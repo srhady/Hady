@@ -1,0 +1,143 @@
+#EXTM3U
+#EXTINF:-1 group-title="Bangladesh",SOMOY TV
+http://iptvbd.jagobd.com:1931/live-orgin/somoyt000011226615544544.stream/playlist.m3u8
+#EXTINF:-1 group-title="Bangladesh",DBC News
+http://iptvbd.jagobd.com:1931/live-orgin/dbcnews.stream/chunks.m3u8
+#EXTINF:-1 group-title="Bangladesh",News24
+http://iptvbd.jagobd.com:1931/live-orgin/news24local.stream/chunks.m3u8
+#EXTINF:-1 group-title="Bangladesh",JagoNews24 Tv
+http://iptvbd.jagobd.com:1931/live-orgin/jagonews24.stream/chunks.m3u8
+#EXTINF:-1 group-title="Bangladesh",INDEPENDENT_HD
+https://tempe.jagobd.com:444/live-orgin/independent-8-org.stream/chunks.m3u8
+#EXTINF:-1 group-title="Bangladesh",JAMUNA
+http://iptvbd.jagobd.com:1931/live-orgin/jamuna-test-sample-ok.stream/playlist.m3u8
+#EXTINF:-1 group-title="Bangladesh",CHANNEL 24
+https://bd.jagobd.com:444/live-orgin/channel24-sg-e8e.stream/chunks.m3u8
+#EXTINF:-1 group-title="Bangladesh",Channel I
+http://iptvbd.jagobd.com:1931/live-orgin/channeli-8-org.stream/chunks.m3u8
+#EXTINF:-1 ,Ekattor TV HD
+http://cdn01.palki.tv/live/EkattorTV-M/tracks-v1/index.fmp4.m3u8
+#EXTINF:-1 group-title="Bangladesh",ATN Bangla
+http://iptvbd.jagobd.com:1931/live-orgin/atnbd-8-org.stream/chunks.m3u8
+
+
+#EXTINF:-1 group-title="International",ABC News
+https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8
+#EXTINF:-1 group-title="International",CGTN News
+https://news.cgtn.com/resource/live/english/cgtn-news.m3u8
+#EXTINF:-1 group-title="International",CBC News
+https://1359547862.rsc.cdn77.org/64r4ed_1ub5cqCyh2pT7kg==,1700766372/LS-ATL-54548-8/index.m3u8
+#EXTINF:-1 group-title="International", Al Jazeera English
+https://d1cy85syyhvqz5.cloudfront.net/v1/master/7b67fbda7ab859400a821e9aa0deda20ab7ca3d2/aljazeeraLive/AJE/index.m3u8
+#EXTINF:-1 group-title="International",Al Arabiya
+https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8
+#EXTINF:-1 group-title="International",24 Канал
+https://streamvideol1.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8
+#EXTINF:-1 group-title="International",I24 News
+https://bcovlive-a.akamaihd.net/6e3dd61ac4c34d6f8fb9698b565b9f50/eu-central-1/5377161796001/playlist-all.m3u8
+#EXTINF:-1 group-title="International",Bloomberg
+https://www.bloomberg.com/media-manifest/streams/asia.m3u8
+#EXTINF:-1 group-title="International",BBC World News
+http://103.199.161.254/Content/bbcworld/Live/Channel(BBCworld)/Stream(01)/index.m3u8
+#EXTINF:-1 group-title="International",Sky News
+https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/Content/HLS_001_sd/Live/channel(skynews)/index_hd30.m3u8
+#EXTINF:-1 group-title="International",RT International
+https://rt-glb.rttv.com/dvr/rtnews/playlist.m3u8
+#EXTINF:-1 group-title="International",Taiwan+
+https://bcovlive-a.akamaihd.net/rce33d845cb9e42dfa302c7ac345f7858/ap-northeast-1/6282251407001/playlist.m3u8
+#EXTINF:-1 group-title="International",Arirang TV
+https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8
+#EXTINF:-1 group-title="International",CBS News
+https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master.m3u8
+#EXTINF:-1 group-title="International",CNA International
+https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+#EXTINF:-1 group-title="International",CNN International Europe
+https://cnn-cnninternational-1-eu.rakuten.wurl.tv/playlist.m3u8
+#EXTINF:-1 group-title="International",WION
+https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8
+#EXTINF:-1 group-title="International",DW English
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8
+#EXTINF:-1 group-title="International",Fox News Channel
+http://247preview.foxnews.com/hls/live/2020027/fncv3preview/primary.m3u8
+#EXTINF:-1 group-title="International",France 24 English
+https://ythls.armelin.one/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg.m3u8
+#EXTINF:-1 group-title="International",Reuters
+https://reuters-reutersnow-1-us.plex.wurl.tv/playlist.m3u8
+#EXTINF:-1 group-title="International",TRT World
+https://tv-trtworld.live.trt.com.tr/master.m3u8
+#EXTINF:1 group-title="International",NHK World Japan
+https://nhkwlive-xjp.akamaized.net/hls/live/2003458/nhkwlive-xjp-en/index.m3u8
+#EXTINF:-1 group-title="International",The Guardian
+https://rakuten-guardian-1-ie.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 group-title="International",UN Web TV
+https://cdnapi.kaltura.com/p/2503451/sp/250345100/playManifest/entryId/1_gb6tjmle/protocol/https/format/applehttp/a.m3u8
+#EXTINF:-1 group-title="International",Africanews
+https://rakuten-africanews-1-pt.samsung.wurl.tv/manifest/playlist.m3u8
+#EXTINF:-1 group-title="International",Euronews
+https://rakuten-euronews-10-be.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 group-title="International",Iran International
+https://dev-live.livetvstream.co.uk/LS-63503-4/index.m3u8
+#EXTINF:-1 group-title="International",Press TV Iran
+https://cdnlive.presstv.ir/cdnlive/smil:cdnlive.smil/playlist.m3u8
+#EXTINF:-1 group-title="International",KBS WORLD
+https://world.gscdn.kbs.co.kr/world-01/world-01_sd.m3u8?Expires=1700889196&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly93b3JsZC5nc2Nkbi5rYnMuY28ua3Ivd29ybGQtMDEvd29ybGQtMDFfc2QubTN1OCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcwMDg4OTE5Nn19fV19&Signature=m-T7eRV1i4hlcoboJl8cHHewSgp31ts3JOmtrnvOaYH0tgsFosEt--~QpjZRpLTiztXt6WarThnhdVovgmBpflMwrPgkADUevMlAKY1MUCW7jdaz8ATqY9N19qd0W50hfa0Jv4YmkDqN3K8eXx1yRE4LwbSCavMwZUs8r9vUA8TmaW4dEQsqZfNCFwt2MYzIbh6WCg1OGhajw7swzoP2fkcreHDr-F9X-tBZn1zIEkuRIXDwbrlFCYCc~6XVLXNb9EAvRkX9sVhKMGfgIu6iGn0eSUMowM~fkg-VAW6kOWhCSRLh1wF7wy9KV5N55TX0GejwOelaCd9dnqVHC4lXTQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA
+#EXTINF:-1 group-title="International",teleSUR
+https://cdnenmain.telesur.ultrabase.net/mblivev3/480p/playlist.m3u8
+#EXTINF:-1 group-title="International",RTA
+https://hls.rta.live/hls/stream.m3u8
+#EXTINF:-1 group-title="International", ATN News
+https://d10rltuy0iweup.cloudfront.net/ATNNEWS/myStream/playlist.m3u8
+
+
+#EXTINF:-1 group-title="West Bengal", ABP Ananda
+https://abplivetv.akamaized.net/hls/live/2043012/ananda/master.m3u8
+#EXTINF:-1 group-title="West Bengal", Zee 24 Ghonta
+https://vg-zeeftalive.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/zeefta_https/v1/0188823505fd1ea540e602a8c710/0188823555fe1ea5578a028f9e0a/main.m3u8
+#EXTINF:-1 group-title="West Bengal", TV9 Bangla
+https://vg-tv9yupp.akamaized.net/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-563504/main.m3u8
+#EXTINF:-1 group-title="West Bengal", News18_Bangla
+https://prod-ent-live-gm.jiocinema.com/bpk-tv/News18_Bangla_voot_MOB/Fallback/index.m3u8
+#EXTINF:-1 group-title="West Bengal",Samay Kolkata
+https://5dd3981940faa.streamlock.net/kbcration/kbcration/playlist.m3u8
+#EXTINF:-1 group-title="West Bengal",R.বাংলা
+https://rbangla.pc.cdn.bitgravity.com/live/rbanglatv/playlist.m3u8
+#EXTINF:-1 group-title="West Bengal",Bangla Jago
+http://banglajagotv.livebox.co.in:80/banglajagohls/24x7.m3u8
+#EXTINF:-1 group-title="West Bengal",R Plus News
+https://thelegitpro.in/pntv/rplusnews24x7/index.m3u8
+#EXTINF:-1 group-title="West Bengal",ANANDA BARTA
+http://5dd3981940faa.streamlock.net:1935/abnews/abnews/chunklist_w1725375788.m3u8
+#EXTINF:-1 group-title="West Bengal",AKD Calcutta News
+https://akdnetwork.co.in/live/cnnew/index.m3u8
+
+
+#EXTINF:-1 group-title="India",Aaj Tak
+https://feeds.intoday.in/aajtak/api/aajtakhd/master.m3u8
+#EXTINF:-1 group-title="India",Zee News
+https://dknttpxmr0dwf.cloudfront.net/index.m3u8?akes=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MDA3MjcwNzJ9.RUaUgEN6XHE3eCktDCeDbsfUfuBeNufAmR_oWI3Xkuo
+#EXTINF:-1 group-title="India",ABP News
+https://abplivetv.akamaized.net/hls/live/2043010/hindi/master.m3u8
+#EXTINF:-1 group-title="India",Asianet News
+https://vidcdn.vidgyor.com/asianet-origin/liveabr/playlist.m3u8
+#EXTINF:-1 group-title="India",Bharat Samachar TV
+https://idvd.multitvsolution.com/idvo/bharatsamachar.m3u8
+#EXTINF:-1 group-title="India",CNN News 18
+https://prod-ent-live-gm.jiocinema.com/bpk-tv/CNN_News18_voot_MOB/Fallback/index.m3u8
+#EXTINF:-1 group-title="India",NDTV 24X7
+https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678-b/ndtv24x7/master.m3u8
+#EXTINF:-1 group-title="India",Republic TV
+https://weblive.republicworld.com/httppush/ottr_republic_english/weblive/master.m3u8?e=1651389600&h=67242102ec7fc359b6b619159615c280
+
+
+#EXTINF:-1 group-title="Pakistan",PTV News
+https://ptvbkp.nayatel.com:8096/transcoder/ptvnewstrc_source/playlist.m3u8
+#EXTINF:-1 group-title="Pakistan",Bol News
+https://ythls.armelin.one/channel/UCz2yxQJZgiB_5elTzqV7FiQ.m3u8
+#EXTINF:-1 group-title="Pakistan",Dawn News
+https://ythls.armelin.one/channel/UCaxR-D8FjZ-2otbU0_Y2grg.m3u8
+#EXTINF:-1 group-title="Pakistan",Geo News
+https://jk3lz82elw79-hls-live.5centscdn.com/GEONEWS/3500ba09d0538297440ca620c9dd46bf.sdp/playlist.m3u8
+#EXTINF:-1 group-title="Pakistan",Hum News
+https://ythls.armelin.one/channel/UC0Um3pnZ2WGBEeoA3BX2sKw.m3u8
+#EXTINF:-1 group-title="Pakistan", Duniya News
+https://imob.dunyanews.tv/livehd/_definst_/ngrp:dunyalivehd_2_all/playlist.m3u8
