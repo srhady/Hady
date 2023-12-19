@@ -241,6 +241,208 @@ https://ddy3.webhd.ru/ddy3/premium591/tracks-v1a1/mono.m3u8
 #EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
 https://ddy3.webhd.ru/ddy3/premium592/tracks-v1a1/mono.m3u8
 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ojmfP-QcgDW4aXcZ6HncvEs6eSIIZ1CbEw&usqp=CAU" group-title="SPORTS", DAZN 3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh2.webhd.ru/ddh2/premium447/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBaFfxKdXVDRK74hxuYIZkf6GwOHtUYwmCAw&usqp=CAU" group-title="SPORTS", DAZN 4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh2.webhd.ru/ddh2/premium448/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_del_canale_televisivo_Zona_DAZN.svg\/1200px-Logo_del_canale_televisivo_Zona_DAZN.svg.png" group-title="SPORTS", Zona DAZN
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy2.webhd.ru/ddy2/premium877/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/DAZN_Logo_Master.svg/1200px-DAZN_Logo_Master.svg.png" group-title="SPORTS", DAZN DE 1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy4.webhd.ru/ddy4/premium426/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/DAZN_Logo_Master.svg\/1200px-DAZN_Logo_Master.svg.pn" group-title="SPORTS", DAZN DE 2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy4.webhd.ru/ddy4/premium427/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/7lxofw1656964140.png" group-title="SPORTS", SuperSport Football 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh2.webhd.ru/ddh2/premium56/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/srtijz1643382350.png" group-title="SPORTS", SuperSports Cricket 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh2.webhd.ru/ddh2/premium368/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/0lwdq31638048788.png" group-title="SPORTS", SuperSports Variety 1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium416/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/9vnt801638048828.png" group-title="SPORTS", SuperSports Variety 2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium417/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/mh03f41638048848.png" group-title="SPORTS", SuperSports Variety 3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium418/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/jz5jpt1638048871.png" group-title="SPORTS", SuperSports Variety 4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium419/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/aitip41642604897.png" group-title="SPORTS", SuperSports Grandstand 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium412/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/s6b35j1629404341.png" group-title="SPORTS", SuperSports PSL
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium413/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnb3guz2RupUT2O6f-mlun9OXn50PNLlNY2w&usqp=CAU" group-title="SPORTS", SuperSports Premier League 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh1.webhd.ru/ddh1/premium414/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://icdb.tv/images/a8a882fb16572f8d4c1980b75b27201d.jpg" group-title="SPORTS", SuperSports Laliga
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddh1.webhd.ru/ddh1/premium415/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2agVCKZ31xZv9BBrQMFBrb2nT0vRGKSOJmQ&usqp=CAU" group-title="SPORTS", SuperSports Action
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium420/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://www.thesportsdb.com/images/media/channel/tvlogo/scvqpc1642604954.png" group-title="SPORTS", SuperSports Rugby 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium421/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTALQi8QergCOEc-eRYRPKRVtmH9YLIWQaH_A&usqp=CAU" group-title="SPORTS", SuperSports Golf
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium422/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://archive.org/download/supersport-tennis/supersport-tennis.png" group-title="SPORTS", SuperSports Tennis 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium423/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcUa6MoJan3_tVo0RpF4EKx1Bq9bam2in1uQ&usqp=CAU" group-title="SPORTS", SuperSports Motorsport 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://olalivehdplay.ru/
+https://ddy3.webhd.ru/ddy3/premium424/tracks-v1a1/mono.m3u8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
