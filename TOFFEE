@@ -1,4 +1,4 @@
-#EXTM3U
-#EXTINF:-1 tvg-logo="https://images.toffeelive.com/images/program/26939/logo/240x240/mobile_logo_685519001702469550.png" group-title="SPORTS", Toffee Live
-
-https://mprod-cdn.toffeelive.com/live/match-1/index.m3u8|cookie=Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9tcHJvZC1jZG4udG9mZmVlbGl2ZS5jb20v:Expires=1702595534:KeyName=prod_live_events:Signature=q64SSChR8T-usAMgQ2hbtHSnOuWCRN_vSSsgj-j8aywtML5Czzv176A-_37LOEyrOrALwXlaoaqBt4fQnVgEDA
+#EXTINF:-1 tvg-logo="https://static.vecteezy.com/system/resources/previews/016/314/808/original/transparent-live-transparent-live-icon-free-png.png" group-title="LIVE EVENT", LIVE
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=
+https://mprod-cdn.toffeelive.com/live/match-3/index.m3u8|cookie=Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9tcHJvZC1jZG4udG9mZmVlbGl2ZS5jb20v:Expires=1703125335:KeyName=prod_live_events:Signature=MBfF5Pj6ccwzZeiRLYR6676aiMBq15cBdmR-uXMfZZGsncZjHmcvnAmVbZoCW2FhAxoJyROqNFErQ10RQuhWBA
