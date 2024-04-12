@@ -1,0 +1,7 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://cdn.bongo-solutions.com/abfea462-f64d-491e-9cd9-75ee001f45b0/content/d52ac12f-b6f0-4e9a-bf18-c860548b7b21/9b94b724-9189-4b99-a80e-55505f643aad.jpg?width=1200" 
+https://vod.bongobd.com/vod/vod/919f93a7400e4149a70d204beb589074/7/1/71d2018b6c3e4ebda3af7a36677f3a5f/59fa5133ec6b47c6a4255ed38403e7b7.m3u8|User-Agent=iPhone 
+
+#EXTINF:-1 tvg-logo="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/fd3f446f-92af-4362-8b56-9dcb9f5aa5a7/9e04d338-956f-45a3-8af3-d06650a387b6.jpg?width=1200"
+https://vod.bongobd.com/vod/vod/919f93a7400e4149a70d204beb589074/3/8/386555816c654ebeb732ddb9c61fe6c1/29f7a383978a4daeb92f9ddf9fa440ca.m3u8|User-Agent=iPhone 
