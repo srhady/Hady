@@ -134,7 +134,59 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="mohonatv.bd" tvg-name="R TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/40/Mohona_TV_Logo.png" group-title="Bangladesh", R TV
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/rtv-sg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
 
+#EXTINF:-1 tvg-id="sonyten1.in" tvg-name="Sony Ten 1 HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/61/Sony_Ten_1_logo.png" group-title="Sony Sports", Sony Ten 1 HD
+https://tataplay.slivcdn.com/hls/live/2011747/TEN1HD/master.m3u8
 
+#EXTINF:-1 tvg-id="sonyten2.in" tvg-name="Sony Ten 2 HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/42/Sony_Ten_2_logo.png" group-title="Sony Sports", Sony Ten 2 HD
+https://tataplay.slivcdn.com/hls/live/2020434/TEN2HD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonyten3.in" tvg-name="Sony Ten 3 HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/0/09/Sony_Ten_3_logo.png" group-title="Sony Sports", Sony Ten 3 HD
+https://tataplay.slivcdn.com/hls/live/2020591/TEN3HD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonyten4.in" tvg-name="Sony Ten 4 HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/c/c6/Sony_Ten_4_logo.png" group-title="Sony Sports", Sony Ten 4 HD
+https://tataplay.slivcdn.com/hls/live/2020589/ten4hd/master.m3u8
+
+#EXTINF:-1 tvg-id="sonysixhd.in" tvg-name="Sony Ten 5 (Sony Six HD)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7d/Sony_Six_logo.png" group-title="Sony Sports", Sony Ten 5 (Sony Six HD)
+https://tataplay.slivcdn.com/hls/live/2020593/SONYSIXHD/master.m3u8
+
+#EXTINF:-1 tvg-id="set.in" tvg-name="SET HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/65/Sony_Entertainment_Television_India_Logo.png" group-title="Sony Entertainment", SET HD
+https://tataplay.slivcdn.com/hls/live/2011671/SETHD/master.m3u8
+
+#EXTINF:-1 tvg-id="sab.in" tvg-name="Sony SAB HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e3/Sony_SAB_2020_Logo.png" group-title="Sony Entertainment", Sony SAB HD
+https://tataplay.slivcdn.com/hls/live/2011749/SABHD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonymarathi.in" tvg-name="Sony Marathi" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/24/Sony_Marathi_Logo.png" group-title="Sony Regional", Sony Marathi
+https://tataplay.slivcdn.com/hls/live/2011740/SonyMarathi/master.m3u8
+
+#EXTINF:-1 tvg-id="sonypal.in" tvg-name="Sony PAL" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/42/Sony_Pal_logo.png" group-title="Sony Entertainment", Sony PAL
+https://tataplay.slivcdn.com/hls/live/2011741/SonyPalSD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonykal.int" tvg-name="Sony KAL" tvg-logo="https://i.imgur.com/yXUx47j.png" group-title="Sony International", Sony KAL
+https://spt-sonykal-1-us.lg.wurl.tv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="sonyaath.in" tvg-name="Sony AATH" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/dc/Sony_Aath_Logo.png" group-title="Sony Regional", Sony AATH
+https://tataplay.slivcdn.com/hls/live/2011641/SonyAathSD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonyyay.in" tvg-name="Sony YAY!" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/fc/Sony_Yay_Logo.png" group-title="Kids", Sony YAY!
+https://tataplay.slivcdn.com/hls/live/2011746/SonyYaySD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonymaxhd.in" tvg-name="Sony MAX HD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4c/Sony_MAX_Logo.png" group-title="Sony Movies", Sony MAX HD
+https://tataplay.slivcdn.com/hls/live/2011670/SonyMaxhd/master.m3u8
+
+#EXTINF:-1 tvg-id="sonymax.in" tvg-name="Sony MAX" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4c/Sony_MAX_Logo.png" group-title="Sony Movies", Sony MAX
+https://tataplay.slivcdn.com/hls/live/2011745/SonyMaxSD/master.m3u8
+
+#EXTINF:-1 tvg-id="sonymax2.in" tvg-name="Sony MAX 2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d4/Sony_MAX_2.png" group-title="Sony Movies", Sony MAX 2
+https://tataplay.slivcdn.com/hls/live/2011908/MAX2/master.m3u8
+
+#EXTINF:-1 tvg-id="sonywah.in" tvg-name="Sony WAH" tvg-logo="https://upload.wikimedia.org/wikipedia/en/c/c1/Sony_Wah_Logo.png" group-title="Sony Movies", Sony WAH
+https://tataplay.slivcdn.com/hls/live/2011906/SonyWah/master.m3u8
+
+#EXTINF:-1 tvg-id="sonypix.in" tvg-name="Sony PIX" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e6/Sony_PIX_Logo.png" group-title="Sony Movies", Sony PIX
+https://tataplay.slivcdn.com/hls/live/2011748/PIXHD/master.m3u8
+
+#EXTINF:-1 tvg-id="bbcearth.in" tvg-name="Sony BBC Earth" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/2c/Sony_BBC_Earth_logo.png" group-title="Documentary", Sony BBC Earth
+https://tataplay.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master.m3u8
 
 
 
