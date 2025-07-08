@@ -1,7 +1,143 @@
+
+
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://cdn.bongo-solutions.com/abfea462-f64d-491e-9cd9-75ee001f45b0/content/d52ac12f-b6f0-4e9a-bf18-c860548b7b21/9b94b724-9189-4b99-a80e-55505f643aad.jpg?width=1200", hady 
+#EXTINF:-1 tvg-id="anandatv.bd" tvg-name="Ananda TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/3b/Ananda_TV_Logo.png" group-title="Bangladesh", Ananda TV
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/anandatv.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
 
-#EXTINF:-1 tvg-logo="https://cdn.bongo-solutions.com/919f93a7-400e-4149-a70d-204beb589074/content/fd3f446f-92af-4362-8b56-9dcb9f5aa5a7/9e04d338-956f-45a3-8af3-d06650a387b6.jpg?width=1200", hady
-https://vod.bongobd.com/vod/vod/919f93a7400e4149a70d204beb589074/3/8/386555816c654ebeb732ddb9c61fe6c1/29f7a383978a4daeb92f9ddf9fa440ca.m3u8|User-Agent=iPhone 
+#EXTINF:-1 tvg-id="aljazeera" tvg-name="Al Jazeera" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c0/Al_Jazeera_English_logo.svg" group-title="International", Al Jazeera
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/aljazeera.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="atnbangla.bd" tvg-name="ATN Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/33/ATN_Bangla.png" group-title="Bangladesh", ATN Bangla
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbd-8-org.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="atnbangla-uk.bd" tvg-name="ATN Bangla UK" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/33/ATN_Bangla.png" group-title="Bangladesh", ATN Bangla UK
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="atnmusic.bd" tvg-name="ATN Music" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d3/ATN_Music.png" group-title="Bangladesh", ATN Music
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/atnmusic.stream/playlist.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="atnnews.bd" tvg-name="ATN News" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/4a/ATN_News_Logo.png" group-title="Bangladesh", ATN News
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/atnws-sg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="b24c.bd" tvg-name="B24C" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7c/B24_Logo.png" group-title="Bangladesh", B24C
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/b24c.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="banglavision.bd" tvg-name="Banglavision" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/60/Bangla_Vision.png" group-title="Bangladesh", Banglavision
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/banglav000.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="biswabangla.in" tvg-name="BiswaBangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/75/Biswa_Bangla_Logo.png" group-title="India", BiswaBangla
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/biswabanglatv.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="boishakhi.bd" tvg-name="Boishakhi TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e3/Boishakhi_TV.png" group-title="Bangladesh", Boishakhi TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/boishakhitv-org.stream/playlist.m3u8|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="btv.bd" tvg-name="BTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/11/BTV_Logo.png" group-title="Bangladesh", BTV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/btvnational1.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="btvctg.bd" tvg-name="BTV Chittagong" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/11/BTV_Logo.png" group-title="Bangladesh", BTV Chittagong
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/btvnational-ctg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="bijoytv.bd" tvg-name="Bijoy TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/6b/Bijoy_TV_Logo.png" group-title="Bangladesh", Bijoy TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/bijoy00.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="btvnews.bd" tvg-name="BTV News" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/11/BTV_Logo.png" group-title="Bangladesh", BTV News
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/btvbd-office-sg.stream/playlist.m3u8?wmsAuthSign=HadyHady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="cb24.bd" tvg-name="CB24" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/31/CB24_Logo.png" group-title="Bangladesh", CB24
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/cb24.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="cgtn" tvg-name="CGTN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/91/CGTN_Logo.svg" group-title="International", CGTN
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/cgtn.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="cgtn-doc" tvg-name="CGTN Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/91/CGTN_Logo.svg" group-title="International", CGTN Documentary
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/cgtndoc.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="channel5.bd" tvg-name="Channel 5" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d6/Channel5_Logo.png" group-title="Bangladesh", Channel 5
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/musicbangla.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="channel52.usa" tvg-name="Channel 52 USA" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e9/Channel52_Logo.png" group-title="USA", Channel 52 USA
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/channel25usa.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=Hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="channel24.bd" tvg-name="Channel 24" tvg-logo="https://upload.wikimedia.org/wikipedia/en/1/1a/Channel_24_Bangladesh_logo.png" group-title="Bangladesh", Channel 24
+https://ch24cdn.ncare.live/channel24/ch24office/index.m3u8|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="channel9.bd" tvg-name="Channel 9" tvg-logo="https://upload.wikimedia.org/wikipedia/en/3/38/Channel9_Logo.png" group-title="Bangladesh", Channel 9
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/channel9hd.stream/tracks-v1/index.fmp4.m3u8?wmsAuthSign=hadyhady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="colosal.tv" tvg-name="Colosal TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f1/Colosal_TV_Logo.png" group-title="Bangladesh", Colosal TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/colosal.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="csbnews.usa" tvg-name="CSB News USA" tvg-logo="https://upload.wikimedia.org/wikipedia/en/8/8c/CSB-News-USA_Logo.png" group-title="USA", CSB News USA
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/csbnewsbd.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="cumilla24.bd" tvg-name="Cumilla 24" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/fb/Cumilla_24_Logo.png" group-title="Bangladesh", Cumilla 24
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/cumilla24bd.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="deentv.bd" tvg-name="Deen TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/6f/Deen_TV_Logo.png" group-title="Bangladesh", Deen TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/deentv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="deshtv.bd" tvg-name="Desh TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/74/Desh_TV.png" group-title="Bangladesh", Desh TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/deshtv.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="deshbideshe.bd" tvg-name="Deshbideshe TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/9c/Deshbideshe_TV_Logo.png" group-title="Bangladesh", Deshbideshe TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/deshebideshe.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="deshitv.bd" tvg-name="Deshi TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/a/a3/Deshi_TV_Logo.png" group-title="Bangladesh", Deshi TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/deshitv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="discoverpakistan.pk" tvg-name="Discover Pakistan" tvg-logo="https://upload.wikimedia.org/wikipedia/en/e/e1/Discover_Pakistan_Logo.png" group-title="Pakistan", Discover Pakistan
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/discoverpakistan.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="dwnews" tvg-name="DW News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/65/DW_News_Logo.svg" group-title="International", DW News
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/dwnews.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="ekattortv.bd" tvg-name="Ekattor TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f3/Ekattor_TV.png" group-title="Bangladesh", Ekattor TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/ekattor.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="ekhontv.bd" tvg-name="Ekhon TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/2/25/Ekhon_TV_Logo.png" group-title="Bangladesh", Ekhon TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/globaltv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="etv.bd" tvg-name="ETV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f4/Ekushey_Television.png" group-title="Bangladesh", ETV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/ekusheytv-8-org.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="eurobangla.bd" tvg-name="Euro Bangla TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f0/Euro_Bangla_Logo.png" group-title="Europe", Euro Bangla TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/eurobangla.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="globaltv.bd" tvg-name="Global TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d9/Global_TV_Logo.png" group-title="Bangladesh", Global TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/Global-tv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="gtv.bd" tvg-name="GTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/9/99/GTV_Bangladesh_Logo.png" group-title="Bangladesh", GTV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/gazibdz.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="independenttv.bd" tvg-name="Independent TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/c/c7/Independent_TV_Logo.png" group-title="Bangladesh", Independent TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/independent-8-org.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="jamunatv.bd" tvg-name="Jamuna TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/64/Jamuna_TV_logo.png" group-title="Bangladesh", Jamuna TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/jamuna-test-sample-ok.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="mohonatv.bd" tvg-name="Mohona TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/40/Mohona_TV_Logo.png" group-title="Bangladesh", Mohona TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/mohonatv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="mytv.bd" tvg-name="MY TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f9/MyTV_Bangladesh.png" group-title="Bangladesh", MY TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/mytv-up-off.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="news24.bd" tvg-name="News 24" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/41/News24_Bangladesh.png" group-title="Bangladesh", News 24
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/news24local.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="ntv.bd" tvg-name="NTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/f/f5/Ntv_bangladesh_logo.png" group-title="Bangladesh", NTV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/ntvuk00332211.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="jamunatv.bd" tvg-name="Somoy TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/6/64/Jamuna_TV_logo.png" group-title="Bangladesh", Somoy TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/somoyt000011226615544544.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+#EXTINF:-1 tvg-id="mohonatv.bd" tvg-name="R TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/4/40/Mohona_TV_Logo.png" group-title="Bangladesh", R TV
+https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/rtv-sg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+
+
+
+
+
+
+
+
