@@ -134,7 +134,7 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="somoytv.bd" tvg-name="Somoy TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSki7eb3XHGbfIEWsSWkxLhhW9jVxApJ3_NIQ&s" group-title="Bangladesh", Somoy TV
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/somoyt000011226615544544.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
 
-#EXTINF:-1 tvg-id="rtv.bd" tvg-name="R TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Kn08RB2X2uBrhwWab3FM942AXEBcMj646g&usqp=CAU" group-title="Bangladesh", R TV
+#EXTINF:-1 tvg-id="rtv.bd" tvg-name="R TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Rtv_bangladesh.svg/480px-Rtv_bangladesh.svg.png" group-title="Bangladesh", R TV
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/rtv-sg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
 
 #EXTINF:-1 tvg-id="tsports.bd" tvg-name="T Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s" group-title="Sports",T Sports
@@ -143,7 +143,7 @@ https://tvsen5.aynaott.com/YNMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="starsports1.in" tvg-name="Star Sports 1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Star_Sports_1.svg/512px-Star_Sports_1.svg.png" group-title="Sports",Star Sports 1
 https://live20.bozztv.com/akamaissh101/ssh101/starsports/chunks.m3u8
 
-#EXTINF:-1 tvg-id="rtasports.af" tvg-name="RTA Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/RTA_Sports_logo.png/320px-RTA_Sports_logo.png" group-title="Sports",RTA Sports
+#EXTINF:-1 tvg-id="rtasports.af" tvg-name="RTA Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Kn08RB2X2uBrhwWab3FM942AXEBcMj646g&usqp=CAU" group-title="Sports",RTA Sports
 https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8
 
 #EXTINF:-1 tvg-id="sonyten1.in" tvg-name="Sony Ten 1 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen1_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 1 HD
