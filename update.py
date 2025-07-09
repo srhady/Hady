@@ -1,0 +1,14 @@
+import requests
+from datetime import datetime
+
+new_url = "https://tvsen6.aynascope.net/etv/tracks-v1a1/mono.ts.m3u8?e=1752071943&token=2399e7c5986c54529cc846bff3ad87c9&u=6360e0ce-a6bf-4d2d-8e1a-ca8f2114a88c"
+
+m3u_content = f"""#EXTM3U
+#EXTINF:-1 tvg-id="bbcearth.in" tvg-name="Sony BBC Earth" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SBBCE_LOGO_NEW_PNG.png" group-title="Bangla TV", Bangla TV
+{new_url}
+"""
+
+with open("ayna", "w", encoding="utf-8") as file:
+    file.write(m3u_content)
+
+print(f"[✓] Updated at {datetime.now()}")
