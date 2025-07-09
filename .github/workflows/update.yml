@@ -1,0 +1,23 @@
+name: Auto Update M3U
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - run: pip install requests
+      - run: python update.py
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add Own.m3u
+          git commit -m "update token" || echo "No change"
+          git push
