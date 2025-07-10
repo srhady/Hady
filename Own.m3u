@@ -3,7 +3,7 @@
 #EXTM3U
 
 #EXTINF:-1 tvg-id="anandatv.bd" tvg-name="Ananda TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2lNEvihIw7_U07gseYS3OHJLrKDL7wMhRQ&usqp=CAU" group-title="Bangladesh", Ananda TV
-https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/anandatv.stream/tracks-v1a1/mono.ts.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+MFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/anandatv.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://mcaster.tv/
 
 #EXTINF:-1 tvg-id="aljazeera" tvg-name="Al Jazeera" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c0/Al_Jazeera_English_logo.svg" group-title="International", Al Jazeera
 https://live-hls-web-aje-fa.thehlive.com/AJE/02.m3u8
