@@ -171,6 +171,27 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="rtv.bd" tvg-name="R TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Rtv_bangladesh.svg/480px-Rtv_bangladesh.svg.png" group-title="Bangladesh", R TV
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/rtv-sg.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
 
+#EXTINF:-1 tvg-id="RedbullTV" tvg-name="Redbull TV" group-title="International", Redbull TV
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
+
+#EXTINF:-1 tvg-id="FigaroTV" tvg-name="Le Figaro TV" group-title="International", Le Figaro TV
+https://figarotv-live.freecaster.com/live/freecaster/figarotv-audio_fre=96000-video=4000000.m3u8
+
+#EXTINF:-1 tvg-id="ScientologyTV" tvg-name="Scientology TV" group-title="Religion", Scientology TV
+https://www.xfireflix.fun/yt/v2/stream.php?video_id=df-97lhZBi0&e=.m3u8
+
+#EXTINF:-1 tvg-id="TLCTurkey" tvg-name="TLC Turkey" group-title="Turkey", TLC Turkey
+https://dogus-live.daioncdn.net/tlc/tlc_720p.m3u8
+
+#EXTINF:-1 tvg-id="DWNews" tvg-name="DW News" group-title="News", DW News
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/stream05/streamPlaylist.m3u8
+
+#EXTINF:-1 tvg-id="BBCNews" tvg-name="BBC News" group-title="News", BBC News
+https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist_4300k.m3u8
+
+#EXTINF:-1 tvg-id="CNN" tvg-name="CNN" group-title="News", CNN
+https://d1vnr7amzbx49s.cloudfront.net/index_1.m3u8
+
 #EXTINF:-1 tvg-id="tsports.bd" tvg-name="T Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s" group-title="Sports",T Sports
 https://tvsen5.aynaott.com/YNMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 
