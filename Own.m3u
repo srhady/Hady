@@ -42,37 +42,37 @@ https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/355ba
 https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/a707f2dc-9704-413a-a67c-17c64a77c350/a707f2dc-9704-413a-a67c-17c64a77c350_1_playlist.m3u8|referer=https://www.btvlive.gov.bd/
 
 
-#EXTINF:-1 tvg-id="channeli.bd" tvg-name="Channel I" tvg-logo="https://i.imgur.com/Hb4HlmF.png" group-title="Bangla TV", Channel I
+#EXTINF:-1 tvg-id="channeli.bd" tvg-name="Channel I" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Channel-i.svg/1200px-Channel-i.svg.png" group-title="Bangla TV", Channel I
 https://live.thebosstv.com:30443/chlive/121212/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="channeliusa.us" tvg-name="Channel I USA" tvg-logo="https://i.imgur.com/Hb4HlmF.png" group-title="International", Channel I USA
+#EXTINF:-1 tvg-id="channeliusa.us" tvg-name="Channel I USA" tvg-logo="https://img.rockstreamer.com/280xauto/images/wg45HjRYDPCAOlHGvrc2.png" group-title="International", Channel I USA
 https://live-tv.rockstreamer.com/ustv/14141414.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="srktv.in" tvg-name="SRK TV" tvg-logo="https://i.imgur.com/WXkF0pK.png" group-title="Bangla TV", SRK TV
+#EXTINF:-1 tvg-id="srktv.in" tvg-name="SRK TV" tvg-logo="https://img.rockstreamer.com/280xauto/images/ypG48IU5qIAjFlTDiPOl.jpg" group-title="Bangla TV", SRK TV
 https://stream-hls.castr.net/682844396f7cd6438223a9b9/live_c2cd8d8032f611f0a3ed4d6387c20d28/index.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="arynews.pk" tvg-name="ARY News" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/ARY_News_Logo.svg/1200px-ARY_News_Logo.svg.png" group-title="News", ARY News
+#EXTINF:-1 tvg-id="arynews.pk" tvg-name="ARY News" tvg-logo="https://img.rockstreamer.com/280xauto/images/lvRQkgOmMrhLFbUdT6Y9.png" group-title="News", ARY News
 https://live.thebosstv.com:30443/dwlive/ARY-NEWS/playlist.m3u8|referer=https://iscreen.com.bd/
 
 #EXTINF:-1 tvg-id="abpnews.in" tvg-name="ABP News" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/ABP_News_Logo.svg/800px-ABP_News_Logo.svg.png" group-title="News", ABP News
 https://live.thebosstv.com:30443/dwlive/ABP-NEWS/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="historytv18.in" tvg-name="History TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/9c/History_Logo.svg" group-title="Documentary", History TV
+#EXTINF:-1 tvg-id="historytv18.in" tvg-name="History TV" tvg-logo="https://img.rockstreamer.com/280xauto/images/0dKapm0JRiOpn1vQuVkW.png" group-title="Documentary", History TV
 https://live.thebosstv.com:30443/dwlive/HISTORY/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="akashath.in" tvg-name="Aakash Aath" tvg-logo="https://i.imgur.com/YkxyCvb.png" group-title="Bangla TV", Akash Aath
+#EXTINF:-1 tvg-id="akashath.in" tvg-name="Aakash Aath" tvg-logo="https://img.rockstreamer.com/280xauto/images/r6PzyRCsOWu1qYsi63AQ.png" group-title="Bangla TV", Akash Aath
 https://live.thebosstv.com:30443/dwlive/AAKAASH-AATH/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="rongeentv.bd" tvg-name="Rongeen TV" tvg-logo="https://i.imgur.com/FZNRs3N.png" group-title="Kids", Rongeen TV
+#EXTINF:-1 tvg-id="rongeentv.bd" tvg-name="Rongeen TV" tvg-logo="https://img.rockstreamer.com/280xauto/images/xcAagB0E0UCSV1N5dC4V.png" group-title="Kids", Rongeen TV
 https://server.thelegitpro.in/rongeentv/rongeentv/index.m3u8|referer=https://iscreen.com.bd/
 
 #EXTINF:-1 tvg-id="cnbc.in" tvg-name="CNBC" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e3/CNBC_logo.svg" group-title="News", CNBC
 https://live.thebosstv.com:30443/dwlive/CNBC/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="dangal.in" tvg-name="Dangal TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Dangal_TV_logo.png/220px-Dangal_TV_logo.png" group-title="Entertainment", Dangal TV
+#EXTINF:-1 tvg-id="dangal.in" tvg-name="Dangal TV" tvg-logo="https://img.rockstreamer.com/280xauto/images/d8DoodQeaXFik4K1bxy7.png" group-title="Entertainment", Dangal TV
 https://live.thebosstv.com:30443/dwlive/DANGAL-TV/playlist.m3u8|referer=https://iscreen.com.bd/
 
-#EXTINF:-1 tvg-id="ndtv.in" tvg-name="NDTV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/NDTV_Logo.svg/1200px-NDTV_Logo.svg.png" group-title="News", NDTV
+#EXTINF:-1 tvg-id="ndtv.in" tvg-name="NDTV" tvg-logo="https://img.rockstreamer.com/280xauto/images/nQdBcu7aqu6QJ5zoNUnA.png" group-title="News", NDTV
 https://live.thebosstv.com:30443/dwlive/NDTV-NEWS/playlist.m3u8|referer=https://iscreen.com.bd/
 
 #EXTINF:-1 tvg-id="bijoytv.bd" tvg-name="Bijoy TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Logo_of_Bijoy_TV.svg/1200px-Logo_of_Bijoy_TV.svg.png" group-title="Bangladesh", Bijoy TV
