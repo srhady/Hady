@@ -192,6 +192,12 @@ https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist_4300k.m3u8
 #EXTINF:-1 tvg-id="CNN" tvg-name="CNN" group-title="News", CNN
 https://d1vnr7amzbx49s.cloudfront.net/index_1.m3u8
 
+
+#EXTINF:-1 group-title="Sports" tvg-id="597" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s", Live | T Sports 1
+https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
+#EXTINF:-1 group-title="Sports" tvg-id="261" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s", Live | T Sports 2
+https://live.tsports.com/mobile_hls/tsports_live_2/playlist.m3u8
+
 #EXTINF:-1 tvg-id="tsports.bd" tvg-name="T Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s" group-title="Sports",T Sports
 https://tvsen5.aynaott.com/YNMn5kZz8aLm/tracks-v1a1/mono.ts.m3u8
 
