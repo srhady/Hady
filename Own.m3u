@@ -5,6 +5,9 @@
 #EXTINF:-1 tvg-id="banglatv.bd" tvg-name="Bangla TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bangla_TV_logo.svg/1200px-Bangla_TV_logo.svg.png" group-title="Bangladesh", Bangla TV
 https://tvsen6.aynaott.com/banglatv/index.m3u8
 
+#EXTINF:-1 tvg-id="nexustv.bd" tvg-name="Nexus TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTccjOVbYwpymjy8ZqGSc9JAHInUq51VzEZDw&s" group-title="Bangladesh", Nexus TV
+https://tvsen6.aynaott.com/nexustv/index.m3u8
+
 
 #EXTINF:-1 tvg-id="anandatv.bd" tvg-name="Ananda TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2lNEvihIw7_U07gseYS3OHJLrKDL7wMhRQ&usqp=CAU" group-title="Bangladesh", Ananda TV
 https://tvsen6.aynaott.com/anandatv/index.m3u8
