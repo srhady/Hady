@@ -5,6 +5,10 @@
 #EXTINF:-1 tvg-id="anandatv.bd" tvg-name="Ananda TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2lNEvihIw7_U07gseYS3OHJLrKDL7wMhRQ&usqp=CAU" group-title="Bangladesh", Ananda TV
 https://tvsen6.aynaott.com/anandatv/index.m3u8
 
+#EXTINF:-1 tvg-id="durontotv.bd" tvg-name="Duronto TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/Duronto_TV_Logo.png" group-title="Bangladesh", Duronto TV
+https://tvsen6.aynaott.com/durontotv/index.m3u8
+
+
 #EXTINF:-1 tvg-id="maasrangatv.bd" tvg-name="Maasranga TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT90te6i-yKCSPGtx-d2sdTdIWmzRR5RBQIKg&usqp=CAU" group-title="Bangladesh", Maasranga TV
 https://tvsen6.aynaott.com/maasrangatv/index.m3u8
 
