@@ -5,6 +5,10 @@
 #EXTINF:-1 tvg-id="anandatv.bd" tvg-name="Ananda TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2lNEvihIw7_U07gseYS3OHJLrKDL7wMhRQ&usqp=CAU" group-title="Bangladesh", Ananda TV
 https://tvsen6.aynaott.com/anandatv/index.m3u8
 
+#EXTINF:-1 tvg-id="asiantv.bd" tvg-name="Asian TV" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/thumb/e/ec/এশিয়ান_টিভির_লোগো.svg/1501px-এশিয়ান_টিভির_লোগো.svg.png" group-title="Bangladesh", Asian TV
+https://tvsen6.aynaott.com/asiantv/index.m3u8
+
+
 
 #EXTINF:-1 tvg-id="deeptotv.bd" tvg-name="Ananda TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Logo_of_Deepto_TV.svg/1200px-Logo_of_Deepto_TV.svg.png" group-title="Bangladesh", Deepto TV
 https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
