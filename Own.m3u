@@ -66,6 +66,11 @@ https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/355ba
 #EXTINF:-1 tvg-id="btvctg.bd" tvg-name="BTV Chittagong" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/BTV_Chattogram_Logo.svg/1200px-BTV_Chattogram_Logo.svg.png" group-title="Bangladesh", BTV Chittagong
 https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/a707f2dc-9704-413a-a67c-17c64a77c350/a707f2dc-9704-413a-a67c-17c64a77c350_1_playlist.m3u8|referer=https://www.btvlive.gov.bd/
 
+
+#EXTINF:-1 tvg-id="sangsad.bd" tvg-name="Sangsad" tvg-logo="https://www.btvlive.gov.bd/_next/image?url=https://d38ll44lbmt52p.cloudfront.net/cms/channel_poster/1676193184888_2.png&w=750&q=75" group-title="Bangladesh", Sangsad Bangla
+https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/9ee3b4f9-fd0a-47c5-a135-2575c5691613/9ee3b4f9-fd0a-47c5-a135-2575c5691613_1_playlist.m3u8|referer=https://www.btvlive.gov.bd/
+
+
 #EXTINF:-1 tvg-id="dbcnews.bd" tvg-name="DBC News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/9f/DBC_News_logo.png" group-title="Bangladesh", DBC News
 https://tvsen6.aynaott.com/dbcnews/index.m3u8
 
