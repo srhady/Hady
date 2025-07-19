@@ -81,7 +81,7 @@ https://live.thebosstv.com:30443/dwlive/DANGAL-TV/playlist.m3u8|referer=https://
 https://dai.google.com/linear/hls/pb/event/8BmMXuLuTHS1U3jtBnHmaQ/stream/b9a4bcac-84f7-4917-b19c-a9433507f5c4:SIN/variant/fdd10aacd915c57f01c892f628ccf6f4/bandwidth/3330800.m3u8
 
 #EXTINF:-1 tvg-id="bijoytv.bd" tvg-name="Bijoy TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Logo_of_Bijoy_TV.svg/1200px-Logo_of_Bijoy_TV.svg.png" group-title="Bangladesh", Bijoy TV
-https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/bijoy00.stream/playlist.m3u8?wmsAuthSign=hady|referer=https://tvz.jagobd.com/
+https://tvsen6.aynaott.com/bijoytv/index.m3u8
 
 #EXTINF:-1 tvg-id="btvnews.bd" tvg-name="BTV News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4f/BTV_NEWS_Logo_-_Bangladesh_Television.png" group-title="Bangladesh", BTV News
 https://www.btvlive.gov.bd/streams/37f2df30-3edf-42f3-a2ee-6185002c841c/BD/d96eb7f4-83c2-4472-9597-3568390a8ebf/d96eb7f4-83c2-4472-9597-3568390a8ebf_1_playlist.m3u8|referer=https://www.btvlive.gov.bd/
