@@ -9,6 +9,8 @@ https://tvsen6.aynaott.com/anandatv/index.m3u8
 https://tvsen6.aynaott.com/asiantv/index.m3u8
 
 
+#EXTINF:-1 tvg-id="ntv.bd" tvg-name="N TV" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e1/NTV_Bangladesh.svg/revision/latest/scale-to-width-down/250?cb=20200514143050" group-title="Bangladesh", NTV HD
+https://tvsen5.aynaott.com/xV4jEKf3D9zc/index.m3u8
 
 #EXTINF:-1 tvg-id="deeptotv.bd" tvg-name="Ananda TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Logo_of_Deepto_TV.svg/1200px-Logo_of_Deepto_TV.svg.png" group-title="Bangladesh", Deepto TV
 https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
