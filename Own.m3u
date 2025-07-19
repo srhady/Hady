@@ -2,6 +2,14 @@
 
 #EXTM3U
 
+
+
+#EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="Peace TV Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3zH0LtOT-Fp9DCCRw_YZulNOTpKGpu6ylib77qjRphl7jcoCkJxPx2tE&s=10" group-title="Bangladesh", Peace TV Bangla
+https://tvsen5.aynaott.com/PeaceTvBanglaHD/index.m3u8
+
+#EXTINF:-1 tvg-id="discoverybangla.in" tvg-name="Discovery HD Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJArzlJbDaAx8vvGIi4nTfCnmPKwQVJ6jnQRyO5rLtq5PzdOvXT1Q5VXAH&s=10" group-title="Bangladesh", Discovery HD Bangla
+https://tvsen6.aynaott.com/discovery_hd_bangla/index.m3u8
+
 #EXTINF:-1 tvg-id="banglatv.bd" tvg-name="Bangla TV" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bangla_TV_logo.svg/1200px-Bangla_TV_logo.svg.png" group-title="Bangladesh", Bangla TV
 https://tvsen6.aynaott.com/banglatv/index.m3u8
 
