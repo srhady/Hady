@@ -198,25 +198,27 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="cgtn-doc" tvg-name="CGTN Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d6/CGTN_Documentary_logo.png" group-title="International", CGTN Documentary
 https://english-livebkali.cgtn.com/live/doccgtn_1.m3u8
 
-#EXTINF:-1 tvg-id="RedbullTV" tvg-name="Redbull TV" group-title="International", Redbull TV
+#EXTINF:-1 tvg-id="RedbullTV" tvg-name="Redbull TV" tvg-logo="https://ia803107.us.archive.org/22/items/RedBullTVLogo/Red-Bull-TV-Logo.png"
+ group-title="International", Redbull TV
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
 
-#EXTINF:-1 tvg-id="FigaroTV" tvg-name="Le Figaro TV" group-title="International", Le Figaro TV
+#EXTINF:-1 tvg-id="FigaroTV" tvg-name="Le Figaro TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReao7klNxUMLKom8bJk_IbF-QF0ldn0GA_Fkm0KHDluCfydHFaXar0C7A&s=10" 
+group-title="International", Le Figaro TV
 https://figarotv-live.freecaster.com/live/freecaster/figarotv-audio_fre=96000-video=4000000.m3u8
 
-#EXTINF:-1 tvg-id="ScientologyTV" tvg-name="Scientology TV" group-title="Religion", Scientology TV
-https://www.xfireflix.fun/yt/v2/stream.php?video_id=df-97lhZBi0&e=.m3u8
 
-#EXTINF:-1 tvg-id="TLCTurkey" tvg-name="TLC Turkey" group-title="Turkey", TLC Turkey
+#EXTINF:-1 tvg-id="TLCTurkey" tvg-name="TLC Turkey" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/TLC_logo_(2023).svg/1200px-TLC_logo_(2023).svg.png"
+ group-title="Turkey", TLC Turkey
 https://dogus-live.daioncdn.net/tlc/tlc_720p.m3u8
 
-#EXTINF:-1 tvg-id="DWNews" tvg-name="DW News" group-title="News", DW News
+#EXTINF:-1 tvg-id="DWNews" tvg-name="DW News"
+tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8e/DW_(TV)_Logo_2012.png" group-title="News", DW News
 https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/stream05/streamPlaylist.m3u8
 
-#EXTINF:-1 tvg-id="BBCNews" tvg-name="BBC News" group-title="News", BBC News
+#EXTINF:-1 tvg-id="BBCNews" tvg-name="BBC News" tvg-logo="https://images.icon-icons.com/70/PNG/512/bbc_news_14062.png" group-title="News", BBC News
 https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist_4300k.m3u8
 
-#EXTINF:-1 tvg-id="CNN" tvg-name="CNN" group-title="News", CNN
+#EXTINF:-1 tvg-id="CNN" tvg-name="CNN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/CNN-International-Logo.svg/2560px-CNN-International-Logo.svg.png" group-title="News", CNN
 https://d1vnr7amzbx49s.cloudfront.net/index_1.m3u8
 
 
@@ -246,8 +248,18 @@ https://live-hls-web-aje-fa.thehlive.com/AJE/02.m3u8
 
 
 #EXTINF:-1 tvg-id="ndtv.in" tvg-name="NDTV" tvg-logo="https://img.rockstreamer.com/280xauto/images/nQdBcu7aqu6QJ5zoNUnA.png" group-title="News", NDTV
-https://dai.google.com/linear/hls/pb/event/8BmMXuLuTHS1U3jtBnHmaQ/stream/b9a4bcac-84f7-4917-b19c-a9433507f5c4:SIN/variant/fdd10aacd915c57f01c892f628ccf6f4/bandwidth/3330800.m3u8
+https://vg-ndtvyupp.akamaized.net/ptnr-yupptv/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-252389/0d2c1019-8d98-496c-934c-0df68703838a/3.m3u8
 
+#EXTINF:-1 tvg-id="starjalsha.in" tvg-name="Star Jalsha" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Star_Jalsha_logo_2023.png/640px-Star_Jalsha_logo_2023.png" group-title="Bangladesh", Star Jalsha
+https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
+
+
+#EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Colors Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png" group-title="News", Colors Bangla
+https://tvsen5.aynaott.com/gUX8BJmNc2yF/index.m3u8
+
+
+#EXTINF:-1 tvg-id="enterr10bangla.in" tvg-name="enterr10bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/bn/c/c9/এন্টার১০_বাংলা_টেলিভিশন_চ্যানেলের_লোগো.jpeg" group-title="News", Enterr10 Bangla
+https://live-bangla.akamaized.net/liveabr/pub-iobanglakp3sff/live_720p/chunks.m3u8
 
 #EXTINF:-1 group-title="Sports" tvg-id="597" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2mm9dwdaeLIfpf_9h5wWhCPOY5AkJyPu3A&s", Live | T Sports 1
 https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8
@@ -321,8 +333,6 @@ https://tataplay.slivcdn.com/hls/live/2011748/PIXHD/master_3500.m3u8
 https://tataplay.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master_3500.m3u8
 
 
-#EXTINF:-1 tvg-id="bbcearth.in" tvg-name="Sony BBC Earth" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SBBCE_LOGO_NEW_PNG.png" group-title="Bangla TV", Bangla TV
-https://tvsen6.aynascope.net/etv/tracks-v1a1/mono.ts.m3u8?e=1752071943&token=2399e7c5986c54529cc846bff3ad87c9&u=6360e0ce-a6bf-4d2d-8e1a-ca8f2114a88c
 
 
 
