@@ -198,21 +198,17 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 #EXTINF:-1 tvg-id="cgtn-doc" tvg-name="CGTN Documentary" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d6/CGTN_Documentary_logo.png" group-title="International", CGTN Documentary
 https://english-livebkali.cgtn.com/live/doccgtn_1.m3u8
 
-#EXTINF:-1 tvg-id="RedbullTV" tvg-name="Redbull TV" tvg-logo="https://ia803107.us.archive.org/22/items/RedBullTVLogo/Red-Bull-TV-Logo.png"
- group-title="International", Redbull TV
+#EXTINF:-1 tvg-id="RedbullTV" tvg-name="Redbull TV" tvg-logo="https://ia803107.us.archive.org/22/items/RedBullTVLogo/Red-Bull-TV-Logo.png" group-title="International", Redbull TV
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_6660.m3u8
 
-#EXTINF:-1 tvg-id="FigaroTV" tvg-name="Le Figaro TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReao7klNxUMLKom8bJk_IbF-QF0ldn0GA_Fkm0KHDluCfydHFaXar0C7A&s=10" 
-group-title="International", Le Figaro TV
+#EXTINF:-1 tvg-id="FigaroTV" tvg-name="Le Figaro TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReao7klNxUMLKom8bJk_IbF-QF0ldn0GA_Fkm0KHDluCfydHFaXar0C7A&s=10" group-title="International", Le Figaro TV
 https://figarotv-live.freecaster.com/live/freecaster/figarotv-audio_fre=96000-video=4000000.m3u8
 
 
-#EXTINF:-1 tvg-id="TLCTurkey" tvg-name="TLC Turkey" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/TLC_logo_(2023).svg/1200px-TLC_logo_(2023).svg.png"
- group-title="Turkey", TLC Turkey
+#EXTINF:-1 tvg-id="TLCTurkey" tvg-name="TLC Turkey" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/TLC_logo_(2023).svg/1200px-TLC_logo_(2023).svg.png" group-title="Turkey", TLC Turkey
 https://dogus-live.daioncdn.net/tlc/tlc_720p.m3u8
 
-#EXTINF:-1 tvg-id="DWNews" tvg-name="DW News"
-tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8e/DW_(TV)_Logo_2012.png" group-title="News", DW News
+#EXTINF:-1 tvg-id="DWNews" tvg-name="DW News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/8e/DW_(TV)_Logo_2012.png" group-title="News", DW News
 https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/stream05/streamPlaylist.m3u8
 
 #EXTINF:-1 tvg-id="BBCNews" tvg-name="BBC News" tvg-logo="https://images.icon-icons.com/70/PNG/512/bbc_news_14062.png" group-title="News", BBC News
