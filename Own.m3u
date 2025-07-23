@@ -249,6 +249,8 @@ https://vg-ndtvyupp.akamaized.net/ptnr-yupptv/v1/manifest/611d79b11b77e2f571934f
 #EXTINF:-1 tvg-id="starjalsha.in" tvg-name="Star Jalsha" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Star_Jalsha_logo_2023.png/640px-Star_Jalsha_logo_2023.png" group-title="Bangladesh", Star Jalsha
 https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
 
+#EXTINF:-1 tvg-id="sunbangla.in" tvg-name="Sun Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Sun_Bangla.png/250px-Sun_Bangla.png" group-title="News", Sun Bangla
+http://tv.bdiptv.store:80/live/restreax/refstream/143.m3u8
 
 #EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Colors Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png" group-title="News", Colors Bangla
 https://tvsen5.aynaott.com/gUX8BJmNc2yF/index.m3u8
