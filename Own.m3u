@@ -113,7 +113,7 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 http://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/musicbangla.stream/playlist.m3u8
 
 
-#EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Magic Bangla TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrilYOErcBLFGp4SOWrLZzzCbW5WTelOn0OYqhl3bNY7pCGlgdmMDAnpu=10" group-title="Bangladesh", Magic Bangla TV
+#EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Magic Bangla TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7kF3708zP0clh6ekQIJ6Uj0oreCBkamuVQ&usqp=CAU" group-title="Bangladesh", Magic Bangla TV
 https://jolshabd.com/live/mbanglatv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="channel52.usa" tvg-name="Channel 52 USA" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyjiAkqVNifzfFIbWyP6211vT3uNtX3kVpds-yoT3sqrvAJ0mQOz2k0A8Z&s=10" group-title="USA", Channel 52 USA
@@ -251,13 +251,14 @@ https://live-hls-web-aje-fa.thehlive.com/AJE/02.m3u8
 https://vg-ndtvyupp.akamaized.net/ptnr-yupptv/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-252389/0d2c1019-8d98-496c-934c-0df68703838a/3.m3u8
 
 #EXTINF:-1 tvg-id="starjalsha.in" tvg-name="Star Jalsha" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Star_Jalsha_logo_2023.png/640px-Star_Jalsha_logo_2023.png" group-title="Bangladesh", Star Jalsha
-https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
+https://tvsen5.aynaott.com/gUX8BJmNc2yF/index.m3u8
 
 #EXTINF:-1 tvg-id="sunbangla.in" tvg-name="Sun Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Sun_Bangla.png/250px-Sun_Bangla.png" group-title="News", Sun Bangla
 http://tv.bdiptv.store:80/live/restreax/refstream/143.m3u8
 
 #EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Colors Bangla" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/7b/Colors_Bangla.png" group-title="Bangladesh", Colors Bangla
-https://tvsen5.aynaott.com/gUX8BJmNc2yF/index.m3u8
+https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
+
 
 
 #EXTINF:-1 tvg-id="sanondatv.in" tvg-name="Sanonda TV" tvg-logo="https://static.wikia.nocookie.net/etv-gspn-bangla/images/4/48/Sananda_TV_logo_(2011).png/revision/latest?cb=20210428083412" group-title="Bangladesh", Sanonda TV
