@@ -116,6 +116,10 @@ https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF9
 http://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/musicbangla.stream/playlist.m3u8
 
 
+#EXTINF:-1 tvg-id="jagoronitv.bd" tvg-name="Jagoroni TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcNI4OIBlaSnsXU1AFcK7IL2Hy3NETXYAMGg&usqp=CAU" group-title="Bangladesh", Jagoroni TV
+http://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/jagoronitv.stream/playlist.m3u8
+
+
 #EXTINF:-1 tvg-id="colorsbangla.in" tvg-name="Magic Bangla TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY7kF3708zP0clh6ekQIJ6Uj0oreCBkamuVQ&usqp=CAU" group-title="Bangladesh", Magic Bangla TV
 https://jolshabd.com/live/mbanglatv/playlist.m3u8
 
