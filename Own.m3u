@@ -274,6 +274,13 @@ https://live20.bozztv.com/akamaissh101/ssh101/starsports/chunks.m3u8
 #EXTINF:-1 tvg-id="rtasports.af" tvg-name="RTA Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Kn08RB2X2uBrhwWab3FM942AXEBcMj646g&usqp=CAU" group-title="Sports",RTA Sports
 https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8
 
+#EXTINF:-1 tvg-id="tsports.bd" tvg-name="Eurosport 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e6/Eurosport_1_Logo_2015.png" group-title="Sports",Eurosport 1
+http://178.217.72.66:8080/Eurosport_HD/video.m3u8
+
+
+#EXTINF:-1 tvg-id="tsports.bd" tvg-name="Eurosport 2" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-3-OnBH5EvbV9JoLD8f4wFeU2fmNQ9luqgA&usqp=CAU" group-title="Sports",Eurosport 2
+http://178.217.72.66:8080/Eurosport_2_HD/video.m3u8
+
 #EXTINF:-1 tvg-id="sonyten1.in" tvg-name="Sony Ten 1 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen1_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 1 HD
 https://tataplay.slivcdn.com/hls/live/2011747/TEN1HD/master_3500.m3u8
 
