@@ -59,6 +59,9 @@ https://tvsen6.aynaott.com/atnnews/index.m3u8
 #EXTINF:-1 tvg-id="b24c.bd" tvg-name="B24C" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvqXzD0AuYXBjIMb5ubR-ldUA8Kg70cCBIe1Yzxcb9CAOBNNgRCBXy-0&s=10" group-title="Bangladesh", B24C
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/b24c.stream/tracks-v1a1/mono.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8xMS8yMDI1IDk6Mjc6MzEgQU0maGFzaF92YWx1ZT1WQ3FELzh0YUpHb21EMVY3b0FndzJnPT0mdmFsaWRtaW51dGVzPTQw|referer=https://tvz.jagobd.com/
 
+#EXTINF:-1 tvg-id="nantv.bd" tvg-name="NAN TV" tvg-logo="https://nantvbd.com/wp-content/uploads/2024/07/cropped-NAN-TV-41.png" group-title="Bangladesh", NAN TV
+http://tv.bdiptv.store:80/live/restreax/refstream/15346.m3u8
+
 #EXTINF:-1 tvg-id="banglavision.bd" tvg-name="Banglavision" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Banglavision.svg/640px-Banglavision.svg.png" group-title="Bangladesh", Banglavision
 https://tvsen5.aynaott.com/banglavision/index.m3u8
 
