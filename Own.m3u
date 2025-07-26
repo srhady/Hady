@@ -7,25 +7,25 @@
 https://tvsen6.aynaott.com/GoldminesMovies/index.m3u8
 
 
-#EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="Goldmines" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlo8tzFWuQh-bHQQHiWOQPwyhCqQKkQsSKsw&usqp=CAU" group-title="Bangladesh", Goldmines
+#EXTINF:-1 tvg-id="goldmines.in" tvg-name="Goldmines" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlo8tzFWuQh-bHQQHiWOQPwyhCqQKkQsSKsw&usqp=CAU" group-title="Bangladesh", Goldmines
 https://tvsen6.aynaott.com/Goldmines/index.m3u8
 
 
 #EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="B4U Movies" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_A0Vd31lmefn_He1-PXLcN2OqNR_O-WjxGOoXpDLdrDykL4H-qYJz5Ysp&s=10" group-title="Bangladesh", B4U Movies
 https://tvsen5.aynaott.com/B4U_Movies_India/index.m3u8
 
-#EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="Sangeet Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNgQenJv5h4YRlocNINZxQDLrOLnJvCG8XzA8BkKjec1OMmK9MpflixSTJ&s=10" group-title="Bangladesh", Sangeet Bangla
+#EXTINF:-1 tvg-id="sangeetbangla.in" tvg-name="Sangeet Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNgQenJv5h4YRlocNINZxQDLrOLnJvCG8XzA8BkKjec1OMmK9MpflixSTJ&s=10" group-title="Bangladesh", Sangeet Bangla
 https://tvsen6.aynaott.com/SangeetBangla/index.m3u8
 
 
 #EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="Peace TV Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3zH0LtOT-Fp9DCCRw_YZulNOTpKGpu6ylib77qjRphl7jcoCkJxPx2tE&s=10" group-title="Bangladesh", Peace TV Bangla
 https://tvsen5.aynaott.com/PeaceTvBanglaHD/index.m3u8
 
-#EXTINF:-1 tvg-id="discoverybangla.in" tvg-name="Discovery HD Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJArzlJbDaAx8vvGIi4nTfCnmPKwQVJ6jnQRyO5rLtq5PzdOvXT1Q5VXAH&s=10" group-title="Bangladesh", Discovery HD Bangla
+#EXTINF:-1 tvg-id="discovery.in" tvg-name="Discovery HD Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJArzlJbDaAx8vvGIi4nTfCnmPKwQVJ6jnQRyO5rLtq5PzdOvXT1Q5VXAH&s=10" group-title="Bangladesh", Discovery HD Bangla
 https://tvsen6.aynaott.com/discovery_hd_bangla/index.m3u8
 
 
-#EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="TravelXP Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56tkwkpZvUxAQeWeslwWkmxAL2x4o5KQAxQ&usqp=CAU" group-title="Bangladesh", TravelXP Bangla
+#EXTINF:-1 tvg-id="travelxp.in" tvg-name="TravelXP Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56tkwkpZvUxAQeWeslwWkmxAL2x4o5KQAxQ&usqp=CAU" group-title="Bangladesh", TravelXP Bangla
 http://tv.bdiptv.store:80/live/restreauu/refstream/15283.m3u8
 
 #EXTINF:-1 tvg-id="nationalgeographic.in" tvg-name="National Geographic" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX9EZWIUnLSgXX8rm2vvROg0zuVyRz8UPl5Vj1HxCldjaWZrpw9Bcaei0W&s=10" group-title="Bangladesh", National Geographic 
@@ -67,7 +67,8 @@ https://byphdgllyk.gpcdn.net/hls/deeptotv/index.m3u8
 https://tvsen5.aynaott.com/atnbangla/index.m3u8
 
 #EXTINF:-1 tvg-id="tsports.bd" tvg-name="T Sports" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/T_Sports_logo.svg/1200px-T_Sports_logo.svg.png" group-title="Sports",T Sports
-http://kst.moonplex.net:8080/CH2/tracks-v1a1/mono.m3u8
+http://103.15.140.138/tsports/index.m3u8
+
 
 #EXTINF:-1 tvg-id="atnbangla-uk.bd" tvg-name="ATN Bangla UK" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9iRSwbT7Nue8tJp76m71d-1vcqqekmM10l36QWSUjTunbOVOG8CYWWLQ&s=10" group-title="Bangladesh", ATN Bangla UK
 https://statiics.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/atnbanglauk-off.stream/tracks-v1a1/mono.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny8xMS8yMDI1IDk6MjM6MDggQU0maGFzaF92YWx1ZT01aXN0RFREVXJxVUM1NGY0NExyYTNnPT0mdmFsaWRtaW51dGVzPTQw|referer=https://tvz.jagobd.com/
