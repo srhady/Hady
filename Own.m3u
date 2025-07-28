@@ -344,58 +344,58 @@ http://135.125.232.151:8989/ElevenSports1/index.m3u8
 http://135.125.232.151:8989/ElevenSports2/index.m3u8
 
 #EXTINF:-1 tvg-id="sonyten1.in" tvg-name="Sony Ten 1 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen1_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 1 HD
-https://tataplay.slivcdn.com/hls/live/2011747/TEN1HD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011747/TEN1HD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonyten2.in" tvg-name="Sony Ten 2 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen2_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 2 HD
-https://tataplay.slivcdn.com/hls/live/2020434/TEN2HD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2020434/TEN2HD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonyten3.in" tvg-name="Sony Ten 3 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen3_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 3 HD
-https://tataplay.slivcdn.com/hls/live/2020591/TEN3HD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2020591/TEN3HD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonyten4.in" tvg-name="Sony Ten 4 HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen4_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 4 HD
-https://tataplay.slivcdn.com/hls/live/2020589/ten4hd/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2020589/ten4hd/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonysixhd.in" tvg-name="Sony Ten 5 (Sony Six HD)" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY_SportsTen5_HD_Logo_CLR.png" group-title="Sony Sports", Sony Ten 5 (Sony Six HD)
-https://tataplay.slivcdn.com/hls/live/2020593/SONYSIXHD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2020593/SONYSIXHD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="set.in" tvg-name="SET HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SET-LOGO-HD.png" group-title="Sony Entertainment", SET HD
-https://tataplay.slivcdn.com/hls/live/2011671/SETHD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011671/SETHD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sab.in" tvg-name="Sony SAB HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY SAB HD_WHITE.png" group-title="Sony Entertainment", Sony SAB HD
-https://tataplay.slivcdn.com/hls/live/2011749/SABHD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011749/SABHD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonymarathi.in" tvg-name="Sony Marathi" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/Sony_MARATHI.png" group-title="Sony Regional", Sony Marathi
-https://tataplay.slivcdn.com/hls/live/2011740/SonyMarathi/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011740/SonyMarathi/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonypal.in" tvg-name="Sony PAL" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY PAL.png" group-title="Sony Entertainment", Sony PAL
-https://tataplay.slivcdn.com/hls/live/2011741/SonyPalSD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011741/SonyPalSD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonykal.int" tvg-name="Sony KAL" tvg-logo="https://i.ibb.co/JFrTDg2k/275853749-1027757541419082-8885487251764233689-n.jpg" group-title="Sony International", Sony KAL
-https://spt-sonykal-1-us.lg.wurl.tv/playlist.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://spt-sonykal-1-us.lg.wurl.tv/playlist.m3u8
 
 #EXTINF:-1 tvg-id="sonyaath.in" tvg-name="Sony AATH" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY AATH.png" group-title="Sony Regional", Sony AATH
-https://tataplay.slivcdn.com/hls/live/2011641/SonyAathSD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011641/SonyAathSD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonyyay.in" tvg-name="Sony YAY!" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY YAY.png" group-title="Kids", Sony YAY!
-https://tataplay.slivcdn.com/hls/live/2011746/SonyYaySD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011746/SonyYaySD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonymaxhd.in" tvg-name="Sony MAX HD" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/Sony_MAX-HD_WHITE.png" group-title="Sony Movies", Sony MAX HD
-https://tataplay.slivcdn.com/hls/live/2011670/SonyMaxhd/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011670/SonyMaxhd/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonymax.in" tvg-name="Sony MAX" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Max_SD.png" group-title="Sony Movies", Sony MAX
-https://tataplay.slivcdn.com/hls/live/2011745/SonyMaxSD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011745/SonyMaxSD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonymax2.in" tvg-name="Sony MAX 2" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/Sony_MAX2.png" group-title="Sony Movies", Sony MAX 2
-https://tataplay.slivcdn.com/hls/live/2011908/MAX2/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011908/MAX2/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonywah.in" tvg-name="Sony WAH" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/Sony_WAH.png" group-title="Sony Movies", Sony WAH
-https://tataplay.slivcdn.com/hls/live/2011906/SonyWah/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011906/SonyWah/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonypix.in" tvg-name="Sony PIX" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/PIX HD_WHITE.png" group-title="Sony Movies", Sony PIX
-https://tataplay.slivcdn.com/hls/live/2011748/PIXHD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011748/PIXHD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="bbcearth.in" tvg-name="Sony BBC Earth" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SBBCE_LOGO_NEW_PNG.png" group-title="Documentary", Sony BBC Earth
-https://tataplay.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master_3500.m3u8
+https://mintos.allinonereborn.xyz/sony/stream_proxy.php?url=https://tataplay.slivcdn.com/hls/live/2011907/SonyBBCEarthHD/master_3500.m3u8
 
 
 
