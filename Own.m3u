@@ -300,6 +300,9 @@ https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
 https://live.dinesh29.com.np/stream/jiotv/colorsbanglacinema/master.m3u8
 
 
+#EXTINF:-1 tvg-id="zeebanglacinema.in" tvg-name="Zee Bangla Cinema" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/17/Zee_bangla_cinema.png/revision/latest/scale-to-width-down/284?cb=20210509182053" group-title="Bangladesh", Zee Bangla Cinema
+https://smart.bengaldigital.live/Zee-Bangla-Cinema/index.m3u8
+
 #EXTINF:-1 tvg-id="sanondatv.in" tvg-name="Sanonda TV" tvg-logo="https://static.wikia.nocookie.net/etv-gspn-bangla/images/4/48/Sananda_TV_logo_(2011).png/revision/latest?cb=20210428083412" group-title="Bangladesh", Sanonda TV
 https://live.sanonda.tv/sanonda/index.m3u8
 
