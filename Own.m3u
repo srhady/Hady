@@ -299,6 +299,8 @@ https://tvsen5.aynaott.com/u3LkNQ7UHhFX/index.m3u8
 #EXTINF:-1 tvg-id="colorsbanglacinema.in" tvg-name="Colors Bangla Cinema" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/8c/Colors_Bangla_Cinema.png/revision/latest/scale-to-width-down/250?cb=20240324135511" group-title="Bangladesh", Colors Bangla Cinema
 https://live.dinesh29.com.np/stream/jiotv/colorsbanglacinema/master.m3u8
 
+#EXTINF:-1 tvg-id="zeebangla.in" tvg-name="Zee Bangla" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmLnlUZbGe_9bqDlwxA541VyZlOwP7Wbysjw&usqp=CAU" group-title="Bangladesh", Zee Bangla 
+https://tvsen6.aynaott.com/ZeeBangla/index.m3u8
 
 #EXTINF:-1 tvg-id="zeebanglacinema.in" tvg-name="Zee Bangla Cinema" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/17/Zee_bangla_cinema.png/revision/latest/scale-to-width-down/284?cb=20210509182053" group-title="Bangladesh", Zee Bangla Cinema
 https://smart.bengaldigital.live/Zee-Bangla-Cinema/index.m3u8
