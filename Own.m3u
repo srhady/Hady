@@ -45,6 +45,9 @@ https://tvsen6.aynaott.com/anandatv/index.m3u8
 #EXTINF:-1 tvg-id="durontotv.bd" tvg-name="Duronto TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/d/d7/Duronto_TV_Logo.png" group-title="Bangladesh", Duronto TV
 https://tvsen6.aynaott.com/durontotv/index.m3u8
 
+#EXTINF:-1 tvg-id="durontotv.bd" tvg-name="Gupal Bhar TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK4NLB_UYIJhWBmX5b4cWcSzxLmyMvd70SlKxwdSSQJ2wpaZIhTCxc0CS4&s=10" group-title="Bangladesh", Gupal Bhar TV
+https://live20.bozztv.com/giatvplayout7/giatv-209611/tracks-v1a1/mono.ts.m3u8
+
 #EXTINF:-1 tvg-id="nagoriktv.bd" tvg-name="Nagorik TV" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Logo_of_Nagorik_TV.svg/800px-Logo_of_Nagorik_TV.svg.png" group-title="Bangladesh", Nagorik TV
 https://tvsen6.aynaott.com/nagoriktv/index.m3u8
 
