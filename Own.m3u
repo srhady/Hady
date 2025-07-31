@@ -332,7 +332,7 @@ https://live20.bozztv.com/akamaissh101/ssh101/starsports/chunks.m3u8
 http://163.227.238.44/StarSports1/index.m3u8
 
 #EXTINF:-1 tvg-id="starsports2.in" tvg-name="Star Sports 2" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPSzU9Su0Np2OdKw7hE_n3tOQqJIBXNqMOTg&usqp=CAU" group-title="Sports",Star Sports 2
-http://163.227.238.44/StrSports2/index.m3u8
+http://163.227.238.44/StarSports2/index.m3u8
 
 #EXTINF:-1 tvg-id="starsportsselect1.in" tvg-name="Star Sports Select 1" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/c2/Star-sports-select-1-hd.png/revision/latest?cb=20230128174313" group-title="Sports",Star Sports Select 1
 http://163.227.238.44/StarSportsSelected1/index.m3u8
