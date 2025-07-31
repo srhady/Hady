@@ -11,6 +11,10 @@ https://tvsen6.aynaott.com/GoldminesMovies/index.m3u8
 https://tvsen6.aynaott.com/Goldmines/index.m3u8
 
 
+#EXTINF:-1 tvg-id="zeecinema.in" tvg-name="Zee Cinema" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUQvWyPZj_d7gotXYkBqkDuNnxhLKnBmkiA&usqp=CAU" group-title="Bangladesh", Zee Cinema
+https://tvsen6.aynaott.com/ZeeCinemaHD/index.m3u8
+
+
 #EXTINF:-1 tvg-id="peacetvbangla.in" tvg-name="B4U Movies" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_A0Vd31lmefn_He1-PXLcN2OqNR_O-WjxGOoXpDLdrDykL4H-qYJz5Ysp&s=10" group-title="Bangladesh", B4U Movies
 https://tvsen5.aynaott.com/B4U_Movies_India/index.m3u8
 
