@@ -262,12 +262,6 @@ https://d2vnbkvjbims7j.cloudfront.net/containerA/LTN/playlist_4300k.m3u8
 https://d1vnr7amzbx49s.cloudfront.net/index_1.m3u8
 
 
-#EXTINF:-1 tvg-id="arynews.pk" tvg-name="ARY News" tvg-logo="https://img.rockstreamer.com/280xauto/images/lvRQkgOmMrhLFbUdT6Y9.png" group-title="News", ARY News
-https://live.thebosstv.com:30443/dwlive/ARY-NEWS/playlist.m3u8|referer=https://iscreen.com.bd/
-
-#EXTINF:-1 tvg-id="abpnews.in" tvg-name="ABP News" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/ABP_News_Logo.svg/800px-ABP_News_Logo.svg.png" group-title="News", ABP News
-https://live.thebosstv.com:30443/dwlive/ABP-NEWS/playlist.m3u8|referer=https://iscreen.com.bd/
-
 #EXTINF:-1 tvg-id="historytv18.in" tvg-name="History TV" tvg-logo="https://img.rockstreamer.com/280xauto/images/0dKapm0JRiOpn1vQuVkW.png" group-title="Documentary", History TV
 http://filex.me:8080/live/8582/8582/246722.ts
 
