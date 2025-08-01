@@ -396,7 +396,7 @@ https://tataplay.slivcdn.com/hls/live/2011741/SonyPalSD/master_3500.m3u8
 #EXTINF:-1 tvg-id="sonykal.int" tvg-name="Sony KAL" tvg-logo="https://i.ibb.co/JFrTDg2k/275853749-1027757541419082-8885487251764233689-n.jpg" group-title="Sony International", Sony KAL
 https://spt-sonykal-1-us.lg.wurl.tv/playlist.m3u8
 
-#EXTINF:-1 tvg-id="sonyaath.in" tvg-name="Sony AATH" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY AATH.png" group-title="Sony Regional", Sony AATH
+#EXTINF:-1 tvg-id="sonyaath.in" tvg-name="Sony AATH" tvg-logo="https://brand-websites-prod.s3.ap-south-1.amazonaws.com/sonypicturesnetworksindia/logo/9_255.png" group-title="Sony Regional", Sony AATH
 https://tataplay.slivcdn.com/hls/live/2011641/SonyAathSD/master_3500.m3u8
 
 #EXTINF:-1 tvg-id="sonyyay.in" tvg-name="Sony YAY!" tvg-logo="https://www.sonypicturesnetworks.com/images/logos/SONY YAY.png" group-title="Kids", Sony YAY!
