@@ -2,15 +2,25 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "12:49:03 AM 10-03-2026",
+#"last update time": "1:30:32 AM 10-03-2026",
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Kayserispor%0AVS%0ATrabzonspor&font=Oswald" group-title="LIVE EVENT", Kayserispor VS Trabzonspor
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Brentford&font=Oswald" group-title="LIVE EVENT", Brentford
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=426f759df282cc8e25efd61f21b1872c&x-time=1773082140&is_vip=false&token=d7e64d41dafc0ed423be19c91a3eb71b796689b9
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=c00ac40717aef20090f4108714ff5500&x-time=1773084600&is_vip=false&token=0fd2eb198c1d1ff925c5d01d9e5bfa05832709a3
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Wisla%20Plock%0AVS%0AArka%20Gdynia&font=Oswald" group-title="LIVE EVENT", Wisla Plock VS Arka Gdynia
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/17/chunks.m3u8?x-sign=8432b79f9f29a87cc6a6ad113dfff1c4&x-time=1773082140&is_vip=false&token=d7e64d41dafc0ed423be19c91a3eb71b796689b9
+https://livecdn-bp-livestream.linewgen.xyz/stream/17/chunks.m3u8?x-sign=8aad5ec97353765cc105e67147ed46b4&x-time=1773084600&is_vip=false&token=0fd2eb198c1d1ff925c5d01d9e5bfa05832709a3
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=ab2206c72ebef8a8486c0844ccd10c2f&x-time=1773084600&is_vip=false&token=0fd2eb198c1d1ff925c5d01d9e5bfa05832709a3
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Cultural%20Leonesa&font=Oswald" group-title="LIVE EVENT", Cultural Leonesa
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=9203ae763a98ce6dead6b1d08ff7a8b8&x-time=1773084600&is_vip=false&token=0fd2eb198c1d1ff925c5d01d9e5bfa05832709a3
 
