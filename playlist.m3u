@@ -2,35 +2,20 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "2:46:26 AM 10-03-2026",
+#"last update time": "3:01:26 AM 10-03-2026",
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=YOKOHAMA%20DeNA%20BAYSTARS%0AVS%0AHiroshima%20Toyo%20Carp&font=Oswald" group-title="LIVE EVENT", YOKOHAMA DeNA BAYSTARS VS Hiroshima Toyo Carp
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=5e87071f02bba1b6c508456cd23c40f8&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
+https://livecdn.linewgen.xyz/stream/9/chunks.m3u8?token=882bd83e272b6dd6115e805e53964ce562815527&is_vip=false&verify=1773090300-TmpeA37%2FPe3R%2BOGb4%2B2mTpvInYD%2BIsV5hITw603Lg1E%3D
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Almeria%0AVS%0ACultural%20Leonesa&font=Oswald" group-title="LIVE EVENT", Almeria VS Cultural Leonesa
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Hanshin%20Tigers%0AVS%0ASaitama%20Seibu%20Lions&font=Oswald" group-title="LIVE EVENT", Hanshin Tigers VS Saitama Seibu Lions
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=9cfb0bd33e6acfa71daf9dbdba039d58&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
+https://livecdn.linewgen.xyz/stream/15/chunks.m3u8?token=882bd83e272b6dd6115e805e53964ce562815527&is_vip=false&verify=1773090300-JTv9Qifgqd9B2%2FtJVp6KL1wX2rqD2ial9fWXbFTVJDM%3D
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Dunkerque%0AVS%0AReims&font=Oswald" group-title="LIVE EVENT", Dunkerque VS Reims
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Chiba%20Lotte%20Marines%0AVS%0AORIX%20Buffaloes&font=Oswald" group-title="LIVE EVENT", Chiba Lotte Marines VS ORIX Buffaloes
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=5d86d3f36e0cdc5ab8e86a55976a6a21&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Lazio%0AVS%0ASassuolo&font=Oswald" group-title="LIVE EVENT", Lazio VS Sassuolo
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=60e720ee23a60842ace2125b09f28c7c&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Espanyol%0AVS%0AOviedo&font=Oswald" group-title="LIVE EVENT", Espanyol VS Oviedo
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=121a392727b514f9ba8a362ef7934e5a&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Tondela%0AVS%0ARio%20Ave&font=Oswald" group-title="LIVE EVENT", Tondela VS Rio Ave
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/22/chunks.m3u8?x-sign=3d7acd412f5b3548e1eaa006d37c32c6&x-time=1773089220&is_vip=false&token=7169cb2cb004290b0565236a087a90104e42455b
+https://livecdn.linewgen.xyz/stream/48/chunks.m3u8?token=882bd83e272b6dd6115e805e53964ce562815527&is_vip=false&verify=1773090300-WJhTvyRQZwXS1aHm%2BMp%2Bx6mcTnF35a7c7m3o6kOHkNc%3D
 
