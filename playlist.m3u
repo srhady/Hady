@@ -2,30 +2,30 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "1:45:26 AM 10-03-2026",
+#"last update time": "2:00:35 AM 10-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=West%20Ham%0AVS%0ABrentford&font=Oswald" group-title="LIVE EVENT", West Ham VS Brentford
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=eb77fc42c3ca75b45f046275748661f8&x-time=1773085500&is_vip=false&token=0b0e81803213a4ab5d031bc8172f29038786a943
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Wisla%20Plock%0AVS%0AArka%20Gdynia&font=Oswald" group-title="LIVE EVENT", Wisla Plock VS Arka Gdynia
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/17/chunks.m3u8?x-sign=19670e2df0a6e7a443a367d47e95f075&x-time=1773085500&is_vip=false&token=0b0e81803213a4ab5d031bc8172f29038786a943
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=d7be238dd8023b37d3cd394b08a44e39&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=a6445913d25cfb02e947f4132377bb75&x-time=1773085500&is_vip=false&token=0b0e81803213a4ab5d031bc8172f29038786a943
+https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=c7b58200636cc79d10152ce83f8135ef&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Almeria%0AVS%0ACultural%20Leonesa&font=Oswald" group-title="LIVE EVENT", Almeria VS Cultural Leonesa
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=89e18af6df9ab411c2af3d28db2e76c1&x-time=1773085500&is_vip=false&token=0b0e81803213a4ab5d031bc8172f29038786a943
+https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=b89541302401ee6737c3e1e72d753024&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Sassuolo&font=Oswald" group-title="LIVE EVENT", Sassuolo
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Lazio%0AVS%0ASassuolo&font=Oswald" group-title="LIVE EVENT", Lazio VS Sassuolo
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=699d753aa2a8d6332f0196e2c2e70d74&x-time=1773085500&is_vip=false&token=0b0e81803213a4ab5d031bc8172f29038786a943
+https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=86d7626aa7b0c579f53623fb7837b051&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Oviedo&font=Oswald" group-title="LIVE EVENT", Oviedo
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=8c310d36efe028683d8688d1a6120184&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
 
