@@ -2,8 +2,8 @@ name: Auto Update Playlist
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # প্রতি ৩০ মিনিট পরপর রান করবে (আপনার ইচ্ছেমতো বদলাতে পারেন)
-  workflow_dispatch: # ম্যানুয়ালি রান করার অপশন
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   scrape-live-matches:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: 📥 চেকআউট রিপোজিটরি
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🟢 Node.js সেটআপ
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20' # <--- শুধু এই লাইনটা 18 থেকে 20 করা হয়েছে!
 
       - name: 📦 ডিপেনডেন্সি ইনস্টল (Puppeteer & Cheerio)
         run: npm install
