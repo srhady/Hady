@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "puppeteer": "latest"
+    "puppeteer": "^22.0.0"
   }
 }
