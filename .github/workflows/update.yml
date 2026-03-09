@@ -1,0 +1,33 @@
+name: Auto Update Playlist
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # প্রতি ৩০ মিনিট পরপর রান করবে (আপনার ইচ্ছেমতো বদলাতে পারেন)
+  workflow_dispatch: # ম্যানুয়ালি রান করার অপশন
+
+jobs:
+  scrape-live-matches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 চেকআউট রিপোজিটরি
+        uses: actions/checkout@v3
+
+      - name: 🟢 Node.js সেটআপ
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 ডিপেনডেন্সি ইনস্টল (Puppeteer & Cheerio)
+        run: npm install
+
+      - name: 🚀 স্ক্র্যাপার রান করা
+        run: node scraper.js
+
+      - name: 💾 প্লেলিস্ট গিটহাবে পুশ করা
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u
+          git commit -m "Auto Update Playlist: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || exit 0
+          git push
