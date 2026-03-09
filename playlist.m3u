@@ -2,50 +2,35 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "3:31:34 AM 10-03-2026",
+#"last update time": "3:46:24 AM 10-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=West%20Ham%0AVS%0ABrentford&font=Oswald" group-title="LIVE EVENT", West Ham VS Brentford
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=bc8a495aa3476166a65721922add4ccc&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=9b4ffcd848d6ee3141d148a539e2e3f8&x-time=1773092760&is_vip=false&token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=0f87ec9b5e64d516d44064831228bc82&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
+https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=25985ac1a1fdaa072cc88b46a94aea62&x-time=1773092760&is_vip=false&token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Dunkerque%0AVS%0AReims&font=Oswald" group-title="LIVE EVENT", Dunkerque VS Reims
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=42d6392d16b2b7b38321a95f93e67f6e&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Lazio%0AVS%0ASassuolo&font=Oswald" group-title="LIVE EVENT", Lazio VS Sassuolo
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=82bc37c64deec7afdde78e2c5b94fd21&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
+https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=719ea343712ca85c08aea2aa69bd57e5&x-time=1773092760&is_vip=false&token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Espanyol%0AVS%0AOviedo&font=Oswald" group-title="LIVE EVENT", Espanyol VS Oviedo
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=3251ace46134f9fac0ced7954261eb88&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
+https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=d94461756f3bb634b63f8c439cc88f81&x-time=1773092760&is_vip=false&token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Tondela%0AVS%0ARio%20Ave&font=Oswald" group-title="LIVE EVENT", Tondela VS Rio Ave
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/22/chunks.m3u8?x-sign=c06408fb33a0a0b4b6caabca8a5e2eda&x-time=1773091860&is_vip=false&token=22052fc06ae5f86454462443893a4d64e854510e
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=YOKOHAMA%20DeNA%20BAYSTARS%0AVS%0AHiroshima%20Toyo%20Carp&font=Oswald" group-title="LIVE EVENT", YOKOHAMA DeNA BAYSTARS VS Hiroshima Toyo Carp
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn.linewgen.xyz/stream/9/chunks.m3u8?token=22052fc06ae5f86454462443893a4d64e854510e&is_vip=false&verify=1773091860-InT8rbWSPiyqdigAfz6S%2Fny%2BVtb6erLz0LQZ47XYFTs%3D
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Hanshin%20Tigers%0AVS%0ASaitama%20Seibu%20Lions&font=Oswald" group-title="LIVE EVENT", Hanshin Tigers VS Saitama Seibu Lions
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn.linewgen.xyz/stream/15/chunks.m3u8?token=22052fc06ae5f86454462443893a4d64e854510e&is_vip=false&verify=1773091860-TW7tyjtlh6wKkZH%2Bbddi7i5nlJbDu2iL7%2Bil7zt9OXA%3D
+https://livecdn-bp-livestream.linewgen.xyz/stream/22/chunks.m3u8?x-sign=1613cc77281bfde6027879702ea4a798&x-time=1773092760&is_vip=false&token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Chiba%20Lotte%20Marines%0AVS%0AORIX%20Buffaloes&font=Oswald" group-title="LIVE EVENT", Chiba Lotte Marines VS ORIX Buffaloes
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn.linewgen.xyz/stream/48/chunks.m3u8?token=22052fc06ae5f86454462443893a4d64e854510e&is_vip=false&verify=1773091860-uYm0ReIEyqUFEs3bwEoBrp%2B2QwIX0cZ%2Fq53eS6AEMD0%3D
+https://livecdn.linewgen.xyz/stream/48/chunks.m3u8?token=603a9372d965fa4b5f8e977cb525bdf2c38b3ddd&is_vip=false&verify=1773092760-G4ssVh4RXywC0sK5j4gilKXjlXr%2BC5Yiiqf3DEsJAkQ%3D
 
