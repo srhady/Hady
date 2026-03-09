@@ -2,10 +2,10 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "5:20:48 PM 09-03-2026",
+#"last update time": "11:40:47 PM 09-03-2026",
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Kayserispor%0AVS%0ATrabzonspor&font=Oswald" group-title="LIVE EVENT", Kayserispor VS Trabzonspor
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn.linewgen.xyz/stream/18/chunks.m3u8?token=c039fb70011a043bb3e32b82a8a670447f60e274&is_vip=false&verify=1773055200-g9zX8iGYpnhvt5UGS5CBi8ClYbF%2FKIP1gDgyRXFCgpA%3D
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=a57ea5fe94f54115dffcafd27404c30e&x-time=1773078000&is_vip=false&token=a82daec577868e9c5bd4671e3040e20d96fd4b7b
 
