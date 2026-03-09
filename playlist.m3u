@@ -2,25 +2,5 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "4:01:24 AM 10-03-2026",
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=West%20Ham%0AVS%0ABrentford&font=Oswald" group-title="LIVE EVENT", West Ham VS Brentford
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=1eb7243e70b13553bb707d2cdf632e42&x-time=1773093660&is_vip=false&token=e0d038c04e0e181908b33f001464a77e03b0a674
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=f2c21ba65b0d6bf9e1f68f22d1495ad4&x-time=1773093660&is_vip=false&token=e0d038c04e0e181908b33f001464a77e03b0a674
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Dunkerque%0AVS%0AReims&font=Oswald" group-title="LIVE EVENT", Dunkerque VS Reims
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=9a07c0950bc3dfedea140999251b8894&x-time=1773093660&is_vip=false&token=e0d038c04e0e181908b33f001464a77e03b0a674
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Tondela%0AVS%0ARio%20Ave&font=Oswald" group-title="LIVE EVENT", Tondela VS Rio Ave
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/22/chunks.m3u8?x-sign=78438e27b1ce418c5ee6475d1ecb8312&x-time=1773093660&is_vip=false&token=e0d038c04e0e181908b33f001464a77e03b0a674
+#"last update time": "4:16:23 AM 10-03-2026",
 
