@@ -2,5 +2,15 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "12:31:34 AM 10-03-2026",
+#"last update time": "12:39:28 AM 10-03-2026",
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Kayserispor%0AVS%0ATrabzonspor&font=Oswald" group-title="LIVE EVENT", Kayserispor VS Trabzonspor
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=29e7e2de6dc0f63068de80850bc9d489&x-time=1773081540&is_vip=false&token=1389ba45ac8b37a2aa62d4a204886dc5e2165741
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Wisla%20Plock%0AVS%0AArka%20Gdynia&font=Oswald" group-title="LIVE EVENT", Wisla Plock VS Arka Gdynia
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/17/chunks.m3u8?x-sign=92330e7c1f331ca857f4fbb553db36e1&x-time=1773081540&is_vip=false&token=1389ba45ac8b37a2aa62d4a204886dc5e2165741
 
