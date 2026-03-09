@@ -2,11 +2,10 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const fs = require('fs');
 
-// বাংলাদেশ সময় জেনারেট করার ফাংশন
 const getBDTime = () => {
     const d = new Date();
     const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-    const bdDate = new Date(utc + (3600000 * 6)); // +6 BD time
+    const bdDate = new Date(utc + (3600000 * 6)); 
 
     let hours = bdDate.getHours();
     let minutes = bdDate.getMinutes();
@@ -39,15 +38,11 @@ const getBDTime = () => {
         let liveMatches = [];
         let seen = new Set();
 
-        // আপনার আগের স্ক্রিপ্টের সেই অসাধারন লজিকটি Cheerio তে নিয়ে আসলাম!
         $('a[href*="/live-sport/"]').each((i, el) => {
             let text = $(el).text().trim();
             let href = $(el).attr('href');
             
-            // ১. লাইভ হওয়ার কড়া শর্ত
             let isLive = /\bLIVE\b/i.test(text) || /\d+\s*-\s*\d+/.test(text) || /\b(?:Half|Session)\b/i.test(text);
-            
-            // ২. আপকামিং বাদ দেওয়ার শর্ত
             let isUpcoming = /\b\d{1,2}:\d{2}\b/.test(text);
             
             if (isLive && !isUpcoming) {
@@ -73,7 +68,6 @@ const getBDTime = () => {
                     imageText = cleanTitle.includes(' VS ') ? cleanTitle.replace(' VS ', '\nVS\n') : cleanTitle;
                 }
 
-                // হাবিজাবি মেনু লিংক বাদ দেওয়া
                 if (cleanTitle && cleanTitle.length > 5 && !/League|Cup|Menu|Hot|Fixtures|Football|Tennis|Basketball/i.test(cleanTitle)) {
                     if (href && !href.startsWith('http')) href = 'https://bingstream.info' + href;
                     
@@ -118,7 +112,8 @@ const getBDTime = () => {
             await matchPage.setRequestInterception(true);
             
             let bestLink = await new Promise(async (resolve) => {
-                let linkFound = false;
+                let foundLinks = [];
+                let linkTimeout;
 
                 matchPage.on('request', request => {
                     if (request.isInterceptResolutionHandled()) return;
@@ -133,9 +128,22 @@ const getBDTime = () => {
                     if ((url.includes('.m3u8') || url.includes('.m3u')) && !url.includes('wowhaha.php') && !url.includes('ping.gif')) {
                         if (url.includes('token=') || url.includes('verify=')) {
                             let finalUrl = url.replace(/&amp;/g, '&');
-                            if (!linkFound) {
-                                linkFound = true;
-                                resolve(finalUrl); 
+                            
+                            // যদি লিংকটি আগে না পেয়ে থাকি, তবে লিস্টে রাখব
+                            if (!foundLinks.includes(finalUrl)) {
+                                foundLinks.push(finalUrl);
+                                
+                                // যদি ২য় লিংকটা পেয়ে যাই, সাথে সাথে সেটা নিয়ে বের হয়ে যাব!
+                                if (foundLinks.length === 2) {
+                                    clearTimeout(linkTimeout);
+                                    resolve(foundLinks[1]); 
+                                } 
+                                // যদি প্রথম লিংক পাই, তবে ৩ সেকেন্ড ওয়েট করব ২য় লিংকের জন্য
+                                else if (foundLinks.length === 1) {
+                                    linkTimeout = setTimeout(() => {
+                                        resolve(foundLinks[0]); // ৩ সেকেন্ডে না পেলে প্রথমটাই ভরসা
+                                    }, 3000);
+                                }
                             }
                         }
                     }
@@ -146,8 +154,9 @@ const getBDTime = () => {
                     await matchPage.goto(match.url, { waitUntil: 'domcontentloaded', timeout: 15000 });
                 } catch (e) {}
 
+                // ফলব্যাক লজিক
                 setTimeout(async () => {
-                    if (!linkFound) {
+                    if (foundLinks.length === 0) {
                         try {
                             const content = await matchPage.content();
                             const frameMatch = content.match(/https?:\/\/api2\.ifnewgen\.xyz\/wowhaha\.php[^\s"'<>]+/);
@@ -155,7 +164,10 @@ const getBDTime = () => {
                                 console.log(`  [*] ফ্রেম আনলক করা হচ্ছে...`);
                                 const frameUrl = frameMatch[0].replace(/&amp;/g, '&');
                                 await matchPage.goto(frameUrl, { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(()=>{});
-                                setTimeout(() => resolve(null), 5000);
+                                setTimeout(() => {
+                                    // ফ্রেমে ২টা পেলে ২য়টা, না হলে প্রথমটা
+                                    resolve(foundLinks.length > 1 ? foundLinks[1] : (foundLinks[0] || null));
+                                }, 5000);
                             } else {
                                 resolve(null);
                             }
