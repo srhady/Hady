@@ -2,30 +2,40 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "2:00:35 AM 10-03-2026",
+#"last update time": "2:15:29 AM 10-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=West%20Ham%0AVS%0ABrentford&font=Oswald" group-title="LIVE EVENT", West Ham VS Brentford
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=d7be238dd8023b37d3cd394b08a44e39&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+https://livecdn-bp-livestream.linewgen.xyz/stream/20/chunks.m3u8?x-sign=1454782cfc4740a5825d2ee8616b3c17&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=c7b58200636cc79d10152ce83f8135ef&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=54b48b354c7b964e8ee4eb238f4be15e&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Almeria%0AVS%0ACultural%20Leonesa&font=Oswald" group-title="LIVE EVENT", Almeria VS Cultural Leonesa
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=b89541302401ee6737c3e1e72d753024&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+https://livecdn-bp-livestream.linewgen.xyz/stream/15/chunks.m3u8?x-sign=99efc79ff86f2c644ca44e43d8c89be7&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Dunkerque%0AVS%0AReims&font=Oswald" group-title="LIVE EVENT", Dunkerque VS Reims
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=76b1355037f2feadf2d2d29076c40549&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Lazio%0AVS%0ASassuolo&font=Oswald" group-title="LIVE EVENT", Lazio VS Sassuolo
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=86d7626aa7b0c579f53623fb7837b051&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+https://livecdn-bp-livestream.linewgen.xyz/stream/40/chunks.m3u8?x-sign=a6b642d7b886e6b7cb533a8e49dc60e0&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
 
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Oviedo&font=Oswald" group-title="LIVE EVENT", Oviedo
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Espanyol%0AVS%0AOviedo&font=Oswald" group-title="LIVE EVENT", Espanyol VS Oviedo
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=8c310d36efe028683d8688d1a6120184&x-time=1773086400&is_vip=false&token=6c013697b6368831608c61772dbf4d3d0851d99f
+https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=bab974c6c1632122b170ab228177e176&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Rio%20Ave&font=Oswald" group-title="LIVE EVENT", Rio Ave
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/22/chunks.m3u8?x-sign=9cb80b9c8a30e73d8be10c636c584bd7&x-time=1773087300&is_vip=false&token=85715dd9d077033a7ce6d0272f69191070644e13
 
