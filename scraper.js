@@ -32,7 +32,6 @@ const getBDTime = () => {
     try {
         console.log("[*] হোমপেজ থেকে লাইভ ম্যাচ খোঁজা হচ্ছে (সুপারফাস্ট Cheerio মোড)...");
         
-        // ধাপ ১: ব্রাউজার ছাড়াই চোখের পলকে লাইভ ম্যাচ ফিল্টার করা
         const res = await fetch('https://bingstream.info/');
         const html = await res.text();
         const $ = cheerio.load(html);
@@ -40,31 +39,50 @@ const getBDTime = () => {
         let liveMatches = [];
         let seen = new Set();
 
-        $('.list-match-sport-live-stream').each((i, el) => {
-            if ($(el).find('.isLive').length > 0) {
-                let link = $(el).find('a').first().attr('href');
-                let name = $(el).find('.txt-name').text().trim();
-                
-                // টিমের নাম এবং স্কোর থাকলে সুন্দর করে সাজানো
-                let team1 = $(el).find('.txt-team-name').first().text().trim();
-                let team2 = $(el).find('.txt-team-name').last().text().trim();
-                let cleanTitle = name;
+        // আপনার আগের স্ক্রিপ্টের সেই অসাধারন লজিকটি Cheerio তে নিয়ে আসলাম!
+        $('a[href*="/live-sport/"]').each((i, el) => {
+            let text = $(el).text().trim();
+            let href = $(el).attr('href');
+            
+            // ১. লাইভ হওয়ার কড়া শর্ত
+            let isLive = /\bLIVE\b/i.test(text) || /\d+\s*-\s*\d+/.test(text) || /\b(?:Half|Session)\b/i.test(text);
+            
+            // ২. আপকামিং বাদ দেওয়ার শর্ত
+            let isUpcoming = /\b\d{1,2}:\d{2}\b/.test(text);
+            
+            if (isLive && !isUpcoming) {
+                let parts = text.split('\n').map(p => p.trim()).filter(p => p !== '');
+                let cleanTitle = "";
+                let imageText = "";
 
-                if (team1 && team2) {
-                    cleanTitle = `${team1} VS ${team2}`;
+                let rev = [...parts].reverse();
+                let scoreIdx = rev.findIndex(p => /\d+\s*-\s*\d+/.test(p));
+
+                if (scoreIdx !== -1) {
+                    let team2 = rev[scoreIdx - 1] || "";
+                    let team1 = rev[scoreIdx + 1] || "";
+                    if (team1 && team2) {
+                        cleanTitle = `${team1} VS ${team2}`;
+                    } else {
+                        cleanTitle = rev[scoreIdx].replace(/\s*\d+\s*-\s*\d+\s*/, ' VS ').trim();
+                    }
+                    imageText = cleanTitle.replace(' VS ', '\nVS\n');
+                } else {
+                    let rawTitle = rev.find(p => /[a-zA-Z]/.test(p) && !/^(LIVE|NOW|HD|Watch|•)$/i.test(p)) || parts[parts.length - 1];
+                    cleanTitle = (rawTitle || "").replace(/\b(LIVE|NOW|HD|Live|live)\b/gi, '').replace(/•/g, '').replace(/ vs /gi, ' VS ').replace(/\s+/g, ' ').trim();
+                    imageText = cleanTitle.includes(' VS ') ? cleanTitle.replace(' VS ', '\nVS\n') : cleanTitle;
                 }
 
-                if (link && !link.startsWith('http')) link = 'https://bingstream.info' + link;
-
-                if (link && cleanTitle && !seen.has(link)) {
-                    seen.add(link);
+                // হাবিজাবি মেনু লিংক বাদ দেওয়া
+                if (cleanTitle && cleanTitle.length > 5 && !/League|Cup|Menu|Hot|Fixtures|Football|Tennis|Basketball/i.test(cleanTitle)) {
+                    if (href && !href.startsWith('http')) href = 'https://bingstream.info' + href;
                     
-                    // প্লেসহোল্ডার লোগো তৈরি
-                    let imageText = cleanTitle.replace(' VS ', '\nVS\n');
-                    let encodedTitle = encodeURIComponent(imageText);
-                    let imageUrl = `https://placehold.co/800x450/ffffff/000000.png?text=${encodedTitle}&font=Oswald`;
-                    
-                    liveMatches.push({ title: cleanTitle, url: link, logo: imageUrl });
+                    if (!seen.has(href)) {
+                        seen.add(href);
+                        let encodedTitle = encodeURIComponent(imageText);
+                        let imageUrl = `https://placehold.co/800x450/ffffff/000000.png?text=${encodedTitle}&font=Oswald`;
+                        liveMatches.push({ title: cleanTitle, url: href, logo: imageUrl });
+                    }
                 }
             }
         });
@@ -76,7 +94,6 @@ const getBDTime = () => {
             process.exit(0);
         }
 
-        // প্লেলিস্টের বেসিক সেটআপ
         let m3uContent = "#EXTM3U\n\n";
         m3uContent += `#"name": "Bingstream Auto Update Playlist",\n`;
         m3uContent += `#"telegram": "https://t.me/livesportsplay",\n`;
@@ -93,19 +110,16 @@ const getBDTime = () => {
             ]
         });
 
-        // ধাপ ২: প্রতিটি ম্যাচের লিংকে ঢুকে টোকেন ধরা (Promise ব্যবহার করে)
         for (let match of liveMatches) {
             console.log(`\n[*] স্ক্যান করছি: ${match.title}`);
             const matchPage = await browser.newPage();
             await matchPage.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
             
-            // স্পিড বাড়ানোর জন্য অপ্রয়োজনীয় ফাইল ব্লক করা
             await matchPage.setRequestInterception(true);
             
             let bestLink = await new Promise(async (resolve) => {
                 let linkFound = false;
 
-                // নেটওয়ার্ক ট্রাফিক স্ক্যান
                 matchPage.on('request', request => {
                     if (request.isInterceptResolutionHandled()) return;
                     
@@ -121,7 +135,7 @@ const getBDTime = () => {
                             let finalUrl = url.replace(/&amp;/g, '&');
                             if (!linkFound) {
                                 linkFound = true;
-                                resolve(finalUrl); // লিংক পাওয়া মাত্রই Promise সাকসেস!
+                                resolve(finalUrl); 
                             }
                         }
                     }
@@ -130,9 +144,8 @@ const getBDTime = () => {
 
                 try {
                     await matchPage.goto(match.url, { waitUntil: 'domcontentloaded', timeout: 15000 });
-                } catch (e) { /* টাইমআউট ইগনোর */ }
+                } catch (e) {}
 
-                // যদি ডিরেক্ট লিংক না পায়, তবে wowhaha.php ফ্রেম স্ক্যান করবে
                 setTimeout(async () => {
                     if (!linkFound) {
                         try {
@@ -142,20 +155,19 @@ const getBDTime = () => {
                                 console.log(`  [*] ফ্রেম আনলক করা হচ্ছে...`);
                                 const frameUrl = frameMatch[0].replace(/&amp;/g, '&');
                                 await matchPage.goto(frameUrl, { waitUntil: 'domcontentloaded', timeout: 10000 }).catch(()=>{});
-                                // ফ্রেমে ঢোকার পর আরও ৫ সেকেন্ড অপেক্ষা করবে
                                 setTimeout(() => resolve(null), 5000);
                             } else {
                                 resolve(null);
                             }
                         } catch (e) { resolve(null); }
                     }
-                }, 8000); // প্রাথমিক ৮ সেকেন্ড ওয়েট
+                }, 8000); 
             });
 
             if (bestLink) {
                 console.log(`  [+] আসল ভিআইপি লিংক পাওয়া গেছে:\n  ${bestLink}`);
                 m3uContent += `#EXTINF:-1 tvg-logo="${match.logo}" group-title="LIVE EVENT", ${match.title}\n`;
-                m3uContent += `#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)\n`;
+                m3uContent += `#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36\n`;
                 m3uContent += `#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/\n`;
                 m3uContent += `${bestLink}\n\n`;
             } else {
@@ -167,7 +179,6 @@ const getBDTime = () => {
 
         await browser.close();
 
-        // ধাপ ৩: প্লেলিস্ট সেভ করা
         fs.writeFileSync('playlist.m3u', m3uContent, 'utf-8');
         console.log(`\n[+] সফলভাবে সব লিংক playlist.m3u ফাইলে সেভ করা হয়েছে!`);
 
