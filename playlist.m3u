@@ -2,20 +2,5 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "4:01:39 PM 09-03-2026",
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=3cc3571af06ff63d2262603b69c61fea&x-time=1773050460&is_vip=false&token=e9f42702de53a1dd98e14f2b463f5b0a7a26f9a2
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Bangladesh%20W%0AVS%0AUzbekistan%20W&font=Oswald" group-title="LIVE EVENT", Bangladesh W VS Uzbekistan W
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/48/chunks.m3u8?x-sign=6451761d211f025dd905bbcc4045672f&x-time=1773050460&is_vip=false&token=e9f42702de53a1dd98e14f2b463f5b0a7a26f9a2
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Korea%20DPR%0AVS%0AChina%20W&font=Oswald" group-title="LIVE EVENT", Korea DPR VS China W
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/38/chunks.m3u8?x-sign=f1be94d1a68d54bc299b76054a3972de&x-time=1773050460&is_vip=false&token=e9f42702de53a1dd98e14f2b463f5b0a7a26f9a2
+#"last update time": "4:36:46 PM 09-03-2026",
 
