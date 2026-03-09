@@ -2,5 +2,10 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "3:24:35 PM 09-03-2026",
+#"last update time": "3:28:29 PM 09-03-2026",
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Bangladesh%20W%0AVS%0AChina%20W&font=Oswald" group-title="LIVE EVENT", Bangladesh W VS China W
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F18%2Findex.m3u8&token=cc828cd7795174d5a864d88eeba988f8106738c4&is_vip=false&verify=1773036000-CrtKSHdHXOzi%2BOFlmaMMX2iP8JKFp9dy1POUvxDPkjc%3D
 
