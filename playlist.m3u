@@ -2,20 +2,20 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "3:34:52 PM 09-03-2026",
+#"last update time": "3:39:16 PM 09-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F18%2Findex.m3u8&token=77285912a29d8b099bc34f8d079f3e051b11d597&is_vip=false&verify=1773036000-Buv8T9VWW%2B2E8KZWtBHy%2B36IOQafGQkJQtotAEnajr8%3D
+https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F18%2Findex.m3u8&token=0ef8fb216d1b21a1a99ecd136baf24fa72a66b5e&is_vip=false&verify=1773036000-gd0ahf1HfIEPUjI1m25ycUq47UKMrxJ0uhLBfJyGbU8%3D
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Bangladesh%20W%0AVS%0AUzbekistan%20W&font=Oswald" group-title="LIVE EVENT", Bangladesh W VS Uzbekistan W
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F48%2Findex.m3u8&token=77285912a29d8b099bc34f8d079f3e051b11d597&is_vip=false&verify=1773036000-Buv8T9VWW%2B2E8KZWtBHy%2B36IOQafGQkJQtotAEnajr8%3D
+https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F48%2Findex.m3u8&token=0ef8fb216d1b21a1a99ecd136baf24fa72a66b5e&is_vip=false&verify=1773036000-gd0ahf1HfIEPUjI1m25ycUq47UKMrxJ0uhLBfJyGbU8%3D
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Korea%20DPR%0AVS%0AChina%20W&font=Oswald" group-title="LIVE EVENT", Korea DPR VS China W
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F38%2Findex.m3u8&token=77285912a29d8b099bc34f8d079f3e051b11d597&is_vip=false&verify=1773036000-Buv8T9VWW%2B2E8KZWtBHy%2B36IOQafGQkJQtotAEnajr8%3D
+https://api2.ifnewgen.xyz/stream.m3u8?url=https%3A%2F%2Flivecdn-bp-livestream.linewgen.xyz%2Fstream%2F38%2Findex.m3u8&token=0ef8fb216d1b21a1a99ecd136baf24fa72a66b5e&is_vip=false&verify=1773036000-gd0ahf1HfIEPUjI1m25ycUq47UKMrxJ0uhLBfJyGbU8%3D
 
