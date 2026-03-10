@@ -2,10 +2,10 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "8:16:23 AM 10-03-2026",
+#"last update time": "8:31:25 AM 10-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=56040e19b5f7a794ea55e60c258f8d76&x-time=1773108960&is_vip=false&token=c4ea7419bcda704deb8e6a79ae59ec7bfb4795a1
+https://livecdn-bp-livestream.linewgen.xyz/stream/18/chunks.m3u8?x-sign=72fcd479582b2cc74e3c493d15f51cfa&x-time=1773109860&is_vip=false&token=4fd74f233645cd997ac0c9c8d9e8f926d80fe845
 
