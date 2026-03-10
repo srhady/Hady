@@ -2,5 +2,25 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "11:31:22 AM 10-03-2026",
+#"last update time": "11:34:30 AM 10-03-2026",
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/3/chunks.m3u8?x-sign=e8dd7607b24d34fe685fc8ac300ca970&x-time=1773120840&is_vip=false&token=93ebb0d6227347523f0e25b3fc78141eb75224a6
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=YOKOHAMA%20DeNA%20BAYSTARS%0AVS%0AHiroshima%20Toyo%20Carp&font=Oswald" group-title="LIVE EVENT", YOKOHAMA DeNA BAYSTARS VS Hiroshima Toyo Carp
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/1/chunks.m3u8?x-sign=4110dfeee094771b0065bcc30fc4a676&x-time=1773120840&is_vip=false&token=93ebb0d6227347523f0e25b3fc78141eb75224a6
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Hanshin%20Tigers%0AVS%0ASaitama%20Seibu%20Lions&font=Oswald" group-title="LIVE EVENT", Hanshin Tigers VS Saitama Seibu Lions
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/5/chunks.m3u8?x-sign=bcd202c6c5246331ef14d595d37f62fa&x-time=1773120840&is_vip=false&token=93ebb0d6227347523f0e25b3fc78141eb75224a6
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Chiba%20Lotte%20Marines%0AVS%0AORIX%20Buffaloes&font=Oswald" group-title="LIVE EVENT", Chiba Lotte Marines VS ORIX Buffaloes
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=f4889fce98f012a6c857c9a8f1d43685&x-time=1773120840&is_vip=false&token=93ebb0d6227347523f0e25b3fc78141eb75224a6
 
