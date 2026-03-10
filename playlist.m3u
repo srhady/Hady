@@ -2,10 +2,25 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "9:46:23 AM 10-03-2026",
+#"last update time": "10:01:24 AM 10-03-2026",
 
 #EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
 #EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/3/chunks.m3u8?x-sign=f789b40fc23701e1834c341a02233dcf&x-time=1773114360&is_vip=false&token=0adb4e2b32b042313aba36f0ea0490f577deaff9
+https://livecdn-bp-livestream.linewgen.xyz/stream/3/chunks.m3u8?x-sign=6f40c26f8f23ae2c53ec321b90b54b3c&x-time=1773115260&is_vip=false&token=99de3736b4059fd08b30bd58a5b22443db6d63bf
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=YOKOHAMA%20DeNA%20BAYSTARS%0AVS%0AHiroshima%20Toyo%20Carp&font=Oswald" group-title="LIVE EVENT", YOKOHAMA DeNA BAYSTARS VS Hiroshima Toyo Carp
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/1/chunks.m3u8?x-sign=f69eb4afba865e6d128a12bcd7cfeefb&x-time=1773115260&is_vip=false&token=99de3736b4059fd08b30bd58a5b22443db6d63bf
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Hanshin%20Tigers%0AVS%0ASaitama%20Seibu%20Lions&font=Oswald" group-title="LIVE EVENT", Hanshin Tigers VS Saitama Seibu Lions
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/5/chunks.m3u8?x-sign=8bbafc993d173fd9ae44da4dc5463e45&x-time=1773115260&is_vip=false&token=99de3736b4059fd08b30bd58a5b22443db6d63bf
+
+#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Chiba%20Lotte%20Marines%0AVS%0AORIX%20Buffaloes&font=Oswald" group-title="LIVE EVENT", Chiba Lotte Marines VS ORIX Buffaloes
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
+#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
+https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=dec70287f15acfda96e03b949f3d0ee6&x-time=1773115260&is_vip=false&token=99de3736b4059fd08b30bd58a5b22443db6d63bf
 
