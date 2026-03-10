@@ -2,25 +2,5 @@
 
 #"name": "Bingstream Auto Update Playlist",
 #"telegram": "https://t.me/livesportsplay",
-#"last update time": "11:16:23 AM 10-03-2026",
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=ATP%2FWTA%20Third%20Round&font=Oswald" group-title="LIVE EVENT", ATP/WTA Third Round
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/3/chunks.m3u8?x-sign=ead8292280df965b1b62f445dcfb63eb&x-time=1773119760&is_vip=false&token=56b12076e9299a383964cc937e06d33004a90dc7
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=YOKOHAMA%20DeNA%20BAYSTARS%0AVS%0AHiroshima%20Toyo%20Carp&font=Oswald" group-title="LIVE EVENT", YOKOHAMA DeNA BAYSTARS VS Hiroshima Toyo Carp
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/1/chunks.m3u8?x-sign=4bfade9c4d225da44a741387dcea4f3c&x-time=1773119760&is_vip=false&token=56b12076e9299a383964cc937e06d33004a90dc7
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Hanshin%20Tigers%0AVS%0ASaitama%20Seibu%20Lions&font=Oswald" group-title="LIVE EVENT", Hanshin Tigers VS Saitama Seibu Lions
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/5/chunks.m3u8?x-sign=c0156c480f91c239ee87931bdcd8f429&x-time=1773119760&is_vip=false&token=56b12076e9299a383964cc937e06d33004a90dc7
-
-#EXTINF:-1 tvg-logo="https://placehold.co/800x450/ffffff/000000.png?text=Chiba%20Lotte%20Marines%0AVS%0AORIX%20Buffaloes&font=Oswald" group-title="LIVE EVENT", Chiba Lotte Marines VS ORIX Buffaloes
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36
-#EXTVLCOPT:http-referrer=https://api2.ifnewgen.xyz/
-https://livecdn-bp-livestream.linewgen.xyz/stream/25/chunks.m3u8?x-sign=2803cefc6866e9bee0edb511061fc08f&x-time=1773119760&is_vip=false&token=56b12076e9299a383964cc937e06d33004a90dc7
+#"last update time": "11:31:22 AM 10-03-2026",
 
