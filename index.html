@@ -67,24 +67,28 @@
 </div>
 
 <script>
+   
     // আপনার JSON লিংক
     const playlistUrl = 'https://raw.githubusercontent.com/srhady/bingstream/main/playlist.json';
-    let allMatches = []; // ডাটা সেভ রাখার জন্য
+    let allMatches = []; 
 
     // ডাটা টেনে আনার ফাংশন
     async function loadDynamicPlaylist() {
         try {
-            const response = await fetch(playlistUrl + '?t=' + new Date().getTime()); // ক্যাশ এড়ানোর জন্য টাইমস্ট্যাম্প
+            const response = await fetch(playlistUrl + '?t=' + new Date().getTime()); 
             const data = await response.json();
-            allMatches = data;
+            
+            // আপনার ডেটা থেকে channels লিস্টটা বের করে নিচ্ছি
+            allMatches = data.channels; 
             
             const liveGrid = document.getElementById('liveGrid');
             const pillsContainer = document.getElementById('pillsContainer');
-            liveGrid.innerHTML = ''; // আগের লোডিং লেখা মুছে ফেলা
+            liveGrid.innerHTML = ''; 
             
             let uniqueCategories = new Set();
 
-            data.forEach(match => {
+            // এখানে data.channels ব্যবহার করা হয়েছে
+            data.channels.forEach(match => {
                 uniqueCategories.add(match.channel_group);
                 const streamLink = match.channel_url; 
                 
@@ -107,13 +111,11 @@
                 liveGrid.innerHTML += cardHTML;
             });
 
-            // ডাইনামিক ক্যাটাগরি বাটন তৈরি করা (যদি নতুন কোনো ইভেন্ট গ্রুপ আসে)
             pillsContainer.innerHTML = `<div class="pill active" onclick="filterCategory('all', this)">All Live Events</div>`;
             uniqueCategories.forEach(cat => {
                 pillsContainer.innerHTML += `<div class="pill" onclick="filterCategory('${cat.toLowerCase()}', this)">${cat}</div>`;
             });
 
-            // নতুন ডাটা আসার পর আগের সার্চ/ফিল্টার অ্যাপ্লাই করা
             applySearch();
 
         } catch (error) {
@@ -122,7 +124,6 @@
         }
     }
 
-    // ফিল্টার ফাংশন
     function filterCategory(cat, el){ 
         document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); 
         if(el) el.classList.add('active'); 
@@ -139,7 +140,6 @@
         }); 
     }
 
-    // সার্চ ফাংশন
     function applySearch(){ 
         const val = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
         const activePill = document.querySelector('.pill.active');
@@ -191,10 +191,7 @@
         if(e.target === popup) closePlayer(); 
     });
 
-    // পেজ লোড হওয়ার সাথে সাথে প্রথমবার ডাটা টানা
     loadDynamicPlaylist();
-
-    // প্রতি ১৫ মিনিট (900000 মিলি-সেকেন্ড) পর পর অটোমেটিক ডাটা আপডেট
     setInterval(loadDynamicPlaylist, 900000);
 
 </script> 
