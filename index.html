@@ -7,7 +7,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-    <script type="text/javascript">var _Hasync= _Hasync|| [];_Hasync.push(['Histats.start', '1,4905712,4,0,0,0,00000000']);_Hasync.push(['Histats.fasi', '1']);_Hasync.push(['Histats.track_hits', '']);(function() {var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;hs.src = ('//s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4905712&101" alt="free counter with statistics" border="0"></a></noscript>
     <style> 
         :root{ --bg:#0b1116; --panel:#0f1620; --muted:#8b949e; --accent:#58a6ff; --pill:#1f2a36; --green:#238636; --card-border:#24303a; } html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial; background:linear-gradient(180deg,var(--bg),#07111a); color:#e6edf3;}
         header { display:flex;align-items:center;justify-content:space-between; padding:12px 28px;background:var(--panel);border-bottom:1px solid #162029; position:sticky;top:0;z-index:20; } .left, .right {display:flex;align-items:center;gap:14px;} 
@@ -22,7 +21,6 @@
         .section-title{ margin:16px 28px 6px; color:var(--accent); font-weight:700; display:flex; align-items:center; gap:12px;} .grid { padding:0 28px 48px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
         .card{ background:linear-gradient(180deg,#0f1820,#0b1418); border:1px solid var(--card-border); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s; box-shadow:0 8px 30px rgba(2,6,10,0.6); } .card:hover{ transform:translateY(-6px) }
         
-        /* এখানে ইমেজের স্টাইল ঠিক করা হয়েছে */
         .card-thumb{ position:relative; width: 100%; aspect-ratio: 16/9; background: #070d12; overflow:hidden; border-top-left-radius: 12px; border-top-right-radius: 12px; } 
         .card-thumb img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.35s ease, filter 0.35s ease; filter: saturate(1.05) contrast(1.03); will-change: transform; } 
         .card-thumb:hover img { transform: scale(1.05); filter: saturate(1.1) contrast(1.05); }
@@ -69,6 +67,20 @@
 
 <footer> 
     <strong>Disclaimer</strong><br>This Website does not host any media content on its site. Any content displayed may be embedded from third-party websites. All links and media shared by visitors are hosted elsewhere on the web. We respect copyright and notify all copyright owners accordingly.
+
+    <div style="margin-top: 20px; display: flex; justify-content: center;">
+        <div id="histats_counter"></div>
+        <script type="text/javascript">var _Hasync= _Hasync|| [];
+        _Hasync.push(['Histats.start', '1,5014541,4,4006,112,61,00011111']);
+        _Hasync.push(['Histats.fasi', '1']);
+        _Hasync.push(['Histats.track_hits', '']);
+        (function() {
+        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+        hs.src = ('//s10.histats.com/js15_as.js');
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+        })();</script>
+        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5014541&101" alt="web statistics" border="0"></a></noscript>
+        </div>
 </footer>
 
 <div class="popup" id="playerPopup" aria-hidden="true" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:50;"> 
@@ -96,7 +108,6 @@
             let uniqueCategories = new Set();
 
             data.channels.forEach(match => {
-                // ইন্ট্রো স্কিপ করার ম্যাজিক কোড
                 if(match.channel_name.toLowerCase() === 'intro') {
                     return; 
                 }
