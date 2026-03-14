@@ -5,13 +5,12 @@
     <title>Free Sports Live</title> 
     <meta name="viewport" content="width=device-width,initial-scale=1"> 
     
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
 
     <style> 
         :root{ --bg:#0b1116; --panel:#0f1620; --muted:#8b949e; --accent:#58a6ff; --pill:#1f2a36; --green:#238636; --card-border:#24303a; } html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial; background:linear-gradient(180deg,var(--bg),#07111a); color:#e6edf3;}
         header { display:flex;align-items:center;justify-content:space-between; padding:12px 28px;background:var(--panel);border-bottom:1px solid #162029; position:sticky;top:0;z-index:20; } .left, .right {display:flex;align-items:center;gap:14px;} 
         
-        /* New Text Logo Style */
         .text-logo { font-size: 22px; font-weight: 900; color: #e6edf3; letter-spacing: 0.5px; text-transform: uppercase; margin: 0; }
         .text-logo span { color: var(--accent); }
 
@@ -80,17 +79,51 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
         })();</script>
         <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5014541&101" alt="web statistics" border="0"></a></noscript>
-        </div>
+    </div>
 </footer>
 
-<div class="popup" id="playerPopup" aria-hidden="true" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:50;"> 
-    <div class="popup-content" id="popupContent" style="position:relative;width:90%;max-width:900px;"> 
-        <button id="closePopup" style="position:absolute;top:10px;right:10px;font-size:22px;color:#fff;background:none;border:none;cursor:pointer;z-index:51;">✖</button> 
-        <video id="playerVideo" controls autoplay playsinline style="width:100%;border-radius:12px;background:#000;"></video> 
-    </div>
+<div class="popup" id="playerPopup" aria-hidden="true" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);align-items:center;justify-content:center;z-index:50;"> 
+    <div class="popup-content" id="popupContent" style="position:relative;width:95%;max-width:1000px;"> 
+        <button id="closePopup" style="position:absolute;top:-40px;right:0;font-size:28px;color:#fff;background:none;border:none;cursor:pointer;z-index:51;">✖</button> 
+        
+        <div style="max-width: 100%; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-radius: 12px; overflow: hidden; background: #000;">
+          <video
+            id="my-video"
+            class="video-js vjs-big-play-centered vjs-theme-city vjs-fluid"
+            controls
+            preload="auto"
+            width="100%"
+            data-setup='{"fluid": true}'
+          >
+            <source src="https://github.com/srhady/Hady/raw/refs/heads/main/video_20260310_131739_edit.mp4" type="video/mp4" />
+          </video>
+        </div>
+        </div>
 </div>
 
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+
 <script>
+    // --- আপনার দেওয়া প্লেয়ার সেটআপ ও ফুলস্ক্রিন রোটেশন লক কোড শুরু ---
+    var player = videojs('my-video');
+
+    player.on('fullscreenchange', function() {
+      if (player.isFullscreen()) {
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock('landscape').catch(function(error) {
+            console.log('Rotation blocked');
+          });
+        }
+      } else {
+        if (screen.orientation && screen.orientation.unlock) {
+          screen.orientation.unlock();
+        }
+      }
+    });
+    // --- আপনার দেওয়া প্লেয়ার সেটআপ ও ফুলস্ক্রিন রোটেশন লক কোড শেষ ---
+
+    
+    // --- ওয়েবসাইটের লাইভ খেলা এবং ডাটাবেস লোড করার লজিক ---
     const playlistUrl = 'https://raw.githubusercontent.com/srhady/bingstream/main/playlist.json';
     let allMatches = []; 
 
@@ -108,9 +141,7 @@
             let uniqueCategories = new Set();
 
             data.channels.forEach(match => {
-                if(match.channel_name.toLowerCase() === 'intro') {
-                    return; 
-                }
+                if(match.channel_name.toLowerCase() === 'intro') { return; }
 
                 uniqueCategories.add(match.channel_group);
                 const streamLink = match.channel_url; 
@@ -150,15 +181,12 @@
     function filterCategory(cat, el){ 
         document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); 
         if(el) el.classList.add('active'); 
-        
         document.querySelectorAll('.card').forEach(c => { 
             const ccat = c.dataset.cat || ''; 
             const searchVal = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
             const matchsTitle = (c.dataset.title || ''); 
-            
             const catOk = (cat === 'all' || ccat === cat); 
             const searchOk = !searchVal || matchsTitle.includes(searchVal); 
-            
             c.style.display = (catOk && searchOk) ? 'block' : 'none'; 
         }); 
     }
@@ -167,45 +195,37 @@
         const val = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
         const activePill = document.querySelector('.pill.active');
         const activeCat = activePill ? activePill.textContent.toLowerCase() : 'all live events';
-
         document.querySelectorAll('.card').forEach(c => { 
             const txt = (c.dataset.title || ''); 
             const ccat = (c.dataset.cat || '');
-            
             const catOk = (activeCat === 'all live events' || ccat === activeCat); 
             c.style.display = (txt.includes(val) && catOk) ? 'block' : 'none'; 
         });
     }
 
+    // --- পপআপ প্লেয়ার কন্ট্রোল ---
     const popup = document.getElementById('playerPopup');
-    const video = document.getElementById('playerVideo');
     const closePopupBtn = document.getElementById('closePopup');
-    let hls; 
 
     function openPlayer(url){ 
         if(!url) return; 
         popup.style.display = 'flex'; 
 
-        if (Hls.isSupported()) {
-            if(hls) { hls.destroy(); } 
-            hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                video.play().catch(()=>{});
-            });
-        } 
-        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = url;
-            video.play().catch(()=>{});
-        }
+        // ম্যাজিক: যে খেলায় ক্লিক করবে তার লিংকটা Video.js প্লেয়ারে সেট করা
+        let isMp4 = url.toLowerCase().includes('.mp4');
+        player.src({
+            src: url,
+            type: isMp4 ? 'video/mp4' : 'application/x-mpegURL'
+        });
+        player.play().catch(()=>{});
     }
     
     function closePlayer(){ 
-        video.pause(); 
-        video.src = ''; 
-        if(hls) { hls.destroy(); }
+        player.pause(); 
         popup.style.display = 'none';
+        if (player.isFullscreen()) {
+            player.exitFullscreen();
+        }
     }
     
     closePopupBtn.addEventListener('click', closePlayer);
