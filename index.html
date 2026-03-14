@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head> 
+    <meta charset="utf-8"> 
+    <title>Free Sports Live</title> 
+    <meta name="viewport" content="width=device-width,initial-scale=1"> 
+    <link rel="icon" href="/logofc.png" type="image/png"> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <script type="text/javascript">var _Hasync= _Hasync|| [];_Hasync.push(['Histats.start', '1,4905712,4,0,0,0,00000000']);_Hasync.push(['Histats.fasi', '1']);_Hasync.push(['Histats.track_hits', '']);(function() {var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;hs.src = ('//s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4905712&101" alt="free counter with statistics" border="0"></a></noscript>
+    <style> 
+        :root{ --bg:#0b1116; --panel:#0f1620; --muted:#8b949e; --accent:#58a6ff; --pill:#1f2a36; --green:#238636; --card-border:#24303a; } html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial; background:linear-gradient(180deg,var(--bg),#07111a); color:#e6edf3;}
+        header { display:flex;align-items:center;justify-content:space-between; padding:12px 28px;background:var(--panel);border-bottom:1px solid #162029; position:sticky;top:0;z-index:20; } .left, .right {display:flex;align-items:center;gap:14px;} .logo img{height:42px; display:block;} .top-actions button{ background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dbe7ff;padding:8px 12px;border-radius:26px; cursor:pointer;font-weight:600; font-size:13px; } .top-actions button:hover{background:rgba(255,255,255,0.02);}
+        .categories-wrap{padding:18px 28px 8px; display:flex;flex-direction:column; gap:12px; background:transparent;} .pills{display:flex;flex-wrap:wrap;gap:10px; align-items:center;} .pill { background:var(--pill); border:1px solid rgba(255,255,255,0.04); color:#cbd6e8; padding:8px 14px;border-radius:999px; cursor:pointer; font-weight:600; font-size:13px; box-shadow: 0 6px 18px rgba(0,0,0,0.4) inset; } .pill.active{ background: linear-gradient(180deg,#234b6a,#173645); color:#fff; box-shadow:0 6px 20px rgba(16,24,32,0.6); transform:translateY(-2px); }
+        .controls { display:flex; gap:16px; align-items:center; padding:0 28px 18px; } .search { flex:1; display:flex; gap:8px; align-items:center; background:linear-gradient(180deg,#0d1a23,#07121a); border:1px solid #14212a; padding:10px;border-radius:12px; } .search input{ background:transparent;border:0;outline:none;color:#cfe7ff;font-size:15px;width:100%; } .search button{ background:linear-gradient(180deg,#1e4b78,#16324a);border:0;padding:8px 12px;border-radius:8px;color:#fff;cursor:pointer;}
+        .section-title{ margin:16px 28px 6px; color:var(--accent); font-weight:700; display:flex; align-items:center; gap:12px;} .grid { padding:0 28px 48px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+        .card{ background:linear-gradient(180deg,#0f1820,#0b1418); border:1px solid var(--card-border); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s; box-shadow:0 8px 30px rgba(2,6,10,0.6); } .card:hover{ transform:translateY(-6px) }
+        .card-thumb{ position:relative; height:160px; overflow:hidden; } .card-thumb img { width: 100%; height: 160px; object-fit: cover; object-position: center; border-top-left-radius: 16px; border-top-right-radius: 16px; transition: transform 0.35s ease, filter 0.35s ease; filter: saturate(1.05) contrast(1.03); will-change: transform; } .card-thumb:hover img { transform: scale(1.05); filter: saturate(1.1) contrast(1.05); }
+        .card-content{ padding:14px; display:flex; flex-direction:column; gap:8px; flex:1; } .card .title{ font-weight:800; font-size:15px; color:#e7f0fb; line-height:1.2 } .card .sport{ font-size:12px; color:#76a6d6; font-weight:700; } .card .cat-pill{ display:inline-block; background:var(--green); color:#fff; padding:4px 8px; border-radius:6px; font-size:12px; font-weight:700; text-transform: uppercase; } .card .meta-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; } 
+        .card-actions{ margin-top:auto; display:flex; gap:10px; padding-top:6px; } .watch-btn{ flex:1; background:linear-gradient(180deg,#183c56,#0f2a3a); color:#eaf6ff; border-radius:10px; border:1px solid rgba(255,255,255,0.03); padding:10px; cursor:pointer; font-weight:800; } .watch-btn:hover { background:linear-gradient(180deg,#1f4d6e,#14354a); }
+        footer{ padding:40px 28px; text-align:center; color:#93a1b3; font-size:13px; border-top:1px solid #0f1a21; margin-top:30px; }
+        @keyframes pulseRed {0%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:0.6;}100%{transform:scale(1);opacity:1;}} .live-dot{ display:inline-block; animation: pulseRed 1s infinite; color:red; }
+        @media (max-width:900px){ .card-thumb{ height:140px; } .logo img{ height:36px; } } @media (max-width:600px){ header{ padding:10px 14px } .categories-wrap{ padding:12px 14px } .search{ padding:8px } .grid { padding:0 14px 40px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; } .card-thumb{ height:120px; } } 
+    </style>
+</head>
+<body>
+
+<header> 
+    <div class="left"> <div class="logo"><img src="/header.png" alt="logo" onerror="this.src='https://placehold.co/150x42/0b1116/ffffff.png?text=FANCODE+BD&font=Oswald'"></div> </div> 
+    <div class="right"> 
+        <div class="top-actions"> 
+            <button onclick="window.open('https://t.me/livesportsplay','_blank')">Join Telegram</button> 
+            <button onclick="alert('Support us - Share our website!')">Support Us</button> 
+        </div> 
+    </div>
+</header>
+
+<div class="categories-wrap"> 
+    <div class="pills" id="pillsContainer"> 
+        <div class="pill active" onclick="filterCategory('All', this)">All Live Events</div> 
+        </div>
+    <div class="controls"> 
+        <div class="search" role="search"> 
+            <input id="searchInput" placeholder="Search matches by title..." onkeyup="applySearch()" /> 
+            <button onclick="applySearch()">Search</button> 
+        </div> 
+    </div>
+</div>
+
+<div id="liveSection"> 
+    <div class="section-title"><span class="live-dot">🔴</span> Live Matches</div> 
+    <div class="grid" id="liveGrid"> 
+        <p style="color:#8b949e; padding-left:14px;">Loading live matches...</p>
+    </div> 
+</div>
+
+<footer> 
+    <strong>Disclaimer</strong><br>This Website does not host any media content on its site. Any content displayed may be embedded from third-party websites. All links and media shared by visitors are hosted elsewhere on the web. We respect copyright and notify all copyright owners accordingly.
+</footer>
+
+<div class="popup" id="playerPopup" aria-hidden="true" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:50;"> 
+    <div class="popup-content" id="popupContent" style="position:relative;width:90%;max-width:900px;"> 
+        <button id="closePopup" style="position:absolute;top:10px;right:10px;font-size:22px;color:#fff;background:none;border:none;cursor:pointer;z-index:51;">✖</button> 
+        <video id="playerVideo" controls autoplay playsinline style="width:100%;border-radius:12px;background:#000;"></video> 
+    </div>
+</div>
+
+<script>
+    // আপনার JSON লিংক
+    const playlistUrl = 'https://raw.githubusercontent.com/srhady/bingstream/main/playlist.json';
+    let allMatches = []; // ডাটা সেভ রাখার জন্য
+
+    // ডাটা টেনে আনার ফাংশন
+    async function loadDynamicPlaylist() {
+        try {
+            const response = await fetch(playlistUrl + '?t=' + new Date().getTime()); // ক্যাশ এড়ানোর জন্য টাইমস্ট্যাম্প
+            const data = await response.json();
+            allMatches = data;
+            
+            const liveGrid = document.getElementById('liveGrid');
+            const pillsContainer = document.getElementById('pillsContainer');
+            liveGrid.innerHTML = ''; // আগের লোডিং লেখা মুছে ফেলা
+            
+            let uniqueCategories = new Set();
+
+            data.forEach(match => {
+                uniqueCategories.add(match.channel_group);
+                const streamLink = match.channel_url; 
+                
+                const cardHTML = `
+                    <div class="card" data-cat="${match.channel_group.toLowerCase()}" data-title="${match.channel_name.toLowerCase()}"> 
+                        <div class="card-thumb"><img src="${match.channel_logo}" alt="Cover" onerror="this.src='https://placehold.co/800x450/1f2a36/ffffff.png?text=Live+Match'"></div> 
+                        <div class="card-content"> 
+                            <div class="title">${match.channel_name}</div> 
+                            <div class="meta-row">
+                                <div class="sport">Live Stream</div>
+                                <div class="cat-pill">${match.channel_group}</div>
+                            </div> 
+                            <div style="height:8px;"></div> 
+                            <div class="card-actions"> 
+                                <button class="watch-btn" onclick="openPlayer('${streamLink}')">▶ WATCH LIVE</button> 
+                            </div> 
+                        </div> 
+                    </div>
+                `;
+                liveGrid.innerHTML += cardHTML;
+            });
+
+            // ডাইনামিক ক্যাটাগরি বাটন তৈরি করা (যদি নতুন কোনো ইভেন্ট গ্রুপ আসে)
+            pillsContainer.innerHTML = `<div class="pill active" onclick="filterCategory('all', this)">All Live Events</div>`;
+            uniqueCategories.forEach(cat => {
+                pillsContainer.innerHTML += `<div class="pill" onclick="filterCategory('${cat.toLowerCase()}', this)">${cat}</div>`;
+            });
+
+            // নতুন ডাটা আসার পর আগের সার্চ/ফিল্টার অ্যাপ্লাই করা
+            applySearch();
+
+        } catch (error) {
+            console.error('Error fetching playlist:', error);
+            document.getElementById('liveGrid').innerHTML = '<p style="color:red; padding-left:14px;">Error loading matches. Please try again later.</p>';
+        }
+    }
+
+    // ফিল্টার ফাংশন
+    function filterCategory(cat, el){ 
+        document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); 
+        if(el) el.classList.add('active'); 
+        
+        document.querySelectorAll('.card').forEach(c => { 
+            const ccat = c.dataset.cat || ''; 
+            const searchVal = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
+            const matchsTitle = (c.dataset.title || ''); 
+            
+            const catOk = (cat === 'all' || ccat === cat); 
+            const searchOk = !searchVal || matchsTitle.includes(searchVal); 
+            
+            c.style.display = (catOk && searchOk) ? 'block' : 'none'; 
+        }); 
+    }
+
+    // সার্চ ফাংশন
+    function applySearch(){ 
+        const val = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
+        const activePill = document.querySelector('.pill.active');
+        const activeCat = activePill ? activePill.textContent.toLowerCase() : 'all live events';
+
+        document.querySelectorAll('.card').forEach(c => { 
+            const txt = (c.dataset.title || ''); 
+            const ccat = (c.dataset.cat || '');
+            
+            const catOk = (activeCat === 'all live events' || ccat === activeCat); 
+            c.style.display = (txt.includes(val) && catOk) ? 'block' : 'none'; 
+        });
+    }
+
+    // --- Video Player Logic ---
+    const popup = document.getElementById('playerPopup');
+    const video = document.getElementById('playerVideo');
+    const closePopupBtn = document.getElementById('closePopup');
+    let hls; 
+
+    function openPlayer(url){ 
+        if(!url) return; 
+        popup.style.display = 'flex'; 
+
+        if (Hls.isSupported()) {
+            if(hls) { hls.destroy(); } 
+            hls = new Hls();
+            hls.loadSource(url);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play().catch(()=>{});
+            });
+        } 
+        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = url;
+            video.play().catch(()=>{});
+        }
+    }
+    
+    function closePlayer(){ 
+        video.pause(); 
+        video.src = ''; 
+        if(hls) { hls.destroy(); }
+        popup.style.display = 'none';
+    }
+    
+    closePopupBtn.addEventListener('click', closePlayer);
+    popup.addEventListener('click', e => { 
+        if(e.target === popup) closePlayer(); 
+    });
+
+    // পেজ লোড হওয়ার সাথে সাথে প্রথমবার ডাটা টানা
+    loadDynamicPlaylist();
+
+    // প্রতি ১৫ মিনিট (900000 মিলি-সেকেন্ড) পর পর অটোমেটিক ডাটা আপডেট
+    setInterval(loadDynamicPlaylist, 900000);
+
+</script> 
+</body>
+</html>
