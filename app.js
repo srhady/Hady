@@ -15,35 +15,39 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        // আপনার আসল JSON ফাইলের লিংক
         const jsonUrl = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
         const response = await fetch(jsonUrl); 
         const data = await response.json();
 
-        // ১ম পেজে যে ম্যাচে ক্লিক করা হয়েছে, সেটি খুঁজে বের করা
         const matchData = data.find(m => m["Match Title"] === matchTitle);
 
         if (matchData) {
             document.getElementById('match-title').innerText = matchData["Match Title"];
-            document.getElementById('league-name').innerText = matchData["League"];
+            document.getElementById('league-name').innerText = matchData["League"] || "Live Sports";
             
-            if(matchData["Team 1 Logo"]) document.getElementById('team1-logo').src = matchData["Team 1 Logo"];
-            if(matchData["Team 2 Logo"]) document.getElementById('team2-logo').src = matchData["Team 2 Logo"];
+            // "VS" কার্ড এবং লোগো হাইড/শো করার লজিক (Willow Cricket এর মত চ্যানেলের জন্য)
+            const teamCard = document.querySelector('.teams-card');
+            if (matchData["Team 1 Name"] && matchData["Team 2 Name"]) {
+                document.getElementById('team1-logo').src = matchData["Team 1 Logo"];
+                document.getElementById('team2-logo').src = matchData["Team 2 Logo"];
+                teamCard.style.display = "flex"; // সাধারণ ম্যাচ হলে কার্ড দেখাবে
+            } else {
+                teamCard.style.display = "none"; // টিম না থাকলে (টিভি চ্যানেল হলে) কার্ড লুকাবে
+            }
 
             // ভিডিও প্লেয়ার এবং সার্ভার বাটন সেট করা
             const serverContainer = document.getElementById('server-buttons');
             const videoFrame = document.getElementById('video-frame');
+            serverContainer.innerHTML = ""; // আগের মেসেজ ক্লিয়ার করা
             
-            // আপনার JSON এর "Streams" অ্যারে থেকে বাটন তৈরি করা
+            // "Streams" অ্যারে থেকে বাটন তৈরি করা
             if (matchData.Streams && matchData.Streams.length > 0) {
                 matchData.Streams.forEach((stream, index) => {
                     const btn = document.createElement('button');
                     btn.className = 'server-btn';
                     
-                    // বাটনের নাম ডাইনামিক করা হলো (যেমন: Server 1 - English (HD))
-                    btn.innerText = `▶ Server ${stream.Stream_No || index + 1} - ${stream.Language || 'Auto'} (${stream.Quality || 'Auto'})`;
+                    btn.innerText = `▶ Server ${stream.Stream_No || index + 1} - ${stream.Language || 'Auto'} (${stream.Quality || 'HD'})`;
                     
-                    // বাটনে ক্লিক করলে ওই সার্ভারের লিংক প্লেয়ারে চালু হবে
                     btn.onclick = () => { 
                         videoFrame.src = stream.Embed_URL; 
                     };
