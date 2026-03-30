@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>LiveSportsPlay | Streaming Football, Cricket, and Basketball</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveSportsPlay | Premium Sports Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* ------------------ 90Sport Geometric Texture Style ------------------ */
-        .unique-match-card-texture {
-            /* This creates a subtle dark geometric shape pattern, similar to 90Sport */
-            background-color: #0d111c; /* Solid background base color from 90Sport */
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+        
+        body {
+            background-color: #00081c; 
+            color: white;
+            font-family: 'Sora', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* 🛑 90Sport স্টাইল প্রিমিয়াম ব্যাকগ্রাউন্ড টেক্সচার 🛑 */
+        .card-bg {
+            background-color: #0d111c;
             background-image: linear-gradient(135deg, #1e293b 25%, transparent 25%),
                               linear-gradient(225deg, #1e293b 25%, transparent 25%),
                               linear-gradient(45deg, #1e293b 25%, transparent 25%),
@@ -17,224 +26,415 @@
             background-position: 10px 0, 10px 0, 0 0, 0 0;
             background-size: 20px 20px;
             background-repeat: repeat;
-            
-            border: 1px solid rgba(255,255,255,0.05); /* Very subtle transparent border */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Deep shadow */
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
         }
 
-        /* Hover effect, similar to other cards */
-        .unique-match-card-texture:hover {
-            transform: translateY(-3px);
-            border-color: #00f2fe; /* Active border color from other elements */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .active-filter {
+            background-color: #ef4444;
+            color: white;
+            font-weight: 600;
         }
+        .inactive-filter {
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
+        .cat-active { color: white; font-weight: bold; }
+        .cat-inactive { color: #94a3b8; font-weight: 600; }
+
+        @keyframes blinkGlow {
+            0% { box-shadow: 0 0 4px #ef4444; opacity: 1; }
+            50% { box-shadow: 0 0 15px #ef4444; opacity: 0.85; }
+            100% { box-shadow: 0 0 4px #ef4444; opacity: 1; }
+        }
+        .live-glow {
+            animation: blinkGlow 1.5s infinite;
+            background-color: #ef4444;
+            color: white;
+        }
+
+        /* --- Light Mode Styles --- */
+        body.light-mode { background-color: #f1f5f9; color: #0f172a; }
+        .light-mode .card-bg { background: #ffffff; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; }
+        .light-mode header, .light-mode nav { border-color: #cbd5e1; }
+        .light-mode #search-input { background-color: #ffffff; border-color: #cbd5e1; color: #0f172a; }
+        .light-mode #search-input::placeholder { color: #64748b; }
+        .light-mode .inactive-filter { background-color: #e2e8f0; color: #475569; }
+        .light-mode .cat-inactive { color: #64748b; }
+        .light-mode .cat-active { color: #0f172a; }
+        .light-mode .text-slate-400, .light-mode .text-slate-300, .light-mode .text-gray-400 { color: #475569; }
+        .light-mode .text-slate-200 { color: #1e293b; }
+        .light-mode .bg-slate-800, .light-mode .bg-slate-800\/50 { background-color: #e2e8f0; }
+        .light-mode .border-slate-600, .light-mode .border-slate-800\/50 { border-color: #cbd5e1; }
+        
+        footer { background-color: #040d21; }
+        .light-mode footer { background-color: #e2e8f0; border-top-color: #cbd5e1; }
+        .social-link svg { transition: transform 0.3s, color 0.3s; color: white; }
+        .social-link:hover svg { color: #ef4444; transform: scale(1.1); }
+        .light-mode .social-link svg { color: #0f172a; }
+        .light-mode .social-link:hover svg { color: #ef4444; }
     </style>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-[#00081c] text-white font-[Sora,sans-serif]">
+<body class="flex flex-col min-h-screen">
 
-    <header class="bg-[#040d21] p-4 border-b border-slate-800/50 flex-shrink-0 z-50 relative">
-        <div class="max-w-3xl mx-auto flex justify-between items-center w-full">
-            <h1 class="font-bold text-xl md:text-2xl tracking-tight flex items-center gap-1 logo-text">
-                <span class="text-white">LiveSports</span><span class="text-red-500">Play</span>
-            </a>
-            <a href="https://t.me/livesportsplay" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2 transition hover:bg-blue-700">
-                <i class="fab fa-telegram-plane"></i><span>Join Telegram</span>
-            </a>
-        </div>
-    </header>
+    <div class="flex-grow pb-10">
+        
+        <header class="flex justify-between items-center p-4 max-w-3xl mx-auto mt-2 border-b border-slate-800/50 transition-colors">
+            <div class="flex items-center">
+                <h1 class="font-bold text-2xl tracking-tight logo-text">
+                    <span class="text-white logo-white">LiveSports</span><span class="text-red-500">Play</span>
+                </h1>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" id="theme-btn" class="text-xl p-1.5 rounded-full hover:bg-slate-800 transition">☀️</button>
+                <a href="https://t.me/livesportsplay" target="_blank" class="bg-cyan-400 text-slate-900 px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-1.5 shadow-[0_0_10px_rgba(34,211,238,0.5)] hover:shadow-[0_0_15px_rgba(34,211,238,0.8)] transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                    Join
+                </a>
+            </div>
+        </header>
 
-    <main class="flex-grow max-w-3xl mx-auto p-4 w-full">
-        
-        <h2 class="font-bold text-lg md:text-xl text-slate-100 mb-5 mt-3 px-1" id="page-title">Featured Matches</h2>
-        
-        <div class="mb-6 px-1">
+        <nav id="category-nav" class="flex gap-6 overflow-x-auto hide-scrollbar p-4 max-w-3xl mx-auto"></nav>
+
+        <div class="px-4 max-w-3xl mx-auto my-2">
             <div class="relative">
-                <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
-                <input type="text" id="searchInput" placeholder="Search by match, team, league..." class="w-full px-5 py-3 pl-11 bg-white/5 border border-white/10 rounded-full text-white text-sm outline-none focus:border-[#00f2fe] transition placeholder-slate-500">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <span class="text-slate-400">🔍</span>
+                </div>
+                <input type="text" id="search-input" oninput="handleSearch()" placeholder="Search matches..." class="w-full bg-[#1e293b] border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition placeholder-slate-500 transition-colors">
             </div>
         </div>
 
-        <div id="filter-tabs" class="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
-            </div>
+        <div id="status-filters" class="flex gap-3 overflow-x-auto hide-scrollbar p-4 max-w-3xl mx-auto mt-2">
+            <button onclick="setStatusFilter('All')" id="btn-All" class="active-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition">All</button>
+            <button onclick="setStatusFilter('Live')" id="btn-Live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">Live</button>
+            <button onclick="setStatusFilter('Upcoming live')" id="btn-Upcoming live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">Upcoming live</button>
+            <button onclick="setStatusFilter('24/7 Live')" id="btn-24/7 Live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">24/7 Live</button>
+        </div>
 
-        <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            </div>
+        <main class="max-w-3xl mx-auto p-4" id="match-container">
+            <p class="text-center text-slate-400 py-10 animate-pulse">Loading matches...</p>
+        </main>
+    </div>
 
-    </main>
-    
+    <footer class="p-8 text-center border-t border-slate-800/50 transition-colors mt-auto">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex justify-center items-center gap-6 mb-8 text-2xl">
+                <a href="#" class="social-link"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
+            </div>
+            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.
+            </p>
+            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto">
+                <span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.
+            </p>
+            <p class="text-sm text-slate-400 font-medium">&copy; 2026 LiveSportsPlay</p>
+        </div>
+    </footer>
+
     <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            // Fetch multiple JSON sources using Promise.all
-            const URL_1 = "https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json";
-            const URL_2 = "https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/Live_Events.json";
-            const URL_3 = "https://raw.githubusercontent.com/srhady/join_telegram_chennal-livesportsplay/refs/heads/main/custom.json";
+        // 🛑 JSON লিংকগুলো এখানে আপডেট করা হয়েছে 🛑
+        const jsonUrl1 = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
+        const jsonUrl2 = 'https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/Live_Events.json';
+        
+        let allMatches = []; 
+        let activeCategory = 'All'; 
+        let activeStatus = 'All'; 
+        let searchQuery = '';
 
-            const [res1, res2, res3] = await Promise.all([
-                fetch(URL_1 + "?t=" + Date.now()).catch(() => null),
-                fetch(URL_2 + "?t=" + Date.now()).catch(() => null),
-                fetch(URL_3 + "?t=" + Date.now()).catch(() => null)
-            ]);
+        const categoryIcons = {
+            "Football": "⚽", "Basketball": "🏀", "Tennis": "🎾", "Cricket": "🏏",
+            "Motor-sports": "🏎️", "Baseball": "⚾", "Hockey": "🏒", "Fight": "🥊", "Other": "🎯"
+        };
 
-            let data1 = res1 && res1.ok ? await res1.json() : [];
-            let data2 = res2 && res2.ok ? await res2.json() : [];
-            let data3 = res3 && res3.ok ? await res3.json() : [];
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('theme-btn');
+            const footerLogo = document.querySelector('.logo-text .logo-white');
 
-            // Normalizing Data Arrays
-            data1 = Array.isArray(data1) ? data1 : (data1.channels ? data1.channels : []);
-            data2 = Array.isArray(data2) ? data2 : (data2.matches ? data2.matches : [data2]);
-            data3 = Array.isArray(data3) ? data3 : (data3.matches ? data3.matches : [data3]);
-
-            // Map 1
-            let mapped1 = data1.map(item => ({
-                "Match Title": item["Match Title"] || item["Watch Title"] || "Unknown",
-                "League": item["League"] || item["Category"] || "Other",
-                "Start Time": item["Start Time"] || "",
-                "Team 1 Logo": item["Team 1 Logo"], "Team 2 Logo": item["Team 2 Logo"],
-                "Streams": item["Streams"] || []
-            }));
-
-            // Map 2 (CricHD format)
-            let mapped2 = data2.map(item => ({
-                "Match Title": item["match name"] || "Live Cricket Match",
-                "League": item["category"] || "Cricket",
-                "Start Time": item["Start time"] || "",
-                // We don't need Streams for the front page card, just for data merging
-                "Streams": (item["Channels"] || []).map(ch => ({
-                    "Embed_URL": ch["Embed link"], "Quality": ch["Language"]
-                }))
-            }));
-
-            // Map 3 (Custom format)
-            let mapped3 = data3.map(item => ({
-                "Match Title": item["Match Title"] || item["match name"] || "Live Match",
-                "League": item["Category"] || item["category"] || "Other",
-                "Start Time": item["Start Time"] || item["Start time"] || "",
-                "Streams": (item["Streams"] || item["Channels"] || []).map(ch => ({
-                    "Embed_URL": ch["Embed_URL"] || ch["Embed link"], "Quality": ch["Quality"] || ch["Language"] || "HD"
-                }))
-            }));
-
-            const allMatches = [...mapped1, ...mapped2, ...mapped3];
-            const matchesGrid = document.getElementById('matches-grid');
-
-            if (allMatches.length > 0) {
-                matchesGrid.innerHTML = ""; // Clear loader
-                
-                // Add unique category filter buttons
-                const categories = ['All', ...new Set(allMatches.map(m => m["League"] || m["Category"]))];
-                const filterTabs = document.getElementById('filter-tabs');
-                categories.forEach(cat => {
-                    const btn = document.createElement('button');
-                    btn.className = 'px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition ' + (cat === 'All' ? 'bg-[#ef4444] text-white active-filter' : 'bg-white/5 text-slate-300 hover:bg-white/10');
-                    btn.innerText = cat;
-                    btn.onclick = () => filterMatches(cat);
-                    filterTabs.appendChild(btn);
-                });
-
-                // Display initial matches
-                allMatches.forEach(match => createMatchCard(match));
-
-                // Initialize Search
-                document.getElementById('searchInput').addEventListener('input', (e) => searchMatches(e.target.value));
-
+            if(document.body.classList.contains('light-mode')) {
+                btn.innerText = '🌙';
+                if(footerLogo) footerLogo.classList.remove('text-white');
             } else {
-                matchesGrid.innerHTML = "<p class='text-slate-500 text-sm'>No matches available right now.</p>";
+                btn.innerText = '☀️';
+                if(footerLogo) footerLogo.classList.add('text-white');
             }
+        }
 
-            // Function to create a match card with the UNIQUE background texture
-            function createMatchCard(match) {
-                const card = document.createElement('div');
-                
-                // --- 🛑 ONLY CHANGE: Unique Geometric Texture Background Class 🛑 ---
-                // We add the CSS class defined at the top of the file here
-                card.className = 'unique-match-card-texture p-6 rounded-2xl flex flex-col justify-between items-center text-center group cursor-pointer';
-                card.onclick = () => { window.location.href = `live.html?match=${encodeURIComponent(match["Match Title"])}`; };
-                
-                // Determine if it's Live or Upcoming
-                const statusStr = (match["Match Status"] || "").toLowerCase();
-                const isLive = statusStr.includes("live") || match["Start Time"] === "Streaming Now";
-                
-                // Default logos if links are missing
-                const team1Logo = match["Team 1 Logo"] && match["Team 1 Logo"].trim() !== "" ? match["Team 1 Logo"] : "https://placehold.co/100x100/1e293b/ffffff?text=Team+1";
-                const team2Logo = match["Team 2 Logo"] && match["Team 2 Logo"].trim() !== "" ? match["Team 2 Logo"] : "https://placehold.co/100x100/1e293b/ffffff?text=Team+2";
+        async function init() {
+            try {
+                // 🛑 ২টা JSON একসাথেই লোড করা হচ্ছে 🛑
+                const [res1, res2] = await Promise.all([
+                    fetch(jsonUrl1).catch(() => null),
+                    fetch(jsonUrl2).catch(() => null)
+                ]);
 
-                card.innerHTML = `
-                    <div class="w-full flex justify-between items-center mb-5 text-slate-400">
-                        <span class="font-semibold text-xs py-1 px-3 bg-white/5 rounded-full">${match["League"] || match["Category"] || "Other"}</span>
-                        ${isLive ? `<span class="font-semibold text-xs py-1 px-3 bg-red-600/10 text-red-500 rounded-full flex items-center gap-1.5"><div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div> Live</span>` : `<span class="font-semibold text-xs py-1 px-3 bg-yellow-500/10 text-yellow-500 rounded-full">Upcoming</span>`}
-                    </div>
-                    
-                    <div class="w-full flex justify-around items-center mb-5">
-                        <img src="${team1Logo}" alt="Team 1" class="w-16 h-16 rounded-full object-cover bg-white" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
-                        <div class="bg-slate-800/80 px-4 py-1 rounded-full font-extrabold text-slate-200 border border-slate-700/50">VS</div>
-                        <img src="${team2Logo}" alt="Team 2" class="w-16 h-16 rounded-full object-cover bg-white" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
-                    </div>
-                    
-                    <div class="w-full text-slate-200">
-                        <h4 class="font-extrabold text-sm mb-1 group-hover:text-red-500 transition">${match["Match Title"].split('|')[0].trim()}</h4>
-                        <p class="text-xs text-slate-500 font-semibold">${match["Start Time"] || "Streaming Now"}</p>
-                    </div>
-                    
-                    <div class="absolute bottom-[-10px] left-0 right-0 h-3 bg-[#0d111c] rounded-b-2xl blur-md opacity-70"></div>
-                `;
-                matchesGrid.appendChild(card);
+                let data1 = res1 && res1.ok ? await res1.json() : [];
+                let data2 = res2 && res2.ok ? await res2.json() : { matches: [] };
+                
+                // নতুন JSON টাকে আগেরটার ফরম্যাটে কনভার্ট করা
+                let mappedData2 = [];
+                if (data2.matches) {
+                    mappedData2 = data2.matches.map(item => {
+                        // UTC Time Convert to existing BD format (08:00 PM | 30-Mar)
+                        let timeStr = item["Start time"] || "";
+                        try {
+                            let cleanStr = timeStr.replace(" at ", " ");
+                            let d = new Date(cleanStr);
+                            if (!isNaN(d)) {
+                                d.setHours(d.getHours() + 6); // Add 6 hours for BD time
+                                let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                                let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+                                timeStr = `${time} | ${date}`;
+                            }
+                        } catch(e) {}
+
+                        let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
+                        let team2 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[1].trim() : "Team 2";
+
+                        return {
+                            "Category": item["Category"] || "Cricket",
+                            "League": item["Tour/Group name"] || "Cricket",
+                            "Team 1 Name": team1,
+                            "Team 2 Name": team2,
+                            "Team 1 Logo": "", // Empty will trigger your old fallback layout
+                            "Team 2 Logo": "",
+                            "Match Title": item["match name"] || "Live Match",
+                            "Match Status": item["Status"] || "Upcoming",
+                            "Start Time": timeStr
+                        };
+                    });
+                }
+
+                // দুইটা JSON এর ডেটা এক জায়গায় মার্জ করা
+                allMatches = [...data1, ...mappedData2]; 
+                
+                generateCategoryMenu();
+                applyFilters(); 
+            } catch (error) {
+                document.getElementById('match-container').innerHTML = `<p class="text-red-500 text-center py-10">Failed to load match data. Please try again later.</p>`;
             }
+        }
 
-            // Function to filter matches by category
-            function filterMatches(category) {
-                // Update active tab styling
-                const filterTabs = document.getElementById('filter-tabs');
-                filterTabs.querySelectorAll('button').forEach(btn => {
-                    if (btn.innerText === category) {
-                        btn.className = 'px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition bg-[#ef4444] text-white active-filter';
-                    } else {
-                        btn.className = 'px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition bg-white/5 text-slate-300 hover:bg-white/10';
+        function getMatchDateObj(bstString) {
+            if (!bstString || !bstString.includes("|")) return null;
+            try {
+                const [timePart, datePart] = bstString.split("|").map(s => s.trim());
+                const [day, monthStr] = datePart.split("-");
+                const monthMap = { "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04", "May": "05", "Jun": "06", "Jul": "07", "Aug": "08", "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12" };
+                const month = monthMap[monthStr] || "01";
+                const year = new Date().getFullYear(); 
+
+                let [time, modifier] = timePart.split(" ");
+                let [hours, minutes] = time.split(":");
+                hours = parseInt(hours, 10);
+                
+                if (hours === 12) hours = 0;
+                if (modifier && modifier.toUpperCase() === "PM") hours += 12;
+
+                const isoString = `${year}-${month}-${day.padStart(2, '0')}T${hours.toString().padStart(2, '0')}:${minutes.padStart(2, '0')}:00+06:00`;
+                return new Date(isoString);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function convertBstToLocal(bstString) {
+            const dateObj = getMatchDateObj(bstString);
+            if (!dateObj) return { time: bstString.split("|")[0] || bstString, date: bstString.split("|")[1] || "Today" };
+            
+            const localTime = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            const localDate = dateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+            return { time: localTime, date: localDate };
+        }
+
+        function generateCategoryMenu() {
+            const nav = document.getElementById('category-nav');
+            const uniqueCategories = [...new Set(allMatches.map(m => m.Category))];
+            
+            let html = `<button onclick="setCategoryFilter('All')" id="cat-All" class="cat-active flex items-center gap-2 whitespace-nowrap transition"><span class="text-xl">🌐</span> All Sports</button>`;
+            uniqueCategories.forEach(cat => {
+                if(!cat) return;
+                const icon = categoryIcons[cat] || "🎯";
+                html += `<button onclick="setCategoryFilter('${cat}')" id="cat-${cat.replace(/\s+/g, '-')}" class="cat-inactive flex items-center gap-2 whitespace-nowrap transition hover:opacity-70"><span class="text-xl">${icon}</span> ${cat}</button>`;
+            });
+            nav.innerHTML = html;
+        }
+
+        function setCategoryFilter(category) {
+            activeCategory = category;
+            document.querySelectorAll('#category-nav button').forEach(btn => {
+                btn.classList.remove('cat-active');
+                btn.classList.add('cat-inactive');
+            });
+            const activeBtnId = category === 'All' ? 'cat-All' : `cat-${category.replace(/\s+/g, '-')}`;
+            const activeBtn = document.getElementById(activeBtnId);
+            if(activeBtn) {
+                activeBtn.classList.add('cat-active');
+                activeBtn.classList.remove('cat-inactive');
+            }
+            applyFilters();
+        }
+
+        function setStatusFilter(status) {
+            activeStatus = status;
+            document.querySelectorAll('#status-filters button').forEach(btn => {
+                btn.className = 'inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80';
+            });
+            document.getElementById(`btn-${status}`).className = 'active-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition';
+            applyFilters();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('search-input').value.toLowerCase();
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const now = new Date();
+            
+            let processedMatches = allMatches.map(m => {
+                let isLive = (m["Match Status"] || "").toLowerCase().includes("live");
+                let is24x7 = (m["Start Time"] || "").trim() === "";
+                
+                if (!isLive && !is24x7) {
+                    const matchDate = getMatchDateObj(m["Start Time"]);
+                    if (matchDate) {
+                        if (now.getTime() >= matchDate.getTime() - 600000) {
+                            isLive = true; 
+                        }
                     }
-                });
+                }
+                return { ...m, _calculatedLive: isLive, _is24x7: is24x7 };
+            });
 
-                // Clear and repopulate grid
-                matchesGrid.innerHTML = "";
-                const filtered = category === 'All' ? allMatches : allMatches.filter(m => (m["League"] || m["Category"]) === category);
-                filtered.forEach(match => createMatchCard(match));
-                document.getElementById('page-title').innerText = category === 'All' ? 'Featured Matches' : `${category} Matches`;
-                // Clear search input
-                document.getElementById('searchInput').value = '';
+            let filtered = processedMatches;
+
+            if (searchQuery.trim() !== '') {
+                filtered = filtered.filter(m => {
+                    const str = `${m["Team 1 Name"]} ${m["Team 2 Name"]} ${m["Match Title"]} ${m["League"]}`.toLowerCase();
+                    return str.includes(searchQuery);
+                });
             }
 
-            // Function to search matches
-            function searchMatches(query) {
-                if (!query || query.trim() === '') {
-                    // Repopulate with all matches if search query is empty
-                    matchesGrid.innerHTML = "";
-                    allMatches.forEach(match => createMatchCard(match));
-                    // Reset active tab to 'All'
-                    filterMatches('All');
-                    return;
-                }
-                const lowQuery = query.toLowerCase();
-                const filtered = allMatches.filter(match => {
-                    const titleLow = match["Match Title"].toLowerCase();
-                    const leagueLow = (match["League"] || match["Category"] || "").toLowerCase();
-                    return titleLow.includes(lowQuery) || leagueLow.includes(lowQuery);
-                });
+            if (activeCategory !== 'All') {
+                filtered = filtered.filter(m => m.Category === activeCategory);
+            }
 
-                matchesGrid.innerHTML = "";
-                if (filtered.length > 0) {
-                    filtered.forEach(match => createMatchCard(match));
+            if (activeStatus === 'Live') {
+                filtered = filtered.filter(m => m._calculatedLive && !m._is24x7);
+            } else if (activeStatus === 'Upcoming live') {
+                filtered = filtered.filter(m => !m._calculatedLive && !m._is24x7);
+            } else if (activeStatus === '24/7 Live') {
+                filtered = filtered.filter(m => m._is24x7);
+            }
+
+            renderMatches(filtered);
+        }
+
+        function renderMatches(matches) {
+            const container = document.getElementById('match-container');
+            container.innerHTML = ''; 
+
+            if (matches.length === 0) {
+                container.innerHTML = `<p class="text-center text-slate-500 py-10 animate-pulse">No matches found for this filter.</p>`;
+                return;
+            }
+            
+            let currentHeader = "";
+
+            matches.forEach((match, index) => {
+                const isLive = match._calculatedLive;
+                const is24x7 = match._is24x7;
+                
+                let displayStatusText = is24x7 ? "24/7 Live" : (isLive ? "Live" : "Upcoming");
+                
+                let statusColorClass = "";
+                if (isLive && !is24x7) {
+                    statusColorClass = "live-glow font-extrabold"; 
+                } else if (is24x7) {
+                    statusColorClass = "bg-red-500 text-white font-bold";
                 } else {
-                    matchesGrid.innerHTML = `<p class='text-slate-500 text-sm'>No matches found for "${query}".</p>`;
+                    statusColorClass = "bg-yellow-500 text-black font-bold";
                 }
-                document.getElementById('page-title').innerText = `Search results for "${query}"`;
-                // Remove active filter styling from tabs
-                const filterTabs = document.getElementById('filter-tabs');
-                filterTabs.querySelectorAll('button').forEach(btn => {
-                    btn.className = 'px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition bg-white/5 text-slate-300 hover:bg-white/10';
-                });
-            }
-        });
+                
+                let startTimeRaw = match["Start Time"] || "";
+                let matchTime = "TBD";
+                let matchDate = "Today";
+
+                if (is24x7) {
+                    matchTime = "Always Live";
+                    matchDate = "24/7 Channels";
+                } else if (startTimeRaw.includes("|")) {
+                    const localDateTime = convertBstToLocal(startTimeRaw);
+                    matchTime = localDateTime.time;
+                    matchDate = localDateTime.date;
+                } else if (startTimeRaw !== "") {
+                    matchTime = startTimeRaw;
+                }
+
+                if(currentHeader !== matchDate && matchDate !== "Today") {
+                    container.innerHTML += `<h3 class="font-bold text-slate-300 mt-6 mb-3">${matchDate}</h3>`;
+                    currentHeader = matchDate;
+                }
+
+                const t1Logo = match["Team 1 Logo"];
+                const t2Logo = match["Team 2 Logo"];
+                const hasLogo = t1Logo && t1Logo.trim() !== "" && !t1Logo.includes("placehold");
+
+                let matchDetailsHTML = "";
+
+                if (hasLogo) {
+                    matchDetailsHTML = `
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex items-center gap-2 w-1/3">
+                                <span class="font-semibold truncate text-sm md:text-base">${match["Team 1 Name"]}</span>
+                                <img src="${t1Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
+                            </div>
+                            <div class="w-1/3 flex justify-center">
+                                <div class="border border-slate-600 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap">${matchTime}</div>
+                            </div>
+                            <div class="flex items-center justify-end gap-2 w-1/3">
+                                <img src="${t2Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
+                                <span class="font-semibold truncate text-sm md:text-base">${match["Team 2 Name"]}</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    matchDetailsHTML = `
+                        <div class="flex justify-between items-center mt-3 px-2">
+                            <span class="font-semibold text-sm md:text-base text-slate-200">${match["Match Title"]}</span>
+                            <span class="font-semibold text-xs text-slate-300 bg-slate-800 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
+                        </div>
+                    `;
+                }
+
+                // 🛑 এখানে কার্ডের ক্লাসে card-bg ব্যবহার করা হয়েছে, যেটা 90Sport টেক্সচার অ্যাপ্লাই করবে 🛑
+                const cardHTML = `
+                    <div class="card-bg rounded-xl p-4 mb-3 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300" onclick="openPlayer('${match["Match Title"]}')">
+                        <div class="flex items-center gap-3">
+                            <span class="${statusColorClass} text-xs px-3 py-1 rounded-full">${displayStatusText}</span>
+                            <span class="text-slate-400 text-xs font-medium">${match["League"]}</span>
+                        </div>
+                        ${matchDetailsHTML}
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        }
+
+        function openPlayer(matchTitle) {
+            // Live পেজে রিডাইরেক্ট করবে
+            window.location.href = `live.html?match=${encodeURIComponent(matchTitle)}`;
+        }
+
+        init();
+        
+        setInterval(applyFilters, 60000);
     </script>
 </body>
 </html>
