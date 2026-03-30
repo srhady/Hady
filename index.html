@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiveSportsPlay | Premium Sports Streaming</title>
-    
-    <meta name="referrer" content="no-referrer">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
         
@@ -19,32 +16,28 @@
             transition: background-color 0.3s, color 0.3s;
         }
         
-        /* 🛑 90Sport স্টাইল স্মুথ প্রিমিয়াম কার্ড ডিজাইন 🛑 */
         .card-bg {
-            background-color: #1e2a47; /* সলিড নেভি ব্লু */
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 50%, transparent 50%, transparent 100%);
-            background-size: 100% 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card-bg:hover {
-            transform: translateY(-3px);
-            border-color: #475569;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
         }
 
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .active-filter { background-color: #ef4444; color: white; font-weight: 600; }
-        .inactive-filter { background-color: #1e293b; color: #94a3b8; }
+        .active-filter {
+            background-color: #ef4444;
+            color: white;
+            font-weight: 600;
+        }
+        .inactive-filter {
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
         .cat-active { color: white; font-weight: bold; }
         .cat-inactive { color: #94a3b8; font-weight: 600; }
 
+        /* লাইভ জ্বলজ্বল করার অ্যানিমেশন */
         @keyframes blinkGlow {
             0% { box-shadow: 0 0 4px #ef4444; opacity: 1; }
             50% { box-shadow: 0 0 15px #ef4444; opacity: 0.85; }
@@ -56,11 +49,22 @@
             color: white;
         }
 
-        /* --- Light Mode Styles --- */
-        body.light-mode { background-color: #f1f5f9; color: #0f172a; }
-        .light-mode .card-bg { background-color: #ffffff; background-image: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.02) 50%, transparent 50%, transparent 100%); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); border: 1px solid #e2e8f0; }
+        /* --- লাইট মোড (Light Mode) স্টাইলস --- */
+        body.light-mode {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+        .light-mode .card-bg {
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
         .light-mode header, .light-mode nav { border-color: #cbd5e1; }
-        .light-mode #search-input { background-color: #ffffff; border-color: #cbd5e1; color: #0f172a; }
+        .light-mode #search-input {
+            background-color: #ffffff;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
         .light-mode #search-input::placeholder { color: #64748b; }
         .light-mode .inactive-filter { background-color: #e2e8f0; color: #475569; }
         .light-mode .cat-inactive { color: #64748b; }
@@ -70,6 +74,7 @@
         .light-mode .bg-slate-800, .light-mode .bg-slate-800\/50 { background-color: #e2e8f0; }
         .light-mode .border-slate-600, .light-mode .border-slate-800\/50 { border-color: #cbd5e1; }
         
+        /* ফুটারের স্টাইল */
         footer { background-color: #040d21; }
         .light-mode footer { background-color: #e2e8f0; border-top-color: #cbd5e1; }
         .social-link svg { transition: transform 0.3s, color 0.3s; color: white; }
@@ -84,7 +89,7 @@
         
         <header class="flex justify-between items-center p-4 max-w-3xl mx-auto mt-2 border-b border-slate-800/50 transition-colors">
             <div class="flex items-center">
-                <h1 class="font-bold text-2xl tracking-tight logo-text cursor-pointer" onclick="window.location.href='index.html'">
+                <h1 class="font-bold text-2xl tracking-tight logo-text">
                     <span class="text-white logo-white">LiveSports</span><span class="text-red-500">Play</span>
                 </h1>
             </div>
@@ -123,33 +128,41 @@
 
     <footer class="p-8 text-center border-t border-slate-800/50 transition-colors mt-auto">
         <div class="max-w-3xl mx-auto">
+            
             <div class="flex justify-center items-center gap-6 mb-8 text-2xl">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on Facebook">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
                 </a>
-                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flivesportsplay.top&text=Catch%20all%20the%20action%20live%20on%20LiveSportsPlay!" target="_blank" class="social-link" title="Share on Twitter">
+                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flivesportsplay.top&text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Twitter">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
                 </a>
-                <a href="https://api.whatsapp.com/send?text=Catch%20all%20the%20action%20live%20on%20LiveSportsPlay!%20https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on WhatsApp">
+                <a href="https://api.whatsapp.com/send?text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!%20%F0%9F%91%89%20https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on WhatsApp">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </a>
-                <a href="https://t.me/share/url?url=https%3A%2F%2Flivesportsplay.top&text=Catch%20all%20the%20action%20live%20on%20LiveSportsPlay!" target="_blank" class="social-link" title="Share on Telegram">
+                <a href="https://t.me/share/url?url=https%3A%2F%2Flivesportsplay.top&text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Telegram">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
                 </a>
-                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Flivesportsplay.top&description=Catch%20all%20the%20action%20live%20on%20LiveSportsPlay!" target="_blank" class="social-link" title="Share on Pinterest">
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Flivesportsplay.top&description=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Pinterest">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.091.377-.293 1.194-.332 1.358-.053.218-.173.265-.4.159-1.492-.695-2.425-2.876-2.425-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.586 3.298 1.12.344 2.304.532 3.532.532 6.62 0 11.988-5.367 11.988-11.987C24.005 5.367 18.637 0 12.017 0z"/></svg>
                 </a>
             </div>
-            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.</p>
-            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto"><span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.</p>
-            <p class="text-sm text-slate-400 font-medium">&copy; 2026 LiveSportsPlay</p>
+
+            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.
+            </p>
+
+            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto">
+                <span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.
+            </p>
+
+            <p class="text-sm text-slate-400 font-medium">
+                &copy; 2026 LiveSportsPlay
+            </p>
         </div>
     </footer>
 
     <script>
-        const jsonUrl1 = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
-        const jsonUrl2 = 'https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/Live_Events.json';
-        const jsonUrl3 = 'https://raw.githubusercontent.com/srhady/join_telegram_chennal-livesportsplay/refs/heads/main/custom.json';
+        const jsonUrl = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
         
         let allMatches = []; 
         let activeCategory = 'All'; 
@@ -175,91 +188,11 @@
             }
         }
 
-        // 🛑 UTC টাইমকে ইউজারের লোকাল টাইমে কনভার্ট করার সলিড লজিক 🛑
-        function convertUtcToLocalBD(utcString) {
-            try {
-                // "March 30, 2026, at 2 PM UTC" থেকে "at" লেখাটা বাদ দিয়ে ক্লিন করা
-                let cleanStr = utcString.replace(" at ", " ");
-                let d = new Date(cleanStr); 
-                
-                if (!isNaN(d)) {
-                    // timeZone: 'Asia/Dhaka' দিয়ে ফিক্স করা হলো যাতে সবার জন্য একই ফরম্যাটে সেভ হয়
-                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dhaka' });
-                    let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'Asia/Dhaka' }).replace(' ', '-');
-                    return `${time} | ${date}`; // Return format: 08:00 PM | 30-Mar
-                }
-                return utcString;
-            } catch(e) {
-                return utcString;
-            }
-        }
-
         async function init() {
             try {
-                const [res1, res2, res3] = await Promise.all([
-                    fetch(jsonUrl1).catch(() => null),
-                    fetch(jsonUrl2).catch(() => null),
-                    fetch(jsonUrl3).catch(() => null)
-                ]);
-
-                let data1 = res1 && res1.ok ? await res1.json() : [];
-                let data2 = res2 && res2.ok ? await res2.json() : { matches: [] };
-                let data3 = res3 && res3.ok ? await res3.json() : [];
-                
-                data1 = Array.isArray(data1) ? data1 : (data1.channels ? data1.channels : []);
-                let data2Matches = Array.isArray(data2) ? data2 : (data2.matches ? data2.matches : []);
-                data3 = Array.isArray(data3) ? data3 : (data3.matches ? data3.matches : []);
-
-                // Map 2 (CricHD JSON formatting)
-                let mappedData2 = data2Matches.map(item => {
-                    let timeStr = item["Start time"] || "";
-                    if(timeStr.includes('UTC')) {
-                        timeStr = convertUtcToLocalBD(timeStr); 
-                    }
-
-                    let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
-                    let team2 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[1].trim() : "Team 2";
-
-                    return {
-                        "Category": item["Category"] || "Cricket",
-                        "League": item["Tour/Group name"] || "Cricket",
-                        "Team 1 Name": team1,
-                        "Team 2 Name": team2,
-                        "Team 1 Logo": "", 
-                        "Team 2 Logo": "",
-                        "Match Title": item["match name"] || "Live Match",
-                        "Match Status": item["Status"] || "Upcoming",
-                        "Start Time": timeStr
-                    };
-                });
-
-                // Map 3
-                let mappedData3 = data3.map(item => {
-                    let timeStr = item["Start Time"] || item["Start time"] || "";
-                    if(timeStr.includes('UTC')) {
-                        timeStr = convertUtcToLocalBD(timeStr);
-                    }
-                    return {
-                        "Category": item["Category"] || item["category"] || "Other",
-                        "League": item["Category"] || item["category"] || "Other",
-                        "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
-                        "Match Title": item["Match Title"] || item["match name"] || "Live Match",
-                        "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Upcoming",
-                        "Start Time": timeStr
-                    };
-                });
-
-                // সবগুলো ডেটা মার্জ করা
-                allMatches = [...data1, ...mappedData2, ...mappedData3]; 
-                
-                // 🛑 ডেট সিরিয়াল (Sorting) ফিক্স 🛑
-                allMatches.sort((a, b) => {
-                    let dateA = getMatchDateObj(a["Start Time"]);
-                    let dateB = getMatchDateObj(b["Start Time"]);
-                    let timeA = dateA ? dateA.getTime() : 9999999999999;
-                    let timeB = dateB ? dateB.getTime() : 9999999999999;
-                    return timeA - timeB; // ক্রমানুসারে সাজানো (আগে কাছের সময়, পরে দূরের সময়)
-                });
+                const response = await fetch(jsonUrl);
+                if (!response.ok) throw new Error("Network error");
+                allMatches = await response.json(); 
                 
                 generateCategoryMenu();
                 applyFilters(); 
@@ -401,6 +334,7 @@
                 
                 let displayStatusText = is24x7 ? "24/7 Live" : (isLive ? "Live" : "Upcoming");
                 
+                // এখানে অরিজিনাল কার্ড ডিজাইনের জন্য স্ট্যাটাস কালার সেট করা হলো
                 let statusColorClass = "";
                 if (isLive && !is24x7) {
                     statusColorClass = "live-glow font-extrabold"; 
@@ -436,6 +370,7 @@
 
                 let matchDetailsHTML = "";
 
+                // আপনার ঠিক করা অরিজিনাল কার্ডের ভেতরের লেআউট
                 if (hasLogo) {
                     matchDetailsHTML = `
                         <div class="flex justify-between items-center mt-3">
@@ -444,7 +379,7 @@
                                 <img src="${t1Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
                             </div>
                             <div class="w-1/3 flex justify-center">
-                                <div class="border border-slate-600/50 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap bg-slate-800/50">${matchTime}</div>
+                                <div class="border border-slate-600 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap">${matchTime}</div>
                             </div>
                             <div class="flex items-center justify-end gap-2 w-1/3">
                                 <img src="${t2Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
@@ -455,30 +390,31 @@
                 } else {
                     matchDetailsHTML = `
                         <div class="flex justify-between items-center mt-3 px-2">
-                            <span class="font-semibold text-sm md:text-base text-slate-200">${match["Match Title"].split('|')[0].trim()}</span>
-                            <span class="font-semibold text-xs text-slate-300 bg-slate-800/80 border border-slate-700/50 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
+                            <span class="font-semibold text-sm md:text-base text-slate-200">${match["Match Title"]}</span>
+                            <span class="font-semibold text-xs text-slate-300 bg-slate-800 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
                         </div>
                     `;
                 }
 
+                // আপনার ঠিক করা অরিজিনাল মেইন কার্ড লেআউট
                 const cardHTML = `
-                    <div class="card-bg p-4 mb-3 cursor-pointer border border-transparent hover:border-slate-600 transition duration-300 group" onclick="openPlayer('${match["Match Title"]}')">
-                        <div class="flex items-center gap-3 relative z-10">
+                    <div class="card-bg rounded-xl p-4 mb-3 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300" onclick="openPlayer('${match["Match Title"]}')">
+                        <div class="flex items-center gap-3">
                             <span class="${statusColorClass} text-xs px-3 py-1 rounded-full">${displayStatusText}</span>
-                            <span class="text-slate-400 text-xs font-medium group-hover:text-slate-300 transition">${match["League"]}</span>
+                            <span class="text-slate-400 text-xs font-medium">${match["League"]}</span>
                         </div>
-                        <div class="relative z-10">
-                            ${matchDetailsHTML}
-                        </div>
+                        ${matchDetailsHTML}
                     </div>
                 `;
                 container.innerHTML += cardHTML;
             });
         }
 
-        function openPlayer(matchTitle) {
+                function openPlayer(matchTitle) {
+            // এর ফলে কার্ডে ক্লিক করলেই ২য় পেজে (live.html) চলে যাবে
             window.location.href = `live.html?match=${encodeURIComponent(matchTitle)}`;
         }
+
 
         init();
         
