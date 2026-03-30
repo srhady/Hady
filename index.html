@@ -187,37 +187,52 @@
             }
         }
 
-        // 🛑 UTC টাইমকে ইউজারের লোকাল টাইমে কনভার্ট করার সলিড লজিক 🛑
-        function convertUtcToLocalBD(utcString) {
+        // 🛑 UTC টাইমকে ইউজারের লোকাল টাইমে কনভার্ট করা 🛑
+        function formatSafeUTC(utcStr) {
+            if (!utcStr.includes("UTC")) return utcStr;
             try {
-                let cleanStr = utcString.replace(" at ", " ").replace(/,/g, "").trim();
                 const months = { "January":"01", "February":"02", "March":"03", "April":"04", "May":"05", "June":"06", "July":"07", "August":"08", "September":"09", "October":"10", "November":"11", "December":"12" };
-                let parts = cleanStr.split(" ");
                 
-                if(parts.length >= 6 && parts[5] === "UTC") {
-                    let month = months[parts[0]];
-                    let day = parts[1].padStart(2, '0');
-                    let year = parts[2];
-                    let hour = parseInt(parts[3]);
-                    let ampm = parts[4] ? parts[4].toUpperCase() : "";
-                    
-                    if (ampm === "PM" && hour !== 12) hour += 12;
-                    if (ampm === "AM" && hour === 12) hour = 0;
-                    
-                    let isoString = `${year}-${month}-${day}T${hour.toString().padStart(2, '0')}:00:00Z`;
-                    let d = new Date(isoString);
-                    
-                    if (!isNaN(d)) {
-                        // ইউজারের লোকাল টাইমে কনভার্ট হবে (Device Time)
-                        let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-                        let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
-                        return `${time} | ${date}`;
-                    }
+                let cleanStr = utcStr.replace(" at ", " ").replace(/,/g, "").trim();
+                let parts = cleanStr.split(" "); 
+                
+                let month = months[parts[0]];
+                let day = parts[1].padStart(2, '0');
+                let year = parts[2];
+                let hour = parseInt(parts[3]);
+                let ampm = parts[4] ? parts[4].toUpperCase() : "";
+
+                if (ampm === "PM" && hour !== 12) hour += 12;
+                if (ampm === "AM" && hour === 12) hour = 0;
+
+                let isoString = `${year}-${month}-${day}T${hour.toString().padStart(2, '0')}:00:00Z`;
+                let d = new Date(isoString);
+
+                if (!isNaN(d)) {
+                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                    let localDate = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+                    return `${time} | ${localDate}`; 
                 }
-                return utcString;
-            } catch(e) {
-                return utcString;
-            }
+            } catch(e) {}
+            return utcStr;
+        }
+        
+        // 🛑 UTC থেকে Date Object রিটার্ন করার ফাংশন (লজিকের জন্য) 🛑
+        function getUtcDateObj(utcStr) {
+            if (!utcStr.includes("UTC")) return null;
+            try {
+                const months = { "January":"01", "February":"02", "March":"03", "April":"04", "May":"05", "June":"06", "July":"07", "August":"08", "September":"09", "October":"10", "November":"11", "December":"12" };
+                let cleanStr = utcStr.replace(" at ", " ").replace(/,/g, "").trim();
+                let parts = cleanStr.split(" "); 
+                let month = months[parts[0]];
+                let day = parts[1].padStart(2, '0');
+                let year = parts[2];
+                let hour = parseInt(parts[3]);
+                let ampm = parts[4] ? parts[4].toUpperCase() : "";
+                if (ampm === "PM" && hour !== 12) hour += 12;
+                if (ampm === "AM" && hour === 12) hour = 0;
+                return new Date(`${year}-${month}-${day}T${hour.toString().padStart(2, '0')}:00:00Z`);
+            } catch(e) { return null; }
         }
 
         async function init() {
@@ -238,10 +253,30 @@
 
                 let mappedData2 = data2Matches.map(item => {
                     let timeStr = item["Start time"] || "";
-                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr); 
+                    let endStr = item["End time"] || "";
+                    let isLongTournament = false;
                     
+                    // 🛑 ৫ দিনের ಗ্যাপ চেক (24/7 লজিক) 🛑
+                    if(timeStr.includes('UTC') && endStr.includes('UTC')) {
+                        let startDate = getUtcDateObj(timeStr);
+                        let endDate = getUtcDateObj(endStr);
+                        
+                        if(startDate && endDate) {
+                            let diffInDays = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+                            if(diffInDays >= 5) {
+                                isLongTournament = true; 
+                                timeStr = ""; // এটা ফাঁকা মানে 24/7 চ্যানেল
+                            }
+                        }
+                    }
+
+                    if(!isLongTournament && timeStr.includes('UTC')) {
+                        timeStr = formatSafeUTC(timeStr); 
+                    }
+
                     let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
                     let team2 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[1].trim() : "Team 2";
+
                     return {
                         "Category": item["Category"] || "Cricket",
                         "League": item["Tour/Group name"] || "Cricket",
@@ -251,20 +286,22 @@
                         "Team 2 Logo": "",
                         "Match Title": item["match name"] || "Live Match",
                         "Match Status": item["Status"] || "Upcoming",
-                        "Start Time": timeStr
+                        "Start Time": timeStr,
+                        "_rawEndTime": endStr // অটো হাইডের জন্য রাখা হলো
                     };
                 });
 
-                // 🛑 Custom.json ফিল্টার: শুধুমাত্র 'Live' থাকলে শো করবে 🛑
                 let mappedData3 = data3.filter(item => {
                     let status = (item["Match Status"] || item["Status"] || item["status"] || "").toLowerCase().trim();
                     return status === "live" || status.includes("live"); 
                 }).map(item => {
                     let timeStr = item["Start Time"] || item["Start time"] || "";
-                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr);
+                    if(timeStr.includes('UTC')) {
+                        timeStr = formatSafeUTC(timeStr);
+                    }
                     return {
                         "Category": item["Category"] || item["category"] || "Other",
-                        "League": item["League"] || item["category"] || "Other",
+                        "League": item["Category"] || item["category"] || "Other",
                         "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
                         "Match Title": item["Match Title"] || item["match name"] || "Live Match",
                         "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Live",
@@ -274,7 +311,6 @@
 
                 allMatches = [...data1, ...mappedData2, ...mappedData3]; 
                 
-                // 🛑 ডেট এবং টাইম অনুযায়ী সিরিয়াল এবং 24/7 এর পজিশন 🛑
                 const nowTime = new Date().getTime();
                 allMatches.sort((a, b) => {
                     let dateA = getMatchDateObj(a["Start Time"]);
@@ -283,7 +319,6 @@
                     let is24x7A = (a["Start Time"] || "").trim() === "";
                     let is24x7B = (b["Start Time"] || "").trim() === "";
 
-                    // 24/7 চ্যানেলগুলোকে লাইভ ইভেন্টগুলোর ঠিক পরে এবং আপকামিংয়ের আগে বসানোর ট্রিক
                     let timeA = dateA ? dateA.getTime() : (is24x7A ? nowTime + 1 : 9999999999999);
                     let timeB = dateB ? dateB.getTime() : (is24x7B ? nowTime + 1 : 9999999999999);
                     
@@ -318,15 +353,6 @@
             } catch (e) {
                 return null;
             }
-        }
-
-        function convertBstToLocal(bstString) {
-            const dateObj = getMatchDateObj(bstString);
-            if (!dateObj) return { time: bstString.split("|")[0] || bstString, date: bstString.split("|")[1] || "Today" };
-            
-            const localTime = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-            const localDate = dateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
-            return { time: localTime, date: localDate };
         }
 
         function generateCategoryMenu() {
@@ -372,16 +398,26 @@
         }
 
         function applyFilters() {
-            const now = new Date();
+            const now = new Date().getTime();
             
-            let processedMatches = allMatches.map(m => {
+            let processedMatches = allMatches.filter(m => {
+                // 🛑 অটো হাইড লজিক: যদি End Time পার হয়ে যায়, তবে ম্যাচটা রিমুভ হয়ে যাবে 🛑
+                if (m._rawEndTime && m._rawEndTime.includes('UTC')) {
+                    let endDate = getUtcDateObj(m._rawEndTime);
+                    if (endDate && now > endDate.getTime()) {
+                        return false; 
+                    }
+                }
+                return true; 
+            }).map(m => {
                 let isLive = (m["Match Status"] || "").toLowerCase().includes("live");
                 let is24x7 = (m["Start Time"] || "").trim() === "";
                 
                 if (!isLive && !is24x7) {
                     const matchDate = getMatchDateObj(m["Start Time"]);
                     if (matchDate) {
-                        if (now.getTime() >= matchDate.getTime() - 600000) {
+                        // 🛑 ১০ মিনিট আগের অটো লাইভ লজিক 🛑
+                        if (now >= matchDate.getTime() - 600000) {
                             isLive = true; 
                         }
                     }
@@ -447,9 +483,8 @@
                     matchTime = "Always Live";
                     matchDate = "24/7 Channels";
                 } else if (startTimeRaw.includes("|")) {
-                    const localDateTime = convertBstToLocal(startTimeRaw);
-                    matchTime = localDateTime.time;
-                    matchDate = localDateTime.date;
+                    matchTime = startTimeRaw.split("|")[0].trim();
+                    matchDate = startTimeRaw.split("|")[1].trim();
                 } else if (startTimeRaw !== "") {
                     matchTime = startTimeRaw;
                 }
