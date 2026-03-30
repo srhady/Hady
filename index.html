@@ -128,6 +128,7 @@
 
     <footer class="p-8 text-center border-t border-slate-800/50 transition-colors mt-auto">
         <div class="max-w-3xl mx-auto">
+            
             <div class="flex justify-center items-center gap-6 mb-8 text-2xl">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on Facebook">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
@@ -186,33 +187,37 @@
             }
         }
 
-        function formatSafeUTC(utcStr) {
-            if (!utcStr.includes("UTC")) return utcStr;
+        // 🛑 UTC টাইমকে ইউজারের লোকাল টাইমে কনভার্ট করার সলিড লজিক 🛑
+        function convertUtcToLocalBD(utcString) {
             try {
+                let cleanStr = utcString.replace(" at ", " ").replace(/,/g, "").trim();
                 const months = { "January":"01", "February":"02", "March":"03", "April":"04", "May":"05", "June":"06", "July":"07", "August":"08", "September":"09", "October":"10", "November":"11", "December":"12" };
+                let parts = cleanStr.split(" ");
                 
-                let cleanStr = utcStr.replace(" at ", " ").replace(/,/g, "").trim();
-                let parts = cleanStr.split(" "); 
-                
-                let month = months[parts[0]];
-                let day = parts[1].padStart(2, '0');
-                let year = parts[2];
-                let hour = parseInt(parts[3]);
-                let ampm = parts[4] ? parts[4].toUpperCase() : "";
-
-                if (ampm === "PM" && hour !== 12) hour += 12;
-                if (ampm === "AM" && hour === 12) hour = 0;
-
-                let isoString = `${year}-${month}-${day}T${hour.toString().padStart(2, '0')}:00:00Z`;
-                let d = new Date(isoString);
-
-                if (!isNaN(d)) {
-                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dhaka' });
-                    let localDate = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'Asia/Dhaka' }).replace(' ', '-');
-                    return `${time} | ${localDate}`; 
+                if(parts.length >= 6 && parts[5] === "UTC") {
+                    let month = months[parts[0]];
+                    let day = parts[1].padStart(2, '0');
+                    let year = parts[2];
+                    let hour = parseInt(parts[3]);
+                    let ampm = parts[4] ? parts[4].toUpperCase() : "";
+                    
+                    if (ampm === "PM" && hour !== 12) hour += 12;
+                    if (ampm === "AM" && hour === 12) hour = 0;
+                    
+                    let isoString = `${year}-${month}-${day}T${hour.toString().padStart(2, '0')}:00:00Z`;
+                    let d = new Date(isoString);
+                    
+                    if (!isNaN(d)) {
+                        // ইউজারের লোকাল টাইমে কনভার্ট হবে (Device Time)
+                        let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                        let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+                        return `${time} | ${date}`;
+                    }
                 }
-            } catch(e) {}
-            return utcStr;
+                return utcString;
+            } catch(e) {
+                return utcString;
+            }
         }
 
         async function init() {
@@ -233,13 +238,10 @@
 
                 let mappedData2 = data2Matches.map(item => {
                     let timeStr = item["Start time"] || "";
-                    if(timeStr.includes('UTC')) {
-                        timeStr = formatSafeUTC(timeStr); 
-                    }
-
+                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr); 
+                    
                     let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
                     let team2 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[1].trim() : "Team 2";
-
                     return {
                         "Category": item["Category"] || "Cricket",
                         "League": item["Tour/Group name"] || "Cricket",
@@ -253,17 +255,16 @@
                     };
                 });
 
+                // 🛑 Custom.json ফিল্টার: শুধুমাত্র 'Live' থাকলে শো করবে 🛑
                 let mappedData3 = data3.filter(item => {
                     let status = (item["Match Status"] || item["Status"] || item["status"] || "").toLowerCase().trim();
                     return status === "live" || status.includes("live"); 
                 }).map(item => {
                     let timeStr = item["Start Time"] || item["Start time"] || "";
-                    if(timeStr.includes('UTC')) {
-                        timeStr = formatSafeUTC(timeStr);
-                    }
+                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr);
                     return {
                         "Category": item["Category"] || item["category"] || "Other",
-                        "League": item["Category"] || item["category"] || "Other",
+                        "League": item["League"] || item["category"] || "Other",
                         "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
                         "Match Title": item["Match Title"] || item["match name"] || "Live Match",
                         "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Live",
@@ -273,6 +274,7 @@
 
                 allMatches = [...data1, ...mappedData2, ...mappedData3]; 
                 
+                // 🛑 ডেট এবং টাইম অনুযায়ী সিরিয়াল এবং 24/7 এর পজিশন 🛑
                 const nowTime = new Date().getTime();
                 allMatches.sort((a, b) => {
                     let dateA = getMatchDateObj(a["Start Time"]);
@@ -281,6 +283,7 @@
                     let is24x7A = (a["Start Time"] || "").trim() === "";
                     let is24x7B = (b["Start Time"] || "").trim() === "";
 
+                    // 24/7 চ্যানেলগুলোকে লাইভ ইভেন্টগুলোর ঠিক পরে এবং আপকামিংয়ের আগে বসানোর ট্রিক
                     let timeA = dateA ? dateA.getTime() : (is24x7A ? nowTime + 1 : 9999999999999);
                     let timeB = dateB ? dateB.getTime() : (is24x7B ? nowTime + 1 : 9999999999999);
                     
@@ -462,41 +465,38 @@
 
                 let matchDetailsHTML = "";
 
-                // 🛑 এখানে লোগোর সাইজ w-9 h-9 করা হয়েছে, প্যাডিং p-5 এবং মার্জিন mt-5 করা হয়েছে 🛑
                 if (hasLogo) {
                     matchDetailsHTML = `
-                        <div class="flex justify-between items-center mt-5">
-                            <div class="flex items-center gap-3 w-2/5">
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex items-center gap-2 w-1/3">
                                 <span class="font-semibold truncate text-sm md:text-base">${match["Team 1 Name"]}</span>
-                                <img src="${t1Logo}" class="w-9 h-9 rounded-full object-cover bg-white shadow-sm" onerror="this.style.display='none'">
+                                <img src="${t1Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
                             </div>
-                            <div class="w-1/5 flex justify-center">
-                                <div class="border border-slate-600/50 rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap bg-slate-800/50">${matchTime}</div>
+                            <div class="w-1/3 flex justify-center">
+                                <div class="border border-slate-600 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap">${matchTime}</div>
                             </div>
-                            <div class="flex items-center justify-end gap-3 w-2/5">
-                                <img src="${t2Logo}" class="w-9 h-9 rounded-full object-cover bg-white shadow-sm" onerror="this.style.display='none'">
+                            <div class="flex items-center justify-end gap-2 w-1/3">
+                                <img src="${t2Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
                                 <span class="font-semibold truncate text-sm md:text-base">${match["Team 2 Name"]}</span>
                             </div>
                         </div>
                     `;
                 } else {
                     matchDetailsHTML = `
-                        <div class="flex justify-between items-center mt-4 px-2">
+                        <div class="flex justify-between items-center mt-3 px-2">
                             <span class="font-semibold text-sm md:text-base text-slate-200">${match["Match Title"]}</span>
-                            <span class="font-semibold text-xs text-slate-300 bg-slate-800/80 border border-slate-700/50 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
+                            <span class="font-semibold text-xs text-slate-300 bg-slate-800 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
                         </div>
                     `;
                 }
 
                 const cardHTML = `
-                    <div class="card-bg rounded-xl p-5 mb-4 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300 group" onclick="openPlayer('${match["Match Title"]}')">
-                        <div class="flex items-center gap-3 relative z-10">
+                    <div class="card-bg rounded-xl p-4 mb-3 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300" onclick="openPlayer('${match["Match Title"]}')">
+                        <div class="flex items-center gap-3">
                             <span class="${statusColorClass} text-xs px-3 py-1 rounded-full">${displayStatusText}</span>
-                            <span class="text-slate-400 text-xs font-medium group-hover:text-slate-300 transition">${match["League"]}</span>
+                            <span class="text-slate-400 text-xs font-medium">${match["League"]}</span>
                         </div>
-                        <div class="relative z-10">
-                            ${matchDetailsHTML}
-                        </div>
+                        ${matchDetailsHTML}
                     </div>
                 `;
                 container.innerHTML += cardHTML;
