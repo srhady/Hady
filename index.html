@@ -162,7 +162,9 @@
     </footer>
 
     <script>
-        const jsonUrl = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
+        const jsonUrl1 = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
+        const jsonUrl2 = 'https://raw.githubusercontent.com/srhady/crichd-speical-live-event/refs/heads/main/Live_Events.json';
+        const jsonUrl3 = 'https://raw.githubusercontent.com/srhady/join_telegram_chennal-livesportsplay/refs/heads/main/custom.json';
         
         let allMatches = []; 
         let activeCategory = 'All'; 
@@ -188,11 +190,80 @@
             }
         }
 
+        // 🛑 UTC টাইমকে ইউজারের লোকাল টাইমে কনভার্ট করার ফাংশন 🛑
+        function convertUtcToLocalBD(utcString) {
+            try {
+                let cleanStr = utcString.replace(" at ", " ");
+                let d = new Date(cleanStr); 
+                if (!isNaN(d)) {
+                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dhaka', hour12: true });
+                    let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'Asia/Dhaka' }).replace(' ', '-');
+                    return `${time} | ${date}`;
+                }
+                return utcString;
+            } catch(e) {
+                return utcString;
+            }
+        }
+
         async function init() {
             try {
-                const response = await fetch(jsonUrl);
-                if (!response.ok) throw new Error("Network error");
-                allMatches = await response.json(); 
+                // ৩টা JSON একসাথেই লোড করা হচ্ছে
+                const [res1, res2, res3] = await Promise.all([
+                    fetch(jsonUrl1).catch(() => null),
+                    fetch(jsonUrl2).catch(() => null),
+                    fetch(jsonUrl3).catch(() => null)
+                ]);
+
+                let data1 = res1 && res1.ok ? await res1.json() : [];
+                let data2 = res2 && res2.ok ? await res2.json() : { matches: [] };
+                let data3 = res3 && res3.ok ? await res3.json() : [];
+                
+                data1 = Array.isArray(data1) ? data1 : (data1.channels ? data1.channels : []);
+                let data2Matches = Array.isArray(data2) ? data2 : (data2.matches ? data2.matches : []);
+                data3 = Array.isArray(data3) ? data3 : (data3.matches ? data3.matches : []);
+
+                let mappedData2 = data2Matches.map(item => {
+                    let timeStr = item["Start time"] || "";
+                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr); 
+                    let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
+                    let team2 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[1].trim() : "Team 2";
+                    return {
+                        "Category": item["Category"] || "Cricket",
+                        "League": item["Tour/Group name"] || "Cricket",
+                        "Team 1 Name": team1,
+                        "Team 2 Name": team2,
+                        "Team 1 Logo": "", 
+                        "Team 2 Logo": "",
+                        "Match Title": item["match name"] || "Live Match",
+                        "Match Status": item["Status"] || "Upcoming",
+                        "Start Time": timeStr
+                    };
+                });
+
+                let mappedData3 = data3.map(item => {
+                    let timeStr = item["Start Time"] || item["Start time"] || "";
+                    if(timeStr.includes('UTC')) timeStr = convertUtcToLocalBD(timeStr);
+                    return {
+                        "Category": item["Category"] || item["category"] || "Other",
+                        "League": item["Category"] || item["category"] || "Other",
+                        "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
+                        "Match Title": item["Match Title"] || item["match name"] || "Live Match",
+                        "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Upcoming",
+                        "Start Time": timeStr
+                    };
+                });
+
+                allMatches = [...data1, ...mappedData2, ...mappedData3]; 
+                
+                // 🛑 ডেট এবং টাইম অনুযায়ী সিরিয়াল (Sorting) 🛑
+                allMatches.sort((a, b) => {
+                    let dateA = getMatchDateObj(a["Start Time"]);
+                    let dateB = getMatchDateObj(b["Start Time"]);
+                    let timeA = dateA ? dateA.getTime() : 9999999999999; // 24/7 বা টাইম না থাকলে শেষে দেখাবে
+                    let timeB = dateB ? dateB.getTime() : 9999999999999;
+                    return timeA - timeB; 
+                });
                 
                 generateCategoryMenu();
                 applyFilters(); 
@@ -334,7 +405,6 @@
                 
                 let displayStatusText = is24x7 ? "24/7 Live" : (isLive ? "Live" : "Upcoming");
                 
-                // এখানে অরিজিনাল কার্ড ডিজাইনের জন্য স্ট্যাটাস কালার সেট করা হলো
                 let statusColorClass = "";
                 if (isLive && !is24x7) {
                     statusColorClass = "live-glow font-extrabold"; 
@@ -370,7 +440,6 @@
 
                 let matchDetailsHTML = "";
 
-                // আপনার ঠিক করা অরিজিনাল কার্ডের ভেতরের লেআউট
                 if (hasLogo) {
                     matchDetailsHTML = `
                         <div class="flex justify-between items-center mt-3">
@@ -396,7 +465,6 @@
                     `;
                 }
 
-                // আপনার ঠিক করা অরিজিনাল মেইন কার্ড লেআউট
                 const cardHTML = `
                     <div class="card-bg rounded-xl p-4 mb-3 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300" onclick="openPlayer('${match["Match Title"]}')">
                         <div class="flex items-center gap-3">
@@ -410,11 +478,9 @@
             });
         }
 
-                function openPlayer(matchTitle) {
-            // এর ফলে কার্ডে ক্লিক করলেই ২য় পেজে (live.html) চলে যাবে
+        function openPlayer(matchTitle) {
             window.location.href = `live.html?match=${encodeURIComponent(matchTitle)}`;
         }
-
 
         init();
         
