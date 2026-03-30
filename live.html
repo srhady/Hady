@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Stream | LiveSportsPlay</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -42,6 +43,7 @@
             backdrop-filter: blur(5px);
         }
 
+        /* Hide scrollbar for server buttons */
         #server-buttons::-webkit-scrollbar { display: none; }
         #server-buttons { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -54,7 +56,7 @@
                 <i class="fas fa-arrow-left"></i>
                 <span>Home</span>
             </a>
-            <a href="index.html" class="font-bold text-lg md:text-xl tracking-tight flex items-center gap-1">
+            <a href="index.html" class="font-bold text-lg md:text-xl tracking-tight flex items-center gap-1 logo-text">
                 <span class="text-white">LiveSports</span><span class="text-red-500">Play</span>
             </a>
         </div>
@@ -92,8 +94,10 @@
             </div>
         </div>
 
-        <div id="video-container-box" class="video-container mb-5 border border-slate-700 hidden">
-            <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+        <div id="video-container-box" class="sticky top-0 z-50 bg-[#00081c] pt-2 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 hidden transition-all">
+            <div class="video-container border border-slate-700 shadow-xl">
+                <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
 
         <div class="flex justify-between items-center mb-5 p-3 rounded-lg border border-slate-700 bg-slate-800/50">
@@ -116,11 +120,11 @@
         <div id="server-buttons" class="flex gap-2 overflow-x-auto pb-3 mb-8"></div>
 
         <div id="vip-teams-card-container" class="vip-team-card justify-around items-center p-6 md:p-8 rounded-2xl mb-6 hidden">
-            <img id="team1-logo" src="" alt="Team 1" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover bg-white p-1" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
+            <img id="team1-logo" src="" alt="Team 1" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
             
             <div class="bg-slate-800 px-5 py-2 rounded-full font-extrabold text-slate-300 border border-slate-700 text-lg">VS</div>
             
-            <img id="team2-logo" src="" alt="Team 2" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover bg-white p-1" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
+            <img id="team2-logo" src="" alt="Team 2" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain bg-white p-1" onerror="this.src='https://placehold.co/100x100/1e293b/ffffff?text=Logo'">
         </div>
 
     </main>
@@ -255,6 +259,7 @@
             }
         });
 
+        // লাইভ প্লেয়ার এবং অ্যাক্টিভ সার্ভার বাটন দেখানোর ফাংশন
         function showLivePlayer(matchData) {
             document.getElementById('upcoming-box').classList.add("hidden");
             const videoContainerBox = document.getElementById('video-container-box');
@@ -264,13 +269,41 @@
             videoContainerBox.classList.remove("hidden");
             serverContainer.innerHTML = ""; 
             
+            let allServerButtons = []; // সব বাটন ট্র্যাক করার জন্য অ্যারে
+
             if (matchData.Streams && matchData.Streams.length > 0) {
                 matchData.Streams.forEach((stream, index) => {
                     const btn = document.createElement('button');
-                    btn.className = 'bg-slate-800 text-slate-100 px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border border-slate-700 hover:bg-[#ef4444] hover:text-white transition flex-shrink-0';
+                    
+                    // বেসিক ক্লাস (সব বাটনেই থাকবে)
+                    const baseClass = 'px-5 py-2.5 rounded-full text-sm font-semibold whitespace-nowrap border transition flex-shrink-0';
+                    // ইনঅ্যাক্টিভ কালার (অফ থাকা অবস্থায়)
+                    const inactiveClass = 'bg-slate-800 text-slate-100 border-slate-700 hover:bg-slate-700';
+                    // অ্যাক্টিভ কালার (চালু থাকা অবস্থায় লাল রঙ ও গ্লো)
+                    const activeClass = 'bg-[#ef4444] text-white border-[#ef4444] shadow-[0_0_10px_rgba(239,68,68,0.5)]';
+
+                    // প্রথম সার্ভার অটোমেটিক অ্যাক্টিভ হয়ে থাকবে
+                    if (index === 0) {
+                        btn.className = `${baseClass} ${activeClass}`;
+                    } else {
+                        btn.className = `${baseClass} ${inactiveClass}`;
+                    }
+
                     btn.innerText = `▶ Server ${stream.Stream_No || index + 1} (${stream.Quality || 'HD'})`;
                     
-                    btn.onclick = () => { videoFrame.src = stream.Embed_URL; };
+                    btn.onclick = () => { 
+                        videoFrame.src = stream.Embed_URL; 
+                        
+                        // ক্লিক করলে বাকি সব বাটন থেকে লাল কালার সরিয়ে ফেলা হবে
+                        allServerButtons.forEach(b => {
+                            b.className = `${baseClass} ${inactiveClass}`;
+                        });
+                        
+                        // যেটায় ক্লিক করা হয়েছে, সেটাকে লাল (অ্যাক্টিভ) করে দেওয়া হবে
+                        btn.className = `${baseClass} ${activeClass}`;
+                    };
+                    
+                    allServerButtons.push(btn);
                     serverContainer.appendChild(btn);
                 });
                 videoFrame.src = matchData.Streams[0].Embed_URL;
