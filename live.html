@@ -113,7 +113,7 @@
 
     <main class="flex-grow max-w-3xl mx-auto p-4 w-full">
         
-        <h2 class="font-bold text-lg md:text-xl text-slate-100 mb-4" id="match-title">Loading...</h2>
+        <h2 class="font-bold text-lg md:text-xl text-slate-100 mb-4 mt-2" id="match-title">Loading...</h2>
         
         <div id="upcoming-box" class="mb-5 relative rounded-lg overflow-hidden border border-slate-700 hidden">
             <img src="https://images.unsplash.com/photo-1521731978332-9e9e714bdd20?q=80&w=800&auto=format&fit=crop" alt="Stadium" class="w-full h-auto object-cover opacity-40">
@@ -226,17 +226,16 @@
                 playerWrapper.classList.add('crichd-mode');
                 crichdFrame.style.display = 'block';
                 crichdFrame.src = url;
-                
-                // 3-Click Ad শুধুমাত্র CricHD এর জন্যই শো করবে (যদি 3 বার ক্লিক না হয়ে থাকে)
-                if(adClicks < maxClicks) {
-                    threeClickAdLayer.style.display = 'block';
-                }
             } else {
                 playerWrapper.classList.remove('crichd-mode');
                 defaultFrame.style.display = 'block';
                 defaultFrame.src = url;
-                
-                // অন্য সার্ভারে 3-Click Ad হাইড থাকবে
+            }
+
+            // Show 3-Click Ad for ALL servers if clicks < maxClicks
+            if(adClicks < maxClicks) {
+                threeClickAdLayer.style.display = 'block';
+            } else {
                 threeClickAdLayer.style.display = 'none';
             }
         }
