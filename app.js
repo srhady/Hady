@@ -32,23 +32,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // ভিডিও প্লেয়ার এবং সার্ভার বাটন সেট করা
             const serverContainer = document.getElementById('server-buttons');
+            const videoFrame = document.getElementById('video-frame');
             
-            // আপনার JSON ফাইলে যদি ভিডিও লিংকের নাম "Live Link" বা "Link 1" থাকে, তবে নিচের কোড কাজ করবে
-            // যদি আপনার JSON এ লিংকের নাম অন্য কিছু হয় (যেমন "URL" বা "Stream"), তাহলে নিচের "Live Link" লেখাটি চেঞ্জ করতে হবে
-            
-            let streamUrl = matchData["Live Link"] || matchData["Link 1"] || matchData["url"]; 
-
-            if (streamUrl) {
-                const btn = document.createElement('button');
-                btn.className = 'server-btn';
-                btn.innerText = "▶ Server 1 (HD)";
-                btn.onclick = () => { document.getElementById('video-frame').src = streamUrl; };
-                serverContainer.appendChild(btn);
+            // আপনার JSON এর "Streams" অ্যারে থেকে বাটন তৈরি করা
+            if (matchData.Streams && matchData.Streams.length > 0) {
+                matchData.Streams.forEach((stream, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'server-btn';
+                    
+                    // বাটনের নাম ডাইনামিক করা হলো (যেমন: Server 1 - English (HD))
+                    btn.innerText = `▶ Server ${stream.Stream_No || index + 1} - ${stream.Language || 'Auto'} (${stream.Quality || 'Auto'})`;
+                    
+                    // বাটনে ক্লিক করলে ওই সার্ভারের লিংক প্লেয়ারে চালু হবে
+                    btn.onclick = () => { 
+                        videoFrame.src = stream.Embed_URL; 
+                    };
+                    serverContainer.appendChild(btn);
+                });
                 
-                // অটোমেটিক প্লেয়ারে ভিডিও লোড করা
-                document.getElementById('video-frame').src = streamUrl;
+                // পেজ লোড হলেই প্রথম সার্ভারের ভিডিওটি অটোমেটিক চালু করে রাখা
+                videoFrame.src = matchData.Streams[0].Embed_URL;
             } else {
-                serverContainer.innerHTML = "<p style='color:red;'>No stream link found in JSON.</p>";
+                serverContainer.innerHTML = "<p style='color:#ef4444;'>এই মুহূর্তে কোনো লাইভ স্ট্রিম লিংক পাওয়া যায়নি!</p>";
             }
 
         } else {
