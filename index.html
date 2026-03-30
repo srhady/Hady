@@ -410,9 +410,11 @@
             });
         }
 
-        function openPlayer(matchTitle) {
-            alert("This will open the player for: " + matchTitle);
+                function openPlayer(matchTitle) {
+            // এর ফলে কার্ডে ক্লিক করলেই ২য় পেজে (live.html) চলে যাবে
+            window.location.href = `live.html?match=${encodeURIComponent(matchTitle)}`;
         }
+
 
         init();
         
