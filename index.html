@@ -19,35 +19,29 @@
             transition: background-color 0.3s, color 0.3s;
         }
         
-        /* 🛑 90Sport স্টাইল প্রিমিয়াম কার্ড ডিজাইন 🛑 */
-        /* সলিড নেভি ব্লু ব্যাকগ্রাউন্ডের সাথে হালকা তেড়ছা শেড (Diagonal Shade) */
+        /* 🛑 90Sport স্টাইল স্মুথ প্রিমিয়াম কার্ড ডিজাইন 🛑 */
         .card-bg {
-            background-color: #1e2a47; /* 90Sport-এর মতো সলিড নেভি ব্লু */
+            background-color: #1e2a47; /* সলিড নেভি ব্লু */
             background-image: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 50%, transparent 50%, transparent 100%);
             background-size: 100% 100%;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.2s ease, border-color 0.2s ease;
             position: relative;
             overflow: hidden;
         }
         
         .card-bg:hover {
             transform: translateY(-3px);
+            border-color: #475569;
         }
 
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .active-filter {
-            background-color: #ef4444;
-            color: white;
-            font-weight: 600;
-        }
-        .inactive-filter {
-            background-color: #1e293b;
-            color: #94a3b8;
-        }
+        .active-filter { background-color: #ef4444; color: white; font-weight: 600; }
+        .inactive-filter { background-color: #1e293b; color: #94a3b8; }
         .cat-active { color: white; font-weight: bold; }
         .cat-inactive { color: #94a3b8; font-weight: 600; }
 
@@ -129,7 +123,6 @@
 
     <footer class="p-8 text-center border-t border-slate-800/50 transition-colors mt-auto">
         <div class="max-w-3xl mx-auto">
-            
             <div class="flex justify-center items-center gap-6 mb-8 text-2xl">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on Facebook">
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
@@ -147,18 +140,9 @@
                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.091.377-.293 1.194-.332 1.358-.053.218-.173.265-.4.159-1.492-.695-2.425-2.876-2.425-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.586 3.298 1.12.344 2.304.532 3.532.532 6.62 0 11.988-5.367 11.988-11.987C24.005 5.367 18.637 0 12.017 0z"/></svg>
                 </a>
             </div>
-
-            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
-                LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.
-            </p>
-
-            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto">
-                <span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.
-            </p>
-
-            <p class="text-sm text-slate-400 font-medium">
-                &copy; 2026 LiveSportsPlay
-            </p>
+            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.</p>
+            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto"><span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.</p>
+            <p class="text-sm text-slate-400 font-medium">&copy; 2026 LiveSportsPlay</p>
         </div>
     </footer>
 
@@ -199,12 +183,12 @@
                 let d = new Date(cleanStr); 
                 
                 if (!isNaN(d)) {
-                    // ইউজারের লোকাল টাইম জোন অনুযায়ী অটোমেটিক কনভার্ট হবে (BD তে থাকলে +6 হবে)
-                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-                    let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+                    // timeZone: 'Asia/Dhaka' দিয়ে ফিক্স করা হলো যাতে সবার জন্য একই ফরম্যাটে সেভ হয়
+                    let time = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Dhaka' });
+                    let date = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'Asia/Dhaka' }).replace(' ', '-');
                     return `${time} | ${date}`; // Return format: 08:00 PM | 30-Mar
                 }
-                return utcString; // যদি কনভার্ট না হয়, যা আছে তাই রিটার্ন করবে
+                return utcString;
             } catch(e) {
                 return utcString;
             }
@@ -212,7 +196,6 @@
 
         async function init() {
             try {
-                // 3টা JSON একসাথেই লোড করা হচ্ছে
                 const [res1, res2, res3] = await Promise.all([
                     fetch(jsonUrl1).catch(() => null),
                     fetch(jsonUrl2).catch(() => null),
@@ -223,16 +206,15 @@
                 let data2 = res2 && res2.ok ? await res2.json() : { matches: [] };
                 let data3 = res3 && res3.ok ? await res3.json() : [];
                 
-                // Normalizing Data Arrays
                 data1 = Array.isArray(data1) ? data1 : (data1.channels ? data1.channels : []);
                 let data2Matches = Array.isArray(data2) ? data2 : (data2.matches ? data2.matches : []);
                 data3 = Array.isArray(data3) ? data3 : (data3.matches ? data3.matches : []);
 
-                // Map 2 (CricHD JSON formatting with Local Time Fix)
+                // Map 2 (CricHD JSON formatting)
                 let mappedData2 = data2Matches.map(item => {
                     let timeStr = item["Start time"] || "";
                     if(timeStr.includes('UTC')) {
-                        timeStr = convertUtcToLocalBD(timeStr); // UTC থেকে লোকাল টাইমে কনভার্ট
+                        timeStr = convertUtcToLocalBD(timeStr); 
                     }
 
                     let team1 = item["match name"] && item["match name"].includes('vs') ? item["match name"].split('vs')[0].trim() : "Team 1";
@@ -252,17 +234,32 @@
                 });
 
                 // Map 3
-                let mappedData3 = data3.map(item => ({
-                    "Category": item["Category"] || item["category"] || "Other",
-                    "League": item["Category"] || item["category"] || "Other",
-                    "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
-                    "Match Title": item["Match Title"] || item["match name"] || "Live Match",
-                    "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Upcoming",
-                    "Start Time": item["Start Time"] || item["Start time"] || ""
-                }));
+                let mappedData3 = data3.map(item => {
+                    let timeStr = item["Start Time"] || item["Start time"] || "";
+                    if(timeStr.includes('UTC')) {
+                        timeStr = convertUtcToLocalBD(timeStr);
+                    }
+                    return {
+                        "Category": item["Category"] || item["category"] || "Other",
+                        "League": item["Category"] || item["category"] || "Other",
+                        "Team 1 Name": "", "Team 2 Name": "", "Team 1 Logo": "", "Team 2 Logo": "",
+                        "Match Title": item["Match Title"] || item["match name"] || "Live Match",
+                        "Match Status": item["Match Status"] || item["Status"] || item["status"] || "Upcoming",
+                        "Start Time": timeStr
+                    };
+                });
 
                 // সবগুলো ডেটা মার্জ করা
                 allMatches = [...data1, ...mappedData2, ...mappedData3]; 
+                
+                // 🛑 ডেট সিরিয়াল (Sorting) ফিক্স 🛑
+                allMatches.sort((a, b) => {
+                    let dateA = getMatchDateObj(a["Start Time"]);
+                    let dateB = getMatchDateObj(b["Start Time"]);
+                    let timeA = dateA ? dateA.getTime() : 9999999999999;
+                    let timeB = dateB ? dateB.getTime() : 9999999999999;
+                    return timeA - timeB; // ক্রমানুসারে সাজানো (আগে কাছের সময়, পরে দূরের সময়)
+                });
                 
                 generateCategoryMenu();
                 applyFilters(); 
@@ -444,13 +441,13 @@
                         <div class="flex justify-between items-center mt-3">
                             <div class="flex items-center gap-2 w-1/3">
                                 <span class="font-semibold truncate text-sm md:text-base">${match["Team 1 Name"]}</span>
-                                <img src="${t1Logo}" class="w-7 h-7 rounded-full object-contain bg-white p-0.5" onerror="this.style.display='none'">
+                                <img src="${t1Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
                             </div>
                             <div class="w-1/3 flex justify-center">
                                 <div class="border border-slate-600/50 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap bg-slate-800/50">${matchTime}</div>
                             </div>
                             <div class="flex items-center justify-end gap-2 w-1/3">
-                                <img src="${t2Logo}" class="w-7 h-7 rounded-full object-contain bg-white p-0.5" onerror="this.style.display='none'">
+                                <img src="${t2Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
                                 <span class="font-semibold truncate text-sm md:text-base">${match["Team 2 Name"]}</span>
                             </div>
                         </div>
@@ -464,7 +461,6 @@
                     `;
                 }
 
-                // 🛑 90Sport স্টাইল স্মুথ ডার্ক-নেভি ব্লু কার্ড 🛑
                 const cardHTML = `
                     <div class="card-bg p-4 mb-3 cursor-pointer border border-transparent hover:border-slate-600 transition duration-300 group" onclick="openPlayer('${match["Match Title"]}')">
                         <div class="flex items-center gap-3 relative z-10">
