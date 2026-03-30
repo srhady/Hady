@@ -1,221 +1,422 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="utf-8"> 
-    <title>Free Sports Live</title> 
-    <meta name="viewport" content="width=device-width,initial-scale=1"> 
-    
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveSportsPlay | Premium Sports Streaming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+        
+        body {
+            background-color: #00081c; 
+            color: white;
+            font-family: 'Sora', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .card-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
 
-    <style> 
-        :root{ --bg:#0b1116; --panel:#0f1620; --muted:#8b949e; --accent:#58a6ff; --pill:#1f2a36; --green:#238636; --card-border:#24303a; } html,body{height:100%;margin:0;font-family:Inter,Segoe UI,system-ui,Arial; background:linear-gradient(180deg,var(--bg),#07111a); color:#e6edf3;}
-        header { display:flex;align-items:center;justify-content:space-between; padding:12px 28px;background:var(--panel);border-bottom:1px solid #162029; position:sticky;top:0;z-index:20; } .left, .right {display:flex;align-items:center;gap:14px;} 
-        
-        /* New Text Logo Style */
-        .text-logo { font-size: 22px; font-weight: 900; color: #e6edf3; letter-spacing: 0.5px; text-transform: uppercase; margin: 0; }
-        .text-logo span { color: var(--accent); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .top-actions button{ background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dbe7ff;padding:8px 12px;border-radius:26px; cursor:pointer;font-weight:600; font-size:13px; } .top-actions button:hover{background:rgba(255,255,255,0.02);}
-        .categories-wrap{padding:18px 28px 8px; display:flex;flex-direction:column; gap:12px; background:transparent;} .pills{display:flex;flex-wrap:wrap;gap:10px; align-items:center;} .pill { background:var(--pill); border:1px solid rgba(255,255,255,0.04); color:#cbd6e8; padding:8px 14px;border-radius:999px; cursor:pointer; font-weight:600; font-size:13px; box-shadow: 0 6px 18px rgba(0,0,0,0.4) inset; } .pill.active{ background: linear-gradient(180deg,#234b6a,#173645); color:#fff; box-shadow:0 6px 20px rgba(16,24,32,0.6); transform:translateY(-2px); }
-        .controls { display:flex; gap:16px; align-items:center; padding:0 28px 18px; } .search { flex:1; display:flex; gap:8px; align-items:center; background:linear-gradient(180deg,#0d1a23,#07121a); border:1px solid #14212a; padding:10px;border-radius:12px; } .search input{ background:transparent;border:0;outline:none;color:#cfe7ff;font-size:15px;width:100%; } .search button{ background:linear-gradient(180deg,#1e4b78,#16324a);border:0;padding:8px 12px;border-radius:8px;color:#fff;cursor:pointer;}
-        .section-title{ margin:16px 28px 6px; color:var(--accent); font-weight:700; display:flex; align-items:center; gap:12px;} .grid { padding:0 28px 48px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
-        .card{ background:linear-gradient(180deg,#0f1820,#0b1418); border:1px solid var(--card-border); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s; box-shadow:0 8px 30px rgba(2,6,10,0.6); } .card:hover{ transform:translateY(-6px) }
+        .active-filter {
+            background-color: #ef4444;
+            color: white;
+            font-weight: 600;
+        }
+        .inactive-filter {
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
+        .cat-active { color: white; font-weight: bold; }
+        .cat-inactive { color: #94a3b8; font-weight: 600; }
+
+        /* লাইভ জ্বলজ্বল করার অ্যানিমেশন */
+        @keyframes blinkGlow {
+            0% { box-shadow: 0 0 4px #ef4444; opacity: 1; }
+            50% { box-shadow: 0 0 15px #ef4444; opacity: 0.85; }
+            100% { box-shadow: 0 0 4px #ef4444; opacity: 1; }
+        }
+        .live-glow {
+            animation: blinkGlow 1.5s infinite;
+            background-color: #ef4444;
+            color: white;
+        }
+
+        /* --- লাইট মোড (Light Mode) স্টাইলস --- */
+        body.light-mode {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+        .light-mode .card-bg {
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .light-mode header, .light-mode nav { border-color: #cbd5e1; }
+        .light-mode #search-input {
+            background-color: #ffffff;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+        .light-mode #search-input::placeholder { color: #64748b; }
+        .light-mode .inactive-filter { background-color: #e2e8f0; color: #475569; }
+        .light-mode .cat-inactive { color: #64748b; }
+        .light-mode .cat-active { color: #0f172a; }
+        .light-mode .text-slate-400, .light-mode .text-slate-300, .light-mode .text-gray-400 { color: #475569; }
+        .light-mode .text-slate-200 { color: #1e293b; }
+        .light-mode .bg-slate-800, .light-mode .bg-slate-800\/50 { background-color: #e2e8f0; }
+        .light-mode .border-slate-600, .light-mode .border-slate-800\/50 { border-color: #cbd5e1; }
         
-        .card-thumb{ position:relative; width: 100%; aspect-ratio: 16/9; background: #070d12; overflow:hidden; border-top-left-radius: 12px; border-top-right-radius: 12px; } 
-        .card-thumb img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.35s ease, filter 0.35s ease; filter: saturate(1.05) contrast(1.03); will-change: transform; } 
-        .card-thumb:hover img { transform: scale(1.05); filter: saturate(1.1) contrast(1.05); }
-        
-        .card-content{ padding:14px; display:flex; flex-direction:column; gap:8px; flex:1; } .card .title{ font-weight:800; font-size:15px; color:#e7f0fb; line-height:1.2 } .card .sport{ font-size:12px; color:#76a6d6; font-weight:700; } .card .cat-pill{ display:inline-block; background:var(--green); color:#fff; padding:4px 8px; border-radius:6px; font-size:12px; font-weight:700; text-transform: uppercase; } .card .meta-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; } 
-        .card-actions{ margin-top:auto; display:flex; gap:10px; padding-top:6px; } .watch-btn{ flex:1; background:linear-gradient(180deg,#183c56,#0f2a3a); color:#eaf6ff; border-radius:10px; border:1px solid rgba(255,255,255,0.03); padding:10px; cursor:pointer; font-weight:800; } .watch-btn:hover { background:linear-gradient(180deg,#1f4d6e,#14354a); }
-        footer{ padding:40px 28px; text-align:center; color:#93a1b3; font-size:13px; border-top:1px solid #0f1a21; margin-top:30px; }
-        @keyframes pulseRed {0%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:0.6;}100%{transform:scale(1);opacity:1;}} .live-dot{ display:inline-block; animation: pulseRed 1s infinite; color:red; }
-        @media (max-width:600px){ header{ padding:10px 14px } .categories-wrap{ padding:12px 14px } .search{ padding:8px } .grid { padding:0 14px 40px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; } .text-logo { font-size: 18px; } } 
+        /* ফুটারের স্টাইল */
+        footer { background-color: #040d21; }
+        .light-mode footer { background-color: #e2e8f0; border-top-color: #cbd5e1; }
+        .social-link svg { transition: transform 0.3s, color 0.3s; color: white; }
+        .social-link:hover svg { color: #ef4444; transform: scale(1.1); }
+        .light-mode .social-link svg { color: #0f172a; }
+        .light-mode .social-link:hover svg { color: #ef4444; }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
-<header> 
-    <div class="left"> 
-        <div class="text-logo">Free Sports <span>Live</span></div> 
-    </div> 
-    <div class="right"> 
-        <div class="top-actions"> 
-            <button onclick="window.open('https://t.me/livesportsplay','_blank')">Join Telegram</button> 
-            <button onclick="alert('Support us - Share our website!')">Support Us</button> 
-        </div> 
-    </div>
-</header>
+    <div class="flex-grow pb-10">
+        
+        <header class="flex justify-between items-center p-4 max-w-3xl mx-auto mt-2 border-b border-slate-800/50 transition-colors">
+            <div class="flex items-center">
+                <h1 class="font-bold text-2xl tracking-tight logo-text">
+                    <span class="text-white logo-white">LiveSports</span><span class="text-red-500">Play</span>
+                </h1>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" id="theme-btn" class="text-xl p-1.5 rounded-full hover:bg-slate-800 transition">☀️</button>
+                <a href="https://t.me/livesportsplay" target="_blank" class="bg-cyan-400 text-slate-900 px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-1.5 shadow-[0_0_10px_rgba(34,211,238,0.5)] hover:shadow-[0_0_15px_rgba(34,211,238,0.8)] transition">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                    Join
+                </a>
+            </div>
+        </header>
 
-<div class="categories-wrap"> 
-    <div class="pills" id="pillsContainer"> 
-        <div class="pill active" onclick="filterCategory('all', this)">All Live Events</div> 
-    </div>
-    <div class="controls"> 
-        <div class="search" role="search"> 
-            <input id="searchInput" placeholder="Search matches by title..." onkeyup="applySearch()" /> 
-            <button onclick="applySearch()">Search</button> 
-        </div> 
-    </div>
-</div>
+        <nav id="category-nav" class="flex gap-6 overflow-x-auto hide-scrollbar p-4 max-w-3xl mx-auto"></nav>
 
-<div id="liveSection"> 
-    <div class="section-title"><span class="live-dot">🔴</span> Live Matches</div> 
-    <div class="grid" id="liveGrid"> 
-        <p style="color:#8b949e; padding-left:14px;">Loading live matches...</p>
-    </div> 
-</div>
-
-<footer> 
-    <strong>Disclaimer</strong><br>This Website does not host any media content on its site. Any content displayed may be embedded from third-party websites. All links and media shared by visitors are hosted elsewhere on the web. We respect copyright and notify all copyright owners accordingly.
-
-    <div style="margin-top: 20px; display: flex; justify-content: center;">
-        <div id="histats_counter"></div>
-        <script type="text/javascript">var _Hasync= _Hasync|| [];
-        _Hasync.push(['Histats.start', '1,5014541,4,4006,112,61,00011111']);
-        _Hasync.push(['Histats.fasi', '1']);
-        _Hasync.push(['Histats.track_hits', '']);
-        (function() {
-        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-        hs.src = ('//s10.histats.com/js15_as.js');
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-        })();</script>
-        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5014541&101" alt="web statistics" border="0"></a></noscript>
+        <div class="px-4 max-w-3xl mx-auto my-2">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <span class="text-slate-400">🔍</span>
+                </div>
+                <input type="text" id="search-input" oninput="handleSearch()" placeholder="Search matches..." class="w-full bg-[#1e293b] border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition placeholder-slate-500 transition-colors">
+            </div>
         </div>
-</footer>
 
-<div class="popup" id="playerPopup" aria-hidden="true" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:50;"> 
-    <div class="popup-content" id="popupContent" style="position:relative;width:90%;max-width:900px;"> 
-        <button id="closePopup" style="position:absolute;top:10px;right:10px;font-size:22px;color:#fff;background:none;border:none;cursor:pointer;z-index:51;">✖</button> 
-        <video id="playerVideo" controls autoplay playsinline style="width:100%;border-radius:12px;background:#000;"></video> 
+        <div id="status-filters" class="flex gap-3 overflow-x-auto hide-scrollbar p-4 max-w-3xl mx-auto mt-2">
+            <button onclick="setStatusFilter('All')" id="btn-All" class="active-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition">All</button>
+            <button onclick="setStatusFilter('Live')" id="btn-Live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">Live</button>
+            <button onclick="setStatusFilter('Upcoming live')" id="btn-Upcoming live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">Upcoming live</button>
+            <button onclick="setStatusFilter('24/7 Live')" id="btn-24/7 Live" class="inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80">24/7 Live</button>
+        </div>
+
+        <main class="max-w-3xl mx-auto p-4" id="match-container">
+            <p class="text-center text-slate-400 py-10 animate-pulse">Loading matches...</p>
+        </main>
     </div>
-</div>
 
-<script>
-    const playlistUrl = 'https://raw.githubusercontent.com/srhady/bingstream/main/playlist.json';
-    let allMatches = []; 
+    <footer class="p-8 text-center border-t border-slate-800/50 transition-colors mt-auto">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="flex justify-center items-center gap-6 mb-8 text-2xl">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on Facebook">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Flivesportsplay.top&text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Twitter">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="https://api.whatsapp.com/send?text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!%20%F0%9F%91%89%20https%3A%2F%2Flivesportsplay.top" target="_blank" class="social-link" title="Share on WhatsApp">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+                <a href="https://t.me/share/url?url=https%3A%2F%2Flivesportsplay.top&text=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Telegram">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.94z"/></svg>
+                </a>
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Flivesportsplay.top&description=%F0%9F%8F%86%20Watch%20Live%20Sports%20for%20FREE%20on%20LiveSportsPlay!%20%E2%9A%BD%F0%9F%8F%80%F0%9F%8F%8F%20Catch%20all%20the%20action%2C%20premium%20streams%2C%20and%2024%2F7%20channels%20without%20any%20buffering.%20Join%20the%20ultimate%20sports%20hub%20today!" target="_blank" class="social-link" title="Share on Pinterest">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.091.377-.293 1.194-.332 1.358-.053.218-.173.265-.4.159-1.492-.695-2.425-2.876-2.425-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.445-1.586 3.298 1.12.344 2.304.532 3.532.532 6.62 0 11.988-5.367 11.988-11.987C24.005 5.367 18.637 0 12.017 0z"/></svg>
+                </a>
+            </div>
 
-    async function loadDynamicPlaylist() {
-        try {
-            const response = await fetch(playlistUrl + '?t=' + new Date().getTime()); 
-            const data = await response.json();
-            
-            allMatches = data.channels; 
-            
-            const liveGrid = document.getElementById('liveGrid');
-            const pillsContainer = document.getElementById('pillsContainer');
-            liveGrid.innerHTML = ''; 
-            
-            let uniqueCategories = new Set();
+            <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                LiveSportsPlay is one of the leading platforms on live sports services offering the greatest live coverage of over 1000 sports.
+            </p>
 
-            data.channels.forEach(match => {
-                if(match.channel_name.toLowerCase() === 'intro') {
-                    return; 
+            <p class="disclaimer-text text-xs text-slate-500 mb-6 leading-relaxed max-w-lg mx-auto">
+                <span class="font-bold">Disclaimer:</span> This website does not host any video content on its servers. All streams and media links are provided by external, third-party sources freely available on the internet.
+            </p>
+
+            <p class="text-sm text-slate-400 font-medium">
+                &copy; 2026 LiveSportsPlay
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const jsonUrl = 'https://raw.githubusercontent.com/srhady/data/refs/heads/main/live_sports_playlist.json';
+        
+        let allMatches = []; 
+        let activeCategory = 'All'; 
+        let activeStatus = 'All'; 
+        let searchQuery = '';
+
+        const categoryIcons = {
+            "Football": "⚽", "Basketball": "🏀", "Tennis": "🎾", "Cricket": "🏏",
+            "Motor-sports": "🏎️", "Baseball": "⚾", "Hockey": "🏒", "Fight": "🥊", "Other": "🎯"
+        };
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('theme-btn');
+            const footerLogo = document.querySelector('.logo-text .logo-white');
+
+            if(document.body.classList.contains('light-mode')) {
+                btn.innerText = '🌙';
+                if(footerLogo) footerLogo.classList.remove('text-white');
+            } else {
+                btn.innerText = '☀️';
+                if(footerLogo) footerLogo.classList.add('text-white');
+            }
+        }
+
+        async function init() {
+            try {
+                const response = await fetch(jsonUrl);
+                if (!response.ok) throw new Error("Network error");
+                allMatches = await response.json(); 
+                
+                generateCategoryMenu();
+                applyFilters(); 
+            } catch (error) {
+                document.getElementById('match-container').innerHTML = `<p class="text-red-500 text-center py-10">Failed to load match data. Please try again later.</p>`;
+            }
+        }
+
+        function getMatchDateObj(bstString) {
+            if (!bstString || !bstString.includes("|")) return null;
+            try {
+                const [timePart, datePart] = bstString.split("|").map(s => s.trim());
+                const [day, monthStr] = datePart.split("-");
+                const monthMap = { "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04", "May": "05", "Jun": "06", "Jul": "07", "Aug": "08", "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12" };
+                const month = monthMap[monthStr] || "01";
+                const year = new Date().getFullYear(); 
+
+                let [time, modifier] = timePart.split(" ");
+                let [hours, minutes] = time.split(":");
+                hours = parseInt(hours, 10);
+                
+                if (hours === 12) hours = 0;
+                if (modifier && modifier.toUpperCase() === "PM") hours += 12;
+
+                const isoString = `${year}-${month}-${day.padStart(2, '0')}T${hours.toString().padStart(2, '0')}:${minutes.padStart(2, '0')}:00+06:00`;
+                return new Date(isoString);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function convertBstToLocal(bstString) {
+            const dateObj = getMatchDateObj(bstString);
+            if (!dateObj) return { time: bstString.split("|")[0] || bstString, date: bstString.split("|")[1] || "Today" };
+            
+            const localTime = dateObj.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            const localDate = dateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).replace(' ', '-');
+            return { time: localTime, date: localDate };
+        }
+
+        function generateCategoryMenu() {
+            const nav = document.getElementById('category-nav');
+            const uniqueCategories = [...new Set(allMatches.map(m => m.Category))];
+            
+            let html = `<button onclick="setCategoryFilter('All')" id="cat-All" class="cat-active flex items-center gap-2 whitespace-nowrap transition"><span class="text-xl">🌐</span> All Sports</button>`;
+            uniqueCategories.forEach(cat => {
+                if(!cat) return;
+                const icon = categoryIcons[cat] || "🎯";
+                html += `<button onclick="setCategoryFilter('${cat}')" id="cat-${cat.replace(/\s+/g, '-')}" class="cat-inactive flex items-center gap-2 whitespace-nowrap transition hover:opacity-70"><span class="text-xl">${icon}</span> ${cat}</button>`;
+            });
+            nav.innerHTML = html;
+        }
+
+        function setCategoryFilter(category) {
+            activeCategory = category;
+            document.querySelectorAll('#category-nav button').forEach(btn => {
+                btn.classList.remove('cat-active');
+                btn.classList.add('cat-inactive');
+            });
+            const activeBtnId = category === 'All' ? 'cat-All' : `cat-${category.replace(/\s+/g, '-')}`;
+            const activeBtn = document.getElementById(activeBtnId);
+            if(activeBtn) {
+                activeBtn.classList.add('cat-active');
+                activeBtn.classList.remove('cat-inactive');
+            }
+            applyFilters();
+        }
+
+        function setStatusFilter(status) {
+            activeStatus = status;
+            document.querySelectorAll('#status-filters button').forEach(btn => {
+                btn.className = 'inactive-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition hover:opacity-80';
+            });
+            document.getElementById(`btn-${status}`).className = 'active-filter px-5 py-2 rounded-full text-sm whitespace-nowrap transition';
+            applyFilters();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('search-input').value.toLowerCase();
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const now = new Date();
+            
+            let processedMatches = allMatches.map(m => {
+                let isLive = (m["Match Status"] || "").toLowerCase().includes("live");
+                let is24x7 = (m["Start Time"] || "").trim() === "";
+                
+                if (!isLive && !is24x7) {
+                    const matchDate = getMatchDateObj(m["Start Time"]);
+                    if (matchDate) {
+                        if (now.getTime() >= matchDate.getTime() - 600000) {
+                            isLive = true; 
+                        }
+                    }
+                }
+                return { ...m, _calculatedLive: isLive, _is24x7: is24x7 };
+            });
+
+            let filtered = processedMatches;
+
+            if (searchQuery.trim() !== '') {
+                filtered = filtered.filter(m => {
+                    const str = `${m["Team 1 Name"]} ${m["Team 2 Name"]} ${m["Match Title"]} ${m["League"]}`.toLowerCase();
+                    return str.includes(searchQuery);
+                });
+            }
+
+            if (activeCategory !== 'All') {
+                filtered = filtered.filter(m => m.Category === activeCategory);
+            }
+
+            if (activeStatus === 'Live') {
+                filtered = filtered.filter(m => m._calculatedLive && !m._is24x7);
+            } else if (activeStatus === 'Upcoming live') {
+                filtered = filtered.filter(m => !m._calculatedLive && !m._is24x7);
+            } else if (activeStatus === '24/7 Live') {
+                filtered = filtered.filter(m => m._is24x7);
+            }
+
+            renderMatches(filtered);
+        }
+
+        function renderMatches(matches) {
+            const container = document.getElementById('match-container');
+            container.innerHTML = ''; 
+
+            if (matches.length === 0) {
+                container.innerHTML = `<p class="text-center text-slate-500 py-10 animate-pulse">No matches found for this filter.</p>`;
+                return;
+            }
+            
+            let currentHeader = "";
+
+            matches.forEach((match, index) => {
+                const isLive = match._calculatedLive;
+                const is24x7 = match._is24x7;
+                
+                let displayStatusText = is24x7 ? "24/7 Live" : (isLive ? "Live" : "Upcoming");
+                
+                // এখানে অরিজিনাল কার্ড ডিজাইনের জন্য স্ট্যাটাস কালার সেট করা হলো
+                let statusColorClass = "";
+                if (isLive && !is24x7) {
+                    statusColorClass = "live-glow font-extrabold"; 
+                } else if (is24x7) {
+                    statusColorClass = "bg-red-500 text-white font-bold";
+                } else {
+                    statusColorClass = "bg-yellow-500 text-black font-bold";
+                }
+                
+                let startTimeRaw = match["Start Time"] || "";
+                let matchTime = "TBD";
+                let matchDate = "Today";
+
+                if (is24x7) {
+                    matchTime = "Always Live";
+                    matchDate = "24/7 Channels";
+                } else if (startTimeRaw.includes("|")) {
+                    const localDateTime = convertBstToLocal(startTimeRaw);
+                    matchTime = localDateTime.time;
+                    matchDate = localDateTime.date;
+                } else if (startTimeRaw !== "") {
+                    matchTime = startTimeRaw;
                 }
 
-                uniqueCategories.add(match.channel_group);
-                const streamLink = match.channel_url; 
-                
+                if(currentHeader !== matchDate && matchDate !== "Today") {
+                    container.innerHTML += `<h3 class="font-bold text-slate-300 mt-6 mb-3">${matchDate}</h3>`;
+                    currentHeader = matchDate;
+                }
+
+                const t1Logo = match["Team 1 Logo"];
+                const t2Logo = match["Team 2 Logo"];
+                const hasLogo = t1Logo && t1Logo.trim() !== "" && !t1Logo.includes("placehold");
+
+                let matchDetailsHTML = "";
+
+                // আপনার ঠিক করা অরিজিনাল কার্ডের ভেতরের লেআউট
+                if (hasLogo) {
+                    matchDetailsHTML = `
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex items-center gap-2 w-1/3">
+                                <span class="font-semibold truncate text-sm md:text-base">${match["Team 1 Name"]}</span>
+                                <img src="${t1Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
+                            </div>
+                            <div class="w-1/3 flex justify-center">
+                                <div class="border border-slate-600 rounded-full px-4 py-1 text-xs font-medium whitespace-nowrap">${matchTime}</div>
+                            </div>
+                            <div class="flex items-center justify-end gap-2 w-1/3">
+                                <img src="${t2Logo}" class="w-7 h-7 rounded-full object-cover bg-white" onerror="this.style.display='none'">
+                                <span class="font-semibold truncate text-sm md:text-base">${match["Team 2 Name"]}</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    matchDetailsHTML = `
+                        <div class="flex justify-between items-center mt-3 px-2">
+                            <span class="font-semibold text-sm md:text-base text-slate-200">${match["Match Title"]}</span>
+                            <span class="font-semibold text-xs text-slate-300 bg-slate-800 px-3 py-1 rounded-md whitespace-nowrap">${matchTime}</span>
+                        </div>
+                    `;
+                }
+
+                // আপনার ঠিক করা অরিজিনাল মেইন কার্ড লেআউট
                 const cardHTML = `
-                    <div class="card" data-cat="${match.channel_group.toLowerCase()}" data-title="${match.channel_name.toLowerCase()}"> 
-                        <div class="card-thumb"><img src="${match.channel_logo}" alt="Cover" onerror="this.src='https://placehold.co/800x450/1f2a36/ffffff.png?text=Live+Match'"></div> 
-                        <div class="card-content"> 
-                            <div class="title">${match.channel_name}</div> 
-                            <div class="meta-row">
-                                <div class="sport">Live Stream</div>
-                                <div class="cat-pill">${match.channel_group}</div>
-                            </div> 
-                            <div style="height:8px;"></div> 
-                            <div class="card-actions"> 
-                                <button class="watch-btn" onclick="openPlayer('${streamLink}')">▶ WATCH LIVE</button> 
-                            </div> 
-                        </div> 
+                    <div class="card-bg rounded-xl p-4 mb-3 cursor-pointer hover:border-slate-600 border border-transparent transition duration-300" onclick="openPlayer('${match["Match Title"]}')">
+                        <div class="flex items-center gap-3">
+                            <span class="${statusColorClass} text-xs px-3 py-1 rounded-full">${displayStatusText}</span>
+                            <span class="text-slate-400 text-xs font-medium">${match["League"]}</span>
+                        </div>
+                        ${matchDetailsHTML}
                     </div>
                 `;
-                liveGrid.innerHTML += cardHTML;
+                container.innerHTML += cardHTML;
             });
-
-            pillsContainer.innerHTML = `<div class="pill active" onclick="filterCategory('all', this)">All Live Events</div>`;
-            uniqueCategories.forEach(cat => {
-                pillsContainer.innerHTML += `<div class="pill" onclick="filterCategory('${cat.toLowerCase()}', this)">${cat}</div>`;
-            });
-
-            applySearch();
-
-        } catch (error) {
-            console.error('Error fetching playlist:', error);
-            document.getElementById('liveGrid').innerHTML = '<p style="color:red; padding-left:14px;">Error loading matches. Please try again later.</p>';
         }
-    }
 
-    function filterCategory(cat, el){ 
-        document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); 
-        if(el) el.classList.add('active'); 
+        function openPlayer(matchTitle) {
+            alert("This will open the player for: " + matchTitle);
+        }
+
+        init();
         
-        document.querySelectorAll('.card').forEach(c => { 
-            const ccat = c.dataset.cat || ''; 
-            const searchVal = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
-            const matchsTitle = (c.dataset.title || ''); 
-            
-            const catOk = (cat === 'all' || ccat === cat); 
-            const searchOk = !searchVal || matchsTitle.includes(searchVal); 
-            
-            c.style.display = (catOk && searchOk) ? 'block' : 'none'; 
-        }); 
-    }
-
-    function applySearch(){ 
-        const val = (document.getElementById('searchInput').value || '').toLowerCase().trim(); 
-        const activePill = document.querySelector('.pill.active');
-        const activeCat = activePill ? activePill.textContent.toLowerCase() : 'all live events';
-
-        document.querySelectorAll('.card').forEach(c => { 
-            const txt = (c.dataset.title || ''); 
-            const ccat = (c.dataset.cat || '');
-            
-            const catOk = (activeCat === 'all live events' || ccat === activeCat); 
-            c.style.display = (txt.includes(val) && catOk) ? 'block' : 'none'; 
-        });
-    }
-
-    const popup = document.getElementById('playerPopup');
-    const video = document.getElementById('playerVideo');
-    const closePopupBtn = document.getElementById('closePopup');
-    let hls; 
-
-    function openPlayer(url){ 
-        if(!url) return; 
-        popup.style.display = 'flex'; 
-
-        if (Hls.isSupported()) {
-            if(hls) { hls.destroy(); } 
-            hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                video.play().catch(()=>{});
-            });
-        } 
-        else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = url;
-            video.play().catch(()=>{});
-        }
-    }
-    
-    function closePlayer(){ 
-        video.pause(); 
-        video.src = ''; 
-        if(hls) { hls.destroy(); }
-        popup.style.display = 'none';
-    }
-    
-    closePopupBtn.addEventListener('click', closePlayer);
-    popup.addEventListener('click', e => { 
-        if(e.target === popup) closePlayer(); 
-    });
-
-    loadDynamicPlaylist();
-    setInterval(loadDynamicPlaylist, 900000);
-
-</script>
+        setInterval(applyFilters, 60000);
+    </script>
 </body>
 </html>
