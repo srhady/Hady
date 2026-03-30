@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Stream | LiveSportsPlay</title>
+    
+    <meta name="referrer" content="no-referrer">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -30,14 +33,12 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         }
 
-        /* 90Sport style gradient box */
         .vip-team-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             border: 1px solid #334155;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Countdown display styling */
         .countdown-box {
             background: rgba(0, 0, 0, 0.7);
             border: 1px solid #334155;
@@ -117,15 +118,15 @@
 
         <h3 class="text-slate-300 font-semibold mb-3 text-sm px-1">Available Streams:</h3>
 
-        <div id="server-buttons" class="flex gap-2 overflow-x-auto pb-3 mb-8">
+        <div id="server-buttons" class="flex gap-2 overflow-x-auto pb-3 mb-8 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
             </div>
 
         <div id="vip-teams-card-container" class="vip-team-card justify-around items-center p-6 md:p-8 rounded-2xl mb-6 hidden">
-            <img id="team1-logo" src="" alt="Team 1" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover bg-white p-1" onerror="this.style.display='none'">
+            <img id="team1-logo" src="" alt="Team 1" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain bg-white p-1" onerror="this.style.display='none'">
             
             <div class="bg-slate-800 px-5 py-2 rounded-full font-extrabold text-slate-300 border border-slate-700 text-lg">VS</div>
             
-            <img id="team2-logo" src="" alt="Team 2" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover bg-white p-1" onerror="this.style.display='none'">
+            <img id="team2-logo" src="" alt="Team 2" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain bg-white p-1" onerror="this.style.display='none'">
         </div>
 
     </main>
@@ -142,21 +143,22 @@
 
             // নেটিভ শেয়ার বাটন (ফোনের অরিজিনাল পপ-আপ)
             const shareBtn = document.getElementById('native-share-btn');
-            shareBtn.addEventListener('click', async () => {
+            shareBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
                 if (navigator.share) {
                     try {
                         await navigator.share({
-                            title: `Watch Live: ${matchTitle} | LiveSportsPlay`,
+                            title: `Watch Live: ${matchTitle || 'Sports'} | LiveSportsPlay`,
                             text: `Catch all the action live for FREE on LiveSportsPlay! 🏆⚽🏀`,
                             url: currentUrl,
                         });
                         console.log('Successfully shared');
                     } catch (error) {
-                        console.error('Error sharing:', error);
+                        console.log('Share window closed');
                     }
                 } else {
-                    // যদি ব্রাউজার নেটিভ শেয়ার সাপোর্ট না করে, তবে ফেইসবুকে শেয়ার করবে
-                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, '_blank');
+                    // যদি ব্রাউজার নেটিভ শেয়ার সাপোর্ট না করে, একটা এলার্ট দিবে
+                    alert("আপনার ব্রাউজার ডিরেক্ট শেয়ার সাপোর্ট করছে না! দয়া করে পাশের কপি বাটনে ক্লিক করে লিংক কপি করুন।");
                 }
             });
 
@@ -164,7 +166,6 @@
             const copyBtn = document.getElementById('copy-link-btn');
             copyBtn.addEventListener('click', () => {
                 navigator.clipboard.writeText(currentUrl).then(() => {
-                    // কপি করার পর আইকন বা টেক্সট চেঞ্জ করে ইউজারকে ফিডব্যাক দেওয়া
                     copyBtn.innerHTML = '<i class="fas fa-check text-green-400"></i>';
                     setTimeout(() => {
                         copyBtn.innerHTML = '<i class="fas fa-link"></i>';
@@ -206,11 +207,10 @@
                         teamCardContainer.classList.remove("flex");
                     }
 
-                    // --- ৩. আপকামিং কাউন্টডাউন এবং ১০ মিনিট আগের লাইভ লজিক ---
+                    // --- ৩. BST Local Time এবং Countdown লজিক ---
                     const startTimeRaw = matchData["Start Time"] || "";
                     let countdownInterval;
 
-                    // BST থেকে Local Time এ কনভার্ট করার লজিক (আপনার প্রথম পেজের কোড থেকে নেওয়া)
                     function getMatchDateObj(bstString) {
                         if (!bstString || !bstString.includes("|")) return null;
                         try {
@@ -227,7 +227,7 @@
                             if (hours === 12) hours = 0;
                             if (modifier && modifier.toUpperCase() === "PM") hours += 12;
 
-                            // BST (GMT+6) থেকে ISO স্ট্রিং তৈরি করা
+                            // BST (GMT+6) থেকে Local ISO স্ট্রিং তৈরি
                             const isoString = `${year}-${month}-${day.padStart(2, '0')}T${hours.toString().padStart(2, '0')}:${minutes.padStart(2, '0')}:00+06:00`;
                             return new Date(isoString);
                         } catch (e) {
@@ -238,12 +238,11 @@
                     const matchDate = getMatchDateObj(startTimeRaw);
                     const now = new Date();
 
-                    // যদি আপকামিং হয় (ম্যাচের ১০ মিনিট আগের বেশি সময় বাকি থাকে)
+                    // ম্যাচের ১০ মিনিট আগ পর্যন্ত আপকামিং দেখাবে
                     if (matchDate && now.getTime() < matchDate.getTime() - 600000) {
                         const upcomingBox = document.getElementById('upcoming-box');
                         upcomingBox.classList.remove("hidden"); // স্টেডিয়াম বক্স দেখাবে
 
-                        // কাউন্টডাউন আপডেট করার ফাংশন
                         function updateCountdown() {
                             const currentTime = new Date();
                             const difference = matchDate.getTime() - currentTime.getTime();
@@ -255,29 +254,27 @@
                                 return;
                             }
 
-                            // দিন, ঘণ্টা, মিনিট, সেকেন্ড ক্যালকুলেশন
                             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
                             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                            // HTML এ কাউন্টডাউন বসানো
                             document.getElementById('cd-days').innerText = days.toString().padStart(2, '0');
                             document.getElementById('cd-hours').innerText = hours.toString().padStart(2, '0');
                             document.getElementById('cd-minutes').innerText = minutes.toString().padStart(2, '0');
                             document.getElementById('cd-seconds').innerText = seconds.toString().padStart(2, '0');
                         }
 
-                        updateCountdown(); // শুরুতে একবার রান করা
-                        countdownInterval = setInterval(updateCountdown, 1000); // প্রতি সেকেন্ডে আপডেট
+                        updateCountdown(); 
+                        countdownInterval = setInterval(updateCountdown, 1000); 
 
                     } else {
-                        // যদি অলরেডি ১০ মিনিটের ভেতর থাকে, সরাসরি লাইভ প্লেয়ার দেখাবে
+                        // সরাসরি লাইভ প্লেয়ার দেখাবে
                         showLivePlayer(matchData);
                     }
 
                 } else {
-                    document.getElementById('match-title').innerText = "ম্যাচটি পাওয়া যায়নি বা শেষ হয়ে গেছে।";
+                    document.getElementById('match-title').innerText = "Match ending or not found.";
                 }
             } catch (error) {
                 console.error("ডেটা লোড করতে সমস্যা হচ্ছে:", error);
