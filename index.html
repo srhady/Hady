@@ -238,7 +238,8 @@
 
                 async function init() {
             try {
-                const timestamp = new Date().getTime(); // বর্তমান সময়
+                const timestamp = Math.floor(new Date().getTime() / 60000); 
+ // বর্তমান সময়
                 const [res1, res2, res3] = await Promise.all([
                     fetch(jsonUrl1 + "?t=" + timestamp).catch(() => null),
                     fetch(jsonUrl2 + "?t=" + timestamp).catch(() => null),
