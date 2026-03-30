@@ -273,7 +273,8 @@
                 const jsonUrl1 = 'https://cdn.jsdelivr.net/gh/srhady/data@main/live_sports_playlist.json';
         const jsonUrl2 = 'https://cdn.jsdelivr.net/gh/srhady/crichd-speical-live-event@main/Live_Events.json';
         const jsonUrl3 = 'https://cdn.jsdelivr.net/gh/srhady/join_telegram_chennal-livesportsplay@main/custom.json';
-                const timestamp = new Date().getTime(); // বর্তমান সময়
+                const timestamp = Math.floor(new Date().getTime() / 60000); 
+ // বর্তমান সময়
                 const [res1, res2, res3] = await Promise.all([
                     fetch(jsonUrl1 + "?t=" + timestamp).catch(() => null),
                     fetch(jsonUrl2 + "?t=" + timestamp).catch(() => null),
