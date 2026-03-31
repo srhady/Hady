@@ -159,9 +159,10 @@
     </footer>
 
     <script>
-                const jsonUrl1 = 'https://cdn.jsdelivr.net/gh/srhady/data@main/live_sports_playlist.json';
-        const jsonUrl2 = 'https://cdn.jsdelivr.net/gh/srhady/crichd-speical-live-event@main/Live_Events.json';
-        const jsonUrl3 = 'https://cdn.jsdelivr.net/gh/srhady/join_telegram_chennal-livesportsplay@main/custom.json';
+                        // সিডিএন বাদ, সরাসরি গিটহাবের অরিজিনাল লিংক
+        const jsonUrl1 = 'https://raw.githubusercontent.com/srhady/data/main/live_sports_playlist.json';
+        const jsonUrl2 = 'https://raw.githubusercontent.com/srhady/crichd-speical-live-event/main/Live_Events.json';
+        const jsonUrl3 = 'https://raw.githubusercontent.com/srhady/join_telegram_chennal-livesportsplay/main/custom.json';
 
         
         let allMatches = []; 
@@ -236,15 +237,15 @@
             } catch(e) { return null; }
         }
 
-                async function init() {
+                        async function init() {
             try {
-                const timestamp = Math.floor(new Date().getTime() / 60000); 
- // বর্তমান সময়
+                // কোনো টাইমস্ট্যাম্প লাগবে না, গিটহাব নিজে ৫ মিনিট পরপর ফ্রেশ ডেটা দেবে
                 const [res1, res2, res3] = await Promise.all([
-                    fetch(jsonUrl1 + "?t=" + timestamp).catch(() => null),
-                    fetch(jsonUrl2 + "?t=" + timestamp).catch(() => null),
-                    fetch(jsonUrl3 + "?t=" + timestamp).catch(() => null)
+                    fetch(jsonUrl1).catch(() => null),
+                    fetch(jsonUrl2).catch(() => null),
+                    fetch(jsonUrl3).catch(() => null)
                 ]);
+
 
                 let data1 = res1 && res1.ok ? await res1.json() : [];
                 let data2 = res2 && res2.ok ? await res2.json() : { matches: [] };
