@@ -429,18 +429,24 @@ hs.src = ('//s10.histats.com/js15_as.js');
                 }
                 return true; 
             }).map(m => {
-                let isLive = (m["Match Status"] || "").toLowerCase().includes("live");
-                let is24x7 = (m["Start Time"] || "").trim() === "";
-                
-                if (!isLive && !is24x7) {
-                    const matchDate = getMatchDateObj(m["Start Time"]);
-                    if (matchDate) {
-                        // 🛑 ১০ মিনিট আগের অটো লাইভ লজিক 🛑
-                        if (now >= matchDate.getTime() - 600000) {
-                            isLive = true; 
-                        }
+                            let is24x7 = (m["Start Time"] || "").trim() === "";
+            let isLive = false;
+
+            if (is24x7) {
+                isLive = true; // 24/7 চ্যানেল সবসময় লাইভ
+            } else {
+                const matchDate = getMatchDateObj(m["Start Time"]);
+                if (matchDate) {
+                    // 🛑 JSON এর ভুয়া লাইভ বাদ! এখন শুধু ঘড়ির টাইমে লাইভ হবে 🛑
+                    if (now >= matchDate.getTime() - 600000) {
+                        isLive = true; 
                     }
+                } else {
+                    // যদি কোনো কারণে টাইম পার্স করতে না পারে, শুধু তখনই JSON বিশ্বাস করবে
+                    isLive = (m["Match Status"] || "").toLowerCase().includes("live");
                 }
+            }
+
                 return { ...m, _calculatedLive: isLive, _is24x7: is24x7 };
             });
 
