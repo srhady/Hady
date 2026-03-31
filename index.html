@@ -359,7 +359,8 @@ hs.src = ('//s10.histats.com/js15_as.js');
                 const month = monthMap[monthStr] || "01";
                 const year = new Date().getFullYear(); 
 
-                let [time, modifier] = timePart.split(" ");
+                let [time, modifier] = timePart.replace(/[\u202F\u00A0]/g, ' ').split(" ");
+
                 let [hours, minutes] = time.split(":");
                 hours = parseInt(hours, 10);
                 
