@@ -3,6 +3,16 @@
 #Telegrm Channel: https://t.me/livesportsplay 
 
 #EXTM3U
+
+#EXTINF:-1 tvg-logo="https://akashgo-mediaready.videoready.tv/akashgo/image/fetch/f_auto,fl_lossy,q_auto,w_180,h_180/https://tstatic.akash-go.com/cms-ui/images/custom-content/1758717217949.png" group-title="Sports",Laliga 1
+https://owrcovcrpy.gpcdn.net/bpk-tv/1730/output/1730-audio_113602_eng=113200-video=3224800.m3u8
+
+#EXTINF:-1 tvg-logo="https://akashgo-mediaready.videoready.tv/akashgo/image/fetch/f_auto,fl_lossy,q_auto,w_180,h_180/https://tstatic.akash-go.com/cms-ui/images/custom-content/1776653476147.png" group-title="Sports",Laliga 2
+https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/1731-audio_113612_eng=113200-video=3224800.m3u8
+
+#EXTINF:-1 tvg-logo="https://akashgo-mediaready.videoready.tv/akashgo/image/fetch/f_auto,fl_lossy,q_auto,w_180,h_180/https://tstatic.akash-go.com/cms-ui/images/custom-content/1777536947754.png" group-title="News",Akash Go
+https://owrcovcrpy.gpcdn.net/bpk-tv/1720/output/index.m3u8
+
 #EXTINF:-1 tvg-logo="https://akashgo-mediaready.videoready.tv/akashgo/image/fetch/f_auto,fl_lossy,q_auto,w_180,h_180/https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560219668.png" group-title="News",Jamuna TV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/1701-audio_113312_eng=113200-video=2202800.m3u8
 
