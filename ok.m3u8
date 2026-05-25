@@ -1,4 +1,5 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="1y6e-JQBv9knK3AHNDWb" tvg-logo="https://assets-prod.services.toffeelive.com/1y6e-JQBv9knK3AHNDWb/posters/ee9ba01b-1bcf-436b-b273-7b857f0810fb.webp" group-title="Teen",Cartoon Network HD +
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K)
-https://bldcmprod-cdn.toffeelive.com/cdn/live/cartoon_network_hd/playlist.m3u8|cookie=Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9ibGRjbXByb2QtY2RuLnRvZmZlZWxpdmUuY29t:Expires=1779896453:KeyName=prod_linear:Signature=tDKwtcYVSlSyKQNzSli3LhPQSjKo5tSbHpDkViMCJePs915wraJgIT_hI73egoaUfHuAR9ipHKsV8wR2GzKBBQ;
+#EXTVLCOPT:http-cookie=Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9ibGRjbXByb2QtY2RuLnRvZmZlZWxpdmUuY29t:Expires=1779896453:KeyName=prod_linear:Signature=tDKwtcYVSlSyKQNzSli3LhPQSjKo5tSbHpDkViMCJePs915wraJgIT_hI73egoaUfHuAR9ipHKsV8wR2GzKBBQ;
+https://bldcmprod-cdn.toffeelive.com/cdn/live/cartoon_network_hd/playlist.m3u8
