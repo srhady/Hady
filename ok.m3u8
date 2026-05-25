@@ -1,17 +1,4 @@
 #EXTM3U
-#EXT-X-VERSION:6
-
-#EXT-X-STREAM-INF:BANDWIDTH=3185600,RESOLUTION=1920x1080,CODECS="avc1.640028,mp4a.40.2"
-https://premierleageplnew2.akamaized.net/hls/live/2107109/tapmadenc-1/hdntl=exp=1778519061~acl=%2f*~data=hdntl~hmac=2e7357b6ef55e415753837d1793884b083e584aa57fcb9a87f785444e19f5c22/level_0.m3u8?hdnts=exp=1778433414~acl=/hls/*~hmac=9ca760b943fc894f627d81eccff80dcca4909c4df332051060bf217c1f9516d7
-
-#EXT-X-STREAM-INF:BANDWIDTH=2195600,RESOLUTION=1280x720,CODECS="avc1.64001f,mp4a.40.2"
-https://premierleageplnew2.akamaized.net/hls/live/2107109/tapmadenc-1/hdntl=exp=1778519061~acl=%2f*~data=hdntl~hmac=2e7357b6ef55e415753837d1793884b083e584aa57fcb9a87f785444e19f5c22/level_1.m3u8?hdnts=exp=1778433414~acl=/hls/*~hmac=9ca760b943fc894f627d81eccff80dcca4909c4df332051060bf217c1f9516d7
-
-#EXT-X-STREAM-INF:BANDWIDTH=1425600,RESOLUTION=960x540,CODECS="avc1.64001f,mp4a.40.2"
-https://premierleageplnew2.akamaized.net/hls/live/2107109/tapmadenc-1/hdntl=exp=1778519061~acl=%2f*~data=hdntl~hmac=2e7357b6ef55e415753837d1793884b083e584aa57fcb9a87f785444e19f5c22/level_2.m3u8?hdnts=exp=1778433414~acl=/hls/*~hmac=9ca760b943fc894f627d81eccff80dcca4909c4df332051060bf217c1f9516d7
-
-#EXT-X-STREAM-INF:BANDWIDTH=798600,RESOLUTION=640x360,CODECS="avc1.64001e,mp4a.40.2"
-https://premierleageplnew2.akamaized.net/hls/live/2107109/tapmadenc-1/hdntl=exp=1778519061~acl=%2f*~data=hdntl~hmac=2e7357b6ef55e415753837d1793884b083e584aa57fcb9a87f785444e19f5c22/level_3.m3u8?hdnts=exp=1778433414~acl=/hls/*~hmac=9ca760b943fc894f627d81eccff80dcca4909c4df332051060bf217c1f9516d7
-
-#EXT-X-STREAM-INF:BANDWIDTH=380600,RESOLUTION=480x270,CODECS="avc1.640015,mp4a.40.2"
-https://premierleageplnew2.akamaized.net/hls/live/2107109/tapmadenc-1/hdntl=exp=1778519061~acl=%2f*~data=hdntl~hmac=2e7357b6ef55e415753837d1793884b083e584aa57fcb9a87f785444e19f5c22/level_4.m3u8?hdnts=exp=1778433414~acl=/hls/*~hmac=9ca760b943fc894f627d81eccff80dcca4909c4df332051060bf217c1f9516d7
+#EXTINF:-1 tvg-id="1y6e-JQBv9knK3AHNDWb" tvg-logo="https://assets-prod.services.toffeelive.com/1y6e-JQBv9knK3AHNDWb/posters/ee9ba01b-1bcf-436b-b273-7b857f0810fb.webp" group-title="Teen",Cartoon Network HD +
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K)
+https://bldcmprod-cdn.toffeelive.com/cdn/live/cartoon_network_hd/playlist.m3u8|cookie=Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9ibGRjbXByb2QtY2RuLnRvZmZlZWxpdmUuY29t:Expires=1779896453:KeyName=prod_linear:Signature=tDKwtcYVSlSyKQNzSli3LhPQSjKo5tSbHpDkViMCJePs915wraJgIT_hI73egoaUfHuAR9ipHKsV8wR2GzKBBQ;
