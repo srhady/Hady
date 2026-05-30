@@ -1,7 +1,5 @@
 #EXTM3U
-
-#EXTINF:-1 tvg-logo="https://srhady-live-stream.hf.space/image?url=https://zrtghh.b-cdn.net/upload/photos/2026/03/Durotto.2026.jpg" group-title="Bangla Movie", Durotto (2026) Bengali BONGO 1080p
-https://zrtghh.b-cdn.net/s3/upload/videos/2026/03/[Fibwatch.Com]Durotto.(2026).Bengali.BONGO.1080p.mkv|Referer=https://fibwatch.art/
-
-#EXTINF:-1 tvg-logo="https://srhady-live-stream.hf.space/image?url=https://zrtghh.b-cdn.net/upload/photos/2026/04/Tumi.Ami.Shudhu.jpg" group-title="Bangla Movie", Tumi Ami Shudhu (2026) Bengali 1080P
-https://zrtghh.b-cdn.net/s3/upload/videos/2026/04/[Fibwatch.Com]Tumi.Ami.Shudhu.(2026).Bengali.1080P.mkv|Referer=https://fibwatch.art/
+#EXTINF:-1 tvg-id="DAZN" , DAZN Live Match
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c69ec6e000bc5075b1d5bf3114314c2a:613d06b8db37bc63af6b084d1572cdc4
+https://dca-ac-live.cdn.indazn.com/c8y7lnk4hthh1cpv80v94yhq1/web/stream.mpd?channel=9999&outlet=dazn-row&plang=en&dazn-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV1aWRfMSJ9.eyJwYXRocyI6WyIvYzh5N2xuazRodGhoMWNwdjgwdjk0eWhxMSJdLCJleGMiOltdLCJoZWFkZXJzIjpbInVzZXItYWdlbnQiXSwiY28iOnRydWUsImlwIjpmYWxzZSwiYXNuIjpbIjE1MDczMiIsIjE1MDc0MCJdLCJpbnRzaWciOiJMYTB5cGZkc05GbldzN2lqVWxsS0d3LXZoaGZDSWN0bVpXdHNBN1lkcDZJIiwiaWF0IjoxNzgwMTUyNjQ4LCJleHAiOjE3ODAyMzkwNDh9.nDDJrRINxG01XTnElp0nCRtrmUZ_5Fo_QHPiFPYu_5s|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Unique/96.7.6401.61&Origin=https://www.dazn.com&Referer=https://www.dazn.com/
