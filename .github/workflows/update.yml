@@ -1,31 +1,43 @@
-name: Auto Update Playlist
+name: Manual M3U Update
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
-  scrape-live-matches:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 চেকআউট রিপোজিটরি
+      - name: Checkout Private Repository
         uses: actions/checkout@v4
 
-      - name: 🟢 Node.js সেটআপ
-        uses: actions/setup-node@v4
+      - name: Checkout Target Repository
+        uses: actions/checkout@v4
         with:
-          node-version: '20' # <--- শুধু এই লাইনটা 18 থেকে 20 করা হয়েছে!
+          repository: srhady/Hady
+          token: ${{ secrets.PAT_TOKEN }}
+          path: target_repo
 
-      - name: 📦 ডিপেনডেন্সি ইনস্টল (Puppeteer & Cheerio)
-        run: npm install
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-      - name: 🚀 স্ক্র্যাপার রান করা
-        run: node scraper.js
+      - name: Install Dependencies
+        run: pip install requests
 
-      - name: 💾 প্লেলিস্ট গিটহাবে পুশ করা
+      - name: Execute Script
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add playlist.m3u
-          git commit -m "Auto Update Playlist: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || exit 0
-          git push
+          if [ -f "target_repo/akash_live.m3u" ]; then
+            cp target_repo/akash_live.m3u .
+          fi
+          python akash.py
+          cp akash_live.m3u target_repo/
+
+      - name: Commit and Push to Target
+        run: |
+          cd target_repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add akash_live.m3u
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update M3U Playlist" && git push)
