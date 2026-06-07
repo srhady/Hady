@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Private Repository
+      - name: Checkout Public Repository
         uses: actions/checkout@v4
 
-      - name: Checkout Target Repository
+      - name: Checkout Private Repository
         uses: actions/checkout@v4
         with:
-          repository: srhady/Hady
+          repository: srhady/axsportspvt
           token: ${{ secrets.PAT_TOKEN }}
-          path: target_repo
+          path: private_repo
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -28,15 +28,12 @@ jobs:
 
       - name: Execute Script
         run: |
-          if [ -f "target_repo/akash_live.m3u" ]; then
-            cp target_repo/akash_live.m3u .
-          fi
+          cp private_repo/akash.py .
           python akash.py
-          cp akash_live.m3u target_repo/
+          rm akash.py
 
-      - name: Commit and Push to Target
+      - name: Commit and Push Changes
         run: |
-          cd target_repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add akash_live.m3u
