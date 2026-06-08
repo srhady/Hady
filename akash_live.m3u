@@ -1,4 +1,70 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=822eab7b5615591c89190c0dcddf2290:90685179e49c5309ad2c3ab93e04ee4d
+https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
+#EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=7d992acc662f5cfcb774078ff3e72e5e:200585ec26f824965237e94925892e25
+https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
+#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=7d6631cd3d6b52eebad0a8a63323404d:29e707c3ac258d9573c94eb7acf44491
+https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
+#EXTINF:-1 tvg-id="165" tvg-name="CNN" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770610404979.png" group-title="News",CNN
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=ed5d7120d74956f382beba4f48751db2:1c16dce2649d4e9494c08626170ea047
+https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd
+#EXTINF:-1 tvg-id="153" tvg-name="Ten Cricket" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1745304841482.png" group-title="Sports",Ten Cricket
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9c14e66e5d3b53989090a22d918387af:3087a4d5fdab1138394164507cfa6d94
+https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
+#EXTINF:-1 tvg-id="142" tvg-name="Sony AATH" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906659479.png" group-title="Entertainment",Sony AATH
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=e958c267d2335c7cab5a6d2303518fe8:3b5e8c931ff780c427208a7f70fb53fb
+https://owrcovcrpy.gpcdn.net/bpk-tv/1732/output/index.mpd
+#EXTINF:-1 tvg-id="124" tvg-name="Sony Entertainment" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1740380280065.png" group-title="Entertainment",Sony Entertainment
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=5dcb660dd6b15b8d885d5e97c9009019:64ca1acb3ef7419f60d4b31d904f2ab8
+https://owrcovcrpy.gpcdn.net/bpk-tv/1718/output/index.mpd
+#EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=75ddf721ba9c577599fd3f1ede7613cf:6481d522cd03b3f44d0cc0dd7293cedd
+https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd
+#EXTINF:-1 tvg-id="90" tvg-name="Euro Sports HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1765256371720.png" group-title="Sports",Euro Sports HD
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=c00cf222c76059cf843c450933969dfb:13fa2405358f4d62dafb446f66191068
+https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd
+#EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Movies",Sony Max
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=0a7e84ef02b95c8dbc2abee82a5bb36d:6832f95792fb744bbef360a8e74e889a
+https://owrcovcrpy.gpcdn.net/bpk-tv/1730/output/index.mpd
+#EXTINF:-1 tvg-id="290" tvg-name="Sony Pix" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780311807965.png" group-title="Movies",Sony Pix
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=f8c8cb5c21415af4a4653d9d45153ba1:5613a57886d0c2c4a42332b9d0e4de9e
+https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd
 #EXTINF:-1 tvg-id="98" tvg-name="Somoy TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560559088.png" group-title="News",Somoy TV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8
 #EXTINF:-1 tvg-id="97" tvg-name="Jamuna TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560213832.png" group-title="News",Jamuna TV
