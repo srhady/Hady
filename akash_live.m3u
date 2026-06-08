@@ -27,7 +27,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=3a90746a7fb65b3f86e8a129f467fbc0:6a826ed0702d564fd50f33045dc07aef
+#KODIPROP:inputstream.adaptive.license_key=b41ccee1568b5101bdc0cc1b2935a493:907606ac99fbf264608accfb3684566e
 https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
 #EXTINF:-1 tvg-id="142" tvg-name="Sony AATH" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906659479.png" group-title="Entertainment",Sony AATH
 #KODIPROP:inputstream=inputstream.adaptive
