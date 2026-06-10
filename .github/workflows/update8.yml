@@ -1,0 +1,47 @@
+name: Auto Update IPTV Playlist
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Public Repository
+        uses: actions/checkout@v3
+        with:
+          path: public_repo
+
+      - name: Checkout Private Repository
+        uses: actions/checkout@v3
+        with:
+          repository: srhady/axsportspvt
+          token: ${{ secrets.PAT_TOKEN }}
+          path: private_repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Python Script
+        run: |
+          cd public_repo
+          python ../private_repo/unite8.py
+
+      - name: Commit and Push changes
+        run: |
+          cd public_repo
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add unite8_sports.m3u
+          git commit -m "Auto-updated unite8_sports.m3u" || echo "No changes to commit"
+          git push
