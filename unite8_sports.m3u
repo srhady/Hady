@@ -1,0 +1,5 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://exchange4media.gumlet.io/news-photo/155155-Z1.jpg", Unite8 Sports 1
+https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/index-connected.m3u8?hdnts=st=1781112365~exp=1781115365~acl=/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/*~id=04d1e7ad-9fe2-42f6-8710-4bc6e71fef1c~data=non-ssai_04d1e7ad-9fe2-42f6-8710-4bc6e71fef1c~hmac=95100eda4f7003f95f05a24f14cfa8cee2a457f4ab8f57f7691c86e0e9a44fc4&req_id=non-ssai_04d1e7ad-9fe2-42f6-8710-4bc6e71fef1c
+#EXTINF:-1 tvg-logo="https://exchange4media.gumlet.io/news-photo/155155-Z1.jpg", Unite8 Sports 2
+https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_2HD/index-connected/index-connected.m3u8?hdnts=st=1781112415~exp=1781115415~acl=/out/v1/ZEE5_Live_Channels/Unite8_Sports_2HD/index-connected/*~id=9e30a4b6-9995-4856-b813-95c7a8d7a4e9~data=non-ssai_9e30a4b6-9995-4856-b813-95c7a8d7a4e9~hmac=dfa37d117c8f8d0ce78409c3840920893b48c47fcb800ce418189736ad2c1bd2&req_id=non-ssai_9e30a4b6-9995-4856-b813-95c7a8d7a4e9
