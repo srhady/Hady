@@ -3,67 +3,67 @@
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=7ab7c3482c8252319e08d9b088a1a0c3:4262cb5c205282b76164a9759821c217
+#KODIPROP:inputstream.adaptive.license_key=2ac971508c095e7fb895ec2e5c897f7e:9b256438b08c91cde55a3df66618e862
 https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
 #EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=4f7b19b0c3eb514294a37064e874c263:4d49040687b27253903a6b81bb1be400
+#KODIPROP:inputstream.adaptive.license_key=1949f7fe47295e02afc27eb9d3ef9cf5:9b134db529eb992a387d41f0c4e993ff
 https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
 #EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=8c5c13e0dd1b591785f092f47e6df8e5:9f0f4d901525baafd1b4c099fe5d5fc8
+#KODIPROP:inputstream.adaptive.license_key=6470fd153e785ca3bff4ab2140200023:dd2007004d5026890660727946eb349a
 https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #EXTINF:-1 tvg-id="165" tvg-name="CNN" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770610404979.png" group-title="News",CNN
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=31e7d82e73015f658d28c68ad5d7c68d:3a320cb307ca3c14a6a65aac168a549d
+#KODIPROP:inputstream.adaptive.license_key=0e3ed11615ec5d73a7547103274f83eb:1f76b8899172f90eb622d62eef692933
 https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd
 #EXTINF:-1 tvg-id="153" tvg-name="Ten Cricket" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1745304841482.png" group-title="Sports",Ten Cricket
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=04181d05c5375b738390994a3cbb8329:f8d31fe3c8cf1b5fb612479ac33748dd
+#KODIPROP:inputstream.adaptive.license_key=2a2656dc1a1e5e5aa4fed4e93d48f510:bece5140753e25f5228fbefd877ea167
 https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
 #EXTINF:-1 tvg-id="142" tvg-name="Sony AATH" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906659479.png" group-title="Entertainment",Sony AATH
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=cfebbe5d783b543c9ec5c7d68c434b58:4bf7783dc0710900dfb9ea81ee9da87a
+#KODIPROP:inputstream.adaptive.license_key=6a2375b529e55f61ad6495968217faa4:17caa3ee8e4331d725cba4686e729d25
 https://owrcovcrpy.gpcdn.net/bpk-tv/1732/output/index.mpd
 #EXTINF:-1 tvg-id="124" tvg-name="Sony Entertainment" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1740380280065.png" group-title="Entertainment",Sony Entertainment
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=2bcc4211249e59119351e2fbe509eed1:18c873a175f3cb2d513e959f42edf74f
+#KODIPROP:inputstream.adaptive.license_key=f65c2e8f4f2d54ecab521de934041f1e:4b84e7cd6c914566fba318a84427d56d
 https://owrcovcrpy.gpcdn.net/bpk-tv/1718/output/index.mpd
 #EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=8ded7b87ab9d5a07ad96bd0411cad796:3c2b6b2655199906614982004a2f603c
+#KODIPROP:inputstream.adaptive.license_key=a452befdf2f55c20b915b0c3f6a2e1bc:0c2e9b736efc76c04a4830624f9d96e8
 https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd
 #EXTINF:-1 tvg-id="90" tvg-name="Euro Sports HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1765256371720.png" group-title="Sports",Euro Sports HD
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=0a93b16f5acf5dd9979563bfb559ee08:a32d3c8f148c49884f0fa076462b2047
+#KODIPROP:inputstream.adaptive.license_key=d6117d3923b45ba79cb49ffae51c4733:5e34a29631ac6f3632208ba0d6583702
 https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd
 #EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Movies",Sony Max
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=2f1a81b6871d5f7192ffe9f08057c758:e4bb6d4f7e48d13507e0c63268a89d42
+#KODIPROP:inputstream.adaptive.license_key=891b52600c9d59c0a95bb1ac9773fffb:40ce80cee5c8e807f8876116480ead63
 https://owrcovcrpy.gpcdn.net/bpk-tv/1730/output/index.mpd
 #EXTINF:-1 tvg-id="290" tvg-name="Sony Pix" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780311807965.png" group-title="Movies",Sony Pix
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=adb7447223eb572aa5d49fef241efa56:6a8f2c4ab02a193df0456447a31d4a4e
+#KODIPROP:inputstream.adaptive.license_key=d7c77e2be3b95938aa30a2a01b0e552c:dafcd9c39c95da8994808d7734d70d5b
 https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd
 #EXTINF:-1 tvg-id="97" tvg-name="Jamuna TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560213832.png" group-title="News",Jamuna TV
 https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/index.m3u8
