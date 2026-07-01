@@ -1,14 +1,4 @@
-#EXTM3U                                                        
-#EXT-X-VERSION:6
-#EXT-X-INDEPENDENT-SEGMENTS                                      
-#EXT-X-MEDIA:LANGUAGE="eng",AUTOSELECT=YES,CHANNELS="2",TYPE=AUDIO,URI="variant_7.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92",GROUP-ID="program_audio",DEFAULT=YES,NAME="Alternate Audio"
-#EXT-X-STREAM-INF:CODECS="mp4a.40.2,avc1.4D401F",AVERAGE-BANDWIDTH=760320,RESOLUTION=640x360,VIDEO-RANGE=SDR,FRAME-RATE=25.0,BANDWIDTH=775307,AUDIO="program_audio"
-https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/variant_2.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92
-#EXT-X-STREAM-INF:CODECS="mp4a.40.2,avc1.4D401F",AVERAGE-BANDWIDTH=1256200,RESOLUTION=854x480,VIDEO-RANGE=SDR,FRAME-RATE=25.0,BANDWIDTH=1271158,AUDIO="program_audio"
-https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/variant_3.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92
-#EXT-X-STREAM-INF:CODECS="mp4a.40.2,avc1.4D4029",AVERAGE-BANDWIDTH=1525700,RESOLUTION=1024x576,VIDEO-RANGE=SDR,FRAME-RATE=25.0,BANDWIDTH=1540644,AUDIO="program_audio"
-https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/variant_4.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92
-#EXT-X-STREAM-INF:CODECS="mp4a.40.2,avc1.4D4029",AVERAGE-BANDWIDTH=2334200,RESOLUTION=1280x720,VIDEO-RANGE=SDR,FRAME-RATE=25.0,BANDWIDTH=2349158,AUDIO="program_audio"
-https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/variant_5.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92
-#EXT-X-STREAM-INF:CODECS="mp4a.40.2,avc1.640029",AVERAGE-BANDWIDTH=4598000,RESOLUTION=1920x1080,VIDEO-RANGE=SDR,FRAME-RATE=25.0,BANDWIDTH=4612987,AUDIO="program_audio"
-https://z5live-cf.zee5.com/out/v1/ZEE5_Live_Channels/Unite8_Sports_1HD/index-connected/variant_6.m3u8?hdntl=exp=1781199300~acl=%2fout%2fv1%2fZEE5_Live_Channels%2fUnite8_Sports_1HD%2findex-connected%2f*~id=3dab1062-6f66-4ee8-b8ab-113882e8368d~data=hdntl,non-ssai_3dab1062-6f66-4ee8-b8ab-113882e8368d~hmac=36ffa2700332dd06d4e077692c262cb1ec44b193a55d5b7ff4c039051ebe4b92
+#EXTM3U
+#EXTINF:-1 tvg-name="ESPN Deportes" tvg-logo="" group-title="SPORTS", ESPN Deportes
+#EXTVLCOPT:http-referrer=https://executeandship.com/
+https://cdn4.zohanayaan.com:1686/hls/espndeportess.m3u8?md5=mnVPD_aMu_o0rNDz3a5g3w&expires=1782896031
