@@ -42,34 +42,37 @@ Name: ┃UK┃ RACING TV UK HD
 Link: ffmpeg http://line.tvdsz.cc:80/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1312829&extension=m3u8&play_token=iHHgoOyIpr
 EOF
 
-# ডাটা প্রসেসিং শুরু
-grep -E "^Name:|^Link:" raw_data.txt | paste - - | while read -r name_line link_line; do
-    
-    # নাম এবং ক্লিন নাম বের করা
-    original_name=$(echo "$name_line" | sed 's/Name: //g')
-    clean_name=$(echo "$original_name" | sed 's/[^a-zA-Z0-9 ]//g' | sed 's/  */ /g' | sed 's/^ *//;s/ *$//')
-    file_name=$(echo "$clean_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').m3u8
-    
-    # লিংক ক্লিন করা
-    raw_url=$(echo "$link_line" | sed 's/Link: //g' | sed 's/ffmpeg //g' | sed 's/&play_token=.*//g')
-    
-    # ডামি টিভিজি লোগো তৈরি
-    logo_text=$(echo "$clean_name" | sed 's/ /+/g')
-    tvg_logo="https://ui-avatars.com/api/?name=${logo_text}&background=0D8ABC&color=fff&size=200"
-    
-    # সাবফোল্ডারে 4 লাইনের m3u8 ফাইল তৈরি
-    cat << INLINE_EOF > "$FOLDER_NAME/$file_name"
+# লাইন-বাই-লাইন লুপ (যাতে কোনো ডাটা মিস না হয় বা মিক্স না হয়)
+while read -r line; do
+    if [[ "$line" == Name:* ]]; then
+        # শুধু আসল নামটা বের করা হচ্ছে
+        original_name="${line#Name: }"
+        
+        # ফাইলের নামের জন্য স্পেশাল ক্যারেক্টার বাদ দিয়ে ক্লিন করা
+        clean_name=$(echo "$original_name" | sed 's/[^a-zA-Z0-9 ]//g' | tr -s ' ' | sed 's/^ *//;s/ *$//')
+        file_name=$(echo "$clean_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').m3u8
+        
+        # লোগোর জন্য টেক্সট রেডি করা
+        logo_text=$(echo "$clean_name" | tr ' ' '+')
+        tvg_logo="https://ui-avatars.com/api/?name=${logo_text}&background=0D8ABC&color=fff&size=200"
+
+    elif [[ "$line" == Link:* ]]; then
+        # লিংক থেকে সব আবর্জনা (ffmpeg, play_token) বাদ দিয়ে একদম ফ্রেশ http লিংকটা বের করা হচ্ছে
+        raw_url=$(echo "$line" | grep -o 'http.*' | sed 's/&play_token=.*//')
+        
+        # ১. সাবফোল্ডারে একদম ক্লিন 4 লাইনের m3u8 ফাইল তৈরি (কোনো নামের অংশ লিংকে ঢুকবে না)
+        cat << INLINE_EOF > "$FOLDER_NAME/$file_name"
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-STREAM-INF:BANDWIDTH=4000000,RESOLUTION=1920x1080
 $raw_url
 INLINE_EOF
 
-    # মেইন প্লেলিস্টে ডাটা যুক্ত করা
-    echo "#EXTINF:-1 tvg-id=\"\" tvg-logo=\"$tvg_logo\" group-title=\"UK SKY SPORTS\", $original_name" >> main.m3u
-    echo "$GITHUB_RAW_URL/$file_name" >> main.m3u
-
-done
+        # ২. মেইন প্লেলিস্টে ডাটা যুক্ত করা (এখানে ১৪টা চ্যানেলের ১৪টা আলাদা লিংক তৈরি হবে)
+        echo "#EXTINF:-1 tvg-id=\"\" tvg-logo=\"$tvg_logo\" group-title=\"UK SKY SPORTS\", $original_name" >> main.m3u
+        echo "$GITHUB_RAW_URL/$file_name" >> main.m3u
+    fi
+done < raw_data.txt
 
 # টেম্পোরারি ফাইল মুছে ফেলা
 rm raw_data.txt
