@@ -7,8 +7,8 @@ GITHUB_RAW_URL="https://raw.githubusercontent.com/srhady/Hady/main/$FOLDER_NAME"
 # সাবফোল্ডার তৈরি করা হচ্ছে
 mkdir -p "$FOLDER_NAME"
 
-# মেইন প্লেলিস্ট তৈরি শুরু
-echo "#EXTM3U x-tvg-url=\"\"" > main.m3u
+# মেইন প্লেলিস্ট তৈরি শুরু (প্রথম লাইনে শুধু #EXTM3U থাকবে)
+echo "#EXTM3U" > sky-sports.m3u
 
 # সবগুলো চ্যানেলের অরিজিনাল ডেটা
 cat << 'EOF' > raw_data.txt
@@ -42,25 +42,40 @@ Name: ┃UK┃ RACING TV UK HD
 Link: ffmpeg http://line.tvdsz.cc:80/play/live.php?mac=00:1A:79:B5:AD:FB&stream=1312829&extension=m3u8&play_token=iHHgoOyIpr
 EOF
 
-# লাইন-বাই-লাইন লুপ (যাতে কোনো ডাটা মিস না হয় বা মিক্স না হয়)
+# ডাটা প্রসেসিং শুরু
 while read -r line; do
     if [[ "$line" == Name:* ]]; then
-        # শুধু আসল নামটা বের করা হচ্ছে
         original_name="${line#Name: }"
         
-        # ফাইলের নামের জন্য স্পেশাল ক্যারেক্টার বাদ দিয়ে ক্লিন করা
-        clean_name=$(echo "$original_name" | sed 's/[^a-zA-Z0-9 ]//g' | tr -s ' ' | sed 's/^ *//;s/ *$//')
-        file_name=$(echo "$clean_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_').m3u8
+        # tvg-name এর আগে থেকে UK এবং সব চিহ্ণ বাদ দিয়ে সরাসরি ফ্রেশ নাম নেওয়া হচ্ছে
+        clean_name=$(echo "$original_name" | sed 's/☰//g' | sed 's/┃UK┃ //g' | sed 's/┃//g' | tr -s ' ' | sed 's/^ *//;s/ *$//')
         
-        # লোগোর জন্য টেক্সট রেডি করা
-        logo_text=$(echo "$clean_name" | tr ' ' '+')
-        tvg_logo="https://ui-avatars.com/api/?name=${logo_text}&background=0D8ABC&color=fff&size=200"
+        # সাবফোল্ডারের ফাইলের নামের জন্য স্পেশাল ক্যারেক্টার বাদ দেওয়া হচ্ছে
+        file_name=$(echo "$clean_name" | sed 's/[^a-zA-Z0-9 ]//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '_').m3u8
+        
+        # আপনার দেওয়া লোগো লিংকগুলো সুনির্দিষ্টভাবে সেট করা হচ্ছে
+        case "$clean_name" in
+            *"NEWS"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/c/cc/Sky_Sport_News_2020.svg/revision/latest/scale-to-width-down/284?cb=20201029124150" ;;
+            *"MAIN EVENT"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/d/d7/Sky_Sports_Main_Event_Stacked.svg/revision/latest/scale-to-width-down/250?cb=20220728001048" ;;
+            *"PREMIER LEAGUE"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/3/3e/Sky_Sports_Premier_League_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225151004" ;;
+            *"FOOTBALL"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/0/0f/Sky_Sports_Football_2025.svg/revision/latest/scale-to-width-down/300?cb=20260227133651" ;;
+            *"MIX"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/f/f2/Sky_Sports_Mix_2025.svg/revision/latest/scale-to-width-down/284?cb=20260226213635" ;;
+            *"ACTION"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/e/e5/Sky_Sports_Action_2026.svg/revision/latest/scale-to-width-down/300?cb=20260225145802" ;;
+            *"F1"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/5/5c/Sky_Sports_F1_2025.svg/revision/latest/scale-to-width-down/284?cb=20260225145601" ;;
+            *"RACING TV"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/d/d0/Racing_TV_2018.svg/revision/latest/scale-to-width-down/300?cb=20210627150820" ;;
+            *"RACING"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/f/fe/Sky_Sports_Racing_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226213414" ;;
+            *"TENNIS"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/f/f0/Sky_Sports_Tennis_2025.svg/revision/latest/scale-to-width-down/340?cb=20260226213228" ;;
+            *"GOLF"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/9/90/Sky_Sports_Golf_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226212716" ;;
+            *"CRICKET"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/1/1e/Sky_Sports_Cricket_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225150529" ;;
+            *"+"*) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/6/66/Sky_Sports_Plus_2025.svg/revision/latest/scale-to-width-down/340?cb=20260225151219" ;;
+            *) tvg_logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/300" ;;
+        esac
 
     elif [[ "$line" == Link:* ]]; then
-        # লিংক থেকে সব আবর্জনা (ffmpeg, play_token) বাদ দিয়ে একদম ফ্রেশ http লিংকটা বের করা হচ্ছে
+        # লিংক থেকে আবর্জনা কেটে ফ্রেশ ইউআরএল বের করা হচ্ছে
         raw_url=$(echo "$line" | grep -o 'http.*' | sed 's/&play_token=.*//')
         
-        # ১. সাবফোল্ডারে একদম ক্লিন 4 লাইনের m3u8 ফাইল তৈরি (কোনো নামের অংশ লিংকে ঢুকবে না)
+        # ১. সাবফোল্ডারে একদম ক্লিন ৪ লাইনের ফাইল তৈরি
         cat << INLINE_EOF > "$FOLDER_NAME/$file_name"
 #EXTM3U
 #EXT-X-VERSION:3
@@ -68,9 +83,9 @@ while read -r line; do
 $raw_url
 INLINE_EOF
 
-        # ২. মেইন প্লেলিস্টে ডাটা যুক্ত করা (এখানে ১৪টা চ্যানেলের ১৪টা আলাদা লিংক তৈরি হবে)
-        echo "#EXTINF:-1 tvg-id=\"\" tvg-logo=\"$tvg_logo\" group-title=\"UK SKY SPORTS\", $original_name" >> main.m3u
-        echo "$GITHUB_RAW_URL/$file_name" >> main.m3u
+        # ২. মেইন প্লেলিস্টে ডাটা যুক্ত করা (tvg-name সরাসরি ক্লিন নাম হবে)
+        echo "#EXTINF:-1 tvg-name=\"$clean_name\" tvg-logo=\"$tvg_logo\" group-title=\"UK SKY SPORTS\", $original_name" >> sky-sports.m3u
+        echo "$GITHUB_RAW_URL/$file_name" >> sky-sports.m3u
     fi
 done < raw_data.txt
 
