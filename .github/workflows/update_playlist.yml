@@ -24,7 +24,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git add sky_sports/ main.m3u
-          # যদি কোনো পরিবর্তন থাকে তবেই কমিট করবে
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-updated IPTV Playlist & Subfolders"
+          git add -A
+          git diff --staged --quiet || git commit -m "Auto-updated IPTV Playlist & Subfolders"
           git push
