@@ -1,0 +1,30 @@
+name: Auto Generate IPTV Playlist
+
+on:
+  push:
+    paths:
+      - 'generate.sh' # স্ক্রিপ্ট আপডেট করলে নিজে রান হবে
+  workflow_dispatch: # ম্যানুয়ালি রান করার জন্য
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Make Script Executable
+        run: chmod +x generate.sh
+
+      - name: Run Playlist Generator Script
+        run: ./generate.sh
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add sky_sports/ main.m3u
+          # যদি কোনো পরিবর্তন থাকে তবেই কমিট করবে
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-updated IPTV Playlist & Subfolders"
+          git push
