@@ -1,29 +1,29 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="SKY SPORTS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/300" group-title="UK SKY SPORTS", ☰☰☰☰ ┃UK┃ SKY SPORTS HD ☰☰☰☰
+#EXTINF:-1 tvg-name="SKY SPORTS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b7/Sky_Sports_2025.svg/revision/latest/scale-to-width-down/300" group-title="UK SKY SPORTS", SKY SPORTS HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS NEWS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cc/Sky_Sport_News_2020.svg/revision/latest/scale-to-width-down/284?cb=20201029124150" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS NEWS HD
+#EXTINF:-1 tvg-name="SKY SPORTS NEWS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/cc/Sky_Sport_News_2020.svg/revision/latest/scale-to-width-down/284?cb=20201029124150" group-title="UK SKY SPORTS", SKY SPORTS NEWS HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_news_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS MAIN EVENT HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d7/Sky_Sports_Main_Event_Stacked.svg/revision/latest/scale-to-width-down/250?cb=20220728001048" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS MAIN EVENT HD
+#EXTINF:-1 tvg-name="SKY SPORTS MAIN EVENT HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d7/Sky_Sports_Main_Event_Stacked.svg/revision/latest/scale-to-width-down/250?cb=20220728001048" group-title="UK SKY SPORTS", SKY SPORTS MAIN EVENT HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_main_event_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS PREMIER LEAGUE HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/3e/Sky_Sports_Premier_League_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225151004" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS PREMIER LEAGUE HD
+#EXTINF:-1 tvg-name="SKY SPORTS PREMIER LEAGUE HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/3e/Sky_Sports_Premier_League_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225151004" group-title="UK SKY SPORTS", SKY SPORTS PREMIER LEAGUE HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_premier_league_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS FOOTBALL HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0f/Sky_Sports_Football_2025.svg/revision/latest/scale-to-width-down/300?cb=20260227133651" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS FOOTBALL HD
+#EXTINF:-1 tvg-name="SKY SPORTS FOOTBALL HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/0/0f/Sky_Sports_Football_2025.svg/revision/latest/scale-to-width-down/300?cb=20260227133651" group-title="UK SKY SPORTS", SKY SPORTS FOOTBALL HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_football_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS MIX HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f2/Sky_Sports_Mix_2025.svg/revision/latest/scale-to-width-down/284?cb=20260226213635" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS MIX HD
+#EXTINF:-1 tvg-name="SKY SPORTS MIX HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f2/Sky_Sports_Mix_2025.svg/revision/latest/scale-to-width-down/284?cb=20260226213635" group-title="UK SKY SPORTS", SKY SPORTS MIX HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_mix_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS ACTION / NFL HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e5/Sky_Sports_Action_2026.svg/revision/latest/scale-to-width-down/300?cb=20260225145802" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS ACTION / NFL HD
+#EXTINF:-1 tvg-name="SKY SPORTS ACTION / NFL HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/e/e5/Sky_Sports_Action_2026.svg/revision/latest/scale-to-width-down/300?cb=20260225145802" group-title="UK SKY SPORTS", SKY SPORTS ACTION / NFL HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_action__nfl_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS F1 HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5c/Sky_Sports_F1_2025.svg/revision/latest/scale-to-width-down/284?cb=20260225145601" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS F1 HD
+#EXTINF:-1 tvg-name="SKY SPORTS F1 HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5c/Sky_Sports_F1_2025.svg/revision/latest/scale-to-width-down/284?cb=20260225145601" group-title="UK SKY SPORTS", SKY SPORTS F1 HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_f1_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS RACING HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fe/Sky_Sports_Racing_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226213414" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS RACING HD
+#EXTINF:-1 tvg-name="SKY SPORTS RACING HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/fe/Sky_Sports_Racing_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226213414" group-title="UK SKY SPORTS", SKY SPORTS RACING HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_racing_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS TENNIS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f0/Sky_Sports_Tennis_2025.svg/revision/latest/scale-to-width-down/340?cb=20260226213228" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS TENNIS HD
+#EXTINF:-1 tvg-name="SKY SPORTS TENNIS HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f0/Sky_Sports_Tennis_2025.svg/revision/latest/scale-to-width-down/340?cb=20260226213228" group-title="UK SKY SPORTS", SKY SPORTS TENNIS HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_tennis_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS GOLF HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/90/Sky_Sports_Golf_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226212716" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS GOLF HD
+#EXTINF:-1 tvg-name="SKY SPORTS GOLF HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/9/90/Sky_Sports_Golf_2025.svg/revision/latest/scale-to-width-down/300?cb=20260226212716" group-title="UK SKY SPORTS", SKY SPORTS GOLF HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_golf_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS CRICKET HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/1e/Sky_Sports_Cricket_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225150529" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS CRICKET HD
+#EXTINF:-1 tvg-name="SKY SPORTS CRICKET HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/1/1e/Sky_Sports_Cricket_2025.svg/revision/latest/scale-to-width-down/300?cb=20260225150529" group-title="UK SKY SPORTS", SKY SPORTS CRICKET HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_cricket_hd.m3u8
-#EXTINF:-1 tvg-name="SKY SPORTS+ HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/66/Sky_Sports_Plus_2025.svg/revision/latest/scale-to-width-down/340?cb=20260225151219" group-title="UK SKY SPORTS", ┃UK┃ SKY SPORTS+ HD
+#EXTINF:-1 tvg-name="SKY SPORTS+ HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/66/Sky_Sports_Plus_2025.svg/revision/latest/scale-to-width-down/340?cb=20260225151219" group-title="UK SKY SPORTS", SKY SPORTS+ HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/sky_sports_hd.m3u8
-#EXTINF:-1 tvg-name="RACING TV UK HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d0/Racing_TV_2018.svg/revision/latest/scale-to-width-down/300?cb=20210627150820" group-title="UK SKY SPORTS", ┃UK┃ RACING TV UK HD
+#EXTINF:-1 tvg-name="RACING TV UK HD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d0/Racing_TV_2018.svg/revision/latest/scale-to-width-down/300?cb=20210627150820" group-title="UK SKY SPORTS", RACING TV UK HD
 https://raw.githubusercontent.com/srhady/Hady/main/sky_sports/racing_tv_uk_hd.m3u8
