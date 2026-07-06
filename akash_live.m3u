@@ -27,13 +27,13 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=89487b0ac9fa51b18407613731c2eaaf:49437c56f72f6a811c26df0f5a12f9d3
+#KODIPROP:inputstream.adaptive.license_key=47256bc3c6ae5f79b2a65733c05e76fc:94c8bf760361c2fb2fdc45b92e071ea4
 https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
 #EXTINF:-1 tvg-id="90" tvg-name="Euro Sports HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1765256371720.png" group-title="Sports",Euro Sports HD
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=a8e1600effc0587289d9538751345a84:e31d9384ac8e2e98e48c136eef965336
+#KODIPROP:inputstream.adaptive.license_key=e8b496c8f5ca5f628699ea6e13b4a907:42384a8431566b70a79400845d1f3866
 https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd
 #EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Movies",Sony Max
 #KODIPROP:inputstream=inputstream.adaptive
