@@ -3,25 +3,25 @@
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=9f39f66c8d8057da9f5acf0c95926c01:1a77daa577db15d8007d52bae66f14c8
+#KODIPROP:inputstream.adaptive.license_key=9e86f6d4fb795b3c997d83ba86e9d51a:ab4dfe15161103d505cf59c85aa73898
 https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
 #EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=ea870ba519265cca9a1b7fb5d85057ae:c3068b6305c7505085087a7034a46380
+#KODIPROP:inputstream.adaptive.license_key=1c2babb545f9573f8c7e4e4f9b9a3a37:b15f8bdf752c3a644dc84cb9cbd2e318
 https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=c3a12b01e33f5f74b5d4b060369068f1:d6c1c7fdd52ebac8203a223c45cf82df
+#KODIPROP:inputstream.adaptive.license_key=339d073de04359ea8c811cd18290647e:2326d1d1fa94292adf14aa3ee23488de
 https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
 #EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=74db6e2b954d5538a401018bfc852436:df6ede9ccdb349d57e7c3575dfecf816
+#KODIPROP:inputstream.adaptive.license_key=bec233967a9753b0b751e2b4b0ae1eef:6b5f5ea4ab0720e1af1b4a58cce4c19d
 https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd
 #EXTINF:-1 tvg-id="153" tvg-name="Ten Cricket" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1745304841482.png" group-title="Sports",Ten Cricket
 #KODIPROP:inputstream=inputstream.adaptive
