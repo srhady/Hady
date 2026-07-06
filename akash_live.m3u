@@ -33,7 +33,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=1af453d65fb25173b7fa1f98473217e8:bbd94b6fe55890dadfcaa45094751843
+#KODIPROP:inputstream.adaptive.license_key=9e7484c87cbf5f6fa4b620dc023ed61c:d8cea3a5e5b992faa8f55407331aff31
 https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd
 #EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Movies",Sony Max
 #KODIPROP:inputstream=inputstream.adaptive
@@ -63,7 +63,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1718/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=26aca4b893ea5dee812e1ed4a9477cb0:95b489ddc676638abb1e059450676e93
+#KODIPROP:inputstream.adaptive.license_key=cc101ba294fb507c918134e6c4b51304:7ea307a482da3ddda1831ae6efd84243
 https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd
 #EXTINF:-1 tvg-id="228" tvg-name="BTV Shangshad" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773247382366.png" group-title="News",BTV Shangshad
 https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
