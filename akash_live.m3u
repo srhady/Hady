@@ -3,7 +3,7 @@
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=c29935d0d07b517d9d12c1d177c4bfbe:535fb45787a629b787ec8b7caf8845ff
+#KODIPROP:inputstream.adaptive.license_key=4b6369ce92a1589b94b870b6ca9c506b:5a75263daef4f64d624c3a02bf1c8ed3
 https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
 #EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
 #KODIPROP:inputstream=inputstream.adaptive
@@ -15,7 +15,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=40047398cd5d507796a8cc733ee40a4f:dd26e6d637bf70ac1a3391816c12c383
+#KODIPROP:inputstream.adaptive.license_key=edf1fd668de052389caea0660ed81a4d:49ca2b42504eb0542976ecb8da0935c4
 https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
 #EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
 #KODIPROP:inputstream=inputstream.adaptive
