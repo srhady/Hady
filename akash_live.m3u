@@ -1,25 +1,5 @@
 #EXTM3U
-#DATE:- 12-07-2026 03:16 PM (BST)
-#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=80848ec39c445776998fae0b41309676:f3fb2562d15d9c73ba67c26c3d3bb714
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTVLCOPT:http-referrer=https://akashgo.com/
-#EXTVLCOPT:http-origin=https://akashgo.com
-#EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
-#EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=08d9fd995ed851adb6c8afd07341d147:ab2b2a1a6a054d7664955a5c4b6d28e6
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTVLCOPT:http-referrer=https://akashgo.com/
-#EXTVLCOPT:http-origin=https://akashgo.com
-#EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
+#DATE:- 12-07-2026 03:31 PM (BST)
 #EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
@@ -30,26 +10,6 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
 #EXTVLCOPT:http-origin=https://akashgo.com
 #EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
-#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=b0216a17e7f8506cbacd81f710d0b0ef:97055f0681d4c7e1c81445b5433bd3b1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTVLCOPT:http-referrer=https://akashgo.com/
-#EXTVLCOPT:http-origin=https://akashgo.com
-#EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
-#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=80848ec39c445776998fae0b41309676:f3fb2562d15d9c73ba67c26c3d3bb714
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTVLCOPT:http-referrer=https://akashgo.com/
-#EXTVLCOPT:http-origin=https://akashgo.com
-#EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
@@ -60,6 +20,16 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #EXTVLCOPT:http-origin=https://akashgo.com
 #EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
+#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=80848ec39c445776998fae0b41309676:f3fb2562d15d9c73ba67c26c3d3bb714
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTVLCOPT:http-referrer=https://akashgo.com/
+#EXTVLCOPT:http-origin=https://akashgo.com
+#EXTHTTP:{"referer":"https://akashgo.com/","origin":"https://akashgo.com"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
