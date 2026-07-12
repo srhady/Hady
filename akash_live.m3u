@@ -1,5 +1,5 @@
 #EXTM3U
-#DATE:- 12-07-2026 05:56 PM (BST)
+#DATE:- 12-07-2026 06:11 PM (BST)
 #EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
@@ -54,7 +54,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=11f05b1eaf355774bdc0afea76192c04:c28c501ff3506fc08ae283aef5c3befc
+#KODIPROP:inputstream.adaptive.license_key=18e74d67769f58b08186ea24f6e0c4f9:927b4892d800d693b730297f53339bc7
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -84,7 +84,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1732/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=bc82a1437b2b518288ce587f9d6efc67:9f55370dcd535b3239ddf901c84ba9b0
+#KODIPROP:inputstream.adaptive.license_key=1e86f0d599f4502d9afa8a50821dce86:5e93068b0de5487788d52385bb9f2cab
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -94,7 +94,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=1d542715ab425e2e94b322895726635b:faa6e2dd9cb2a28fbb4a8e4240f292b4
+#KODIPROP:inputstream.adaptive.license_key=cfe3210f7fc150a58279237ded763a6f:c7f2255d38fa5d4fec1c3191faad4303
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
