@@ -1,9 +1,10 @@
 #EXTM3U
+#DATE:- 12-07-2026 03:11 PM (BST)
 #EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=63ca5610a0fb51c3bacb82376b61793e:9ffbff6fed2a6720b2c4cfe8c97dc2c3
+#KODIPROP:inputstream.adaptive.license_key=80848ec39c445776998fae0b41309676:f3fb2562d15d9c73ba67c26c3d3bb714
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -13,7 +14,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=53dd15dc250c5df1a02e774fd801c069:88e3b50d2f19fe2ec79ca2e8156de669
+#KODIPROP:inputstream.adaptive.license_key=08d9fd995ed851adb6c8afd07341d147:ab2b2a1a6a054d7664955a5c4b6d28e6
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -43,7 +44,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=63ca5610a0fb51c3bacb82376b61793e:9ffbff6fed2a6720b2c4cfe8c97dc2c3
+#KODIPROP:inputstream.adaptive.license_key=80848ec39c445776998fae0b41309676:f3fb2562d15d9c73ba67c26c3d3bb714
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -53,7 +54,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=53dd15dc250c5df1a02e774fd801c069:88e3b50d2f19fe2ec79ca2e8156de669
+#KODIPROP:inputstream.adaptive.license_key=08d9fd995ed851adb6c8afd07341d147:ab2b2a1a6a054d7664955a5c4b6d28e6
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -63,7 +64,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=0834fd0571e65ff586c019aa784ca69f:66c8ad394cba3364ad870da6e174b7ad
+#KODIPROP:inputstream.adaptive.license_key=bab9165bbec253ae93fd4c21f658479f:4af0f6668a030805b7614b0567338c3a
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -73,7 +74,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=9fce1f71ef575fc0ac179a3c2866fbd1:a73639b40aafe6f02992fb03d73871bc
+#KODIPROP:inputstream.adaptive.license_key=6571cbd817ee5e4683622aedc14aac3d:668f7413a92c2a1b60e5f1c527f510b8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
