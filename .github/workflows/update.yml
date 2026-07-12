@@ -24,7 +24,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests pywidevine
+        run: pip install requests pywidevine pysocks
 
       - name: Execute Script
         run: |
