@@ -8,12 +8,3 @@
 #EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
 
-
-#EXTINF:-1 tvg-id="DAZN" tvg-name="Karonga United vs. Silver Strikers",Karonga United vs. Silver Strikers
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://license.drm.indazn.com/widevine/v1/license?legacyContentId=prod-live1&contentId=jsga4skdrgb11qxhceftaghop&platform=web&manufacturer=microsoft&model=unknown&appVersion=0.143.3&uid=afc4fa0b-bce8-4c8b-a946-bb45342ff87d&accountStatus=Partial&assetId=d5cxaaqi30um1hlwdw075weeo&aexp=1783884600000&tid=522a9311-b5d9-4744-b33d-fca4e47090ea&uexp=1783946550166&mediaType=live&mediaId=jsga4skdrgb11qxhceftaghop&metadata=country%3Dbd%26ftv%3Dtrue&hash=4f8cd8a1e0aedff2131a9fe167f67a98c20fe888e5ffc96219904113424dc644&dazn-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV1aWRfMSJ9.eyJwYXRocyI6WyIvanNnYTRza2RyZ2IxMXF4aGNlZnRhZ2hvcCJdLCJleGMiOltdLCJoZWFkZXJzIjpbInVzZXItYWdlbnQiXSwiY28iOnRydWUsImlwIjpmYWxzZSwiYXNuIjpbIjE1MDczMiIsIjE1MDc0MCJdLCJpbnRzaWciOiIzSlpoazU4NDktckhNbExuZlhucFVvYlhUcmlxNE9pZXVvaGFRVFNCMDEwIiwiaWF0IjoxNzgzODYwMTUwLCJleHAiOjE3ODM5NDY1NTB9.Lt1kskD15lPX_7qHJlq4-yZK9gmGx5305rD6buSJcCU|Origin=https://www.dazn.com&Referer=https://www.dazn.com/&Content-Type=application/octet-stream|R{SSM}|
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTHTTP:{"origin":"https://www.dazn.com","referer":"https://www.dazn.com/"}
-https://dca-ac-live.cdn.indazn.com/jsga4skdrgb11qxhceftaghop/web/stream.mpd?channel=9999&outlet=dazn-row&plang=en&dazn-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV1aWRfMSJ9.eyJwYXRocyI6WyIvanNnYTRza2RyZ2IxMXF4aGNlZnRhZ2hvcCJdLCJleGMiOltdLCJoZWFkZXJzIjpbInVzZXItYWdlbnQiXSwiY28iOnRydWUsImlwIjpmYWxzZSwiYXNuIjpbIjE1MDczMiIsIjE1MDc0MCJdLCJpbnRzaWciOiIzSlpoazU4NDktckhNbExuZlhucFVvYlhUcmlxNE9pZXVvaGFRVFNCMDEwIiwiaWF0IjoxNzgzODYwMTUwLCJleHAiOjE3ODM5NDY1NTB9.Lt1kskD15lPX_7qHJlq4-yZK9gmGx5305rD6buSJcCU
