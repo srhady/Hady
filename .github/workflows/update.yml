@@ -24,13 +24,14 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: pip install requests pywidevine
 
       - name: Execute Script
         run: |
           cp private_repo/akash.py .
+          cp private_repo/device.wvd .
           python akash.py
-          rm akash.py
+          rm akash.py device.wvd
 
       - name: Commit and Push Changes
         run: |
