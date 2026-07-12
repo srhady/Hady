@@ -1,10 +1,10 @@
 #EXTM3U
-#DATE:- 12-07-2026 03:46 PM (BST)
+#DATE:- 12-07-2026 04:01 PM (BST)
 #EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=b0216a17e7f8506cbacd81f710d0b0ef:97055f0681d4c7e1c81445b5433bd3b1
+#KODIPROP:inputstream.adaptive.license_key=82442161ac045296930ad7369b219859:0ba0f7eab07f0d0de20df7d851657bdb
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
@@ -94,7 +94,7 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=d5270da2cf325d608353b6afc7e27033:8c6bd23d9894d982e1382aa177b3b8cc
+#KODIPROP:inputstream.adaptive.license_key=e6f2fa4d1ac656c9b3362d1dc602b636:82a8bb617dee9beac8c8c8559beeee7d
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTVLCOPT:http-referrer=https://akashgo.com/
 #EXTVLCOPT:http-origin=https://akashgo.com
