@@ -1,5 +1,93 @@
 #EXTM3U
-#DATE:- 20-07-2026 02:00 AM (BST)
+#DATE:- 20-07-2026 03:01 AM (BST)
+#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=f352d057-1907&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NiwiaWF0IjoxNzg0NDk0ODg2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiIyYWE1YmU0ZC1jNjc1LTQxMmItODhiNC1kNTdlMGVjZTA2NDAiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZjM1MmQwNTctMTkwNyJ9.DIFkCTjQx-gIYr9zC2zF7uqaGzh4CXIj9jIDG6n1X_NejqHcNZ7H-1ydw-P7gjMs3YHNsTe6UDhyEm8vFtRWA2Ij3_3CZTVYFSmk3n3cr1S020Q5W4wK8OJHkQyN4R2dJAvlp43lE068LIktFcxLC-54V8XQNHllr55-W9MPg-nYGrn0yeGPcGG88EVeAk2e7Xc6eCRYeGpoD1rV4NkyLmuizDEL6wS2mwCl3MhCuCH9m6IYuZ-7_Ea1kE4MonRguxJq016apSQSKRdkQsE55Ym98mZNz7R8V1YZWNMD1d6-hA4NjUriFUPAldH83cMMTvbu1SDP94A1nD0weuW5yw|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd?_t=1784494886644
+#EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Sports",Sony Sports TEN 1
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=35fee7f3-d55d&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NiwiaWF0IjoxNzg0NDk0ODg2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJiZDk5YmM3Ny1jNjAzLTRmMDYtYTZlZC1iOTFiMzFlNGNkYTQiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMzVmZWU3ZjMtZDU1ZCJ9.Mf6-xQdzacVcYT1HX_uvpI3AzfFZL79pjL53YiugbaaJrmutnq56vkt0U8hGm5G9NrL_kmAeWoFEXniqESHpVLe7QDDYDTcB6UvH4gsA_a1bdCD6VYv0ww53cVbQ6SfZfuZSjJtSIxxlo-JitAoMC-vIpjJyiiEimGH4UptOqL2OT5fkWQJ678UyaM8gzv5DZg-gPy06t7x6bU_xLGNHp4HMnmnkY_s5Zxj89JuYH4Cs3dybgJiJLJYUPSFvtxgX9IAE-FKN4l5CdKf90JpOXRba6vOOYyBzvqfXOdkbr8VTR_jbGwRn633aK4ogeoUyVb-nIH5w_CP2ATFQTx_6SA|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd?_t=1784494886648
+#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Sports",Sony Sports TEN 5
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=2659ffb3-2b08&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NiwiaWF0IjoxNzg0NDk0ODg2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI4ZWY1NzBhNC0xNTVlLTQ3YWEtODU1Mi03YzhiNWM3MDYzMWEiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMjY1OWZmYjMtMmIwOCJ9.RSHTt9QUIlcWiLkjHYej2cA1AELvT6iHyc7gu2VZC5AxHLObyUvQDtXAuR8jJ17yi_bL4ym-DXVPXShnxAYDYMqhAk6do3YdmbrS-x-Gf-I4qN9PJF_y5ZrN1w-qThTMrsnq9ntVJaQILzyVI4HLZx4vpJtJqpcWouWhTdkotNvJQkOPh84cF9k6IhzFXBh8JVhMEhynw9jjPto97V1A2yFfSJMF4-ty0fcOH_iOPWktv695uKoIoxqd6-FkxG2Tc5AZSHKxJJxwU2pcRcsLvCXvrB897DzmCpNoUfBCameGh5ymwk8GlTFKrPR-McJf_uSKxo3PIWxCXgBLc7GFFA|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd?_t=1784494886649
+#EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Entertainment",ZEE BANGLA
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=8f95c9cd-6940&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NiwiaWF0IjoxNzg0NDk0ODg2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI5MDQwYjFkZi1hNzFkLTQ3Y2EtYWJjMS1kMWFkNzgxMWJmMzIiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiOGY5NWM5Y2QtNjk0MCJ9.oBJqYt0hpaeU6JNLdc69aUiySYIx0JpkpH2lZQd7oAEXW6JGhDjoRTQs1NCuE_bSICA2STxEJIYDtgBgJveTgGlRlHji5HZq6XQjc85zh9pFh_x0hpAbfvnERde_RkhnTth5YsTg5DyXx84qHZK8yuHwrK1-7ceoWKIa8npQ652c7MLO-Ni4gwOOrhIos5rCKv9-YP975b6P_nQ9Fmma-MBiikoWSI2jGGI6pEnWTEO8bj1P3yIluQp7MHNyE8TkAWyIuRHO5_XzIXBBqS9PHv-Q2bjGEXvbSbOp32OjjJcoOUWHe4YUI45KTdDgTtGsfNVbVLoZng4DJM047aNfmQ|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd?_t=1784494886654
+#EXTINF:-1 tvg-id="153" tvg-name="Ten Cricket" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1745304841482.png" group-title="Sports",Ten Cricket
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=801c26dd-8035&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NywiaWF0IjoxNzg0NDk0ODg3LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiIwMDg0YzBkMC0wZmIzLTQ4M2UtYjA5MS1hZGM3M2YxYzYyNDgiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiODAxYzI2ZGQtODAzNSJ9.eeTt7RKzrrK3u91lCbfrQkg6BYIv67dxwtAd39GT0eFESEdhljDMEjXAKRaGdDIZiHIY1cwbh3nmJdUDkSnbIsYTGsvhyLAjkGGp3fu3DvFPfZC72cAbc8o-QQFMRg-sCB2W7_YzaOnK_rL8bLBvEM4Un9J-GyN1GmZAC1uQ-RdeAhKdtRCn7sF_v8pQltWFlELRNq2ggYJHF6Omcvv4fG0GvPfIh4rlN4ONNk2S3csKCdV6XrwXQ4RvJTMD1UMGgroofP8tzPttdtkivwR9C2Xav46_X1gwrncVauhqMZkoIz6SG-QzAAhIqPZm8HY0zjconOmBXiL7x4H-WJDvsA|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd?_t=1784494887509
+#EXTINF:-1 tvg-id="90" tvg-name="Euro Sports HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1765256371720.png" group-title="Sports",Euro Sports HD
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=df67fc1a-01d1&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4NywiaWF0IjoxNzg0NDk0ODg3LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI4ZDMwY2I4Yi1hYjI0LTRhYjktYTJmNy00ODU5NDliMzdiNzEiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZGY2N2ZjMWEtMDFkMSJ9.iCyDbxhUWzUUCwd1mYfc1_eqSA1pB9OldjxLppqGGKhMyFr609oSpi3K3DZl3Bz-t4TPnpemWyS6zqewkpowNWSx_iruhOPSlDL7WV6ClQ5G4VLtsG8vxEgCcr9ahdCZxO0-BS8dXToz1ntCJGDDFuXYySEvB3PcVIzCtahWmYj5O4h-sCbQ0-nn7Rg0OhgC87uF5ZYNcu7Iuun3Dus6PQ10H5MY1OSPQIFNigOuChIUdYzT6aQbDGrCQqNXzesNInDHac5AvwbuYJywHK97qp0H3s7sqZx_HxIogUyo59W0mmvgpXxiVeCOpjWbaP4QFv7JkmpAqjU8rfGrFuLcxg|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd?_t=1784494887514
+#EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Movies",Sony Max
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=e7eb2b46-bc76&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4OCwiaWF0IjoxNzg0NDk0ODg4LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJjYzI5NWMzOS1kZGE2LTQ3MGYtOGQwZS04ZTE0MjViNTQyZDAiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZTdlYjJiNDYtYmM3NiJ9.A5sIIoAkhelpTOpkR7bpo5l9M00YoUjyKJdkbMti6ee1ytW16DlYUojcIq4a97rRAUG65F1GcRMb7h5Blj-QM1Zv4d-3TiMTihjDLckH0S3wafy1vhjxYmvNi6FGFHtP2Yh-o1MjUvzIe8iaBlL0MBRiQomvxzmcd5uMOoApSIeobYwVCfYVhf2ra4YPo70j54DPVu36nhCysLjmg1W1NMqJwCwe6QREOdWZRSsqINwhRZgC1LGDk4NDWCHk1eEx9OBnFxQ40_p2CV_H3FNiF6PvETsTZOahcyTg0uXvKTblUWU8xS4AXq1_WOrusqPtzNy6N_v3PU8qSH0rywwuCA|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1730/output/index.mpd?_t=1784494888764
+#EXTINF:-1 tvg-id="142" tvg-name="Sony AATH" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906659479.png" group-title="Entertainment",Sony AATH
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=70f9fa1f-38af&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4OCwiaWF0IjoxNzg0NDk0ODg4LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkZDIxZjU5Yi1kMGU0LTQ3NjktYjY4Zi0xODM1ZTNjYzZlNmMiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiNzBmOWZhMWYtMzhhZiJ9.ir7XED9_xc5Se_btlC4xC_CygawhVFCISaKMShK7XgjR_Zm8aFCaz8bIOaSxPz3mvo4IGd4FOq9gqDs8xAPN6ecachWtckkYoZlcKloCZBFppeTKAiU06F2s-xbKI11mwmHfQeGeQtkVOvUTH1-Lt14oOnW-zRCoSxyIN_788EqKmq9Hq3bcfSum-jocZGEkntxG-qW-qrjXTx6nK4D4iesZfTucE3NNlqlHdmRYYDrpKRJFFNR4vtlDauqdU1RYabJDtNPlMwsQAi8iSXRDHzHFqwpo0kyOvas9L4ClyP-KmlnXjwQoDNYy5sBhd113mi0vF_fDCHHawbikBfuFrg|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1732/output/index.mpd?_t=1784494889049
+#EXTINF:-1 tvg-id="290" tvg-name="Sony Pix" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780311807965.png" group-title="Movies",Sony Pix
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=e864851a-be2b&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4OSwiaWF0IjoxNzg0NDk0ODg5LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiIwMThkN2Y4MC04ZmU2LTQ3ODctYmQ4ZC1hYmNjYzk2MGM0ODQiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZTg2NDg1MWEtYmUyYiJ9.hEPnHeiCClol-2SgwWJKSh3u6GMIb4W8yXis5HSSQ2mIOPuMxJvKTzpw_2G40Y75YeYyvI4pwaasL4gZHg-THZNKYBI0XHiNLODDg7m2Zcb7mJdw6q6e_DkRCRdcdimXHdoResLXKjiX1zU0P-2sQ3ydmi051qLzPWD1dC4cRZ8O9FmH43Ug9q3RlftRcg1riEeT7O4YMLiaAon9a6kXjtjgU3DDk68Aqi6tXIadBDpciDHAbkqxu63Ts1fjAWf4fDyO7O5HLdkwkZMAWHxi6920W_d0cfDD48gtdPXeI3PlPkJTW4ZMKLNPEBIf2or0g3Dw6uTu6eC12ttGzhH2ew|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd?_t=1784494889307
+#EXTINF:-1 tvg-id="124" tvg-name="Sony Entertainment" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1740380280065.png" group-title="Entertainment",Sony Entertainment
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=368f3847-ed5e&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4OSwiaWF0IjoxNzg0NDk0ODg5LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJmZmFlYzljYS05N2RlLTQxZmUtOWI2Yy03MGVhNzkwOGRkMzAiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMzY4ZjM4NDctZWQ1ZSJ9.Qj6ERer6xc-UU4rXDmb7I3X-vAG-zUL4PPrtf37LqJ6FtCYtxLs4BGfdTk4prbjMTn3EFs2GCI4zA_Yr7q-Ln400pRCi7hLX81CiDVE3BaZ9lpdp5L4W14q--iiIcDN6Zno8A3ziP7YjdayGKQye7Agzmj8lv33cRqKtdyzjDk4aGFOSc30B5Mv2Wt9sqMwcDfYq2ZoH4UXAyGN4KAMMlUyGVbDM00K4kN4mTMpXsbKUDtjPJYZFj-J0A7xzSYcVxm_Mnk3_PSF0DwkZTGXbJWa30Z2zf7bQjv7fM0RMF3pscIY3hfBn3PPRkKcaVc5T-_xSyA8V_zJi3bQ1LBhG0g|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1718/output/index.mpd?_t=1784494889665
+#EXTINF:-1 tvg-id="165" tvg-name="CNN" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770610404979.png" group-title="News",CNN
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=br08dp34kn19k&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4NDUwMjA4OSwiaWF0IjoxNzg0NDk0ODg5LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJjYTRlY2ZmNy04ZTI4LTQ4NjUtYmQ1MS0wMzczYTQxZTBmOTQiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiYnIwOGRwMzRrbjE5ayJ9.RTmXV1NEzsObLu6jierx7hh34qBwDuO7piDHB5qAfGbO08q-7HTH3lS4F3MeUrLjLlKqbqNwHu6Re67Yx14ldtL3opL1qK4uf635AtFQfhd3YJnwVFjC7aKPg_bzbHcD8PcrVJbGpnH-xPVXaC9bRC3UXMwhH_9-BHDcYIzZIFeuRKC_vpv0tti1px6L1qGQF9cGMEqiopWTHTNnnA16lOc2zSRZyEQeOsS7iM_6uQPGaijgJIdw9DO61FafAWoT84pOe-GtHBoktD2pSWCRhukBfqMrw_TCTh0wkXK6PpKzQnWJ3P501YIXAFwGuUvEhZRUZ2iO-iGE83fHkyHxCw|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
+#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd?_t=1784494890021
 #EXTINF:-1 tvg-id="228" tvg-name="BTV Shangshad" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773247382366.png" group-title="News",BTV Shangshad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
 #EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
