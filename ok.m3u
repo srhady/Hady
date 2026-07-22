@@ -1,10 +1,4 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2",Sony Sports TEN 2
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=f352d057-1907&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MDM4Mzg5OCIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4Mzg2NTk3MiwiaWF0IjoxNzgzODU4NzcyLCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJmNDhiMzYyNi0yZmZmLTRhOTMtODQ5Mi00ODhhYzEyNDI5ZTMiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZjM1MmQwNTctMTkwNyJ9.QWx5NPZS9aUGRi9RV-JIR-O2-iWJI4uVb53K-h3fQX5-k7MFRwLNBYFwhGEWG5NSAKIEUzVsdw50ilBGFFhp5BefIg6nxlCtn1KrrK8HDA5guL1Pej1VyWJB71iZZMNNh116BbBEKQzSurw_IdA6JFTxZm4oGdTi2z3h1q-B0QNJbvAlGEJ239SboD-doguiJ7kdnxIfxd9HsNhac9DwPngzyZMcGmtHbhWbIyvI0g_OBFsUQwljAwoaeKqWApF-DsIWNywoEcZieZmDpV-swXvrEQPq26zl061rmsLVG6hdjg3gbi8cVz6f-EE7c5nypGSR_Y0GT704Vv-p6-BBlA|Origin=https://akashgo.com&Referer=https://akashgo.com/&Content-Type=application/octet-stream|R{SSM}|
+#EXTINF:-1 tvg-id="228" tvg-name="BTV Shangshad" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773247382366.png" group-title="News",BTV Shangshad
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-#EXTHTTP:{"origin":"https://akashgo.com","referer":"https://akashgo.com/"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd
-
+https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8|Referer=https://akashgo.com/&Origin=https://akashgo.com&edge-key-pair-id=DEFAULT&edge-policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwOS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODQ3NTU0MTJ9fX1dfQ&edge-signature=hRH8pOqN0Z9NnKt6E~QDb0vjhdiyVBtcISBRG2Bj2CY
