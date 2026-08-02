@@ -1,4 +1,7 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="228" tvg-name="BTV Shangshad" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773247382366.png" group-title="News",BTV Shangshad
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.7727.56 Safari/537.36
-https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8|Referer=https://akashgo.com/&Origin=https://akashgo.com&edge-key-pair-id=DEFAULT&edge-policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwOS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODQ3NTU0MTJ9fX1dfQ&edge-signature=hRH8pOqN0Z9NnKt6E~QDb0vjhdiyVBtcISBRG2Bj2CY
+#EXTINF:-1 tvg-id="" tvg-name="Amazon Live Match" group-title="Amazon Sports",Amazon Live Match
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=385a0beed7cbba8b824c4b9378a4304e:7cfe9335b4d9f8082d7d77bf1f5cb6a3
+https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/startover/clients/dash/manipulated-manifest-iad-prod/enc/ohhdsvyoz3/out/v1/899ad4003ead490dbfd91eb6e49f3513/0ec5ef27-2fed-40a7-8bf0-72943c493f17-cenc.mpd
