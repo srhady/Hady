@@ -1,7 +1,2 @@
-#EXTM3U
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Live Match" group-title="Amazon Sports",Amazon Live Match
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=385a0beed7cbba8b824c4b9378a4304e:7cfe9335b4d9f8082d7d77bf1f5cb6a3
-https://ss-ott.bia-cf.live.pv-cdn.net/iad-nitro/startover/clients/dash/manipulated-manifest-iad-prod/enc/ohhdsvyoz3/out/v1/899ad4003ead490dbfd91eb6e49f3513/0ec5ef27-2fed-40a7-8bf0-72943c493f17-cenc.mpd
+#EXTINF:-1 tvg-id="229" tvg-name="Maasranga TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773680325498.png" group-title="Entertainment",Maasranga TV
+https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/index.m3u8|edge-policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyMi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODU4Njg1NzZ9fX1dfQ&edge-signature=ciI-o7qS9-n000c7Ib4P9lJ4dHFCqRV0QoW~DsldxRQ
