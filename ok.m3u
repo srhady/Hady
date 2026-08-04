@@ -1,3 +1,4 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="318" tvg-name="Somoy tv" group-title="Live",Somoy tv
-https://owrcovcrpy.gpcdn.net/bpk-tv/1713/output/index.m3u8?edge-policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODU4NjcxNTZ9fX1dfQ&edge-signature=ZICnhJegOS-7gnU91WyWmVWF9-DK32nIbViai63vdHQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODU4NjcxNTZ9fX1dfQ","edge-signature":"ZICnhJegOS-7gnU91WyWmVWF9-DK32nIbViai63vdHQ"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1713/output/index.m3u8
