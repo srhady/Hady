@@ -1,7 +1,13 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="" tvg-name="Amazon Live Match" group-title="Amazon Sports",Amazon Live Match
+#PLAYLIST:Akash Go Live TV
+#LAST_UPDATE:12:00 AM 23-08-2026
+#TELEGRAM:https://t.me/livesportsplay
+#OWNER:Md Sohanur Rahman Hady
+
+#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
 #KODIPROP:inputstream=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=2ac53ffee8faaa0d67423f4364d1d0d2:b2024fb86b688e26ff66367f89ce3c69
-https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/startover/clients/dash/manipulated-manifest-iad-prod/enc/vtaypmlewy/out/v1/649ec56a412d40029d15b7a573cb2f67/9e454a79-a0a0-49ce-88ae-00c1804fc678-cenc.mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://air-go.lovable.app/api/public/license?id=117
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODc0MzI0NDB9fX1dfQ","edge-signature":"IewsLZDPLfRzvDg01xssZ~8diUuSU1525Qk3d3WEEDQ"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd?_by=hady
