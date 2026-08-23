@@ -1,31 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Sports - Ad Free Player</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000; /* ব্যাকগ্রাউন্ড কালো রাখা হয়েছে স্পোর্টস ফিলের জন্য */
-            height: 100vh;
-            overflow: hidden; /* স্ক্রলবার হাইড করার জন্য */
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKASH GO - Premium</title>
+<script src='https://cdn.jwplayer.com/libraries/MAaRkUjT.js'></script>
+<script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftIJ5Vqg==";</script>
+<style>
+@font-face{font-family:'CustomBangla';src:url('https://raw.githubusercontent.com/srhady/Hady/main/Bornomala-Regular.ttf') format('truetype');}
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+body{background-color:#050508;color:#fff;padding-bottom:35px;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;}
+.logo{font-size:22px;font-weight:900;color:#00a0e3;font-style:italic;display:flex;align-items:center;gap:2px;cursor:pointer;}
+.logo span{background:#e31837;color:#fff;font-size:11px;padding:1px 7px;border-radius:12px;font-style:normal;}
+.search-container{position:relative;display:flex;align-items:center;justify-content:flex-end;flex:1;margin-left:20px;}
+.search-container input{background:#1a1a24;border:1px solid #2a2a35;color:#fff;padding:8px 15px 8px 35px;border-radius:20px;outline:none;font-size:14px;width:0;opacity:0;transition:all .3s ease;pointer-events:none;}
+.search-container input.active{width:100%;max-width:250px;opacity:1;pointer-events:auto;}
+.search-icon{position:absolute;right:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:right .3s ease;}
+.search-container input.active ~ .search-icon{right:calc(100% - 30px);max-right:220px;}
+.search-icon svg{width:20px;height:20px;fill:#fff;transition:fill .2s;}
+.search-icon:hover svg{fill:#00a0e3;}
+.menu-icon svg{width:24px;height:24px;fill:#fff;cursor:pointer;}
+#player-container{display:none;width:100%;position:sticky;top:0;aspect-ratio:16/9;background:#000;border-bottom:2px solid #00a0e3;z-index:9999;box-shadow:0 4px 15px rgba(0,0,0,.8);}
+#player{width:100%!important;height:100%!important;}
+#status{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#00e676;font-size:14px;font-weight:bold;z-index:9998;text-align:center;background:rgba(0,0,0,0.8);padding:10px 20px;border-radius:8px;}
+.categories{display:flex;gap:12px;padding:15px 20px;overflow-x:auto;white-space:nowrap;scroll-behavior:smooth;}
+.categories::-webkit-scrollbar{display:none;}
+.category-btn{background:transparent;color:#fff;border:1px solid #00a0e3;padding:8px 24px;border-radius:20px;font-size:14px;cursor:pointer;transition:all .2s ease;}
+.category-btn.active{background:#00a0e3;color:#fff;}
+.channel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;padding:10px 25px 20px;}
+.channel-card{background-color:#fff;border-radius:8px;aspect-ratio:1/1;display:flex;justify-content:center;align-items:center;padding:4px;cursor:pointer;transition:transform .2s;}
+.channel-card:active{transform:scale(.95);}
+.channel-card img{width:100%;height:100%;object-fit:contain;border-radius:6px;pointer-events:none;}
+.ticker-wrap{position:fixed;bottom:0;width:100%;background:#e31837;padding:8px 0;z-index:10000;overflow:hidden;white-space:nowrap;box-shadow:0 -2px 10px rgba(0,0,0,.5);}
+.ticker-text{display:inline-block;padding-left:100%;animation:ticker 15s linear infinite;font-family:'CustomBangla',sans-serif;font-size:13px;font-weight:bold;color:#fff;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+</style>
 </head>
 <body>
-
-    <iframe 
-        src="https://srhady-sports-transcoder.hf.space/proxy?url=https://vovlacosa.sbs/wiki.php?id=0efl6" 
-        allow="autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;" 
-        allowfullscreen>
-    </iframe>
-
+<header>
+<div class="menu-icon"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+<div class="logo" onclick="goHome()">AKASH <span>GO</span></div>
+<div class="search-container">
+<input type="text" id="search-input" placeholder="Search channels...">
+<div class="search-icon" id="search-toggle"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+</div>
+</header>
+<div id="player-container">
+<div id="status">Connecting... 🚀</div>
+<div id="player"></div>
+</div>
+<div class="categories" id="category-container"></div>
+<div class="channel-grid" id="channel-container"></div>
+<div class="ticker-wrap"><div class="ticker-text">যদি কোনো চ্যানেল প্লে না হয় ওই চ্যানেলের উপর একাধিক বার ক্লিক করুন!</div></div>
+<script>
+const b64m3u="aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NyaGFkeS9IYWR5L3JlZnMvaGVhZHMvbWFpbi9ha2FzaF9saXZlLm0zdQ==";
+const encW=["aHR0cHM6Ly90djIud29ya2VyYm90NC53b3JrZXJzLmRldg==","aHR0cHM6Ly90djMuaGVuZXh1a2VsMzMwLndvcmtlcnMuZGV2","aHR0cHM6Ly90djQudWRpcWlwdXc1NDQud29ya2Vycy5kZXY=","aHR0cHM6Ly90djUuZ2VuYXR1ejA3MC53b3JrZXJzLmRldg==","aHR0cHM6Ly90djYudnVrZXJheW9nb2dlODAud29ya2Vycy5kZXY="];
+let allC=[],m3uL=[];
+function goHome(){
+document.getElementById('player-container').style.display='none';
+if(jwplayer("player").getState())jwplayer("player").stop();
+if(history.state&&history.state.p)history.back();
+}
+window.addEventListener('popstate',(e)=>{
+if(document.getElementById('player-container').style.display==='block'){
+document.getElementById('player-container').style.display='none';
+if(jwplayer("player").getState())jwplayer("player").stop();
+}
+});
+document.getElementById('search-toggle').onclick=()=>{
+let i=document.getElementById('search-input');
+i.classList.toggle('active');
+if(i.classList.contains('active'))i.focus();
+};
+document.getElementById('search-input').addEventListener('input',(e)=>{
+let s=e.target.value.toLowerCase();
+displayChannels(allC.filter(c=>c.n.toLowerCase().includes(s)));
+document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+});
+async function loadUI(){
+try{
+let r=await fetch(atob(b64m3u)+"?t="+Date.now());
+let t=await r.text();
+m3uL=t.split(String.fromCharCode(10));
+for(let i=0;i<m3uL.length;i++){
+let l=m3uL[i].trim();
+if(l.startsWith('#EXTINF:')){
+let id=l.match(/tvg-id="([^"]+)"/);
+let nm=l.match(/tvg-name="([^"]+)"/);
+let lg=l.match(/tvg-logo="([^"]+)"/);
+let gr=l.match(/group-title="([^"]+)"/);
+if(id&&nm)allC.push({i:id[1],n:nm[1],l:lg?lg[1]:'',g:gr?gr[1]:'Others'});
+}
+}
+let cats=['All'];
+allC.forEach(c=>{if(c.g&&!cats.includes(c.g))cats.push(c.g);});
+let cc=document.getElementById('category-container');
+cc.innerHTML='';
+cats.forEach((c,idx)=>{
+let b=document.createElement('button');
+b.className="category-btn "+(idx===0?"active":"");
+b.textContent=c;
+b.onclick=(e)=>filterC(c,e.target);
+cc.appendChild(b);
+});
+displayChannels(allC);
+}catch(e){}
+}
+function displayChannels(cs){
+let ctn=document.getElementById('channel-container');
+ctn.innerHTML='';
+cs.forEach(c=>{
+let d=document.createElement('div');
+d.className='channel-card';
+d.onclick=()=>playC(c.i);
+let i=document.createElement('img');
+i.src=c.l||'https://via.placeholder.com/150';
+d.appendChild(i);
+ctn.appendChild(d);
+});
+}
+function filterC(cat,btn){
+document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('search-input').value='';
+displayChannels(cat==='All'?allC:allC.filter(c=>c.g===cat));
+}
+async function playC(id){
+let pc=document.getElementById('player-container');
+let st=document.getElementById('status');
+pc.style.display='block';
+st.style.display='block';
+st.innerHTML="Connecting... 🚀";
+if(!history.state||!history.state.p)history.pushState({p:true},"","#play");
+let lic="",type="",ext="",found=false;
+for(let i=0;i<m3uL.length;i++){
+let l=m3uL[i].trim();
+if(l.startsWith('#EXTINF:')&&l.includes('tvg-id="'+id+'"')){found=true;continue;}
+if(found){
+if(l.startsWith('#KODIPROP:inputstream.adaptive.license_key=')){lic=l.substring(l.indexOf('=')+1).trim();}
+else if(l.startsWith('http')){
+if(l.includes('.mpd')){type="dash";ext="mpd";}else{type="hls";ext="m3u8";}
+break;
+}else if(l.startsWith('#EXTINF:')){break;}
+}
+}
+if(!ext){st.innerHTML="Stream not found!";return;}
+let sW=[...encW].sort(()=>0.5-Math.random());
+let aW=null;
+for(let w of sW){
+try{
+let tU=atob(w)+"/live/"+id+"."+ext;
+let cR=await fetch(tU,{method:'HEAD'});
+if(cR.ok){aW=atob(w);break;}
+}catch(e){}
+}
+if(!aW){st.innerHTML="All Servers Busy! 😭";return;}
+st.style.display='none';
+let src={file:aW+"/live/"+id+"."+ext,type:type};
+if(type==='dash'&&lic)src.drm={widevine:{url:lic}};
+jwplayer("player").setup({playlist:[{title:"Live TV",sources:[src]}],autostart:true,width:"100%",height:"100%",stretching:"uniform",controls:true,cast:{}});
+}
+document.addEventListener('DOMContentLoaded',loadUI);
+</script>
 </body>
 </html>
