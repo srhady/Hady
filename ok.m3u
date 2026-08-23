@@ -9,5 +9,4 @@
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
 #KODIPROP:inputstream.adaptive.license_key=https://air-go.lovable.app/api/public/license?id=117
-#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODc0MzI0NDB9fX1dfQ","edge-signature":"IewsLZDPLfRzvDg01xssZ~8diUuSU1525Qk3d3WEEDQ"}
-https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd?_by=hady
+https://tv.srhady.workers.dev/live/117.mpd
