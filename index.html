@@ -69,7 +69,7 @@ try {
   connectedRef.on('value', (snap) => {
     if (snap.val() === true) {
       const con = connectionsRef.push();
-      con.onDisconnect().remove(); // ট্যাব কাটলে অটো রিমুভ
+      con.onDisconnect().remove();
       con.set(true);
     }
   });
