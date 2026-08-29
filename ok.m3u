@@ -1,12 +1,6 @@
 #EXTM3U
-#PLAYLIST:Akash Go Live TV
-#LAST_UPDATE:12:00 AM 23-08-2026
-#TELEGRAM:https://t.me/livesportsplay
-#OWNER:Md Sohanur Rahman Hady
-
-#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Sports",Sony Sports TEN 2
-#KODIPROP:inputstream=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=mpd
-#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
-#KODIPROP:inputstream.adaptive.license_key=https://air-go.lovable.app/api/public/license?id=117
-https://tv.srhady.workers.dev/live/117.mpd
+#EXTINF:-1 tvg-name="DAZN Live" group-title="Sports", DAZN Live Match
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key={"ecbd2e31006252fdb98acb3da0319652":"368f25d6fa78307ca62fec61aafaac8f","cfb5e2b73bef4f3c878f25ab86a7451f":"0d6712bf2a84edcc93d001a9613f6fec"}
+#EXTHTTP:{"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36","origin":"https://www.dazn.com","referer":"https://www.dazn.com/"}
+https://dca-ac-live.cdn.indazn.com/3j0u7dr770ij1kpwielq40pkk/web/stream.mpd?channel=5072&outlet=dazn-row&plang=en&dazn-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InV1aWRfMSJ9.eyJwYXRocyI6WyIvM2owdTdkcjc3MGlqMWtwd2llbHE0MHBrayJdLCJleGMiOltdLCJoZWFkZXJzIjpbInVzZXItYWdlbnQiXSwiY28iOnRydWUsImlwIjpmYWxzZSwiYXNuIjpbIjE1MDczMiJdLCJzc2lkIjoiYmI0NTM0MmZmODdkIiwiaW50c2lnIjoic3F1WHo4Ymg4ZDVISWNRamtTMmNJTkJXRE1RWFVJeV9CYmJ3Q0pELXVBbyIsImlhdCI6MTc4Nzk3NzM3MCwiZXhwIjoxNzg4MDYzNzcwfQ.7N4HkhUr0iX8jKjiU3tCOIPr0a2w_8RHwo_VTLuChAA
