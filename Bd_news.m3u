@@ -1,11 +1,1 @@
-#EXTM3U
-#EXTINF:-1 tvg-logo="https://plusbox.tv/img/channels/tsports.png" group-title="Sports",T Sports HD
-https://axsports.srhady.workers.dev/live/TSportsHD.m3u8
-#EXTINF:-1 tvg-logo="https://plusbox.tv/img/channels/ten1.png" group-title="Sports",Star Sports 1 HD
-https://axsports.srhady.workers.dev/live/StarSports1HD.m3u8
-#EXTINF:-1 tvg-logo="https://plusbox.tv/img/channels/ten2.png" group-title="Sports",Star Sports 2 HD
-https://axsports.srhady.workers.dev/live/StarSports2HD.m3u8
-#EXTINF:-1 tvg-logo="https://plusbox.tv/img/channels/starsportsselect1.png" group-title="Sports",Star Sports Select 1
-https://axsports.srhady.workers.dev/live/StarSportsSelect1.m3u8
-#EXTINF:-1 tvg-logo="https://plusbox.tv/img/channels/starsportsselect2.png" group-title="Sports",Star Sports Select 2
-https://axsports.srhady.workers.dev/live/StarSportsSelect2.m3u8
+
