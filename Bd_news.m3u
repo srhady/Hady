@@ -45,3 +45,5 @@ https://tvsen5.aynaott.com/RtvHD/index.m3u8
 https://d1g8wgjurz8via.cloudfront.net/bpk-tv/NGCHD/default/NGCHD.m3u8
 #EXTINF:-1 tvg-logo="https://assets-prod.services.toffeelive.com/w_480,q_75,f_webp/-C7MX5UBv9knK3AHdKOi/posters/e37fef13-9bf3-4ecc-8b74-fca091874fa0.png" group-title="Movies",Zee Bangla Soner
 https://d1g8wgjurz8via.cloudfront.net/bpk-tv/ColorsHD/default/master2.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtzaHgkBXLag45R_mZohUvyGC3fG60ca2rMNBdXuWug&s=10" group-title="Music",Sangeet Bangla
+https://cdn-4.pishow.tv/live/1143/master.m3u8
