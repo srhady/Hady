@@ -3,42 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AKASH GO - Admin Control Center</title>
+<title>AKASH GO - Master Dashboard</title>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body { background-color: #050508; color: #fff; }
-#login-screen { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #0a0a0f; }
-.login-box { background: #1a1a24; padding: 40px; border-radius: 12px; border: 1px solid #2a2a35; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 100%; max-width: 400px; }
-.login-box h2 { color: #00a0e3; margin-bottom: 20px; font-style: italic; font-weight: 900; }
-.login-box h2 span { background: #e31837; color: #fff; padding: 2px 8px; border-radius: 8px; font-style: normal; font-size: 16px; }
-.login-box input { width: 100%; padding: 12px 15px; margin-bottom: 20px; background: #050508; border: 1px solid #2a2a35; color: #fff; border-radius: 8px; outline: none; }
-.login-box button { width: 100%; padding: 12px; background: #00a0e3; border: none; color: #fff; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-.login-box button:hover { background: #0088c2; }
-#login-error { color: #e31837; font-size: 13px; margin-bottom: 15px; display: none; }
-#dashboard-screen { display: none; padding: 20px; max-width: 1400px; margin: 0 auto; }
-.header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid #1a1a24; margin-bottom: 20px; }
-.header h1 { color: #00e676; font-size: 24px; }
-.stats-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
-.card { background: #1a1a24; border: 1px solid #2a2a35; padding: 20px; border-radius: 12px; text-align: center; }
-.card h3 { color: #aaa; font-size: 13px; margin-bottom: 10px; text-transform: uppercase; }
-.card .value { font-size: 32px; font-weight: bold; }
-.kill-switch-container { display: flex; gap: 15px; align-items: center; }
-.btn-kill { background: #e31837; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(227, 24, 55, 0.4); transition: 0.3s; }
-.btn-kill:hover { background: #c2122c; transform: scale(1.05); }
-.btn-revive { background: #00e676; color: #111; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: none; }
-.table-container { background: #1a1a24; border: 1px solid #2a2a35; border-radius: 12px; overflow-x: auto; max-height: 70vh; }
-table { width: 100%; border-collapse: collapse; text-align: left; }
-th, td { padding: 15px; border-bottom: 1px solid #2a2a35; font-size: 14px; }
-th { background: #0a0a0f; color: #aaa; text-transform: uppercase; font-size: 12px; position: sticky; top: 0; z-index: 10; }
-tr:hover { background: rgba(0, 160, 227, 0.1); }
-.badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
-.badge-pc { background: rgba(0, 160, 227, 0.1); color: #00a0e3; border: 1px solid #00a0e3; }
-.badge-mobile { background: rgba(0, 230, 118, 0.1); color: #00e676; border: 1px solid #00e676; }
-.btn-block { background: transparent; border: 1px solid #e31837; color: #e31837; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; transition: 0.2s; }
-.btn-block:hover { background: #e31837; color: #fff; }
-@media (max-width: 768px) { .stats-cards { grid-template-columns: 1fr; } }
+    /* Reset & Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #0b0f19; color: #e2e8f0; -webkit-font-smoothing: antialiased; }
+
+    /* Login Screen */
+    #login-screen { height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; background: #0b0f19; }
+    .login-box { background: #111827; border: 1px solid #1f2937; padding: 40px 32px; border-radius: 16px; width: 100%; max-width: 400px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); text-align: center; }
+    .login-box h2 { font-size: 26px; color: #f8fafc; margin-bottom: 8px; font-weight: 800; letter-spacing: -0.5px; }
+    .login-box h2 span { color: #38bdf8; }
+    .login-box p { color: #64748b; font-size: 14px; margin-bottom: 24px; }
+    .login-box input { width: 100%; padding: 14px 16px; background: #1f2937; border: 1px solid #374151; color: #f8fafc; border-radius: 10px; outline: none; margin-bottom: 16px; font-size: 15px; transition: all 0.2s ease; }
+    .login-box input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1); }
+    .login-box button { width: 100%; padding: 14px; background: #0284c7; color: white; border: none; border-radius: 10px; font-weight: 600; font-size: 15px; cursor: pointer; transition: background 0.2s ease; }
+    .login-box button:hover { background: #0369a1; }
+    #login-error { color: #ef4444; font-size: 13px; margin-bottom: 16px; display: none; font-weight: 500; }
+
+    /* Dashboard Layout */
+    #dashboard-screen { display: none; padding: 24px; max-width: 1400px; margin: 0 auto; }
+    
+    /* Header Section */
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid #1f2937; padding-bottom: 20px; }
+    .header-title h1 { font-size: 22px; font-weight: 700; color: #f8fafc; letter-spacing: -0.5px; }
+    .header-title p { font-size: 13px; color: #94a3b8; margin-top: 4px; }
+    
+    /* Stats Cards */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .stat-card { background: #111827; border: 1px solid #1f2937; padding: 24px; border-radius: 16px; display: flex; flex-direction: column; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    .stat-label { font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .stat-value { font-size: 36px; font-weight: 700; color: #f8fafc; line-height: 1; }
+    .value-highlight { color: #38bdf8; }
+    .value-success { color: #10b981; }
+    .value-danger { color: #ef4444; }
+
+    /* Kill Switch Buttons */
+    .kill-switch-container { display: flex; gap: 12px; align-items: center; }
+    .btn-danger { background: #ef4444; color: white; padding: 10px 18px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-danger:hover { background: #dc2626; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2); }
+    .btn-success { background: #10b981; color: white; padding: 10px 18px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; display: none; transition: all 0.2s; }
+    .btn-success:hover { background: #059669; }
+
+    /* Table Section */
+    .table-container { background: #111827; border: 1px solid #1f2937; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    
+    /* Custom Scrollbar for Table */
+    .table-responsive::-webkit-scrollbar { height: 8px; }
+    .table-responsive::-webkit-scrollbar-track { background: #0b0f19; }
+    .table-responsive::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    .table-responsive::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+
+    table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+    th { background: #182132; padding: 16px 24px; font-size: 12px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1f2937; }
+    td { padding: 16px 24px; font-size: 14px; color: #cbd5e1; border-bottom: 1px solid #1f2937; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover { background: #172133; }
+    
+    /* Typography & Badges */
+    .ip-text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; color: #f8fafc; font-weight: 500; font-size: 13px; }
+    .channel-text { font-weight: 600; color: #f8fafc; }
+    .time-text { color: #64748b; font-size: 12px; }
+    
+    .badge { display: inline-flex; align-items: center; justify-content: center; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .badge-pc { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2); }
+    .badge-mobile { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+    
+    /* Action Button */
+    .action-btn { background: transparent; border: 1px solid rgba(239, 68, 68, 0.5); color: #ef4444; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+    .action-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
+
+    @media (max-width: 640px) {
+        .header { flex-direction: column; align-items: flex-start; gap: 20px; }
+        .kill-switch-container { width: 100%; }
+        .kill-switch-container button { width: 100%; justify-content: center; }
+    }
 </style>
 </head>
 <body>
@@ -46,52 +88,62 @@ tr:hover { background: rgba(0, 160, 227, 0.1); }
 <div id="login-screen">
     <div class="login-box">
         <h2>AKASH <span>GO</span></h2>
-        <p style="color: #aaa; margin-bottom: 20px; font-size: 14px;">Master Control Center</p>
-        <div id="login-error">Incorrect Password! Access Denied.</div>
-        <input type="password" id="admin-pass" placeholder="Enter Admin Password">
+        <p>Master Administration Panel</p>
+        <div id="login-error">Authentication failed. Please try again.</div>
+        <input type="password" id="admin-pass" placeholder="Enter Secure Password">
         <button onclick="checkLogin()">AUTHORIZE ACCESS</button>
     </div>
 </div>
 
 <div id="dashboard-screen">
     <div class="header">
-        <h1>Live Monitoring Radar</h1>
+        <div class="header-title">
+            <h1>System Radar</h1>
+            <p>Real-time network & user activity monitoring</p>
+        </div>
         <div class="kill-switch-container">
-            <button id="btn-kill" class="btn-kill" onclick="triggerKillSwitch(false)">EMERGENCY SHUTDOWN</button>
-            <button id="btn-revive" class="btn-revive" onclick="triggerKillSwitch(true)">RESTORE WEBSITE</button>
+            <button id="btn-kill" class="btn-danger" onclick="triggerKillSwitch(false)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+                EMERGENCY SHUTDOWN
+            </button>
+            <button id="btn-revive" class="btn-success" onclick="triggerKillSwitch(true)">RESTORE SYSTEM</button>
         </div>
     </div>
 
-    <div class="stats-cards">
-        <div class="card">
-            <h3>Total Viewers (All)</h3>
-            <div class="value" id="total-viewers" style="color: #fff;">0</div>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="stat-label">Total Connections</span>
+            <span class="stat-value" id="total-viewers">0</span>
         </div>
-        <div class="card">
-            <h3>Tracked Viewers (New Update)</h3>
-            <div class="value" id="tracked-viewers" style="color: #00a0e3;">0</div>
+        <div class="stat-card">
+            <span class="stat-label">Verified Viewers</span>
+            <span class="stat-value value-highlight" id="tracked-viewers">0</span>
         </div>
-        <div class="card">
-            <h3>System Status</h3>
-            <div class="value" id="sys-status" style="color: #00e676;">ONLINE</div>
+        <div class="stat-card">
+            <span class="stat-label">Server Status</span>
+            <span class="stat-value value-success" id="sys-status">ONLINE</span>
         </div>
     </div>
 
     <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>IP Address</th>
-                    <th>Location</th>
-                    <th>ISP / Network</th>
-                    <th>Device</th>
-                    <th>Current Channel</th>
-                    <th>Time Joined</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="viewer-table-body"></tbody>
-        </table>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>IP Address</th>
+                        <th>Location</th>
+                        <th>ISP / Network</th>
+                        <th>Device Type</th>
+                        <th>Current Channel</th>
+                        <th>Timestamp</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="viewer-table-body">
+                    <!-- Data populates here -->
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -140,7 +192,7 @@ function startMonitoring() {
         if (!data) {
             document.getElementById('total-viewers').innerText = "0";
             document.getElementById('tracked-viewers').innerText = "0";
-            tbody.innerHTML = "<tr><td colspan='7' style='text-align:center; color:#aaa;'>No active viewers right now.</td></tr>";
+            tbody.innerHTML = "<tr><td colspan='7' style='text-align:center; padding: 40px; color:#64748b;'>No active connections found.</td></tr>";
             return;
         }
 
@@ -150,21 +202,17 @@ function startMonitoring() {
         let validUsers = [];
         keys.forEach(key => {
             let rawUser = data[key];
-            // Filter out old legacy users who only send 'true'
             if (typeof rawUser === 'object' && rawUser !== null && rawUser.ip) {
                 validUsers.push(rawUser);
             }
         });
 
         document.getElementById('tracked-viewers').innerText = validUsers.length;
-
         let rowsHtml = '';
-        
-        // Show only the actual tracked users (limit to 100 to prevent crashing)
         const displayUsers = validUsers.slice(-100).reverse();
 
         if (displayUsers.length === 0) {
-            rowsHtml = "<tr><td colspan='7' style='text-align:center; color:#aaa;'>No detailed tracking data available yet. Waiting for users to refresh...</td></tr>";
+            rowsHtml = "<tr><td colspan='7' style='text-align:center; padding: 40px; color:#64748b;'>Waiting for verified device telemetry...</td></tr>";
         } else {
             displayUsers.forEach(user => {
                 let ip = user.ip || 'Unknown';
@@ -179,18 +227,17 @@ function startMonitoring() {
 
                 rowsHtml += `
                     <tr>
-                        <td style="color: #00a0e3; font-family: monospace;">${ip}</td>
+                        <td class="ip-text">${ip}</td>
                         <td>${city}</td>
-                        <td style="color: #aaa;">${isp}</td>
+                        <td>${isp}</td>
                         <td><span class="badge ${deviceBadge}">${device}</span></td>
-                        <td style="font-weight: bold;">${channel}</td>
-                        <td style="color: #aaa; font-size: 12px;">${time}</td>
-                        <td><button class="btn-block" onclick="blockIP('${ip}')">BLOCK IP</button></td>
+                        <td class="channel-text">${channel}</td>
+                        <td class="time-text">${time}</td>
+                        <td><button class="action-btn" onclick="blockIP('${ip}')">Terminate IP</button></td>
                     </tr>
                 `;
             });
         }
-        
         tbody.innerHTML = rowsHtml;
     });
 
@@ -201,38 +248,36 @@ function startMonitoring() {
         const btnRevive = document.getElementById('btn-revive');
 
         if (status && status.online === false) {
-            sysText.innerText = "OFFLINE (SHUTDOWN)";
-            sysText.style.color = "#e31837";
+            sysText.innerText = "OFFLINE";
+            sysText.className = "stat-value value-danger";
             btnKill.style.display = 'none';
-            btnRevive.style.display = 'block';
+            btnRevive.style.display = 'inline-flex';
         } else {
-            sysText.innerText = "ONLINE & SECURE";
-            sysText.style.color = "#00e676";
-            btnKill.style.display = 'block';
+            sysText.innerText = "ONLINE";
+            sysText.className = "stat-value value-success";
+            btnKill.style.display = 'inline-flex';
             btnRevive.style.display = 'none';
         }
     });
 }
 
 function blockIP(ip) {
-    if (!ip || ip === 'Anonymous User' || ip === 'Unknown') return alert("Cannot block an unknown IP.");
-    if (confirm("Are you sure you want to BLOCK this IP: " + ip + "?\nThey will be immediately kicked out of the website.")) {
+    if (!ip || ip === 'Unknown') return alert("Invalid IP address.");
+    if (confirm("TERMINATION PROTOCOL:\nAre you sure you want to block IP: " + ip + "?\nThis will instantly kill their video playback.")) {
         const safeIp = ip.replace(/\./g, '_');
         db.ref('blacklisted_ips/' + safeIp).set(true)
-        .then(() => {
-            alert("IP Blocked successfully! Target neutralized.");
-        })
+        .then(() => alert("IP Terminated successfully."))
         .catch(err => alert("Error: " + err.message));
     }
 }
 
 function triggerKillSwitch(turnOnline) {
     if (turnOnline) {
-        if (confirm("Are you sure you want to restore the website? Users will be able to watch again.")) {
+        if (confirm("Restore website access to all users?")) {
             db.ref('site_status').set({ online: true });
         }
     } else {
-        const msg = prompt("EMERGENCY SHUTDOWN INITIATED.\nEnter a maintenance message for users:", "Server is down for a security update. Please check back later.");
+        const msg = prompt("EMERGENCY SHUTDOWN PROTOCOL\nEnter public maintenance message:", "Scheduled maintenance is in progress. Please check back later.");
         if (msg !== null) {
             db.ref('site_status').set({ 
                 online: false, 
