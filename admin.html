@@ -26,11 +26,12 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .status-pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border:1px solid var(--border);background:#fff;border-radius:99px;font-size:12px;font-weight:700;color:#12b76a;box-shadow:0 1px 2px rgba(16,24,40,0.05)}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px #12b76a18}
 .refresh{height:35px;padding:0 12px;border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer}.refresh:hover{background:#f8fafc}
-.overview{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:21px}
-.overview-card{padding:18px}.overview-card.full-row{grid-column:1 / -1}
-.ov-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-weight:800}
+.overview{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:21px}
+.overview-card{padding:22px 20px;display:flex;flex-direction:column;justify-content:center}.overview-card.full-row{grid-column:1 / -1}
 .blue{background:#eff6ff;color:var(--blue)}.green{background:#ecfdf3;color:var(--green)}.orange{background:#fffaeb;color:var(--orange)}.purple{background:#f5f3ff;color:#7c3aed}.cyan{background:#ecfeff;color:var(--cyan)}.rose{background:#fff1f2;color:#e11d48}
-.label{font-size:11px;color:var(--muted);font-weight:600}.value{font-size:25px;font-weight:800;margin-top:2px}.sub{font-size:10px;color:var(--muted);margin-top:3px}
+.label{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.value{font-size:36px;font-weight:900;margin:8px 0 4px;color:var(--dark);line-height:1}
+.sub{font-size:11px;color:var(--muted);font-weight:500}
 .control-card{margin-bottom:24px}.control-head{padding:17px 20px;border-bottom:1px solid var(--border)}.control-head b{font-size:13px}.control-head p{font-size:10px;color:var(--muted);margin-top:3px}.controls{display:grid;grid-template-columns:repeat(3,1fr)}.control{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-right:1px solid var(--border)}.control:last-child{border:0}.c-left{display:flex;align-items:center;gap:10px}.c-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center}.c-info b{display:block;font-size:12px}.c-info span{font-size:9px;color:var(--muted)}
 .switch{position:relative;width:43px;height:24px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;inset:0;background:#d0d5dd;border-radius:99px;cursor:pointer}.slider:before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;box-shadow:0 2px 4px #0002;transition:.2s}.switch input:checked+.slider{background:var(--green)}.switch input:checked+.slider:before{transform:translateX(19px)}.akash-toggle:checked+.slider{background:var(--cyan)!important}.toffee-toggle:checked+.slider{background:var(--orange)!important}
 .section-head{margin-bottom:12px}.section-head h2{font-size:14px}.section-head p{font-size:10px}.refresh{display:flex;gap:6px;align-items:center}.servers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:27px}.server-card{padding:17px}.server-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.server-name{font-size:12px;font-weight:700}.server-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px}.badge{font-size:8px;font-weight:800;padding:4px 7px;border-radius:6px}.main-b{background:#eff6ff;color:#1d4ed8}.ak-b{background:#ecfeff;color:#0891b2}.to-b{background:#fffaeb;color:#b45309}.count{font-size:24px;font-weight:800}.count small{font-size:10px;color:var(--muted);font-weight:500}.progress{height:5px;background:#eef2f6;border-radius:99px;margin-top:13px;overflow:hidden}.bar{height:100%;width:0;background:var(--green);transition:.4s}.server-foot{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:8px}
@@ -38,7 +39,14 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 #toast{position:fixed;right:20px;bottom:20px;background:#101828;color:#fff;padding:12px 15px;border-radius:9px;font-size:11px;font-weight:600;opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s}#toast.show{opacity:1;transform:none}
 @media(max-width:1100px){.servers{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.sidebar{display:none}.mobile-brand{display:block;font-size:17px;font-weight:800;margin-bottom:18px}.main{padding:17px 14px 30px}.controls{grid-template-columns:1fr}.control{border-right:0;border-bottom:1px solid var(--border)}.control:last-child{border-bottom:0}.servers{grid-template-columns:1fr}}
-@media(max-width:500px){.overview{grid-template-columns:repeat(2,1fr);gap:10px}.overview-card{padding:14px}.value{font-size:20px}.topbar{align-items:flex-start}.title h1{font-size:20px}.login-card{padding:25px 20px}}
+@media(max-width:500px){
+.overview{grid-template-columns:repeat(2,1fr);gap:12px}
+.overview-card{padding:16px 15px}
+.label{font-size:11px}
+.value{font-size:26px;margin:6px 0 3px}
+.sub{font-size:9.5px}
+.topbar{align-items:flex-start}.title h1{font-size:20px}.login-card{padding:25px 20px}
+}
 </style>
 </head>
 <body>
@@ -68,15 +76,15 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
 <div class="overview">
 <!-- Row 1: Live Viewers + Last Refresh -->
-<div class="overview-card"><div class="ov-icon blue">◉</div><div class="label">Live Viewers</div><div class="value" id="live-viewers">0</div><div class="sub">Active connections</div></div>
-<div class="overview-card"><div class="ov-icon purple">↻</div><div class="label">Last Refresh</div><div class="value" id="last-refresh">--</div><div class="sub">Server usage sync</div></div>
+<div class="overview-card"><div class="label">Live Viewers</div><div class="value" id="live-viewers" style="color: #2563eb;">0</div><div class="sub">Active connections</div></div>
+<div class="overview-card"><div class="label">Last Refresh</div><div class="value" id="last-refresh" style="color: #7c3aed;">--</div><div class="sub">Server usage sync</div></div>
 
 <!-- Row 2: Active Servers + Today's Views -->
-<div class="overview-card"><div class="ov-icon orange">▣</div><div class="label">Active Servers</div><div class="value">6</div><div class="sub">Cloudflare endpoints</div></div>
-<div class="overview-card"><div class="ov-icon cyan">✦</div><div class="label">Today's Views</div><div class="value" id="today-views">0</div><div class="sub">Unique daily visitors</div></div>
+<div class="overview-card"><div class="label">Active Servers</div><div class="value" style="color: #f79009;">6</div><div class="sub">Cloudflare endpoints</div></div>
+<div class="overview-card"><div class="label">Today's Views</div><div class="value" id="today-views" style="color: #06b6d4;">0</div><div class="sub">Unique daily visitors</div></div>
 
 <!-- Row 3: Total Lifetime Views -->
-<div class="overview-card full-row"><div class="ov-icon rose">★</div><div class="label">Total Views</div><div class="value" id="total-views">0</div><div class="sub">Lifetime accumulated portal views</div></div>
+<div class="overview-card full-row"><div class="label">Total Views</div><div class="value" id="total-views" style="color: #e11d48;">0</div><div class="sub">Lifetime accumulated portal views</div></div>
 </div>
 
 <div class="control-card"><div class="control-head"><b>Service Controls</b><p>Manage website and network availability</p></div><div class="controls">
