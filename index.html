@@ -57,11 +57,28 @@ header{display:flex;justify-content:space-between;align-items:center;padding:15p
 <script>
 const firebaseConfig={apiKey:"AIzaSyCpr-TpvEdpTVZXO2Ni3XftrxkcPl9Z5qs",authDomain:"akashgo-live.firebaseapp.com",databaseURL:"https://akashgo-live-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"akashgo-live",storageBucket:"akashgo-live.firebasestorage.app",messagingSenderId:"822141056550",appId:"1:822141056550:web:e6e056424ff3274a5c18e7"};
 let _0xdb=null,_0xcRef=null,_0xuIp="Unknown";
-let akash_active=true, toffee_active=true; // New toggle states
-let _0xcL=[]; // Global channel list
+let akash_active=true, toffee_active=true; 
+let _0xcL=[]; 
 
 try{
-firebase.initializeApp(firebaseConfig);_0xdb=firebase.database();
+firebase.initializeApp(firebaseConfig);
+_0xdb=firebase.database();
+
+// --- UNIQUE VIEW TRACKING LOGIC ---
+const today = new Date();
+const todayStr = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+const lastViewDate = localStorage.getItem('akashgo_last_view');
+
+if (lastViewDate !== todayStr) {
+    // Increment Total Views
+    _0xdb.ref('analytics/total_views').set(firebase.database.ServerValue.increment(1));
+    // Increment Today's Views
+    _0xdb.ref('analytics/daily_views/' + todayStr).set(firebase.database.ServerValue.increment(1));
+    // Save to LocalStorage to prevent fake views via refresh
+    localStorage.setItem('akashgo_last_view', todayStr);
+}
+// ----------------------------------
+
 const connectionsRef=_0xdb.ref('live_viewers');
 connectionsRef.on('value',(s)=>{document.getElementById('live-count').innerText=s.numChildren();});
 fetch('https://ipwho.is/').then(r=>r.json()).then(d=>{
@@ -82,7 +99,6 @@ if(jwplayer("player").getState())jwplayer("player").stop();
 _0xdb.ref('site_status').on('value',s=>{
 let _0xst=s.val();let _0xol=document.getElementById('kill-overlay');
 
-// Master Kill Switch check
 if(_0xst&&_0xst.online===false){
     if(!_0xol){
         _0xol=document.createElement('div');_0xol.id='kill-overlay';
@@ -95,7 +111,6 @@ if(_0xst&&_0xst.online===false){
     if(_0xol)_0xol.remove();
 }
 
-// Network Specific Switches check
 if (_0xst) {
     let needUpdate = false;
     let akStat = _0xst.akash_active !== false; 
@@ -104,7 +119,6 @@ if (_0xst) {
     if(akash_active !== akStat) { akash_active = akStat; needUpdate = true; }
     if(toffee_active !== tofStat) { toffee_active = tofStat; needUpdate = true; }
     
-    // Automatically re-render channels if admin turned on/off a network
     if(needUpdate && _0xcL.length > 0) {
         _0xrenderCategoriesAndChannels();
     }
@@ -112,9 +126,7 @@ if (_0xst) {
 });
 }catch(e){}
 
-// Toffee 2 Servers: tv5, tv6
 const _0xTofW=[atob("aHR0cHM6Ly90djUuZ2VuYXR1ejA3MC53b3JrZXJzLmRldg=="),atob("aHR0cHM6Ly90djYudnVrZXJheW9nb2dlODAud29ya2Vycy5kZXY=")];
-// Akash 3 Servers: tv2, tv3, tv4
 const _0xaW=[atob("aHR0cHM6Ly90djIud29ya2VyYm90NC53b3JrZXJzLmRldg=="),atob("aHR0cHM6Ly90djMuaGVuZXh1a2VsMzMwLndvcmtlcnMuZGV2"),atob("aHR0cHM6Ly90djQudWRpcWlwdXc1NDQud29ya2Vycy5kZXY=")];
 
 const _0xbN=atob("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NyaGFkeS9IYWR5L3JlZnMvaGVhZHMvbWFpbi9CZF9uZXdzLm0zdQ==");const _0xakM=atob("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NyaGFkeS9IYWR5L3JlZnMvaGVhZHMvbWFpbi9ha2FzaF9saXZlLm0zdQ==");
@@ -128,7 +140,6 @@ document.getElementById('search-input').addEventListener('input',(_0xe)=>{
     document.querySelectorAll('.category-btn').forEach(_0xb=>_0xb.classList.remove('active'));
 });
 
-// Dynamic filtering logic based on Admin panel switches
 function _0xgetFilteredList() {
     return _0xcL.filter(_0xx => {
         if(!toffee_active && _0xx.t === "tof") return false;
@@ -162,7 +173,7 @@ function _0xfc(_0xg,_0xbtn){document.querySelectorAll('.category-btn').forEach(_
 
 async function _0xplay(_0xuid){let _0xch=_0xcL.find(_0xx=>_0xx.uid===_0xuid);if(!_0xch)return;if(_0xcRef)_0xcRef.update({channel:_0xch.n});document.getElementById('main-container').classList.add('is-playing');document.getElementById('player-wrapper').style.display='block';let _0xst=document.getElementById('status');_0xst.style.display='block';_0xst.innerHTML="Connecting...";if(!history.state||!history.state.p)history.pushState({p:true},"","#play");let _0xfUrl="";
 if(_0xch.t==="tof"){
-    let _0xswT = [..._0xTofW].sort(()=>0.5-Math.random()); // Randomly pick tv5 or tv6
+    let _0xswT = [..._0xTofW].sort(()=>0.5-Math.random()); 
     let _0xu=new URL(_0xch.u);
     _0xfUrl=_0xswT[0]+_0xu.pathname+_0xu.search;
     _0xst.style.display='none';
