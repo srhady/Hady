@@ -34,11 +34,12 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .sub{font-size:11px;color:var(--muted);font-weight:500}
 .control-card{margin-bottom:24px}.control-head{padding:17px 20px;border-bottom:1px solid var(--border)}.control-head b{font-size:13px}.control-head p{font-size:10px;color:var(--muted);margin-top:3px}.controls{display:grid;grid-template-columns:repeat(3,1fr)}.control{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-right:1px solid var(--border)}.control:last-child{border:0}.c-left{display:flex;align-items:center;gap:10px}.c-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center}.c-info b{display:block;font-size:12px}.c-info span{font-size:9px;color:var(--muted)}
 .switch{position:relative;width:43px;height:24px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;inset:0;background:#d0d5dd;border-radius:99px;cursor:pointer}.slider:before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;box-shadow:0 2px 4px #0002;transition:.2s}.switch input:checked+.slider{background:var(--green)}.switch input:checked+.slider:before{transform:translateX(19px)}.akash-toggle:checked+.slider{background:var(--cyan)!important}.toffee-toggle:checked+.slider{background:var(--orange)!important}
-.section-head{margin-bottom:12px}.section-head h2{font-size:14px}.section-head p{font-size:10px}.refresh{display:flex;gap:6px;align-items:center}.servers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:27px}.server-card{padding:17px}.server-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.server-name{font-size:12px;font-weight:700}.server-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px}.badge{font-size:8px;font-weight:800;padding:4px 7px;border-radius:6px}.main-b{background:#eff6ff;color:#1d4ed8}.ak-b{background:#ecfeff;color:#0891b2}.to-b{background:#fffaeb;color:#b45309}.count{font-size:24px;font-weight:800}.count small{font-size:10px;color:var(--muted);font-weight:500}.progress{height:5px;background:#eef2f6;border-radius:99px;margin-top:13px;overflow:hidden}.bar{height:100%;width:0;background:var(--green);transition:.4s}.server-foot{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:8px}
+.section-head{margin-bottom:12px;margin-top:30px;}.section-head h2{font-size:14px}.section-head p{font-size:10px}.refresh{display:flex;gap:6px;align-items:center}.servers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:27px}.server-card{padding:17px}.server-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.server-name{font-size:12px;font-weight:700}.server-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px}.badge{font-size:8px;font-weight:800;padding:4px 7px;border-radius:6px}.main-b{background:#eff6ff;color:#1d4ed8}.ak-b{background:#ecfeff;color:#0891b2}.to-b{background:#fffaeb;color:#b45309}.count{font-size:24px;font-weight:800}.count small{font-size:10px;color:var(--muted);font-weight:500}.progress{height:5px;background:#eef2f6;border-radius:99px;margin-top:13px;overflow:hidden}.bar{height:100%;width:0;background:var(--green);transition:.4s}.server-foot{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:8px}
 .table-card{overflow:hidden}.table-head{padding:17px 20px;border-bottom:1px solid var(--border)}.table-head b{font-size:13px}.pill{background:#ecfdf3;color:var(--green);padding:5px 8px;border-radius:6px;font-size:9px;font-weight:800}.table-scroll{overflow-x:auto}table{width:100%;min-width:850px;border-collapse:collapse}th{background:#f8fafc;color:#667085;font-size:9px;text-transform:uppercase;text-align:left;padding:12px 17px;border-bottom:1px solid var(--border)}td{padding:13px 17px;border-bottom:1px solid #f0f2f5;font-size:11px;color:#475467}tr:hover{background:#fafbfc}.ip{color:var(--blue);font-family:monospace;font-weight:700}.strong{font-weight:600;color:var(--text)}.block{border:1px solid #fecaca;background:#fef3f2;color:var(--red);border-radius:6px;padding:5px 9px;font-size:9px;font-weight:700;cursor:pointer}.block:hover{background:var(--red);color:#fff}.empty{text-align:center;padding:45px;color:var(--muted);font-size:11px}.empty b{display:block;color:#475467;margin-bottom:4px}
+.unblock{border:1px solid #d1fadf;background:#ecfdf3;color:var(--green);border-radius:6px;padding:5px 9px;font-size:9px;font-weight:700;cursor:pointer}.unblock:hover{background:var(--green);color:#fff}
 #toast{position:fixed;right:20px;bottom:20px;background:#101828;color:#fff;padding:12px 15px;border-radius:9px;font-size:11px;font-weight:600;opacity:0;transform:translateY(15px);pointer-events:none;transition:.25s}#toast.show{opacity:1;transform:none}
 @media(max-width:1100px){.servers{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:800px){.sidebar{display:none}.mobile-brand{display:block;font-size:17px;font-weight:800;margin-bottom:18px}.main{padding:17px 14px 30px}.controls{grid-template-columns:1fr}.control{border-right:0;border-bottom:1px solid var(--border)}.control:last-child{border-bottom:0}.servers{grid-template-columns:1fr}}
+@media(max-width:800px){.sidebar{display:none}.mobile-brand{display:block;font-size:17px;font-weight:800;margin-bottom:18px}.main{padding:17px 14px 30px}.controls{grid-template-columns:1fr}.control{border-right:0;border-bottom:1px solid var(--border)}.control:last-child{border-bottom:0}.servers{grid-template-columns:1fr}table{min-width:100%}}
 @media(max-width:500px){
 .overview{grid-template-columns:repeat(2,1fr);gap:12px}
 .overview-card{padding:16px 15px}
@@ -93,15 +94,21 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 <div class="control"><div class="c-left"><div class="c-icon" style="background:#fffaeb;color:#f79009">◆</div><div class="c-info"><b>Toffee Network</b><span id="lbl-toffee">Toffee Active</span></div></div><label class="switch"><input type="checkbox" id="toffee-toggle" class="toffee-toggle" onchange="toggleNetwork('toffee',this)"><span class="slider"></span></label></div>
 </div></div>
 
-<div class="section-head"><div><h2>Cloudflare Workers Usage</h2><p>Daily request limits — 100,000 requests per server</p></div><button class="refresh" id="refresh-button" onclick="fetchAllServers()">↻ Refresh</button></div>
+<div class="section-head" style="margin-top: 0;"><div><h2>Cloudflare Workers Usage</h2><p>Daily request limits — 100,000 requests per server</p></div><button class="refresh" id="refresh-button" onclick="fetchAllServers()">↻ Refresh</button></div>
 <div class="servers">
 <script>
 ["main|Main Website|MAIN|main-b|tv.akash-go","tv5|Server TV5|TOFFEE|to-b|Toffee","tv6|Server TV6|TOFFEE|to-b|Toffee","tv2|Server TV2|AKASH|ak-b|Akash","tv3|Server TV3|AKASH|ak-b|Akash","tv4|Server TV4|AKASH|ak-b|Akash"].forEach(x=>{let[a,b,c,d,e]=x.split("|");document.write(`<div class="server-card"><div class="server-top"><div class="server-name"><i class="server-dot"></i>${b}</div><span class="badge ${d}">${c}</span></div><div class="count"><span id="cf-${a}">Loading...</span> <small>/ 100K</small></div><div class="progress"><div class="bar" id="progress-${a}"></div></div><div class="server-foot"><span>${e}</span><span id="percent-${a}">--</span></div></div>`)});
 </script>
 </div>
 
+<!-- Active Connections Table -->
 <div class="section-head"><div><h2>Active Connections</h2><p>Currently connected viewers and telemetry</p></div></div>
 <div class="table-card"><div class="table-head"><b>Viewer Telemetry</b><span class="pill" id="viewer-count-pill">0 ACTIVE</span></div><div class="table-scroll"><table><thead><tr><th>IP Address</th><th>Location</th><th>ISP / Network</th><th>Device</th><th>Channel</th><th>Joined</th><th>Action</th></tr></thead><tbody id="viewer-table-body"><tr><td colspan="7"><div class="empty"><b>Loading connections</b>Waiting for Firebase telemetry...</div></td></tr></tbody></table></div></div>
+
+<!-- Blacklisted IPs Table -->
+<div class="section-head"><div><h2>Blacklisted IPs</h2><p>Restricted network access and security</p></div></div>
+<div class="table-card"><div class="table-head"><b>Blocked Network Addresses</b><span class="pill" id="blocked-count-pill" style="background:#fef3f2;color:var(--red);">0 BLOCKED</span></div><div class="table-scroll"><table><thead><tr><th>IP Address</th><th>Action</th></tr></thead><tbody id="blocked-table-body"><tr><td colspan="2"><div class="empty"><b>No blocked IPs</b>System is currently clear.</div></td></tr></tbody></table></div></div>
+
 </main></div></div>
 <div id="toast"></div>
 
@@ -144,12 +151,30 @@ startMonitoring();
 function esc(v){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
 
 function startMonitoring(){
+// Live Viewers Table
 db.ref("live_viewers").on("value",s=>{
 let d=s.val(),u=d?Object.values(d).filter(x=>x&&typeof x==="object"&&x.ip):[],body=document.getElementById("viewer-table-body");
 document.getElementById("live-viewers").textContent=u.length;
 document.getElementById("viewer-count-pill").textContent=u.length+" ACTIVE";
 if(!u.length){body.innerHTML='<tr><td colspan="7"><div class="empty"><b>No active connections</b>No viewers are currently connected.</div></td></tr>';return}
 body.innerHTML=u.slice(-100).reverse().map(x=>`<tr><td><span class="ip">${esc(x.ip)}</span></td><td>${esc(x.city||"Unknown")}</td><td>${esc(x.isp||"-")}</td><td class="strong">${esc(x.device||"Unknown")}</td><td class="strong">${esc(x.channel||"Browsing...")}</td><td>${esc(x.time||"-")}</td><td><button class="block" onclick='blockIP(${JSON.stringify(x.ip)})'>Block</button></td></tr>`).join("");
+});
+
+// Blacklisted IPs Table
+db.ref("blacklisted_ips").on("value",s=>{
+let d=s.val()||{};
+let keys=Object.keys(d);
+let body=document.getElementById("blocked-table-body");
+document.getElementById("blocked-count-pill").textContent=keys.length+" BLOCKED";
+
+if(!keys.length){
+body.innerHTML='<tr><td colspan="2"><div class="empty"><b>No blocked IPs</b>System is currently clear.</div></td></tr>';
+return;
+}
+body.innerHTML=keys.map(k=>{
+let realIp=k.replace(/_/g,'.');
+return `<tr><td><span class="ip">${esc(realIp)}</span></td><td><button class="unblock" onclick='unblockIP("${esc(k)}")'>Unblock</button></td></tr>`;
+}).join("");
 });
 
 db.ref("site_status").on("value",s=>updateControls(s.val()||{}));
@@ -191,6 +216,12 @@ document.getElementById("lbl-toffee").style.color=t?"#f79009":"#667085";
 function blockIP(ip){
 if(!ip||ip==="Unknown"||!confirm("Block this IP?\n\n"+ip))return;
 db.ref("blacklisted_ips/"+ip.replace(/\./g,"_")).set(true).then(()=>toast("IP successfully blocked: "+ip)).catch(()=>toast("Failed to block IP."));
+}
+
+function unblockIP(safeIp){
+if(confirm("Are you sure you want to unblock this IP?")){
+db.ref("blacklisted_ips/"+safeIp).remove().then(()=>toast("IP successfully unblocked!")).catch(()=>toast("Failed to unblock IP."));
+}
 }
 
 function toggleSystem(c){
