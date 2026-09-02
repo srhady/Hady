@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AKASH GO - Admin Control Center</title>
+<title>AKASH GO - Master Dashboard</title>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <style>
@@ -35,7 +35,7 @@
     .logout-btn { background: transparent; border: 1px solid #d1d5db; color: #4b5563; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
     .logout-btn:hover { background: #f3f4f6; color: #111827; }
 
-    /* iPhone Style Toggle Switch for Kill Switch */
+    /* Toggle Switch */
     .switch-container { display: flex; align-items: center; gap: 10px; }
     .switch-label { font-size: 14px; font-weight: 600; color: #374151; }
     .switch { position: relative; display: inline-block; width: 50px; height: 28px; }
@@ -45,14 +45,15 @@
     input:checked + .slider { background-color: #10b981; }
     input:checked + .slider:before { transform: translateX(22px); }
 
-    /* Simple Corporate Stats Cards */
+    /* Stats Cards */
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 30px; }
     .stat-card { background: #ffffff; border: 1px solid #e5e7eb; padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
     .stat-label { font-size: 13px; font-weight: 600; color: #6b7280; text-transform: uppercase; margin-bottom: 8px; }
-    .stat-value { font-size: 36px; font-weight: 700; color: #111827; }
+    .stat-value { font-size: 32px; font-weight: 700; color: #111827; }
     .status-text { font-size: 20px; font-weight: 700; margin-top: 10px; }
     .status-online { color: #10b981; }
     .status-offline { color: #dc2626; }
+    .limit-warning { color: #dc2626; font-size: 12px; margin-top: 5px; font-weight: 600; display: none; }
 
     /* Clean Corporate Table */
     .table-container { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
@@ -65,8 +66,6 @@
     
     .ip-text { font-family: monospace; color: #2563eb; font-weight: 600; font-size: 14px; }
     .time-text { color: #6b7280; font-size: 13px; }
-    
-    /* Subtle Action Button */
     .action-btn { background: #fee2e2; color: #dc2626; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; }
     .action-btn:hover { background: #f87171; color: white; }
 
@@ -78,7 +77,6 @@
 </head>
 <body>
 
-<!-- Login Screen -->
 <div id="login-screen">
     <div class="login-box">
         <h2>AKASH <span>GO</span></h2>
@@ -89,12 +87,11 @@
     </div>
 </div>
 
-<!-- Dashboard Screen -->
 <div id="dashboard-screen">
     <div class="header">
         <div class="header-title">
             <h1>System Overview</h1>
-            <p>Real-time network traffic & connections</p>
+            <p>Real-time network traffic & API Monitoring</p>
         </div>
         <div class="header-controls">
             <div class="switch-container">
@@ -108,10 +105,16 @@
         </div>
     </div>
 
+    <!-- Stats Grid updated with Cloudflare Worker Status -->
     <div class="stats-grid">
         <div class="stat-card">
             <span class="stat-label">Live Viewers</span>
             <span class="stat-value" id="live-viewers">0</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Worker Requests (Today)</span>
+            <span class="stat-value" id="cf-requests" style="color: #2563eb;">Loading...</span>
+            <span class="limit-warning" id="cf-warning">⚠️ Critical: Approaching Limit!</span>
         </div>
         <div class="stat-card">
             <span class="stat-label">Server Status</span>
@@ -133,9 +136,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody id="viewer-table-body">
-                    <!-- Data populates here -->
-                </tbody>
+                <tbody id="viewer-table-body"></tbody>
             </table>
         </div>
     </div>
@@ -143,15 +144,17 @@
 
 <script>
 const ADMIN_PASS = "boss2026";
-let db;
-let isSystemOnline = true; // Default state
 
-// Check Session Storage on Load to prevent logout on refresh
+// Cloudflare API Credentials
+const CF_API_KEY = "cfk_09TKW217Na0IRfYxkuJKS27qtJgZdTUOwz4uwDvBd9e8111c";
+const CF_ACCOUNT_ID = "e50cd15ab5f20698224dc5480e179fde";
+
+let db;
+let isSystemOnline = true;
+
 document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("akash_admin_auth") === "true") {
-        document.getElementById('login-screen').style.display = 'none';
-        document.getElementById('dashboard-screen').style.display = 'block';
-        initFirebase();
+        showDashboard();
     }
 });
 
@@ -159,9 +162,7 @@ function checkLogin() {
     const input = document.getElementById('admin-pass').value;
     if (input === ADMIN_PASS) {
         sessionStorage.setItem("akash_admin_auth", "true");
-        document.getElementById('login-screen').style.display = 'none';
-        document.getElementById('dashboard-screen').style.display = 'block';
-        initFirebase();
+        showDashboard();
     } else {
         document.getElementById('login-error').style.display = 'block';
     }
@@ -171,31 +172,96 @@ document.getElementById('admin-pass').addEventListener('keypress', function (e) 
     if (e.key === 'Enter') checkLogin();
 });
 
+function showDashboard() {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('dashboard-screen').style.display = 'block';
+    initFirebase();
+    fetchCloudflareStats(); // Fetch stats immediately
+    setInterval(fetchCloudflareStats, 60000); // Update every 1 minute
+}
+
 function logoutAdmin() {
     sessionStorage.removeItem("akash_admin_auth");
     window.location.reload();
 }
 
+/* ---------------- CLOUDFLARE API TRACKER ---------------- */
+async function fetchCloudflareStats() {
+    // Generate today's date in format YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Cloudflare GraphQL Query for Worker Subrequests
+    const query = JSON.stringify({
+        query: `
+        query {
+          viewer {
+            accounts(filter: {accountTag: "${CF_ACCOUNT_ID}"}) {
+              workersInvocationsAdaptive(limit: 1, filter: {date: "${today}"}) {
+                sum {
+                  requests
+                }
+              }
+            }
+          }
+        }`
+    });
+
+    try {
+        const response = await fetch('https://api.cloudflare.com/client/v4/graphql', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${CF_API_KEY}`,
+                'Content-Type': 'application/json'
+            },
+            body: query
+        });
+        
+        const data = await response.json();
+        let requests = 0;
+        
+        if (data && data.data && data.data.viewer.accounts[0] && data.data.viewer.accounts[0].workersInvocationsAdaptive.length > 0) {
+            requests = data.data.viewer.accounts[0].workersInvocationsAdaptive[0].sum.requests;
+        }
+
+        const reqDisplay = document.getElementById('cf-requests');
+        const reqWarning = document.getElementById('cf-warning');
+        
+        // Show data like "15,200 / 100K"
+        reqDisplay.innerText = requests.toLocaleString() + " / 100K";
+
+        // Logic for Color Coding & Warnings
+        if (requests >= 80000) {
+            reqDisplay.style.color = "#dc2626"; // Red (Critical)
+            reqWarning.style.display = "block";
+        } else if (requests >= 50000) {
+            reqDisplay.style.color = "#d97706"; // Orange (Warning)
+            reqWarning.style.display = "none";
+        } else {
+            reqDisplay.style.color = "#10b981"; // Green (Safe)
+            reqWarning.style.display = "none";
+        }
+        
+    } catch (error) {
+        document.getElementById('cf-requests').innerText = "API Error";
+        document.getElementById('cf-requests').style.color = "#6b7280";
+        console.error("Cloudflare Fetch Error:", error);
+    }
+}
+
+/* ---------------- FIREBASE REALTIME DB ---------------- */
 function initFirebase() {
     const firebaseConfig = {
         apiKey: "AIzaSyCpr-TpvEdpTVZXO2Ni3XftrxkcPl9Z5qs",
         authDomain: "akashgo-live.firebaseapp.com",
         databaseURL: "https://akashgo-live-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "akashgo-live",
-        storageBucket: "akashgo-live.firebasestorage.app",
-        messagingSenderId: "822141056550",
-        appId: "1:822141056550:web:e6e056424ff3274a5c18e7"
+        projectId: "akashgo-live"
     };
-    
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
     db = firebase.database();
     startMonitoring();
 }
 
 function startMonitoring() {
-    // Watch Live Viewers
     db.ref('live_viewers').on('value', (snapshot) => {
         const data = snapshot.val();
         const tbody = document.getElementById('viewer-table-body');
@@ -207,19 +273,14 @@ function startMonitoring() {
         }
 
         const keys = Object.keys(data);
-        
-        // Filter valid users (Safety check)
         let validUsers = [];
         keys.forEach(key => {
-            if (typeof data[key] === 'object' && data[key] !== null && data[key].ip) {
-                validUsers.push(data[key]);
-            }
+            if (typeof data[key] === 'object' && data[key] !== null && data[key].ip) validUsers.push(data[key]);
         });
 
         document.getElementById('live-viewers').innerText = validUsers.length;
         let rowsHtml = '';
-        
-        const displayUsers = validUsers.slice(-100).reverse(); // Max 100 for performance
+        const displayUsers = validUsers.slice(-100).reverse();
 
         if (displayUsers.length === 0) {
             rowsHtml = "<tr><td colspan='7' style='text-align:center; padding: 40px; color:#6b7280;'>Waiting for telemetry...</td></tr>";
@@ -248,7 +309,6 @@ function startMonitoring() {
         tbody.innerHTML = rowsHtml;
     });
 
-    // Watch System Status (Syncs the Toggle Switch)
     db.ref('site_status').on('value', (snapshot) => {
         const status = snapshot.val();
         const sysText = document.getElementById('sys-status');
@@ -256,52 +316,36 @@ function startMonitoring() {
         const switchLabel = document.getElementById('switch-status-text');
 
         if (status && status.online === false) {
-            isSystemOnline = false;
             sysText.innerText = "OFFLINE";
             sysText.className = "status-text status-offline";
-            toggle.checked = false; // Red state
+            toggle.checked = false;
             switchLabel.innerText = "Site Offline";
         } else {
-            isSystemOnline = true;
             sysText.innerText = "ONLINE";
             sysText.className = "status-text status-online";
-            toggle.checked = true; // Green state
+            toggle.checked = true;
             switchLabel.innerText = "Site Online";
         }
     });
 }
 
 function blockIP(ip) {
-    if (!ip || ip === 'Unknown') return alert("Invalid IP address.");
+    if (!ip || ip === 'Unknown') return;
     if (confirm("Are you sure you want to completely block this IP: " + ip + "?")) {
         const safeIp = ip.replace(/\./g, '_');
         db.ref('blacklisted_ips/' + safeIp).set(true)
-        .then(() => alert("IP successfully blocked."))
-        .catch(err => alert("Error: " + err.message));
+        .then(() => alert("IP successfully blocked."));
     }
 }
 
-// Logic for the Toggle Switch
 function toggleSystem(checkbox) {
     if (checkbox.checked) {
-        // Turning ON
-        if (confirm("Restore website access to all users?")) {
-            db.ref('site_status').set({ online: true });
-        } else {
-            checkbox.checked = false; // Revert switch visually
-        }
+        if (confirm("Restore website access to all users?")) db.ref('site_status').set({ online: true });
+        else checkbox.checked = false;
     } else {
-        // Turning OFF
         const msg = prompt("SHUTDOWN CONFIRMATION\nEnter maintenance message:", "Server maintenance in progress.");
-        if (msg !== null) {
-            db.ref('site_status').set({ 
-                online: false, 
-                title: "SYSTEM OFFLINE", 
-                msg: msg 
-            });
-        } else {
-            checkbox.checked = true; // Revert switch visually
-        }
+        if (msg !== null) db.ref('site_status').set({ online: false, title: "SYSTEM OFFLINE", msg: msg });
+        else checkbox.checked = true;
     }
 }
 </script>
