@@ -24,40 +24,52 @@
     #login-error { color: #dc2626; font-size: 13px; margin-bottom: 16px; display: none; font-weight: 500; }
 
     /* Dashboard Layout */
-    #dashboard-screen { display: none; padding: 30px; max-width: 1200px; margin: 0 auto; }
+    #dashboard-screen { display: none; padding: 30px; max-width: 1300px; margin: 0 auto; }
     
     /* Header & Navigation */
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; background: #ffffff; padding: 20px 24px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 15px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; background: #ffffff; padding: 20px 24px; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 15px; }
     .header-title h1 { font-size: 22px; font-weight: 700; color: #111827; }
     .header-title p { font-size: 13px; color: #6b7280; margin-top: 4px; }
     
-    .header-controls { display: flex; align-items: center; gap: 24px; }
     .logout-btn { background: transparent; border: 1px solid #d1d5db; color: #4b5563; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
     .logout-btn:hover { background: #f3f4f6; color: #111827; }
 
-    /* Toggle Switch */
-    .switch-container { display: flex; align-items: center; gap: 10px; }
-    .switch-label { font-size: 14px; font-weight: 600; color: #374151; }
+    /* Control Panel (Switches) */
+    .control-panel { background: #ffffff; padding: 20px 24px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 24px; display: flex; flex-wrap: wrap; gap: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .switch-group { display: flex; flex-direction: column; gap: 8px; }
+    .switch-container { display: flex; align-items: center; gap: 12px; }
+    .switch-title { font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+    .switch-label { font-size: 15px; font-weight: 600; color: #111827; min-width: 100px; }
+    
     .switch { position: relative; display: inline-block; width: 50px; height: 28px; }
     .switch input { opacity: 0; width: 0; height: 0; }
     .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #dc2626; transition: .4s; border-radius: 34px; }
     .slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
     input:checked + .slider { background-color: #10b981; }
     input:checked + .slider:before { transform: translateX(22px); }
+    
+    /* specific slider colors */
+    input.akash-toggle:checked + .slider { background-color: #0ea5e9; } /* Sky blue for Akash */
+    input.toffee-toggle:checked + .slider { background-color: #f59e0b; } /* Orange for Toffee */
 
-    /* Stats Cards */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 30px; }
-    .stat-card { background: #ffffff; border: 1px solid #e5e7eb; padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column; position: relative; }
-    .stat-label { font-size: 13px; font-weight: 600; color: #6b7280; text-transform: uppercase; margin-bottom: 8px; }
-    .stat-value { font-size: 32px; font-weight: 700; color: #111827; }
-    .status-text { font-size: 20px; font-weight: 700; margin-top: 10px; }
-    .status-online { color: #10b981; }
-    .status-offline { color: #dc2626; }
-    .limit-warning { color: #dc2626; font-size: 12px; margin-top: 5px; font-weight: 600; display: none; }
-    .refresh-btn { position: absolute; top: 20px; right: 20px; background: #e5e7eb; border: none; border-radius: 4px; padding: 4px 8px; font-size: 12px; cursor: pointer; color: #4b5563; font-weight: 600;}
-    .refresh-btn:hover { background: #d1d5db; }
+    /* Stats Grid */
+    .section-title { font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #374151; display: flex; justify-content: space-between; align-items: center; }
+    .refresh-btn { background: #e5e7eb; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; color: #4b5563; font-weight: 600; transition: 0.2s;}
+    .refresh-btn:hover { background: #d1d5db; color: #111827; }
 
-    /* Clean Corporate Table */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .stat-card { background: #ffffff; border: 1px solid #e5e7eb; padding: 20px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: relative; display: flex; flex-direction: column; justify-content: center; }
+    
+    .server-badge { position: absolute; top: 15px; right: 15px; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 12px; text-transform: uppercase; }
+    .badge-main { background: #dbeafe; color: #1e3a8a; }
+    .badge-akash { background: #e0f2fe; color: #0369a1; }
+    .badge-toffee { background: #fef3c7; color: #b45309; }
+
+    .stat-label { font-size: 14px; font-weight: 700; color: #374151; margin-bottom: 8px; }
+    .stat-value { font-size: 28px; font-weight: 700; color: #111827; }
+    .stat-sub { font-size: 12px; color: #6b7280; margin-top: 4px; font-weight: 500; }
+
+    /* Viewer Table */
     .table-container { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
     .table-responsive { width: 100%; overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
@@ -71,9 +83,8 @@
     .action-btn { background: #fee2e2; color: #dc2626; border: none; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s; }
     .action-btn:hover { background: #f87171; color: white; }
 
-    @media (max-width: 640px) {
-        .header { flex-direction: column; align-items: flex-start; }
-        .header-controls { width: 100%; justify-content: space-between; margin-top: 10px; }
+    @media (max-width: 768px) {
+        .control-panel { flex-direction: column; gap: 20px; }
     }
 </style>
 </head>
@@ -92,39 +103,101 @@
 <div id="dashboard-screen">
     <div class="header">
         <div class="header-title">
-            <h1>System Overview</h1>
-            <p>Real-time network traffic & API Monitoring</p>
+            <h1>Master Dashboard</h1>
+            <p>Real-time network traffic, Server Limits & API Monitoring</p>
         </div>
-        <div class="header-controls">
+        <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+    </div>
+
+    <!-- Master Control Panel -->
+    <div class="control-panel">
+        <div class="switch-group">
+            <span class="switch-title">Master Power</span>
             <div class="switch-container">
-                <span class="switch-label" id="switch-status-text">Site Online</span>
                 <label class="switch">
                     <input type="checkbox" id="kill-toggle" onchange="toggleSystem(this)">
                     <span class="slider"></span>
                 </label>
+                <span class="switch-label" id="lbl-master">Site Online</span>
             </div>
-            <button class="logout-btn" onclick="logoutAdmin()">Logout</button>
+        </div>
+
+        <div class="switch-group">
+            <span class="switch-title">Akash Network</span>
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="akash-toggle" class="akash-toggle" onchange="toggleNetwork('akash', this)">
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label" id="lbl-akash">Akash Active</span>
+            </div>
+        </div>
+
+        <div class="switch-group">
+            <span class="switch-title">Toffee Network</span>
+            <div class="switch-container">
+                <label class="switch">
+                    <input type="checkbox" id="toffee-toggle" class="toffee-toggle" onchange="toggleNetwork('toffee', this)">
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label" id="lbl-toffee">Toffee Active</span>
+            </div>
+        </div>
+        
+        <div class="switch-group" style="margin-left: auto; justify-content: center;">
+            <div style="text-align: right;">
+                <div style="font-size: 12px; color: #6b7280; font-weight: 700; text-transform: uppercase;">Live Viewers</div>
+                <div id="live-viewers" style="font-size: 32px; font-weight: 700; color: #10b981; line-height: 1;">0</div>
+            </div>
         </div>
     </div>
 
-    <!-- Stats Grid -->
+    <div class="section-title">
+        <span>Cloudflare Workers Limits (100K Daily)</span>
+        <button class="refresh-btn" onclick="fetchAllServers()">Force Refresh</button>
+    </div>
+    
+    <!-- Cloudflare Limits Grid -->
     <div class="stats-grid">
+        <!-- Main Website -->
         <div class="stat-card">
-            <span class="stat-label">Live Viewers</span>
-            <span class="stat-value" id="live-viewers">0</span>
+            <span class="server-badge badge-main">MAIN SITE</span>
+            <span class="stat-label">tv.akash-go</span>
+            <span class="stat-value" id="cf-main" style="color: #2563eb;">Loading...</span>
         </div>
+        <!-- Toffee TV5 -->
         <div class="stat-card">
-            <span class="stat-label">Worker Requests (Today)</span>
-            <button class="refresh-btn" onclick="fetchCloudflareStats()">Refresh</button>
-            <span class="stat-value" id="cf-requests" style="color: #2563eb;">Loading...</span>
-            <span class="limit-warning" id="cf-warning">⚠️ Critical: Approaching Limit!</span>
+            <span class="server-badge badge-toffee">TOFFEE</span>
+            <span class="stat-label">Server TV5</span>
+            <span class="stat-value" id="cf-tv5">Loading...</span>
         </div>
+        <!-- Toffee TV6 -->
         <div class="stat-card">
-            <span class="stat-label">Server Status</span>
-            <span class="status-text status-online" id="sys-status">ONLINE</span>
+            <span class="server-badge badge-toffee">TOFFEE</span>
+            <span class="stat-label">Server TV6</span>
+            <span class="stat-value" id="cf-tv6">Loading...</span>
+        </div>
+        <!-- Akash TV2 -->
+        <div class="stat-card">
+            <span class="server-badge badge-akash">AKASH</span>
+            <span class="stat-label">Server TV2</span>
+            <span class="stat-value" id="cf-tv2">Loading...</span>
+        </div>
+        <!-- Akash TV3 -->
+        <div class="stat-card">
+            <span class="server-badge badge-akash">AKASH</span>
+            <span class="stat-label">Server TV3</span>
+            <span class="stat-value" id="cf-tv3">Loading...</span>
+        </div>
+        <!-- Akash TV4 -->
+        <div class="stat-card">
+            <span class="server-badge badge-akash">AKASH</span>
+            <span class="stat-label">Server TV4</span>
+            <span class="stat-value" id="cf-tv4">Loading...</span>
         </div>
     </div>
 
+    <div class="section-title">Active Connections</div>
     <div class="table-container">
         <div class="table-responsive">
             <table>
@@ -174,14 +247,11 @@ function showDashboard() {
     document.getElementById('dashboard-screen').style.display = 'block';
     initFirebase();
     
-    // ১ম বার পেজ লোড হলে ফেচ করবে
-    fetchCloudflareStats(); 
+    fetchAllServers(); 
     
-    // स्मार्ट স্লিপ মোড: প্রতি ৫ মিনিট (৩০০,০০০ ms) পরপর চেক করবে, কিন্তু শুধু তখন যখন ট্যাবটি ওপেন থাকবে!
+    // Auto update every 5 minutes if tab is active
     setInterval(() => {
-        if (document.visibilityState === 'visible') {
-            fetchCloudflareStats();
-        }
+        if (document.visibilityState === 'visible') fetchAllServers();
     }, 300000); 
 }
 
@@ -190,38 +260,37 @@ function logoutAdmin() {
     window.location.reload();
 }
 
-/* ---------------- PROXY CLOUDFLARE WORKER TRACKER ---------------- */
-async function fetchCloudflareStats() {
-    const WORKER_URL = "https://dashboard.akash-go.workers.dev/";
-    const reqDisplay = document.getElementById('cf-requests');
-    const reqWarning = document.getElementById('cf-warning');
+/* ---------------- ALL-IN-ONE PROXY FETCHER ---------------- */
+async function fetchAllServers() {
+    const WORKER_URL = "https://dashboard.akash-go.workers.dev/?t=" + Date.now(); 
+    const serverIds = ['main', 'tv5', 'tv6', 'tv2', 'tv3', 'tv4'];
     
-    reqDisplay.style.opacity = "0.5"; // Loading effect
+    // Loading effect
+    serverIds.forEach(id => document.getElementById(`cf-${id}`).style.opacity = "0.5");
 
     try {
         const response = await fetch(WORKER_URL);
         const data = await response.json();
         
-        let requests = data.requests || 0;
+        serverIds.forEach(id => {
+            const el = document.getElementById(`cf-${id}`);
+            const reqCount = data[id] || 0;
+            
+            el.innerText = reqCount.toLocaleString() + " / 100K";
+            el.style.opacity = "1";
+            
+            if (reqCount >= 80000) el.style.color = "#dc2626"; 
+            else if (reqCount >= 50000) el.style.color = "#d97706"; 
+            else el.style.color = "#10b981"; 
+        });
         
-        reqDisplay.innerText = requests.toLocaleString() + " / 100K";
-        reqDisplay.style.opacity = "1";
-
-        if (requests >= 80000) {
-            reqDisplay.style.color = "#dc2626"; 
-            reqWarning.style.display = "block";
-        } else if (requests >= 50000) {
-            reqDisplay.style.color = "#d97706"; 
-            reqWarning.style.display = "none";
-        } else {
-            reqDisplay.style.color = "#10b981"; 
-            reqWarning.style.display = "none";
-        }
-        
-    } catch (error) {
-        reqDisplay.innerText = "API Error";
-        reqDisplay.style.color = "#6b7280";
-        reqDisplay.style.opacity = "1";
+    } catch (e) {
+        serverIds.forEach(id => {
+            const el = document.getElementById(`cf-${id}`);
+            el.innerText = "Error";
+            el.style.color = "#dc2626";
+            el.style.opacity = "1";
+        });
     }
 }
 
@@ -287,22 +356,25 @@ function startMonitoring() {
     });
 
     db.ref('site_status').on('value', (snapshot) => {
-        const status = snapshot.val();
-        const sysText = document.getElementById('sys-status');
-        const toggle = document.getElementById('kill-toggle');
-        const switchLabel = document.getElementById('switch-status-text');
+        const status = snapshot.val() || { online: true, akash_active: true, toffee_active: true };
+        
+        const masterToggle = document.getElementById('kill-toggle');
+        const masterLbl = document.getElementById('lbl-master');
+        masterToggle.checked = status.online !== false;
+        masterLbl.innerText = status.online !== false ? "Site Online" : "Site Offline";
+        masterLbl.style.color = status.online !== false ? "#10b981" : "#dc2626";
 
-        if (status && status.online === false) {
-            sysText.innerText = "OFFLINE";
-            sysText.className = "status-text status-offline";
-            toggle.checked = false;
-            switchLabel.innerText = "Site Offline";
-        } else {
-            sysText.innerText = "ONLINE";
-            sysText.className = "status-text status-online";
-            toggle.checked = true;
-            switchLabel.innerText = "Site Online";
-        }
+        const akashToggle = document.getElementById('akash-toggle');
+        const akashLbl = document.getElementById('lbl-akash');
+        akashToggle.checked = status.akash_active !== false;
+        akashLbl.innerText = status.akash_active !== false ? "Akash Active" : "Akash Paused";
+        akashLbl.style.color = status.akash_active !== false ? "#0ea5e9" : "#6b7280";
+
+        const toffeeToggle = document.getElementById('toffee-toggle');
+        const toffeeLbl = document.getElementById('lbl-toffee');
+        toffeeToggle.checked = status.toffee_active !== false;
+        toffeeLbl.innerText = status.toffee_active !== false ? "Toffee Active" : "Toffee Paused";
+        toffeeLbl.style.color = status.toffee_active !== false ? "#f59e0b" : "#6b7280";
     });
 }
 
@@ -317,12 +389,27 @@ function blockIP(ip) {
 
 function toggleSystem(checkbox) {
     if (checkbox.checked) {
-        if (confirm("Restore website access to all users?")) db.ref('site_status').set({ online: true });
+        if (confirm("Restore website access to all users?")) db.ref('site_status/online').set(true);
         else checkbox.checked = false;
     } else {
         const msg = prompt("SHUTDOWN CONFIRMATION\nEnter maintenance message:", "Server maintenance in progress.");
-        if (msg !== null) db.ref('site_status').set({ online: false, title: "SYSTEM OFFLINE", msg: msg });
+        if (msg !== null) db.ref('site_status').update({ online: false, title: "SYSTEM OFFLINE", msg: msg });
         else checkbox.checked = true;
+    }
+}
+
+function toggleNetwork(network, checkbox) {
+    const isChecked = checkbox.checked;
+    const netName = network === 'akash' ? 'Akash' : 'Toffee';
+    
+    if (isChecked) {
+        db.ref(`site_status/${network}_active`).set(true);
+    } else {
+        if (confirm(`Are you sure you want to disable all ${netName} channels from the website?`)) {
+            db.ref(`site_status/${network}_active`).set(false);
+        } else {
+            checkbox.checked = true;
+        }
     }
 }
 </script>
