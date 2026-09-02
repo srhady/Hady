@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AKASH GO — Admin Console</title>
+<!-- Firebase Core, Auth and Database -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,"Segoe UI",Arial,sans-serif}
@@ -17,8 +19,8 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .login-card,.control-card,.server-card,.table-card,.overview-card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:0 1px 3px #10182808}
 .login-card{padding:32px}.login-card h2{font-size:18px}.login-card p{color:var(--muted);font-size:12px;margin:5px 0 22px}
 .login-card label{display:block;font-size:12px;font-weight:600;color:#475467;margin-bottom:7px}.login-card input{width:100%;height:46px;border:1px solid #d0d5dd;border-radius:9px;padding:0 13px;outline:0;margin-bottom:15px}.login-card input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2563eb14}
-.login-btn{width:100%;height:46px;border:0;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}.login-btn:hover{background:#1d4ed8}
-#login-error{display:none;background:#fef3f2;color:var(--red);padding:9px;border-radius:7px;font-size:12px;margin-bottom:12px}
+.login-btn{width:100%;height:46px;border:0;border-radius:9px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer;transition:.2s}.login-btn:hover{background:#1d4ed8}
+#login-error{display:none;background:#fef3f2;color:var(--red);padding:9px;border-radius:7px;font-size:12px;margin-bottom:12px;text-align:center;font-weight:600}
 #dashboard-screen{display:none}.layout{display:flex;min-height:100vh}.sidebar{width:235px;min-height:100vh;background:var(--dark);color:#fff;padding:21px 14px;position:sticky;top:0;height:100vh;flex-shrink:0}
 .side-brand{display:flex;align-items:center;gap:10px;padding:0 9px;margin-bottom:34px}.side-logo{width:38px;height:38px;border-radius:10px;font-size:12px}.side-brand b{font-size:15px}.side-brand b span{color:#60a5fa}
 .side-title{font-size:9px;color:#667085;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0 10px 7px}.side-link{padding:10px 11px;border-radius:8px;color:#98a2b3;font-size:12px;font-weight:600;margin-bottom:2px}.side-link.active{background:#ffffff12;color:#fff}.side-bottom{position:absolute;bottom:17px;left:14px;right:14px;background:#ffffff0d;border-radius:9px;padding:11px;font-size:11px}.side-bottom span{display:block;color:#667085;font-size:9px;margin-top:2px}
@@ -28,11 +30,10 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 .refresh{height:35px;padding:0 12px;border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer}.refresh:hover{background:#f8fafc}
 .overview{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:21px}
 .overview-card{padding:22px 20px;display:flex;flex-direction:column;justify-content:center}.overview-card.full-row{grid-column:1 / -1}
-.blue{background:#eff6ff;color:var(--blue)}.green{background:#ecfdf3;color:var(--green)}.orange{background:#fffaeb;color:var(--orange)}.purple{background:#f5f3ff;color:#7c3aed}.cyan{background:#ecfeff;color:var(--cyan)}.rose{background:#fff1f2;color:#e11d48}
 .label{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
 .value{font-size:36px;font-weight:900;margin:8px 0 4px;color:var(--dark);line-height:1}
 .sub{font-size:11px;color:var(--muted);font-weight:500}
-.control-card{margin-bottom:24px}.control-head{padding:17px 20px;border-bottom:1px solid var(--border)}.control-head b{font-size:13px}.control-head p{font-size:10px;color:var(--muted);margin-top:3px}.controls{display:grid;grid-template-columns:repeat(3,1fr)}.control{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-right:1px solid var(--border)}.control:last-child{border:0}.c-left{display:flex;align-items:center;gap:10px}.c-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center}.c-info b{display:block;font-size:12px}.c-info span{font-size:9px;color:var(--muted)}
+.control-card{margin-bottom:24px}.control-head{padding:17px 20px;border-bottom:1px solid var(--border)}.control-head b{font-size:13px}.control-head p{font-size:10px;color:var(--muted);margin-top:3px}.controls{display:grid;grid-template-columns:repeat(3,1fr)}.control{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-right:1px solid var(--border)}.control:last-child{border:0}.c-left{display:flex;align-items:center;gap:10px}.c-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eff6ff;color:var(--blue)}.c-info b{display:block;font-size:12px}.c-info span{font-size:9px;color:var(--muted)}
 .switch{position:relative;width:43px;height:24px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;inset:0;background:#d0d5dd;border-radius:99px;cursor:pointer}.slider:before{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:#fff;border-radius:50%;box-shadow:0 2px 4px #0002;transition:.2s}.switch input:checked+.slider{background:var(--green)}.switch input:checked+.slider:before{transform:translateX(19px)}.akash-toggle:checked+.slider{background:var(--cyan)!important}.toffee-toggle:checked+.slider{background:var(--orange)!important}
 .section-head{margin-bottom:12px;margin-top:30px;}.section-head h2{font-size:14px}.section-head p{font-size:10px}.refresh{display:flex;gap:6px;align-items:center}.servers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:27px}.server-card{padding:17px}.server-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.server-name{font-size:12px;font-weight:700}.server-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:7px}.badge{font-size:8px;font-weight:800;padding:4px 7px;border-radius:6px}.main-b{background:#eff6ff;color:#1d4ed8}.ak-b{background:#ecfeff;color:#0891b2}.to-b{background:#fffaeb;color:#b45309}.count{font-size:24px;font-weight:800}.count small{font-size:10px;color:var(--muted);font-weight:500}.progress{height:5px;background:#eef2f6;border-radius:99px;margin-top:13px;overflow:hidden}.bar{height:100%;width:0;background:var(--green);transition:.4s}.server-foot{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-top:8px}
 .table-card{overflow:hidden}.table-head{padding:17px 20px;border-bottom:1px solid var(--border)}.table-head b{font-size:13px}.pill{background:#ecfdf3;color:var(--green);padding:5px 8px;border-radius:6px;font-size:9px;font-weight:800}.table-scroll{overflow-x:auto}table{width:100%;min-width:850px;border-collapse:collapse}th{background:#f8fafc;color:#667085;font-size:9px;text-transform:uppercase;text-align:left;padding:12px 17px;border-bottom:1px solid var(--border)}td{padding:13px 17px;border-bottom:1px solid #f0f2f5;font-size:11px;color:#475467}tr:hover{background:#fafbfc}.ip{color:var(--blue);font-family:monospace;font-weight:700}.strong{font-weight:600;color:var(--text)}.block{border:1px solid #fecaca;background:#fef3f2;color:var(--red);border-radius:6px;padding:5px 9px;font-size:9px;font-weight:700;cursor:pointer}.block:hover{background:var(--red);color:#fff}.empty{text-align:center;padding:45px;color:var(--muted);font-size:11px}.empty b{display:block;color:#475467;margin-bottom:4px}
@@ -55,7 +56,19 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 <div id="login-screen">
 <div class="login-wrap">
 <div class="brand"><div class="logo">AG</div><h1>AKASH <span>GO</span></h1><p>Network Administration Console</p></div>
-<div class="login-card"><h2>Welcome back</h2><p>Sign in to access your master dashboard.</p><div id="login-error">Authentication failed. Please check your password.</div><label>Administrator Password</label><input type="password" id="admin-pass" placeholder="Enter your password"><button class="login-btn" onclick="checkLogin()">Sign in to Dashboard</button></div>
+<div class="login-card">
+    <h2>Welcome back</h2>
+    <p>Sign in to access your master dashboard.</p>
+    <div id="login-error">Access Denied. Check your credentials.</div>
+    
+    <label>Administrator Email</label>
+    <input type="email" id="admin-email" placeholder="e.g. admin@akashgo.com">
+    
+    <label>Administrator Password</label>
+    <input type="password" id="admin-pass" placeholder="Enter your password">
+    
+    <button class="login-btn" id="login-btn" onclick="checkLogin()">Sign in to Dashboard</button>
+</div>
 </div></div>
 
 <div id="dashboard-screen">
@@ -113,11 +126,65 @@ body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 <div id="toast"></div>
 
 <script>
-const ADMIN_PASS="boss2026";let db;
-document.addEventListener("DOMContentLoaded",()=>{if(sessionStorage.getItem("akash_admin_auth")==="true")showDashboard()});
-document.getElementById("admin-pass").addEventListener("keypress",e=>{if(e.key==="Enter")checkLogin()});
-function checkLogin(){if(document.getElementById("admin-pass").value===ADMIN_PASS){sessionStorage.setItem("akash_admin_auth","true");showDashboard()}else document.getElementById("login-error").style.display="block"}
-function showDashboard(){document.getElementById("login-screen").style.display="none";document.getElementById("dashboard-screen").style.display="block";initFirebase();fetchAllServers();setInterval(()=>{if(document.visibilityState==="visible")fetchAllServers()},300000)}
+let db, auth;
+let isInitialized = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialize Firebase Setup
+    let c = {
+        apiKey: "AIzaSyCpr-TpvEdpTVZXO2Ni3XftrxkcPl9Z5qs",
+        authDomain: "akashgo-live.firebaseapp.com",
+        databaseURL: "https://akashgo-live-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "akashgo-live"
+    };
+    if (!firebase.apps.length) firebase.initializeApp(c);
+    
+    db = firebase.database();
+    auth = firebase.auth();
+
+    // Security Feature: Auto-Logout when browser tab is closed!
+    auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then(() => {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("dashboard-screen").style.display = "block";
+                if (!isInitialized) {
+                    startMonitoring();
+                    fetchAllServers();
+                    setInterval(() => { if (document.visibilityState === "visible") fetchAllServers() }, 300000);
+                    isInitialized = true;
+                }
+            } else {
+                // User is signed out
+                document.getElementById("login-screen").style.display = "flex";
+                document.getElementById("dashboard-screen").style.display = "none";
+            }
+        });
+    });
+});
+
+// Login check with Firebase Auth
+function checkLogin() {
+    let email = document.getElementById("admin-email").value;
+    let pass = document.getElementById("admin-pass").value;
+    let btn = document.getElementById("login-btn");
+    
+    if (!email || !pass) return;
+    
+    btn.textContent = "Verifying...";
+    
+    auth.signInWithEmailAndPassword(email, pass).catch(err => {
+        document.getElementById("login-error").style.display = "block";
+        btn.textContent = "Sign in to Dashboard";
+    });
+}
+
+// Press Enter to login
+document.getElementById("admin-pass").addEventListener("keypress", e => {
+    if (e.key === "Enter") checkLogin();
+});
+
 function toast(m){let t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove("show"),3000)}
 
 async function fetchAllServers(){
@@ -139,13 +206,6 @@ document.getElementById("refresh-button").innerHTML="↻ Refresh";
 ids.forEach(id=>{document.getElementById("cf-"+id).textContent="Error";document.getElementById("cf-"+id).style.color="#f04438"});
 document.getElementById("refresh-button").innerHTML="↻ Retry";
 }
-}
-
-function initFirebase(){
-let c={apiKey:"AIzaSyCpr-TpvEdpTVZXO2Ni3XftrxkcPl9Z5qs",authDomain:"akashgo-live.firebaseapp.com",databaseURL:"https://akashgo-live-default-rtdb.asia-southeast1.firebasedatabase.app",projectId:"akashgo-live"};
-if(!firebase.apps.length)firebase.initializeApp(c);
-db=firebase.database();
-startMonitoring();
 }
 
 function esc(v){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
