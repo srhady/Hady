@@ -1,90 +1,235 @@
 #EXTM3U
 #PLAYLIST:Akash Go Live TV
-#LAST_UPDATE:08:01 PM 02-09-2026
+#LAST_UPDATE:03:39 PM 03-09-2026
 #TELEGRAM:https://t.me/livesportsplay
 #OWNER:Md Sohanur Rahman Hady
 
+#EXTINF:-1 tvg-id="117" tvg-name="Sony Sports TEN 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762850019257.png" group-title="Akash Go Channels",Sony Sports TEN 2
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=f352d057-1907&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NSwiaWF0IjoxNzg4NDI4MzU1LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJmMzUxMDc5My1jOWI1LTQ0NWItYWZkZS03NzA4ZmU3MGEyODMiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZjM1MmQwNTctMTkwNyJ9.Etv3EwFqz20drNdFCeCjLTUqEgwLMz-wjlB2qF3zmNAVbf_H3o0UFIo6ib2kXFwevt9jbpOVfnLX11jgnYLltpVKyfuyj3DeqUHLIow14LT2IvayeC2jC3Gtb4CPaCs8L6JvjJXKk0o-WX89UuZQiS87TCmsUC-z5Xq3t6_MtopM8cXJMK1_TXygDJk17NQWHsZ8K7JIz1u8E4v8Ovd1MBWHKynnqvbTBtlGmNDj2HjOISBitJLfz6Y1kd6FqnMKieKNQihL7TmUjJO_irq9jP59-pyRWiGpt84-n9URE250tjDZZoSSFrOVuh-KWAKtAHNGs74HeECHOJ-bX5d-Rw
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"-MNyxXPs1iwW0wox9AEoKD~PwvUHDD~2LY52b37~n4c"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1726/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="118" tvg-name="Sony Sports TEN 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1762853147045.png" group-title="Akash Go Channels",Sony Sports TEN 1
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=35fee7f3-d55d&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NSwiaWF0IjoxNzg4NDI4MzU1LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiIwNDU2OWRjMy0wZWE3LTQzYTItOTE1OC1iNGU5YWIxNDFjNDYiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMzVmZWU3ZjMtZDU1ZCJ9.VV7HMUM_oLSBUJYQClBIJHYWbf5lIe2SffkqgfnKCMrPn5va-0FYUWIUFDzzJmUiXPuH1OJ08c4PWhNxcTAHCfngoTRCqQ530swQGKFThG4slrdhftuRv_l0uuckxZ08vVVjShz5u0G8ePNAWOMBAbOIf9xiCKRBW14MnAQBQ2uEkmr7XTBHMKyyK5vgQo6R2Q4GSJegk-mEh4Xr9k3-XrBBUgY2hQqt4lKd162EpY6z6OBcQp24ysVliHStqR07XsBVZkt3FVkcOc3QiJTDCKEAB_yRwdV0BMCpIZjxRLmzXxX_14qtEtJhPXCS4FA7EzYDjKHSRWxKGCsbbmTNAQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxOS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"kI2Z8fTE0TKg0twxvlZX0GCtg3BQB5WgePwc6Bvi3ho"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1719/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="116" tvg-name="Sony Sports TEN 5" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906861365.png" group-title="Akash Go Channels",Sony Sports TEN 5
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=2659ffb3-2b08&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NSwiaWF0IjoxNzg4NDI4MzU1LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkNmIzNGU0My1mZDNiLTQ1OGYtYWQ0Yi05OGJlN2MyODFkMzEiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMjY1OWZmYjMtMmIwOCJ9.luayjsWGeQK0JVW-8OgC-0Conh0_GhuuI62hR7XWd9Wow3jGbK7xF-m8ZjnAXMaeqC2RzLJIlTc7hnrkQwOFBqiDiKYNWSe0e2z6HtAnB5OECu0vsMRH-7MNYjILd8iQy_MaAPy20o2VEdqkMA98zXtBv62_4AdemTnvOu2KivBNI1NJ0yTBiOD2tSQ11GA9Pf8riKkHsyvkq-h2vmROMrb_0ux7AX1WDb4A4TaI9EKR7bc058-X70bkEFIZwZ9PISRWajAmXutTPRd5FA8oesG_SsN17iGE_sjwGovqM9OPhHt8fDUVAco_eaB0GZzISn8_oZh2oXabOzNZrBEdkQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxNy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"tr50X1eHcO3a4UBi~ZnwlyxdzBtR7f8ZvK7l0~4ZXkw"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1717/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="165" tvg-name="PL Live 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1788427485472.png" group-title="Akash Go Channels",PL Live 1
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=br08dp34kn19k&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NSwiaWF0IjoxNzg4NDI4MzU1LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI1NWJhYmQ1MC0zYmY3LTQ4NTItOWVhZS0xZDc0NGE3NDI1NTkiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiYnIwOGRwMzRrbjE5ayJ9.UXwJ8pwqfaMrAjkMDzCAcY26IfdjlJx-aMMVIlHs3D9no-bKGLxsQ8sj1Zlg8ihYq2s1d4kYPC96uOpL9H8O4lrSfoaOV6a_X6CRkWZFkwWiBKEYPbRVLZRw4rGk3jNjeJ6P6UAWt-GnLzjqDaBlt5KkFHUqzxl1L1rHyBPhoNQWaEPZ0k9MK1ic1jEEIIxOEBmXpxj9Ts_80VoYGl0rgNH5o5DsrqK4pLPftky4KCmdqRK42wFpFPCThbWmCdEwofXeeREXxDRbRY6syjznLj20LXsCwBAHKPsQbOZYqwdNYLGqjiKX3gxgCcb7dQxDEKZRehceBWci0d7UGngTGg
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwNy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"XhYUxffl1Dc4JuO5TDZ7OSjF9hklMJ7DdbRazvbv5Xs"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1707/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="191" tvg-name="PL Live 2" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1787209455553.png" group-title="Akash Go Channels",PL Live 2
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=108684c7a89e&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NiwiaWF0IjoxNzg4NDI4MzU2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI2NmU4Nzk2MC0yMjAyLTQ3Y2UtOTU3OC1mNTZjMTA3YjcyMzUiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMTA4Njg0YzdhODllIn0.MXKym3xRmXKMPhYM8oUXUDAb16SDU7LhFPjfZM_T76SJwVtOyrqw2WKoWV232zxcDND8mlU5_RBieLZDV_29_oyiVvg2adP0LrkjG1aopP-TLvd2SAT86aZmr_iJ14ozWmcsXU6hrVltVKUY57Htbnwwxbh2wxvdgOwwCVKsxP0LT7wE2CRT-pyHEnvhpeG1qzZA9mahVdg3sBXand5lMgsn43PDkeQAKVvJChHkIetXGHXTpZ38ioy2KdUk8ZJPM2vK0ogk49SPN9OfnI3TbgYuWFzGuw9bj0Xd6zBJBxg0RgbF9KYcN3x2Mz6oL2jj-u6GRU2QMoK04noO0XCdRA
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"aM4ywOqJQq1WcTmsQVnV~DZ18EbJg4WiwWGjdhyqUw4"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1710/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="303" tvg-name="PL Live 3" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1787209803973.png" group-title="Akash Go Channels",PL Live 3
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=a54440fc-4162&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NSwiaWF0IjoxNzg4NDI4MzU1LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJiYWUzYWJmYi05NTA2LTRiMTUtODIwNC0zNzI5MDllNjhhMWMiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiYTU0NDQwZmMtNDE2MiJ9.Je7ZgCtdlLpJltIcXM1SDG7Rxvl6I7rQepOt9xbwbi3EAn5zfv_-ff04XqsZYvEA7TBDBmnh7RpldPE7xHQHTIVkdNjvWFYvtKqBVQ0jzi8aFPIWeAO5yQCPJLl6NFVtxDjAIqvU3skwggDW2aEnx2EQmXVZprm3rUHPVjnlgB5leGnfZRgrdhwOIsKn_1DziqFV3kt0Pb0Ornv5jxbl9QU3Mj2pjJpsEf_DMN3TPmMbevV_6DB-tGs5QgpNF0YKfqKaVZ7JbLT6h2UzIYdZKOreB50O7VfOsuKpl7bA6CCnGrELIgf9ShYkDHJMgRcIP8RN8BJ5NbsKhLt_1JIHnQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"5aCv9qulvZDfXkoRKDLDPOQsgFmJdp0GqBBLWNdmtwk"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1724/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="153" tvg-name="Ten Cricket" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1745304841482.png" group-title="Akash Go Channels",Ten Cricket
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=801c26dd-8035&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NiwiaWF0IjoxNzg4NDI4MzU2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkYjMxNmFjMS1hZDZlLTQ0ZjAtOTYwMS05MGUyOWY2ZDM4MzAiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiODAxYzI2ZGQtODAzNSJ9.eXAH9A32OWHXZy2K54KsuwKQ2b1v8-rHpolWzQ773WPOqTBrYuksdTGQ_yVsWo1H2GVDWoB1MK_-FoH1fIcxViw1Br9ldfgh2GyJRsNelptC6psyM_jZjtfVxaWmlGnmQqHp44NPXDNPNG1iTJp_bpzHkqK9lp41PRkVhyUzrUPq_u5uOput8SPDyoXUM7su1pXlFPVBA3yA9_IKJmRD5kV3W6h_qkh5hW4GdbufMlamjQhAnUEB4YdMX3Cw8iwYuQTx81RIkK3Cm_-RBulmBv1MZyQ2be1fBLeKqswr8teXNIUfRR-IWOAUshUdU8C6b4xswt8Op9QQbtOCEg2Wuw
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"IyjtXOblZyANrUez5cgiUXzdRxARzUxSxSrP3pwv8HQ"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1727/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="289" tvg-name="Sony Max" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780310920616.png" group-title="Akash Go Channels",Sony Max
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=e7eb2b46-bc76&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NiwiaWF0IjoxNzg4NDI4MzU2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkZjY2ZDViMy0wNTVmLTQzZTktYjFjZi02NzIxMjgyOGNlNDIiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZTdlYjJiNDYtYmM3NiJ9.a08JFrY6hpJ-KYAdD_ofdgXNmLYSRX-rCR6p-w7asy4LjNCvPvmMRBXTnuZx6m8Hfr9XkXmK-Ypnp5RIJTXos3HuX3be11qqbCkYytdik7DOpqFq_Cc7kC7VD6D76Hgja2KFLKVvH3dCfiIFv5ETd0r3zfB863oz59LCD_nK8-waxQ9iWYPyWINYsw5MjNmA6N2UVPwWLDOpA8IifvOnsW-8Jdprv4oqvCr41ZsI-YTR_28CS5gKNg6II_I4MSegpWS9ps7l3muY7Pt0QYd__D7a8apULiOteDLKrLqNTRrE8HCTXdHetiXF7cJ6znDeMJHbB_z_yru-VAFn8xoU1g
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTczMC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"9zY3Pz3e6t~G5SjaKgdLqVnQzrkukEzr41rzXFqklbA"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1730/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="290" tvg-name="Sony Pix" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1780311807965.png" group-title="Akash Go Channels",Sony Pix
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=e864851a-be2b&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NiwiaWF0IjoxNzg4NDI4MzU2LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkYjc2ZWIwYS05NjIzLTQyOTgtOGMzMy1kMjlhZjk2NmJhYmEiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZTg2NDg1MWEtYmUyYiJ9.VXJ2NYvWL-ALoFfV90KsZJqCCeqqfbOkc-d_7UJIe5uyGWaGTHynYk_WE7VNBT-lOAh_X3hAIefwZvEKCXlGuZjrRDOXrHu-2g5e41kbiv01xzDN9l5rnxEPk8MPU278Cwc8MKcAPH9V3TRkquP4USayWmZP6r0yFgfCyoxx6O7-HCh7cnS96shG6X9M8FX1RULyFAMkb5EiItcHD3lcMpsEDgkf8Z1JZ6Abi4_HqQaqMvW9pLIy3DuUTZEYiByHK6zAJ57RQOFn2aC-YmtHueXq6HBGuewArwGvFI16peKVohWVSJNb1yb89TJU7P4cIKTzMK8CM83GNEd0g6cxFg
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTczMS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"PlxsMqqXBuCGPWJ3NC8cz3ZEAz4um~bO5WdNuwxRXRs"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1731/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="143" tvg-name="ZEE BANGLA" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1756017182009.png" group-title="Akash Go Channels",ZEE BANGLA
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=8f95c9cd-6940&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NywiaWF0IjoxNzg4NDI4MzU3LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiIzNWVmMzZkZS05NWE0LTRmZWEtYWQzNS02ZmJhNzY2ZDFhNDQiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiOGY5NWM5Y2QtNjk0MCJ9.FQgvgO2-TPeVbewcFUSl-x6_sIMT99QvYAOzt7G9x7Y8--K7F8Z1e7tyBn2SqTeM0Di2P5AUkRuXtbgHsclx85WWF1fE_KyoiHSSq6Dxa9Lt3ruqWTCiCTxJzmkfwdUUhvIxM34ZPMCYdYmdAo0FDMnfqGZ_lHeYAHN_JqMoyGMfMJHtPHurHIqMEOZo0xu29GOwiDw3Il1XgDQXFjLKIsx9qrBDnZySL9pD5Hzj20q75t27ImdvmYxkPA5OhVPJ_L4PVlpslo_pgOvEIAOs6vxvq35Q-IbfT-JbEnQtYEK9sMiloy3zEh90viFIm2arptUQo-ugJLkAwhfW_6W5qw
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxNC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"jd35S1~hB2RBqG4uAaO0K82hC79VCvb9E2HhaLQUM~A"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1714/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="93" tvg-name="ATN News" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739962961772.png" group-title="Akash Go Channels",ATN News
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=c6b0ce2e-6071&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NywiaWF0IjoxNzg4NDI4MzU3LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJkNDZmNjkwYy0zZDAzLTQ1ODMtOTZlOS0wODI3YjcwODM3ZWUiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiYzZiMGNlMmUtNjA3MSJ9.Tne_FKHamStmADwa9KL1_Zkpb61zhAoM7GiwSqSxWE5iiiCsOqzcAP5ImXSw59ZridBe8EuFnTEg50NLWvTNBknEjUXQX0RAwsv_csqUqZJzQsdoZoUoOQ4hqXmvQXULvqJqr9EhjewVFTybVqxxzo19bIZGCP-5k4UNRKIZTIOvsjySmT8qvv6v92HANUO2Je9pHj7XsEYq1nqwkpJIGtbYQejFPN0feuHP8_oJuM0sdUFdwYG4-OQF0Yg8rqdUkonXu_Wh0qcNhoJSGL8AB0CNrjpwn_p-J9ejP7ewq4vclCqdGV988NawecHLB9bJrNIuuByNVk7gPDdS03LVkg
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwNi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"X70H0RDfQx6N2FOfgVwlQ0HJ-bzC5NhAEHzEgEIniMs"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="142" tvg-name="Sony AATH" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739906659479.png" group-title="Akash Go Channels",Sony AATH
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=70f9fa1f-38af&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1NywiaWF0IjoxNzg4NDI4MzU3LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJiNTkwYzM1Yy04NTk5LTRjNDktYTZmMy1iNTA0N2QzOWFjOTUiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiNzBmOWZhMWYtMzhhZiJ9.lHxz0r3xRd07gM6dkjDNl2LAMGOIr4X7GMMPlPlgqsAEC6FXWA7aealz16Rrx9_V1M9vR7N4Ehz8G9X4JfoCClfd6f5I09bIsoF4KxisC_vjihVKS6b454grQC109yspzHflDtoNMnmPMWoskp3XdbXu-VPWlRwUF7p44Fxl8XLZUB-Bril3-tciJ2HF8QyAeRVRYgLbVIOg1fXshVzGaVIRPx0xLxjS7dsnkzcbgCOIWvtekFbB0ydnezrOTQJURbnK4_46MmBZxenX5je1O5654gwlUXQLeZzO9DynjK6Z7V2jXsdL3J0tQz41LzTeuqdzBda4la4CceupV62mkQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTczMi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"SYsovtGrshbe9EDQhMIu1E8QvnlvPruzWdYdRPhquDg"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1732/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="186" tvg-name="News 24 HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770186895850.png" group-title="Akash Go Channels",News 24 HD
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=ec040881-5825&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1OCwiaWF0IjoxNzg4NDI4MzU4LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiJmZjU3MjIzNS1jMGJmLTQ1NTctOTdhMy00OThhYzM0ODY3NjQiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZWMwNDA4ODEtNTgyNSJ9.JJTAw1_HQR8uzlMs6A_lDiSDh1Ni9Sr5rV2X699ugtYnBOYWNNG0XiMkolB24ZGKSWoFmlIgxeubsX_rnyIVTFD0LS3c0WsT631_1zZ-gIvTKjXOAV2nFL59tL66srTJuT4HTau4mbnWXe-WURx7zhdfe9C5qSwN0HC3MsJ3LvIp2ZJSd9-i-NOETaVZli6R2erdyT9KUOP7exeGtqoBpoWxOjYXSt4VpxXigEnd8L9-ghoNebtDurIh5tFRMiPp4gCzIKDo62BiVE9DTTwFoTci-pJjCiMqxzo7Lm1fNwThZ1BP_pZ6QtgFBpsZ9J-5rOw8RBdzTcqS2aXy-Ql8fQ
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwOC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"OJBxdwERBv~RKv0L8~LTxVmsYo8cDhmMKEHofJuR9nU"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1708/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="90" tvg-name="Euro Sports HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1765256371720.png" group-title="Akash Go Channels",Euro Sports HD
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=df67fc1a-01d1&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1OCwiaWF0IjoxNzg4NDI4MzU4LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI1YmNmNDY1OS05OGQ4LTRlZGMtODBhNS04Zjg4NWYzNmY1NjYiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiZGY2N2ZjMWEtMDFkMSJ9.lpdsRfTVeTS3ppXYRVJnN150QxwLoJnsaOb3lZhrgYMAb_7MMadwg_OxxxCq-CIv3WBk5MdTzp1inst-XuZtOXUOY6g9PMN8Ac7b7JdqQYBtyodjRyPPley14i5PUqdixXsmaSEQXURYJf2AON7wjIn3HbRXsV-cMQkjUpVNMQTlcnnNa14J75vzPFNlZgkw649_oxm4rbl2rFXNKMNb547hxN6uyjGa82c8UcIiKcFctudCChE-MRy5dRtEi49TAZ6inNIdK_4SwSbRJJ0lMbCiCtVHESKF9GrMZlTXBxpKexvXKsxzAnBhS1G0URdZyYXvCLbWp9Z13lcz9kWaMw
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"CHeWo08YhhG~vqRdYfuTpGAzHdtE-ZoC7I9q0y-n7BA"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1712/output/index.mpd?_by=hady
+#EXTINF:-1 tvg-id="124" tvg-name="Sony Entertainment" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1740380280065.png" group-title="Akash Go Channels",Sony Entertainment
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.widevine.alpha
+#KODIPROP:inputstream.adaptive.license_key=https://bingeakashgo.live.ott.irdeto.com/licenseServer/widevine/v1/bingeakashgo/license?contentId=368f3847-ed5e&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InJzYTIwNDhrZXkifQ.eyJzdWIiOiI0MTMxMzQ1MiIsImlzcyI6Im9wZXJhdG9yLXBvcnRhbCIsImV4cCI6MTc4ODQzNTU1OSwiaWF0IjoxNzg4NDI4MzU5LCJhaWQiOiJiaW5nZWFrYXNoZ28iLCJqdGkiOiI0MzdlNTRmNy01MmJjLTRmZjAtYTdlMy0zOTRiOTU5NmI4OGEiLCJlbnQiOlt7ImVwaWQiOiJzdWJzY3JpcHRpb24tZW50aXRsZW1lbnQtcG9saWN5IiwiYmlkIjoic3Vic2NyaXB0aW9uLWJ1bmRsZSJ9XSwiY2lkIjoiMzY4ZjM4NDctZWQ1ZSJ9.DN6SLY0SI277WdDKhqOOZVwvJt1bS44NEWGC2TCJZC_TTbn3DFjVkai3-obquTzk_5fdO18C6K2NlufbQeHc6aSl52mzwHbzWOk7NAud0VPNLhg759gTLk5r9j87WzUFNf53107jlds5H6XENO5rFlp_hImDpJ8pFiZOu08qbAHbU4kXMnqfQdFxeYvfXGRT3RYElwLO1VK93d0fyDMZxiT879CJVrJ20PJYbVA4mb5UWRlsITyNEzM071VJ9ZQv7CEnVPwHrJieR41RAhYl_FOaFnMEbmuhN1eVQ05LLRBg33oxz4MQ4306biZ1cCl2Xe9xGHlhAosJCkaNBb715w
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxOC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTl9fX1dfQ","edge-signature":"uRsIrFYRPT1zo8~HFFMgi4mMZlEZDvI4eXbQgUQY9B4"}
+https://owrcovcrpy.gpcdn.net/bpk-tv/1718/output/index.mpd?_by=hady
 #EXTINF:-1 tvg-id="318" tvg-name="Somoy tv" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1784629064327.png" group-title="Akash Go Channels",Somoy tv
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTV9fX1dfQ","edge-signature":"yUY-vXjnL7DmAeJbBjrQ~YcUycReNg1GjlcSaChqqcQ"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1713/output/index.m3u8
 #EXTINF:-1 tvg-id="97" tvg-name="Jamuna TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560213832.png" group-title="Akash Go Channels",Jamuna TV
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwMS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTR9fX1dfQ","edge-signature":"xyZy9X1E6YGSnbCAecBmWBRiT5A34ms~n5BkrWHF0Gw"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1701/output/index.m3u8
 #EXTINF:-1 tvg-id="96" tvg-name="Independent TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739964387847.png" group-title="Akash Go Channels",Independent TV
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwNC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"oqlappGkN-j8EoPLzreYIsw8Kt9piwywcazO7npOW5c"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1704/output/index.m3u8
 #EXTINF:-1 tvg-id="185" tvg-name="DBC News HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770186306600.png" group-title="Akash Go Channels",DBC News HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyOC9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"uPmP~VFaohTbs5lVuV5Az9~ZEonLu0w1e0pPCU7FKFA"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1728/output/index.m3u8
 #EXTINF:-1 tvg-id="228" tvg-name="BTV Shangshad" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773247382366.png" group-title="Akash Go Channels",BTV Shangshad
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwOS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"f3E5S9a258CGNqu~kYtblx4jCPINz3f5G3JFGrucjB8"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1709/output/index.m3u8
 #EXTINF:-1 tvg-id="102" tvg-name="Ekattor HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1739963327549.png" group-title="Akash Go Channels",Ekattor HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwNS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTZ9fX1dfQ","edge-signature":"bKfMD5u~W0EXA3A3KKEedlivPuAkua3QCIUWbKDPQt4"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1705/output/index.m3u8
 #EXTINF:-1 tvg-id="94" tvg-name="Channel 24 HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735556516924.png" group-title="Akash Go Channels",Channel 24 HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwMy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"dz-hLKY-8DdKP7c604qAHn98AscLUuGWOu6-LvrlPY0"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1703/output/index.m3u8
 #EXTINF:-1 tvg-id="122" tvg-name="BTV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1784629845642.png" group-title="Akash Go Channels",BTV
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyNS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"H5846ioZUGXt0BeTrqzWzsXAXOPR5xt2JiEd7r5kzGA"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1725/output/index.m3u8
 #EXTINF:-1 tvg-id="229" tvg-name="Maasranga TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1773680325498.png" group-title="Akash Go Channels",Maasranga TV
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyMi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"aX54ZrDG-cjiesI1K36jl2QL6ha1nvZja5cwEatzXfs"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1722/output/index.m3u8
 #EXTINF:-1 tvg-id="202" tvg-name="Crazy Ex" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770348753896.png" group-title="Akash Go Channels",Crazy Ex
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9jcmF6eV9leC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE1N319fV19","edge-signature":"63jYHQnBgOH0pU9YHdc6DRNIx3KkcQ76HeCv58nPFF0"}
 https://nomawnoijl.gpcdn.net/akash/crazy_ex/playlist.m3u8
 #EXTINF:-1 tvg-id="217" tvg-name="Sports Range" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380601958.png" group-title="Akash Go Channels",Sports Range
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9zcG9ydHJhbmdlLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTU3fX19XX0","edge-signature":"no-yh6wYQbUOzD5C349tY3pKO5t0zgG68CLlBHd57Eo"}
 https://nomawnoijl.gpcdn.net/akash/sportrange/playlist.m3u8
 #EXTINF:-1 tvg-id="188" tvg-name="Channel 9 HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770188008067.png" group-title="Akash Go Channels",Channel 9 HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyOS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTd9fX1dfQ","edge-signature":"~ofiWfNjuK1EdjO3cizLMlk1yf-q5mYO24OsHeQDtzc"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1729/output/index.m3u8
 #EXTINF:-1 tvg-id="134" tvg-name="Deepto TV HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1742713000749.png" group-title="Akash Go Channels",Deepto TV HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxMS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"IEob03LAz0iVsA8gU2B-eygIo0HGtnzBPxsW3uFKBM4"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1711/output/index.m3u8
 #EXTINF:-1 tvg-id="99" tvg-name="NTV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735560841094.png" group-title="Akash Go Channels",NTV
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxNi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"k7DyBm8zvWueKSChdO38nXrGLlOkbWxVidFUgEbUwnQ"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1716/output/index.m3u8
 #EXTINF:-1 tvg-id="85" tvg-name="Al Jazeera" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1735547218986.png" group-title="Akash Go Channels",Al Jazeera
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyMS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"x46ON0NEUuqVcC9xitEsE5vpgbBd60VVt~erEGyqhd0"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1721/output/index.m3u8
 #EXTINF:-1 tvg-id="132" tvg-name="Channel I HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1740567626692.png" group-title="Akash Go Channels",Channel I HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcyMy9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"787rlw1VbvBFEhHJTLFg6PvzbsQM-kkKwnO4KL~ayPk"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1723/output/index.m3u8
 #EXTINF:-1 tvg-id="100" tvg-name="Bangla Vision" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1788231546532.png" group-title="Akash Go Channels",Bangla Vision
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcxNS9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTh9fX1dfQ","edge-signature":"uBSxgolN7qmyt1vcLVJ4ONXtcwlYsQkWg2bxlTe888k"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1715/output/index.m3u8
 #EXTINF:-1 tvg-id="205" tvg-name="Sports Legends" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770377900139.png" group-title="Akash Go Channels",Sports Legends
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9zcG9ydHNsZWdlbmRzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTU4fX19XX0","edge-signature":"7JO6NuXyFD9m2RFMuqEXhHlcjuyijYOm65G~Ws5UA0g"}
 https://nomawnoijl.gpcdn.net/akash/sportslegends/playlist.m3u8
 #EXTINF:-1 tvg-id="207" tvg-name="Party Universe" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378215384.png" group-title="Akash Go Channels",Party Universe
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9wYXJ0eXVuaXZlcnNlLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTU5fX19XX0","edge-signature":"ayFkuRfMS2h47O8oc6HoO5Je2-SrHJx2m6raCuoHnvg"}
 https://nomawnoijl.gpcdn.net/akash/partyuniverse/playlist.m3u8
 #EXTINF:-1 tvg-id="218" tvg-name="Thunder Er" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380791303.png" group-title="Akash Go Channels",Thunder Er
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC90aHVuZGVyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTU5fX19XX0","edge-signature":"dHg-7bbULgSUjg4EOy5mRyJ-sPx0N6SzZtEADtdx79c"}
 https://nomawnoijl.gpcdn.net/akash/thunder/playlist.m3u8
 #EXTINF:-1 tvg-id="219" tvg-name="Fighters" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380942670.png" group-title="Akash Go Channels",Fighters
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9maWdodGVyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTU5fX19XX0","edge-signature":"NP2a0tOj5JqXBSBCm1Wg5z7YAZG4gmFjWdUYlEDQY-4"}
 https://nomawnoijl.gpcdn.net/akash/fighter/playlist.m3u8
 #EXTINF:-1 tvg-id="206" tvg-name="Flash Guys HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378074527.png" group-title="Akash Go Channels",Flash Guys HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9mbGFzaGd1eXMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTl9fX1dfQ","edge-signature":"Xdfx6kafdonQGVNh4XLLHocBLnyIbUZPNgTx7iU1Isg"}
 https://nomawnoijl.gpcdn.net/akash/flashguys/playlist.m3u8
 #EXTINF:-1 tvg-id="141" tvg-name="SRK TV" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1746005940155.png" group-title="Akash Go Channels",SRK TV
 https://srknowapp.ncare.live/srktvhlswodrm/srktv.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="210" tvg-name="Nikki" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378704923.png" group-title="Akash Go Channels",Nikki
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9uaWtreS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE1OX19fV19","edge-signature":"eOCEbuchbNXY7rMSqsyK-sycdXb~prW8qK4rnpS5kbU"}
 https://nomawnoijl.gpcdn.net/akash/nikky/playlist.m3u8
 #EXTINF:-1 tvg-id="299" tvg-name="Channel 1" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1781163068414.png" group-title="Akash Go Channels",Channel 1
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9vd3Jjb3ZjcnB5LmdwY2RuLm5ldC9icGstdHYvMTcwMi9vdXRwdXQvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTl9fX1dfQ","edge-signature":"sPYsB0pnn1rc7VsYmoKrWrkRF--h2DqDEX85~F~4NKs"}
 https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8
 #EXTINF:-1 tvg-id="193" tvg-name="Originals" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770313122372.png" group-title="Akash Go Channels",Originals
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9vcmlnaW5hbHMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTl9fX1dfQ","edge-signature":"PhGZzs6nr5wFlpuQQBvExSaW0NuK513-X8Dc9EnwZ2U"}
 https://nomawnoijl.gpcdn.net/akash/originals/playlist.m3u8
 #EXTINF:-1 tvg-id="211" tvg-name="Joy" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378874717.png" group-title="Akash Go Channels",Joy
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9qb3kvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNTl9fX1dfQ","edge-signature":"16bRHxOEyqFzhz-7Kb3esJt2xD~qjOCiNi1ovqxlGKY"}
 https://nomawnoijl.gpcdn.net/akash/joy/playlist.m3u8
 #EXTINF:-1 tvg-id="208" tvg-name="Delicious" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378370876.png" group-title="Akash Go Channels",Delicious
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9kZWxpY2lvdXMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjB9fX1dfQ","edge-signature":"AXU9tQhKQZFPqypqOWnNdj7Tm6Z58C9V6pFcnHymMDE"}
 https://nomawnoijl.gpcdn.net/akash/delicious/playlist.m3u8
 #EXTINF:-1 tvg-id="213" tvg-name="Funny Junior HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770379573329.png" group-title="Akash Go Channels",Funny Junior HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9mdW5ueWp1bmlvci8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE2MH19fV19","edge-signature":"QXCzq09N8SSRT73hm1zD5a0eUwNAvlQKPZVlivV-xkY"}
 https://nomawnoijl.gpcdn.net/akash/funnyjunior/playlist.m3u8
 #EXTINF:-1 tvg-id="222" tvg-name="Kids Stars" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770381398090.png" group-title="Akash Go Channels",Kids Stars
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9raWRzc3RhcnMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjB9fX1dfQ","edge-signature":"j6y1EEeM8sEp5Ly-~rP1woRtINZwuCDi0nvcc9DcXPA"}
 https://nomawnoijl.gpcdn.net/akash/kidsstars/playlist.m3u8
 #EXTINF:-1 tvg-id="197" tvg-name="Cineedge HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770347851305.png" group-title="Akash Go Channels",Cineedge HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9jaW5lZWRnZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE2MH19fV19","edge-signature":"~uEXr-vQJpJoDi~A0aK1BlxFOYUq3m9qjPFG0Qaqv-U"}
 https://nomawnoijl.gpcdn.net/akash/cineedge/playlist.m3u8
 #EXTINF:-1 tvg-id="214" tvg-name="Crimes" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380126540.png" group-title="Akash Go Channels",Crimes
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9jcmltZXMvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjB9fX1dfQ","edge-signature":"oxzaWg5UPVUs0u4VbA41KQW5Rk1DmFH9VcRm-AW8TwE"}
 https://nomawnoijl.gpcdn.net/akash/crimes/playlist.m3u8
 #EXTINF:-1 tvg-id="192" tvg-name="Screem" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770312098339.png" group-title="Akash Go Channels",Screem
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9zY3JlZW0vKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjB9fX1dfQ","edge-signature":"9sAthhPnvglS1MytDbhtF70p6XKPpWJCtNa2LfB4HwA"}
 https://nomawnoijl.gpcdn.net/akash/screem/playlist.m3u8
 #EXTINF:-1 tvg-id="198" tvg-name="Superrix HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770348388925.png" group-title="Akash Go Channels",Superrix HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9zdXBlcnJpeC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE2MH19fV19","edge-signature":"Iac9zlngz3kh8HDXsoQJKKVnSn6gXg7-oL7dT-y1JcM"}
 https://nomawnoijl.gpcdn.net/akash/superrix/playlist.m3u8
 #EXTINF:-1 tvg-id="196" tvg-name="Uniques HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770347327658.png" group-title="Akash Go Channels",Uniques HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC91bmlxdWVzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkVkZ2VUaW1lIjoxNzg4NDM5MTYwfX19XX0","edge-signature":"WMfqK3iec6s0xcYPfdp5yBMtml6ctOXBt2pCFYI9r2Q"}
 https://nomawnoijl.gpcdn.net/akash/uniques/playlist.m3u8
 #EXTINF:-1 tvg-id="212" tvg-name="BuddyStar HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770379038530.png" group-title="Akash Go Channels",BuddyStar HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9idWRkeXN0YXIvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjF9fX1dfQ","edge-signature":"sEjYKfLHKuJBI~VcKMy2KVTIIrjg7vt-LKy2zz5gHT0"}
 https://nomawnoijl.gpcdn.net/akash/buddystar/playlist.m3u8
 #EXTINF:-1 tvg-id="221" tvg-name="Lucky Family" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770381248531.png" group-title="Akash Go Channels",Lucky Family
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9sdWNreWZhbWlseS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE2MX19fV19","edge-signature":"2C~xMJfQZYLBHQU1a-r72TphRyRQNo~4flO7NPRHRJE"}
 https://nomawnoijl.gpcdn.net/akash/luckyfamily/playlist.m3u8
 #EXTINF:-1 tvg-id="220" tvg-name="Smarty" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770381107924.png" group-title="Akash Go Channels",Smarty
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9zbWFydHkvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjF9fX1dfQ","edge-signature":"-Z3EsojOVaBnysZbF92~zckkJATuC46~fno-Ss4IfcM"}
 https://nomawnoijl.gpcdn.net/akash/smarty/playlist.m3u8
 #EXTINF:-1 tvg-id="216" tvg-name="Intelligence" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380460488.png" group-title="Akash Go Channels",Intelligence
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9pbnRlbGxpZ2VuY2UvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjF9fX1dfQ","edge-signature":"XskYxv7YMZ9VEEj-dEM-R7hainf5obxB4HORDJ1NkZE"}
 https://nomawnoijl.gpcdn.net/akash/intelligence/playlist.m3u8
 #EXTINF:-1 tvg-id="215" tvg-name="True Stories" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770380306806.png" group-title="Akash Go Channels",True Stories
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC90cnVlc3Rvcmllcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJFZGdlVGltZSI6MTc4ODQzOTE2MX19fV19","edge-signature":"AwO4oq7glF77ox7O~taw0Ovws1E0jqHhOWv9V1nM2n4"}
 https://nomawnoijl.gpcdn.net/akash/truestories/playlist.m3u8
 #EXTINF:-1 tvg-id="209" tvg-name="Luxell HD" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1770378560772.png" group-title="Akash Go Channels",Luxell HD
+#EXTHTTP:{"edge-policy":"eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9ub21hd25vaWpsLmdwY2RuLm5ldC9ha2FzaC9sdXhlbGwvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiRWRnZVRpbWUiOjE3ODg0MzkxNjF9fX1dfQ","edge-signature":"PU2JM550SR2X~p15nKnthcYiTuXgSK8tdV9ATKudta4"}
 https://nomawnoijl.gpcdn.net/akash/luxell/playlist.m3u8
 #EXTINF:-1 tvg-id="248" tvg-name="Program Promo" tvg-logo="https://tstatic.akash-go.com/cms-ui/images/custom-content/1783925099346.png" group-title="Akash Go Channels",Program Promo
 https://7lsc33jopp.gpcdn.net/bpk-tv/1720/output/index.m3u8
