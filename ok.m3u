@@ -1,5 +1,3 @@
-#EXTINF:-1 tvg-id="V__o054BObUt2AG6LL5C" tvg-logo="https://assets-prod.services.toffeelive.com/V__o054BObUt2AG6LL5C/posters/84590b8d-6430-4ba8-a0a5-757bf2f57c05.png" group-title="Sports",WC Match Recap
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; K)
-#EXTHTTP:{"cookie":"Edge-Cache-Cookie=URLPrefix=aHR0cHM6Ly9ibGRjbXByb2QtY2RuLnRvZmZlZWxpdmUuY29t:Expires=1788917231:KeyName=prod_linear:Signature=JRdBZzOafPQ1Lr9-vlDe7Bu0ZwY3lWuwWQkUIC3plH5iOl9Oj8wPOdQ3etqkjz3afH2SXSRC10aAEsxn_Du5CQ"}
-https://bldcmprod-cdn.toffeelive.com/cdn/live/fifa_world_cup/playlist.m3u8
- 
+#EXTINF:-1 tvg-id="66238" tvg-logo="https://raw.githubusercontent.com/srhady/axsports/main/bing_posters/Georgia%20vs%20Northern%20Ireland.jpg" group-title="LIVE", Georgia vs Northern Ireland - UEFA Nations League [Server 1]
+#EXTHTTP:{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","Referer":"https://iframe.rumsport8.live/"}
+https://livecdn-tc-livestream.rumsport10.live/sla/1-6a96efa0e9d80a100cb2e9a4-hd/chunks.m3u8?is_vip=false&token=1790444850-Kv4cPTAAP5YTi-19633c5a6acbfe797bf98bf0ddffca85381412ca-9072fb1bcdb0af0ef61e1b4090a0a8f9
