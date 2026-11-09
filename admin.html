@@ -5,656 +5,102 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="referrer" content="no-referrer" />
   <title>Dream live</title>
-
-  <!-- Preconnect to Logo CDNs for fast logo loading -->
   <link rel="preconnect" href="https://img.sofascore.com" crossorigin>
   <link rel="preconnect" href="https://pbs.twimg.com" crossorigin>
   <link rel="preconnect" href="https://wsrv.nl" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg-main: #0c121a;
-      --bg-card: #17202c;
-      --bg-pill: #121923;
-      --sky-primary: #38bdf8;
-      --sky-border: #0284c7;
-      --sky-bright: #38bdf8;
-      --pill-active-start: #0284c7;
-      --pill-active-end: #0369a1;
-      --text-white: #ffffff;
-      --text-muted: #93a3b5;
-      --live-green: #22c55e;
-      --badge-red: #e52521;
-      --hot-green: #1db954;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      background-color: #070b10;
-      color: var(--text-white);
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-      user-select: none;
-    }
-
-    .app-container {
-      width: 100%;
-      max-width: 450px;
-      min-height: 100vh;
-      background-color: var(--bg-main);
-      padding-bottom: 24px;
-      position: relative;
-      box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
-    }
-
-    /* 1. Top Header Bar */
-    .app-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px;
-      background-color: var(--bg-main);
-      border-bottom: 1px solid #192434;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .menu-btn {
-      background: none;
-      border: none;
-      color: #b8c4d2;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .brand-title {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      color: #ffffff;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .icon-btn {
-      background: none;
-      border: none;
-      color: #ffffff;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .notif-badge {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background-color: var(--badge-red);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 700;
-      min-width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 3px;
-    }
-
-    .spinning svg {
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Collapsible Search Box */
-    .search-drawer {
-      display: none;
-      padding: 6px 10px 2px;
-    }
-    .search-drawer.open {
-      display: block;
-    }
-    .search-inner {
-      display: flex;
-      align-items: center;
-      background-color: #131c27;
-      border: 2px solid var(--sky-primary);
-      border-radius: 20px;
-      padding: 6px 12px;
-    }
-    .search-inner input {
-      width: 100%;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: #ffffff;
-      font-size: 13px;
-      font-family: inherit;
-    }
-    .search-inner input::placeholder {
-      color: #7b8da3;
-    }
-    .search-clear {
-      background: none;
-      border: none;
-      color: #93a3b5;
-      font-size: 16px;
-      cursor: pointer;
-      padding-left: 6px;
-    }
-
-    /* 2. Notice Marquee Bar (Thicker Sky Blue Border) */
-    .notice-bar {
-      margin: 10px 10px 8px;
-      height: 34px;
-      background-color: #131b25;
-      border: 2px solid var(--sky-primary);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      overflow: hidden;
-    }
-
-    .notice-icon {
-      flex-shrink: 0;
-      margin-right: 8px;
-      display: flex;
-      align-items: center;
-    }
-
-    .marquee-wrap {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-    }
-
-    .marquee-text {
-      display: inline-block;
-      font-size: 13.5px;
-      font-weight: 500;
-      color: #f1f5f9;
-      white-space: nowrap;
-      animation: marquee 20s linear infinite;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* 3. High-Detail Sports Category Icons Slider */
-    .sports-slider {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 2px 10px 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
+    :root { --bg-main: #0c121a; --bg-card: #17202c; --bg-pill: #121923; --sky-primary: #38bdf8; --sky-border: #0284c7; --sky-bright: #38bdf8; --pill-active-start: #0284c7; --pill-active-end: #0369a1; --text-white: #ffffff; --text-muted: #93a3b5; --live-green: #22c55e; --badge-red: #e52521; --hot-green: #1db954; }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body { background-color: #070b10; color: var(--text-white); font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; display: flex; justify-content: center; min-height: 100vh; overflow-x: hidden; user-select: none; }
+    .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: var(--bg-main); padding-bottom: 24px; position: relative; box-shadow: 0 0 35px rgba(0, 0, 0, 0.8); }
+    .app-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background-color: var(--bg-main); border-bottom: 1px solid #192434; position: sticky; top: 0; z-index: 50; }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .menu-btn { background: none; border: none; color: #b8c4d2; display: flex; align-items: center; cursor: pointer; }
+    .brand-title { font-size: 20px; font-weight: 600; letter-spacing: 0.3px; color: #ffffff; }
+    .header-right { display: flex; align-items: center; gap: 18px; }
+    .icon-btn { background: none; border: none; color: #ffffff; position: relative; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .notif-badge { position: absolute; top: -6px; right: -6px; background-color: var(--badge-red); color: #fff; font-size: 10px; font-weight: 700; min-width: 17px; height: 17px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0 3px; }
+    .spinning svg { animation: spin 0.7s linear infinite; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    .search-drawer { display: none; padding: 6px 10px 2px; }
+    .search-drawer.open { display: block; }
+    .search-inner { display: flex; align-items: center; background-color: #131c27; border: 2px solid var(--sky-primary); border-radius: 20px; padding: 6px 12px; }
+    .search-inner input { width: 100%; background: transparent; border: none; outline: none; color: #ffffff; font-size: 13px; font-family: inherit; }
+    .search-inner input::placeholder { color: #7b8da3; }
+    .search-clear { background: none; border: none; color: #93a3b5; font-size: 16px; cursor: pointer; padding-left: 6px; }
+    .notice-bar { margin: 10px 10px 8px; height: 34px; background-color: #131b25; border: 2px solid var(--sky-primary); border-radius: 9px; display: flex; align-items: center; padding: 0 10px; overflow: hidden; }
+    .notice-icon { flex-shrink: 0; margin-right: 8px; display: flex; align-items: center; }
+    .marquee-wrap { overflow: hidden; white-space: nowrap; width: 100%; }
+    .marquee-text { display: inline-block; font-size: 13.5px; font-weight: 500; color: #f1f5f9; white-space: nowrap; animation: marquee 20s linear infinite; }
+    @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+    .sports-slider { display: flex; align-items: center; gap: 9px; padding: 2px 10px 8px; overflow-x: auto; scrollbar-width: none; }
     .sports-slider::-webkit-scrollbar { display: none; }
-
-    .sport-box {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background-color: #151e2b;
-      border: 2px solid #1d2a3b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      flex-shrink: 0;
-      cursor: pointer;
-      transition: border-color 0.15s ease, background-color 0.15s ease;
-    }
-
-    .sport-box.active {
-      border: 2px solid var(--sky-primary);
-      background-color: #182435;
-      box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
-    }
-
-    .sport-badge {
-      position: absolute;
-      top: 3px;
-      right: 3px;
-      background-color: var(--badge-red);
-      color: #fff;
-      font-size: 9.5px;
-      font-weight: 700;
-      min-width: 16px;
-      height: 16px;
-      padding: 0 4px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-    }
-
-    /* 4. Status Filter Pills Slide Bar (Live followed by Upcoming) */
-    .filter-slider {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 2px 10px 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
+    .sport-box { width: 52px; height: 52px; border-radius: 12px; background-color: #151e2b; border: 2px solid #1d2a3b; display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0; cursor: pointer; transition: border-color 0.15s ease, background-color 0.15s ease; }
+    .sport-box.active { border: 2px solid var(--sky-primary); background-color: #182435; box-shadow: 0 0 8px rgba(56, 189, 248, 0.25); }
+    .sport-badge { position: absolute; top: 3px; right: 3px; background-color: var(--badge-red); color: #fff; font-size: 9.5px; font-weight: 700; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .filter-slider { display: flex; align-items: center; gap: 8px; padding: 2px 10px 10px; overflow-x: auto; scrollbar-width: none; }
     .filter-slider::-webkit-scrollbar { display: none; }
-
-    .filter-pill {
-      height: 35px;
-      padding: 0 13px;
-      border-radius: 20px;
-      background-color: var(--bg-pill);
-      border: 2px solid var(--sky-border);
-      color: var(--text-white);
-      font-size: 13.5px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    .filter-pill.active {
-      background: linear-gradient(90deg, var(--pill-active-start) 0%, var(--pill-active-end) 100%);
-      border: 2px solid var(--sky-primary);
-      box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
-    }
-
-    .filter-pill .pill-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
-    }
-
-    /* 5. Compact Match Cards (Thicker Sky Blue Border) */
-    .matches-list {
-      padding: 0 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .match-card {
-      background-color: var(--bg-card);
-      border: 2px solid var(--sky-primary);
-      border-radius: 14px;
-      padding: 5px 10px 0;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 104px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      height: 17px;
-    }
-
-    .league-icon {
-      width: 15px;
-      height: 15px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .league-title {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #ffffff;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 88%;
-    }
-
-    .card-body {
-      display: grid;
-      grid-template-columns: 1fr 82px 1fr;
-      align-items: center;
-      margin: 2px 0;
-      gap: 4px;
-    }
-
-    .team-side {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      min-width: 0;
-    }
-
-    .team-side.right {
-      justify-content: flex-end;
-    }
-
-    /* Slightly Larger 48x48 Circular Logo Flush With Border (0 Padding) */
-    .team-logo-wrap {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background-color: #101720;
-      border: 2px solid #2e435c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .team-logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      display: block;
-    }
-
-    /* Multi-line (2 or 3 lines) Team Name - No "..." or Sliding */
-    .team-name {
-      flex: 1;
-      min-width: 0;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #ffffff;
-      line-height: 1.15;
-      white-space: normal;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .team-side.right .team-name {
-      text-align: right;
-    }
-
-    /* Center Status Area (Green Live Indicator) */
-    .center-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .live-indicator {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      background-color: var(--live-green);
-      border-radius: 50%;
-      box-shadow: 0 0 7px var(--live-green);
-      animation: blink 1.1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.3; transform: scale(0.85); }
-    }
-
-    .live-text {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--live-green);
-      letter-spacing: 0.2px;
-    }
-
-    .match-time {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--sky-bright);
-      line-height: 1.2;
-    }
-
-    .match-date {
-      font-size: 10.5px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 1px;
-    }
-
-    /* Card Bottom Strip & HOT Badge */
-    .card-footer {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      position: relative;
-      height: 21px;
-    }
-
-    .hot-ribbon {
-      position: absolute;
-      left: -10px;
-      bottom: 0;
-      background-color: var(--hot-green);
-      color: #ffffff;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 11px 2px 9px;
-      border-top-right-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 3px;
-    }
-
-    .bottom-status-tab {
-      background-color: #0e141d;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 15px;
-      border-radius: 8px 8px 0 0;
-      letter-spacing: 0.2px;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-    }
-
-    /* 6. Channel Names Popup Modal (No link decryption) */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.74);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      padding: 16px;
-    }
-
-    .modal-backdrop.show {
-      display: flex;
-    }
-
-    .channel-modal {
-      width: 100%;
-      max-width: 360px;
-      background-color: #16202c;
-      border: 2px solid var(--sky-primary);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
-    }
-
-    .modal-head {
-      padding: 12px 14px;
-      background-color: #101720;
-      border-bottom: 1px solid #233042;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .modal-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      color: #93a3b5;
-      font-size: 22px;
-      line-height: 1;
-      cursor: pointer;
-    }
-
-    .channel-list {
-      max-height: 320px;
-      overflow-y: auto;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .channel-item {
-      background-color: #101720;
-      border: 1px solid #263649;
-      border-radius: 9px;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-
-    .channel-item span.tv-tag {
-      font-size: 10.5px;
-      color: var(--sky-primary);
-      background: rgba(56, 189, 248, 0.14);
-      padding: 2px 7px;
-      border-radius: 6px;
-    }
-
-    .empty-msg {
-      text-align: center;
-      color: var(--text-muted);
-      padding: 32px 12px;
-      font-size: 13.5px;
-    }
+    .filter-pill { height: 35px; padding: 0 13px; border-radius: 20px; background-color: var(--bg-pill); border: 2px solid var(--sky-border); color: var(--text-white); font-size: 13.5px; font-weight: 500; display: flex; align-items: center; gap: 7px; white-space: nowrap; flex-shrink: 0; cursor: pointer; font-family: inherit; }
+    .filter-pill.active { background: linear-gradient(90deg, var(--pill-active-start) 0%, var(--pill-active-end) 100%); border: 2px solid var(--sky-primary); box-shadow: 0 0 8px rgba(56, 189, 248, 0.25); }
+    .filter-pill .pill-icon { display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+    .matches-list { padding: 0 10px; display: flex; flex-direction: column; gap: 9px; }
+    .match-card { background-color: var(--bg-card); border: 2px solid var(--sky-primary); border-radius: 14px; padding: 5px 10px 0; position: relative; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; min-height: 104px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32); }
+    .card-header { display: flex; align-items: center; justify-content: center; gap: 6px; height: 17px; }
+    .league-icon { width: 15px; height: 15px; object-fit: contain; flex-shrink: 0; }
+    .league-title { font-size: 11.5px; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 88%; }
+    .card-body { display: grid; grid-template-columns: 1fr 82px 1fr; align-items: center; margin: 2px 0; gap: 4px; }
+    .team-side { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .team-side.right { justify-content: flex-end; }
+    .team-logo-wrap { width: 48px; height: 48px; border-radius: 50%; background-color: #101720; border: 2px solid #2e435c; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; padding: 0; }
+    .team-logo-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+    .team-name { flex: 1; min-width: 0; font-size: 12.5px; font-weight: 600; color: #ffffff; line-height: 1.15; white-space: normal; word-break: break-word; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .team-side.right .team-name { text-align: right; }
+    .center-info { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+    .live-indicator { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .live-dot { width: 6px; height: 6px; background-color: var(--live-green); border-radius: 50%; box-shadow: 0 0 7px var(--live-green); animation: blink 1.1s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.85); } }
+    .live-text { font-size: 11px; font-weight: 700; color: var(--live-green); letter-spacing: 0.2px; }
+    .match-time { font-size: 12.5px; font-weight: 700; color: var(--sky-bright); line-height: 1.2; }
+    .match-date { font-size: 10.5px; font-weight: 500; color: var(--text-muted); margin-top: 1px; }
+    .card-footer { display: flex; align-items: flex-end; justify-content: center; position: relative; height: 21px; }
+    .hot-ribbon { position: absolute; left: -10px; bottom: 0; background-color: var(--hot-green); color: #ffffff; font-size: 10px; font-weight: 700; padding: 2px 11px 2px 9px; border-top-right-radius: 10px; display: flex; align-items: center; gap: 3px; }
+    .bottom-status-tab { background-color: #0e141d; color: #ffffff; font-size: 11px; font-weight: 600; padding: 2px 15px; border-radius: 8px 8px 0 0; letter-spacing: 0.2px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.74); display: none; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
+    .modal-backdrop.show { display: flex; }
+    .channel-modal { width: 100%; max-width: 360px; background-color: #16202c; border: 2px solid var(--sky-primary); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65); }
+    .modal-head { padding: 12px 14px; background-color: #101720; border-bottom: 1px solid #233042; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .modal-title { font-size: 14px; font-weight: 700; color: #ffffff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .close-btn { background: none; border: none; color: #93a3b5; font-size: 22px; line-height: 1; cursor: pointer; }
+    .channel-list { max-height: 320px; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 7px; }
+    .channel-item { background-color: #101720; border: 1px solid #263649; border-radius: 9px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; color: #ffffff; }
+    .channel-item span.tv-tag { font-size: 10.5px; color: var(--sky-primary); background: rgba(56, 189, 248, 0.14); padding: 2px 7px; border-radius: 6px; }
+    .empty-msg { text-align: center; color: var(--text-muted); padding: 32px 12px; font-size: 13.5px; }
   </style>
 </head>
 <body>
-
   <div class="app-container">
-    <!-- 1. Header -->
     <header class="app-header">
       <div class="header-left">
-        <button class="menu-btn" aria-label="Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
+        <button class="menu-btn" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
         <span class="brand-title">Dream live</span>
       </div>
       <div class="header-right">
-        <button class="icon-btn" aria-label="Notifications">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
-          </svg>
-          <span class="notif-badge" id="notifCountBadge">9</span>
-        </button>
-        <button class="icon-btn" aria-label="Favorites">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </button>
-        <button class="icon-btn" id="refreshBtn" aria-label="Refresh">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M21 12a9 9 0 1 1-2.64-6.36"/>
-            <polyline points="21 3 21 9 15 9"/>
-          </svg>
-        </button>
-        <button class="icon-btn" id="searchBtn" aria-label="Search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </button>
+        <button class="icon-btn" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg><span class="notif-badge" id="notifCountBadge">9</span></button>
+        <button class="icon-btn" aria-label="Favorites"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
+        <button class="icon-btn" id="refreshBtn" aria-label="Refresh"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg></button>
+        <button class="icon-btn" id="searchBtn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
       </div>
     </header>
 
-    <!-- Collapsible Search Bar -->
     <div class="search-drawer" id="searchDrawer">
-      <div class="search-inner">
-        <input type="text" id="searchInput" placeholder="Search team or tournament..." />
-        <button class="search-clear" id="searchClear">&times;</button>
-      </div>
+      <div class="search-inner"><input type="text" id="searchInput" placeholder="Search team or tournament..." /><button class="search-clear" id="searchClear">&times;</button></div>
     </div>
 
-    <!-- 2. Marquee Notice Bar -->
     <div class="notice-bar">
-      <div class="notice-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#38bdf8">
-          <path d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm11.5 3c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z"/>
-        </svg>
-      </div>
+      <div class="notice-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="#38bdf8"><path d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm11.5 3c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z"/></svg></div>
       <div class="marquee-wrap">
         <div class="marquee-text">
           <span>Welcome to Dream live ... Watch all Live Sports Events in Full HD &bull; All times shown in UTC+6 (Bangladesh Standard Time) ❤️ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -663,56 +109,33 @@
       </div>
     </div>
 
-    <!-- 3. Category Icon Slider -->
     <div class="sports-slider" id="sportSlider"></div>
-
-    <!-- 4. Status Filter Pills Slider (All, Live, Upcoming, Today's, Tomorrow, Finished) -->
     <div class="filter-slider" id="statusSlider"></div>
-
-    <!-- 5. Matches Container -->
     <main class="matches-list" id="matchesList"></main>
   </div>
 
-  <!-- 6. Channel List Modal (Shows only channel names) -->
   <div class="modal-backdrop" id="channelModal">
     <div class="channel-modal">
-      <div class="modal-head">
-        <div class="modal-title" id="modalMatchTitle">Channels</div>
-        <button class="close-btn" id="closeModalBtn">&times;</button>
-      </div>
+      <div class="modal-head"><div class="modal-title" id="modalMatchTitle">Channels</div><button class="close-btn" id="closeModalBtn">&times;</button></div>
       <div class="channel-list" id="channelListContainer"></div>
     </div>
   </div>
 
   <script>
     const API_URL = 'https://falconde-uqdj3fde.manus.space/api/geesports/events';
-    // UTC+6 Offset in milliseconds (6 hours = 21,600,000 ms)
     const UTC_PLUS_6_MS = 6 * 60 * 60 * 1000;
+    let allEvents = [], selectedSport = 'ALL', selectedStatus = 'all', searchQuery = '';
 
-    let allEvents = [];
-    let selectedSport = 'ALL';
-    let selectedStatus = 'all';
-    let searchQuery = '';
-
-    // =====================================================================
-    // 1. FAST LOGO FIXER & FLUSH FULL-BLEED FALLBACK GENERATOR
-    // =====================================================================
     function sanitizeLogoUrl(url) {
       if (!url || typeof url !== 'string') return '';
       let clean = url.trim();
-      if (clean.startsWith('http://')) {
-        clean = 'https://' + clean.slice(7);
-      }
-      return clean;
+      return clean.startsWith('http://') ? 'https://' + clean.slice(7) : clean;
     }
 
     function createFallbackBadge(name) {
       const clean = (name || 'DL').replace(/[^a-zA-Z0-9 ]/g, '').trim();
       const initials = clean.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase() || 'DL';
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
-        <rect width="96" height="96" rx="48" fill="#101720"/>
-        <text x="48" y="56" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-size="28" font-weight="700">${initials}</text>
-      </svg>`;
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="#101720"/><text x="48" y="56" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-size="28" font-weight="700">${initials}</text></svg>`;
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
     }
 
@@ -728,306 +151,102 @@
       }
     };
 
-    // =====================================================================
-    // 2. HIGH-DETAIL WHITE LINE-ART CATEGORY ICONS
-    // =====================================================================
     const SPORT_ICONS = [
-      {
-        id: 'ALL',
-        matchKey: 'ALL',
-        svg: `
-          <svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.5 24C7.2 17.5 11.4 11 18 9.5C24.8 8 31.5 12.2 33 19C33.8 22.6 32.8 26.3 30.6 29.1" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M11.5 23.5C10.5 18.4 13.8 13.4 18.9 12.3C24.1 11.2 29.2 14.5 30.3 19.7C30.9 22.5 30.1 25.4 28.4 27.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>
-            <polygon points="31.5,33.5 26.5,28.8 33.8,26.8" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
-            <circle cx="20.5" cy="21" r="6" stroke="#ffffff" stroke-width="1.4"/>
-            <path d="M15 19.5C17.5 20.5 18.5 23.5 16.5 25.5M25.5 17.5C23 19 22.5 22 24.5 24.5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
-            <rect x="8.5" y="27.5" width="16.5" height="8" rx="1.5" fill="#151e2b"/>
-            <text x="9.5" y="34.5" fill="#ffffff" font-family="Outfit, sans-serif" font-size="8.8" font-weight="800" letter-spacing="0.4">ALL</text>
-          </svg>`
-      },
-      {
-        id: 'Cricket',
-        matchKey: 'cricket',
-        svg: `
-          <svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="14" y1="12" x2="14" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="18.5" y1="12" x2="18.5" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="23" y1="12" x2="23" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="13" y1="12" x2="18" y2="12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
-            <line x1="19" y1="12" x2="24" y2="12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="11" cy="18.5" r="3.6" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/>
-            <path d="M9 16.2C10.8 17.5 11.2 19.5 9.5 21.2" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-            <path d="M29.5 14L34.5 8.5L36.5 10.2L31.2 15.8" fill="#151e2b" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M15.5 31.5L28.2 15.2L32.2 18.4L19.5 34.8L15.8 34.5L15.5 31.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <line x1="17.5" y1="33" x2="29.8" y2="17" stroke="#ffffff" stroke-width="1" stroke-opacity="0.75"/>
-          </svg>`
-      },
-      {
-        id: 'Football',
-        matchKey: 'football',
-        svg: `
-          <svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="15" cy="25.5" r="7.5" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/>
-            <polygon points="15,22 18,24.2 16.8,27.6 13.2,27.6 12,24.2" stroke="#ffffff" stroke-width="1.2" fill="none"/>
-            <line x1="15" y1="22" x2="15" y2="18" stroke="#ffffff" stroke-width="1.2"/>
-            <line x1="18" y1="24.2" x2="22" y2="23" stroke="#ffffff" stroke-width="1.2"/>
-            <line x1="16.8" y1="27.6" x2="19.5" y2="31.5" stroke="#ffffff" stroke-width="1.2"/>
-            <line x1="13.2" y1="27.6" x2="10.5" y2="31.5" stroke="#ffffff" stroke-width="1.2"/>
-            <line x1="12" y1="24.2" x2="8" y2="23" stroke="#ffffff" stroke-width="1.2"/>
-            <path d="M25.5 9.5L31 13L27.5 21.5L35.5 27.5C36.8 28.5 36.5 30.5 34.8 31.2L22 22.5L25.5 9.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <line x1="21.5" y1="24.8" x2="33.5" y2="33" stroke="#ffffff" stroke-width="1.4" stroke-dasharray="2.2 2.2" stroke-linecap="round"/>
-            <line x1="26.5" y1="16.5" x2="29.5" y2="18.5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="25.5" y1="19" x2="28.5" y2="21" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>`
-      },
-      {
-        id: 'Boxing',
-        matchKey: 'boxing',
-        svg: `
-          <svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 7.5L16.5 15.5M22 7.5L27.5 15.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="22" cy="7.5" r="1.2" fill="#ffffff"/>
-            <rect x="12.5" y="15.5" width="7.5" height="4" rx="1.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/>
-            <line x1="14.5" y1="17.5" x2="18" y2="17.5" stroke="#ffffff" stroke-width="1"/>
-            <path d="M11.5 19.5C9 22.5 9.2 29 13 31.8C16.2 34 20.5 32.2 21 28C21.4 24.8 20.2 21.5 19 19.5H11.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M17.5 23.5C19.8 23.8 21 25.5 20.2 27.8C19.5 29.5 17.5 29.5 16.5 28.2" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
-            <rect x="24" y="15.5" width="7.5" height="4" rx="1.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/>
-            <line x1="26" y1="17.5" x2="29.5" y2="17.5" stroke="#ffffff" stroke-width="1"/>
-            <path d="M32.5 19.5C35 22.5 34.8 29 31 31.8C27.8 34 23.5 32.2 23 28C22.6 24.8 23.8 21.5 25 19.5H32.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M26.5 23.5C24.2 23.8 23 25.5 23.8 27.8C24.5 29.5 26.5 29.5 27.5 28.2" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
-          </svg>`
-      },
-      {
-        id: 'Motorsport',
-        matchKey: 'motorsport',
-        svg: `
-          <svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22.5" cy="16" r="4.8" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/>
-            <path d="M18 15.2H22.2V17.5H18.2" stroke="#ffffff" stroke-width="1.3" stroke-linejoin="round"/>
-            <line x1="16.5" y1="20" x2="19.5" y2="24" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M27.5 17.5L31.5 18.5V24.5" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
-            <path d="M7.5 29.5C7.5 26.2 10.5 24 14.5 24H29.5L34.5 25.5V29.5H7.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/>
-            <circle cx="14.5" cy="30" r="4.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/>
-            <circle cx="14.5" cy="30" r="1.6" stroke="#ffffff" stroke-width="1.2"/>
-            <circle cx="29.5" cy="30" r="4.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/>
-            <circle cx="29.5" cy="30" r="1.6" stroke="#ffffff" stroke-width="1.2"/>
-          </svg>`
-      }
+      { id: 'ALL', matchKey: 'ALL', svg: `<svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 24C7.2 17.5 11.4 11 18 9.5C24.8 8 31.5 12.2 33 19C33.8 22.6 32.8 26.3 30.6 29.1" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/><path d="M11.5 23.5C10.5 18.4 13.8 13.4 18.9 12.3C24.1 11.2 29.2 14.5 30.3 19.7C30.9 22.5 30.1 25.4 28.4 27.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/><polygon points="31.5,33.5 26.5,28.8 33.8,26.8" stroke="#ffffff" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="20.5" cy="21" r="6" stroke="#ffffff" stroke-width="1.4"/><path d="M15 19.5C17.5 20.5 18.5 23.5 16.5 25.5M25.5 17.5C23 19 22.5 22 24.5 24.5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/><rect x="8.5" y="27.5" width="16.5" height="8" rx="1.5" fill="#151e2b"/><text x="9.5" y="34.5" fill="#ffffff" font-family="Outfit, sans-serif" font-size="8.8" font-weight="800" letter-spacing="0.4">ALL</text></svg>` },
+      { id: 'Cricket', matchKey: 'cricket', svg: `<svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="12" x2="14" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/><line x1="18.5" y1="12" x2="18.5" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/><line x1="23" y1="12" x2="23" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/><line x1="13" y1="12" x2="18" y2="12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/><line x1="19" y1="12" x2="24" y2="12" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="18.5" r="3.6" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/><path d="M9 16.2C10.8 17.5 11.2 19.5 9.5 21.2" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/><path d="M29.5 14L34.5 8.5L36.5 10.2L31.2 15.8" fill="#151e2b" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/><path d="M15.5 31.5L28.2 15.2L32.2 18.4L19.5 34.8L15.8 34.5L15.5 31.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><line x1="17.5" y1="33" x2="29.8" y2="17" stroke="#ffffff" stroke-width="1" stroke-opacity="0.75"/></svg>` },
+      { id: 'Football', matchKey: 'football', svg: `<svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="25.5" r="7.5" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/><polygon points="15,22 18,24.2 16.8,27.6 13.2,27.6 12,24.2" stroke="#ffffff" stroke-width="1.2" fill="none"/><line x1="15" y1="22" x2="15" y2="18" stroke="#ffffff" stroke-width="1.2"/><line x1="18" y1="24.2" x2="22" y2="23" stroke="#ffffff" stroke-width="1.2"/><line x1="16.8" y1="27.6" x2="19.5" y2="31.5" stroke="#ffffff" stroke-width="1.2"/><line x1="13.2" y1="27.6" x2="10.5" y2="31.5" stroke="#ffffff" stroke-width="1.2"/><line x1="12" y1="24.2" x2="8" y2="23" stroke="#ffffff" stroke-width="1.2"/><path d="M25.5 9.5L31 13L27.5 21.5L35.5 27.5C36.8 28.5 36.5 30.5 34.8 31.2L22 22.5L25.5 9.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><line x1="21.5" y1="24.8" x2="33.5" y2="33" stroke="#ffffff" stroke-width="1.4" stroke-dasharray="2.2 2.2" stroke-linecap="round"/><line x1="26.5" y1="16.5" x2="29.5" y2="18.5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/><line x1="25.5" y1="19" x2="28.5" y2="21" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/></svg>` },
+      { id: 'Boxing', matchKey: 'boxing', svg: `<svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 7.5L16.5 15.5M22 7.5L27.5 15.5" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/><circle cx="22" cy="7.5" r="1.2" fill="#ffffff"/><rect x="12.5" y="15.5" width="7.5" height="4" rx="1.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/><line x1="14.5" y1="17.5" x2="18" y2="17.5" stroke="#ffffff" stroke-width="1"/><path d="M11.5 19.5C9 22.5 9.2 29 13 31.8C16.2 34 20.5 32.2 21 28C21.4 24.8 20.2 21.5 19 19.5H11.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><path d="M17.5 23.5C19.8 23.8 21 25.5 20.2 27.8C19.5 29.5 17.5 29.5 16.5 28.2" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/><rect x="24" y="15.5" width="7.5" height="4" rx="1.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.4"/><line x1="26" y1="17.5" x2="29.5" y2="17.5" stroke="#ffffff" stroke-width="1"/><path d="M32.5 19.5C35 22.5 34.8 29 31 31.8C27.8 34 23.5 32.2 23 28C22.6 24.8 23.8 21.5 25 19.5H32.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><path d="M26.5 23.5C24.2 23.8 23 25.5 23.8 27.8C24.5 29.5 26.5 29.5 27.5 28.2" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/></svg>` },
+      { id: 'Motorsport', matchKey: 'motorsport', svg: `<svg width="35" height="35" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22.5" cy="16" r="4.8" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/><path d="M18 15.2H22.2V17.5H18.2" stroke="#ffffff" stroke-width="1.3" stroke-linejoin="round"/><line x1="16.5" y1="20" x2="19.5" y2="24" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/><path d="M27.5 17.5L31.5 18.5V24.5" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 29.5C7.5 26.2 10.5 24 14.5 24H29.5L34.5 25.5V29.5H7.5Z" fill="#151e2b" stroke="#ffffff" stroke-width="1.5" stroke-linejoin="round"/><circle cx="14.5" cy="30" r="4.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/><circle cx="14.5" cy="30" r="1.6" stroke="#ffffff" stroke-width="1.2"/><circle cx="29.5" cy="30" r="4.2" fill="#151e2b" stroke="#ffffff" stroke-width="1.5"/><circle cx="29.5" cy="30" r="1.6" stroke="#ffffff" stroke-width="1.2"/></svg>` }
     ];
 
-    // =====================================================================
-    // 3. STATUS FILTER PILLS (Live is immediately followed by Upcoming)
-    // =====================================================================
-    const CHECK_ICON_SVG = `
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-      </svg>
-    `;
+    const CHECK_ICON_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>`;
 
     const STATUS_TABS = [
-      {
-        id: 'all',
-        label: 'All',
-        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>`
-      },
-      {
-        id: 'live',
-        label: 'Live',
-        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2" fill="#22c55e"/><path d="M8.5 8.5a5 5 0 0 0 0 7"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M5.5 5.5a9 9 0 0 0 0 13"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>`
-      },
-      {
-        id: 'upcoming',
-        label: 'Upcoming',
-        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M19.07 4.93l-2.83 2.83M18 12h4"/><path d="M5 16h14v4H5z"/></svg>`
-      },
-      {
-        id: 'today',
-        label: "Today's",
-        icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`
-      },
-      {
-        id: 'tomorrow',
-        label: 'Tomorrow',
-        icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m10 14 2 2 4-4"/></svg>`
-      },
-      {
-        id: 'finished',
-        label: 'Finished',
-        icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`
-      }
+      { id: 'all', label: 'All', icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>` },
+      { id: 'live', label: 'Live', icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2" fill="#22c55e"/><path d="M8.5 8.5a5 5 0 0 0 0 7"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M5.5 5.5a9 9 0 0 0 0 13"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>` },
+      { id: 'upcoming', label: 'Upcoming', icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M12 2v4M4.93 4.93l2.83 2.83M2 12h4M19.07 4.93l-2.83 2.83M18 12h4"/><path d="M5 16h14v4H5z"/></svg>` },
+      { id: 'today', label: "Today's", icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>` },
+      { id: 'tomorrow', label: 'Tomorrow', icon: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m10 14 2 2 4-4"/></svg>` },
+      { id: 'finished', label: 'Finished', icon: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>` }
     ];
 
-    // =====================================================================
-    // 4. UTC TO UTC+6 (BANGLADESH TIME) PARSING & REAL-TIME STATUS ENGINE
-    // =====================================================================
     function parseUtcMillis(dateStr, timeStr) {
       if (!dateStr || !timeStr) return null;
-      const dParts = dateStr.trim().split('/').map(Number);
-      const tParts = timeStr.trim().split(':').map(Number);
+      const dParts = dateStr.trim().split('/').map(Number), tParts = timeStr.trim().split(':').map(Number);
       if (dParts.length !== 3 || isNaN(dParts[0]) || isNaN(dParts[1]) || isNaN(dParts[2])) return null;
-      const [day, month, year] = dParts;
-      const [hour = 0, minute = 0, second = 0] = tParts;
+      const [day, month, year] = dParts, [hour = 0, minute = 0, second = 0] = tParts;
       return Date.UTC(year, month - 1, day, hour, minute, second);
     }
 
-    // Format a UTC timestamp into UTC+6 (Bangladesh Standard Time) 12-hour time & DD/MM/YYYY date
     function formatUtcPlus6(utcMs) {
       const bdDate = new Date(utcMs + UTC_PLUS_6_MS);
-      const dd = String(bdDate.getUTCDate()).padStart(2, '0');
-      const mm = String(bdDate.getUTCMonth() + 1).padStart(2, '0');
-      const yyyy = bdDate.getUTCFullYear();
-
-      const hours24 = bdDate.getUTCHours();
-      const minutes = String(bdDate.getUTCMinutes()).padStart(2, '0');
-      const ampm = hours24 >= 12 ? 'PM' : 'AM';
-      const hours12 = String(hours24 % 12 || 12).padStart(2, '0');
-
-      return {
-        dateStr: `${dd}/${mm}/${yyyy}`,
-        time12Str: `${hours12}:${minutes} ${ampm}`,
-        dayKey: `${yyyy}-${mm}-${dd}`
-      };
+      const dd = String(bdDate.getUTCDate()).padStart(2, '0'), mm = String(bdDate.getUTCMonth() + 1).padStart(2, '0'), yyyy = bdDate.getUTCFullYear();
+      const hours24 = bdDate.getUTCHours(), minutes = String(bdDate.getUTCMinutes()).padStart(2, '0'), ampm = hours24 >= 12 ? 'PM' : 'AM', hours12 = String(hours24 % 12 || 12).padStart(2, '0');
+      return { dateStr: `${dd}/${mm}/${yyyy}`, time12Str: `${hours12}:${minutes} ${ampm}`, dayKey: `${yyyy}-${mm}-${dd}` };
     }
 
     function getBdDayKey(utcMs) {
       const bdDate = new Date(utcMs + UTC_PLUS_6_MS);
-      const dd = String(bdDate.getUTCDate()).padStart(2, '0');
-      const mm = String(bdDate.getUTCMonth() + 1).padStart(2, '0');
-      const yyyy = bdDate.getUTCFullYear();
-      return `${yyyy}-${mm}-${dd}`;
+      return `${bdDate.getUTCFullYear()}-${String(bdDate.getUTCMonth() + 1).padStart(2, '0')}-${String(bdDate.getUTCDate()).padStart(2, '0')}`;
     }
 
     function computeEventTiming(rawEv) {
       let startUtc = parseUtcMillis(rawEv.date, rawEv.time);
       let endUtc = parseUtcMillis(rawEv.end_date || rawEv.date, rawEv.end_time || '23:59:00');
-
-      if (!startUtc) {
-        startUtc = Date.now() - 1800 * 1000;
-      }
-      if (!endUtc || endUtc <= startUtc) {
-        endUtc = endUtc && endUtc <= startUtc
-          ? endUtc + 24 * 3600 * 1000
-          : startUtc + 3 * 3600 * 1000;
-      }
-
+      if (!startUtc) startUtc = Date.now() - 1800 * 1000;
+      if (!endUtc || endUtc <= startUtc) endUtc = endUtc && endUtc <= startUtc ? endUtc + 24 * 3600 * 1000 : startUtc + 3 * 3600 * 1000;
       const bdFormatted = formatUtcPlus6(startUtc);
-
       return {
-        category: (rawEv.category || 'Sports').trim(),
-        eventName: (rawEv.eventName || 'Match').trim(),
-        eventLogo: sanitizeLogoUrl(rawEv.eventLogo),
-        teamAName: (rawEv.teamAName || 'Team A').trim(),
-        teamBName: (rawEv.teamBName || 'Team B').trim(),
-        teamAFlag: sanitizeLogoUrl(rawEv.teamAFlag),
-        teamBFlag: sanitizeLogoUrl(rawEv.teamBFlag),
-        startUtc,
-        endUtc,
-        bdTime12: bdFormatted.time12Str,
-        bdDate: bdFormatted.dateStr,
-        bdDayKey: bdFormatted.dayKey,
-        priority: Number(rawEv.priority ?? -1),
-        isHot: Boolean(rawEv.isHot || Number(rawEv.priority) > 0),
-        link_names: Array.isArray(rawEv.link_names) && rawEv.link_names.length > 0
-          ? rawEv.link_names
-          : ['STREAM TV + HD']
+        category: (rawEv.category || 'Sports').trim(), eventName: (rawEv.eventName || 'Match').trim(), eventLogo: sanitizeLogoUrl(rawEv.eventLogo),
+        teamAName: (rawEv.teamAName || 'Team A').trim(), teamBName: (rawEv.teamBName || 'Team B').trim(), teamAFlag: sanitizeLogoUrl(rawEv.teamAFlag), teamBFlag: sanitizeLogoUrl(rawEv.teamBFlag),
+        startUtc, endUtc, bdTime12: bdFormatted.time12Str, bdDate: bdFormatted.dateStr, bdDayKey: bdFormatted.dayKey,
+        priority: Number(rawEv.priority ?? -1), isHot: Boolean(rawEv.isHot || Number(rawEv.priority) > 0),
+        link_names: Array.isArray(rawEv.link_names) && rawEv.link_names.length > 0 ? rawEv.link_names : ['STREAM TV + HD']
       };
     }
 
-    // Dynamic status check against current real time
     function getMatchLiveState(ev, nowMs = Date.now()) {
-      if (nowMs >= ev.startUtc && nowMs <= ev.endUtc) {
-        return 'live';
-      }
-      if (nowMs > ev.endUtc) {
-        return 'finished';
-      }
-      return 'upcoming';
+      if (nowMs >= ev.startUtc && nowMs <= ev.endUtc) return 'live';
+      return nowMs > ev.endUtc ? 'finished' : 'upcoming';
     }
 
     function matchesStatusTab(ev, tabId, nowMs = Date.now()) {
-      const state = getMatchLiveState(ev, nowMs);
-      const todayKey = getBdDayKey(nowMs);
-      const tomorrowKey = getBdDayKey(nowMs + 24 * 3600 * 1000);
-
+      const state = getMatchLiveState(ev, nowMs), todayKey = getBdDayKey(nowMs), tomorrowKey = getBdDayKey(nowMs + 24 * 3600 * 1000);
       if (tabId === 'all') return true;
       if (tabId === 'live') return state === 'live';
       if (tabId === 'upcoming') return state === 'upcoming';
       if (tabId === 'finished') return state === 'finished';
-      if (tabId === 'today') {
-        return state === 'live' || (ev.bdDayKey === todayKey && state !== 'finished');
-      }
-      if (tabId === 'tomorrow') {
-        return state === 'upcoming' && ev.bdDayKey === tomorrowKey;
-      }
+      if (tabId === 'today') return state === 'live' || (ev.bdDayKey === todayKey && state !== 'finished');
+      if (tabId === 'tomorrow') return state === 'upcoming' && ev.bdDayKey === tomorrowKey;
       return true;
     }
 
-    // Format countdown seconds into H:MM:SS or Xd HH:MM:SS
     function formatTickingDuration(totalSeconds, isUpcoming = false) {
-      const sec = Math.max(0, Math.floor(totalSeconds));
-      const days = Math.floor(sec / 86400);
-      const hours = Math.floor((sec % 86400) / 3600);
-      const minutes = Math.floor((sec % 3600) / 60);
-      const seconds = sec % 60;
-
-      const mm = String(minutes).padStart(2, '0');
-      const ss = String(seconds).padStart(2, '0');
-
-      if (days > 0) {
-        return `${days}d ${String(hours).padStart(2, '0')}:${mm}:${ss}`;
-      }
-      if (isUpcoming && hours === 0) {
-        return `${mm}:${ss}`;
-      }
-      return `${hours}:${mm}:${ss}`;
+      const sec = Math.max(0, Math.floor(totalSeconds)), days = Math.floor(sec / 86400), hours = Math.floor((sec % 86400) / 3600), minutes = Math.floor((sec % 3600) / 60), seconds = sec % 60;
+      const mm = String(minutes).padStart(2, '0'), ss = String(seconds).padStart(2, '0');
+      if (days > 0) return `${days}d ${String(hours).padStart(2, '0')}:${mm}:${ss}`;
+      return (isUpcoming && hours === 0) ? `${mm}:${ss}` : `${hours}:${mm}:${ss}`;
     }
 
-    // Format ELAPSED time since match start (counts UP: 0:28:15, 0:28:16...)
     function formatElapsedDuration(elapsedSeconds) {
-      const sec = Math.max(0, Math.floor(elapsedSeconds));
-      const hours = Math.floor(sec / 3600);
-      const minutes = Math.floor((sec % 3600) / 60);
-      const seconds = sec % 60;
-
-      const mm = String(minutes).padStart(2, '0');
-      const ss = String(seconds).padStart(2, '0');
-      return `${hours}:${mm}:${ss}`;
+      const sec = Math.max(0, Math.floor(elapsedSeconds)), hours = Math.floor(sec / 3600), minutes = Math.floor((sec % 3600) / 60), seconds = sec % 60;
+      return `${hours}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     }
 
     function getCardBottomStatusText(ev, nowMs = Date.now()) {
       const state = getMatchLiveState(ev, nowMs);
-      if (state === 'finished') {
-        return 'Match Ended';
-      }
-      if (state === 'live') {
-        const elapsedSec = (nowMs - ev.startUtc) / 1000;
-        return formatElapsedDuration(elapsedSec);
-      }
-      const remToStartSec = (ev.startUtc - nowMs) / 1000;
-      return `Match Starting in ${formatTickingDuration(remToStartSec, true)}`;
+      if (state === 'finished') return 'Match Ended';
+      if (state === 'live') return formatElapsedDuration((nowMs - ev.startUtc) / 1000);
+      return `Match Starting in ${formatTickingDuration((ev.startUtc - nowMs) / 1000, true)}`;
     }
 
-    // =====================================================================
-    // 5. SPORT CATEGORY MATCHING & RENDERING
-    // =====================================================================
     function matchesSportCategory(ev, sportKey) {
       if (sportKey === 'ALL') return true;
-      const cat = (ev.category || '').toLowerCase();
-      const evt = (ev.eventName || '').toLowerCase();
-
-      if (sportKey === 'cricket') {
-        return cat.includes('cricket') || evt.includes('cricket') || evt.includes('ipl') || evt.includes('t20');
-      }
-      if (sportKey === 'football') {
-        return cat.includes('football') || cat.includes('soccer');
-      }
-      if (sportKey === 'boxing') {
-        return ['boxing', 'mma', 'ufc', 'wrestling', 'fight'].some(k => cat.includes(k) || evt.includes(k));
-      }
-      if (sportKey === 'motorsport') {
-        return ['motor', 'gp', 'formula', 'f1', 'racing', 'nascar'].some(k => cat.includes(k) || evt.includes(k));
-      }
+      const cat = (ev.category || '').toLowerCase(), evt = (ev.eventName || '').toLowerCase();
+      if (sportKey === 'cricket') return cat.includes('cricket') || evt.includes('cricket') || evt.includes('ipl') || evt.includes('t20');
+      if (sportKey === 'football') return cat.includes('football') || cat.includes('soccer');
+      if (sportKey === 'boxing') return ['boxing', 'mma', 'ufc', 'wrestling', 'fight'].some(k => cat.includes(k) || evt.includes(k));
+      if (sportKey === 'motorsport') return ['motor', 'gp', 'formula', 'f1', 'racing', 'nascar'].some(k => cat.includes(k) || evt.includes(k));
       return cat.includes(sportKey);
     }
 
@@ -1035,9 +254,8 @@
       return allEvents.filter(ev => {
         if (!matchesSportCategory(ev, selectedSport)) return false;
         if (searchQuery) {
-          const q = searchQuery.toLowerCase();
           const hay = `${ev.teamAName} ${ev.teamBName} ${ev.eventName} ${ev.category}`.toLowerCase();
-          if (!hay.includes(q)) return false;
+          if (!hay.includes(searchQuery.toLowerCase())) return false;
         }
         return true;
       });
@@ -1052,20 +270,11 @@
         boxing: allEvents.filter(e => matchesSportCategory(e, 'boxing')).length,
         motorsport: allEvents.filter(e => matchesSportCategory(e, 'motorsport')).length
       };
-
-      container.innerHTML = SPORT_ICONS.map(sp => `
-        <div class="sport-box ${selectedSport === sp.matchKey ? 'active' : ''}" onclick="selectSport('${sp.matchKey}')">
-          ${sp.svg}
-          <span class="sport-badge">${counts[sp.matchKey]}</span>
-        </div>
-      `).join('');
+      container.innerHTML = SPORT_ICONS.map(sp => `<div class="sport-box ${selectedSport === sp.matchKey ? 'active' : ''}" onclick="selectSport('${sp.matchKey}')">${sp.svg}<span class="sport-badge">${counts[sp.matchKey]}</span></div>`).join('');
     }
 
     function renderStatusPills() {
-      const container = document.getElementById('statusSlider');
-      const nowMs = Date.now();
-      const sportList = getSportFilteredEvents();
-
+      const container = document.getElementById('statusSlider'), nowMs = Date.now(), sportList = getSportFilteredEvents();
       const counts = {
         all: sportList.length,
         live: sportList.filter(e => matchesStatusTab(e, 'live', nowMs)).length,
@@ -1074,399 +283,86 @@
         tomorrow: sportList.filter(e => matchesStatusTab(e, 'tomorrow', nowMs)).length,
         finished: sportList.filter(e => matchesStatusTab(e, 'finished', nowMs)).length
       };
-
       document.getElementById('notifCountBadge').textContent = counts.live || counts.all || 9;
-
       container.innerHTML = STATUS_TABS.map(tab => {
         const isActive = selectedStatus === tab.id;
-        return `
-          <button class="filter-pill ${isActive ? 'active' : ''}" onclick="selectStatus('${tab.id}')">
-            <span class="pill-icon">${isActive ? CHECK_ICON_SVG : tab.icon}</span>
-            <span>${tab.label} (${counts[tab.id]})</span>
-          </button>
-        `;
+        return `<button class="filter-pill ${isActive ? 'active' : ''}" onclick="selectStatus('${tab.id}')"><span class="pill-icon">${isActive ? CHECK_ICON_SVG : tab.icon}</span><span>${tab.label} (${counts[tab.id]})</span></button>`;
       }).join('');
     }
 
     function renderMatches() {
-      const listEl = document.getElementById('matchesList');
-      const nowMs = Date.now();
-      const sportFiltered = getSportFilteredEvents();
-      let list = sportFiltered.filter(ev => matchesStatusTab(ev, selectedStatus, nowMs));
-
-      // Sort: Live matches first, followed immediately by Upcoming matches, then Finished
+      const listEl = document.getElementById('matchesList'), nowMs = Date.now();
+      let list = getSportFilteredEvents().filter(ev => matchesStatusTab(ev, selectedStatus, nowMs));
       list.sort((a, b) => {
         const stateOrder = { live: 0, upcoming: 1, finished: 2 };
-        const sa = stateOrder[getMatchLiveState(a, nowMs)];
-        const sb = stateOrder[getMatchLiveState(b, nowMs)];
-        if (sa !== sb) return sa - sb;
-        return a.startUtc - b.startUtc;
+        const sa = stateOrder[getMatchLiveState(a, nowMs)], sb = stateOrder[getMatchLiveState(b, nowMs)];
+        return sa !== sb ? sa - sb : a.startUtc - b.startUtc;
       });
-
       window._currentlyRendered = list;
-
-      if (list.length === 0) {
-        listEl.innerHTML = `<div class="empty-msg">No matches found in this section.</div>`;
-        return;
-      }
+      if (list.length === 0) { listEl.innerHTML = `<div class="empty-msg">No matches found in this section.</div>`; return; }
 
       listEl.innerHTML = list.map((ev, idx) => {
-        const state = getMatchLiveState(ev, nowMs);
-        const isLive = state === 'live';
-        const headerText = `${ev.category.toUpperCase()} | ${ev.eventName.toUpperCase()}`;
-
-        const fallbackA = createFallbackBadge(ev.teamAName);
-        const fallbackB = createFallbackBadge(ev.teamBName);
-        const fallbackLeague = createFallbackBadge(ev.eventName);
-
-        const logoA = ev.teamAFlag || fallbackA;
-        const logoB = ev.teamBFlag || fallbackB;
-        const logoLeague = ev.eventLogo || fallbackLeague;
-
-        const safeA = ev.teamAName.replace(/'/g, "\\'");
-        const safeB = ev.teamBName.replace(/'/g, "\\'");
-        const safeL = ev.eventName.replace(/'/g, "\\'");
-
-        const centerHTML = isLive
-          ? `
-            <div class="live-indicator">
-              <span class="live-dot"></span>
-              <span class="live-text">Live</span>
-            </div>
-          `
-          : `
-            <div class="match-time">${ev.bdTime12}</div>
-            <div class="match-date">${ev.bdDate}</div>
-          `;
-
+        const state = getMatchLiveState(ev, nowMs), isLive = state === 'live', headerText = `${ev.category.toUpperCase()} | ${ev.eventName.toUpperCase()}`;
+        const logoA = ev.teamAFlag || createFallbackBadge(ev.teamAName), logoB = ev.teamBFlag || createFallbackBadge(ev.teamBName), logoLeague = ev.eventLogo || createFallbackBadge(ev.eventName);
+        const safeA = ev.teamAName.replace(/'/g, "\\'"), safeB = ev.teamBName.replace(/'/g, "\\'"), safeL = ev.eventName.replace(/'/g, "\\'");
+        const centerHTML = isLive ? `<div class="live-indicator"><span class="live-dot"></span><span class="live-text">Live</span></div>` : `<div class="match-time">${ev.bdTime12}</div><div class="match-date">${ev.bdDate}</div>`;
         const bottomTabText = getCardBottomStatusText(ev, nowMs);
-
-        return `
-          <article class="match-card" data-card-idx="${idx}" data-state="${state}" onclick="openChannels(${idx})">
-            <div class="card-header">
-              <img
-                class="league-icon"
-                src="${logoLeague}"
-                data-raw="${logoLeague}"
-                loading="eager"
-                decoding="async"
-                alt=""
-                onerror="onLogoError(this, '${safeL}')"
-              />
-              <div class="league-title">${headerText}</div>
-            </div>
-
-            <div class="card-body">
-              <div class="team-side">
-                <div class="team-logo-wrap">
-                  <img
-                    src="${logoA}"
-                    data-raw="${logoA}"
-                    loading="eager"
-                    decoding="async"
-                    alt="${ev.teamAName}"
-                    onerror="onLogoError(this, '${safeA}')"
-                  />
-                </div>
-                <div class="team-name">${ev.teamAName}</div>
-              </div>
-
-              <div class="center-info">
-                ${centerHTML}
-              </div>
-
-              <div class="team-side right">
-                <div class="team-name">${ev.teamBName}</div>
-                <div class="team-logo-wrap">
-                  <img
-                    src="${logoB}"
-                    data-raw="${logoB}"
-                    loading="eager"
-                    decoding="async"
-                    alt="${ev.teamBName}"
-                    onerror="onLogoError(this, '${safeB}')"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="card-footer">
-              ${ev.isHot ? `<div class="hot-ribbon">HOT 🔥</div>` : ''}
-              <div class="bottom-status-tab" data-timer-el="${idx}">${bottomTabText}</div>
-            </div>
-          </article>
-        `;
+        return `<article class="match-card" data-card-idx="${idx}" data-state="${state}" onclick="openChannels(${idx})"><div class="card-header"><img class="league-icon" src="${logoLeague}" data-raw="${logoLeague}" loading="eager" decoding="async" alt="" onerror="onLogoError(this, '${safeL}')" /><div class="league-title">${headerText}</div></div><div class="card-body"><div class="team-side"><div class="team-logo-wrap"><img src="${logoA}" data-raw="${logoA}" loading="eager" decoding="async" alt="${ev.teamAName}" onerror="onLogoError(this, '${safeA}')" /></div><div class="team-name">${ev.teamAName}</div></div><div class="center-info">${centerHTML}</div><div class="team-side right"><div class="team-name">${ev.teamBName}</div><div class="team-logo-wrap"><img src="${logoB}" data-raw="${logoB}" loading="eager" decoding="async" alt="${ev.teamBName}" onerror="onLogoError(this, '${safeB}')" /></div></div></div><div class="card-footer">${ev.isHot ? `<div class="hot-ribbon">HOT 🔥</div>` : ''}<div class="bottom-status-tab" data-timer-el="${idx}">${bottomTabText}</div></div></article>`;
       }).join('');
     }
 
-    // =====================================================================
-    // 6. 1-SECOND REAL-TIME COUNTDOWN & ELAPSED TIME UPDATER
-    // =====================================================================
     setInterval(() => {
       const rendered = window._currentlyRendered || [];
       if (!rendered.length) return;
-
       const nowMs = Date.now();
       let stateChanged = false;
-
       rendered.forEach((ev, idx) => {
-        const cardEl = document.querySelector(`[data-card-idx="${idx}"]`);
-        const timerEl = document.querySelector(`[data-timer-el="${idx}"]`);
-        const currentState = getMatchLiveState(ev, nowMs);
-
-        if (cardEl && cardEl.getAttribute('data-state') !== currentState) {
-          stateChanged = true;
-        }
-        if (timerEl) {
-          timerEl.textContent = getCardBottomStatusText(ev, nowMs);
-        }
+        const cardEl = document.querySelector(`[data-card-idx="${idx}"]`), timerEl = document.querySelector(`[data-timer-el="${idx}"]`), currentState = getMatchLiveState(ev, nowMs);
+        if (cardEl && cardEl.getAttribute('data-state') !== currentState) stateChanged = true;
+        if (timerEl) timerEl.textContent = getCardBottomStatusText(ev, nowMs);
       });
-
-      if (stateChanged) {
-        renderStatusPills();
-        renderMatches();
-      }
+      if (stateChanged) { renderStatusPills(); renderMatches(); }
     }, 1000);
 
-    // =====================================================================
-    // 7. USER INTERACTIONS & CHANNEL MODAL (ONLY CHANNEL NAMES)
-    // =====================================================================
-    window.selectSport = function(sportKey) {
-      selectedSport = sportKey;
-      renderSportBoxes();
-      renderStatusPills();
-      renderMatches();
-    };
-
-    window.selectStatus = function(statusId) {
-      selectedStatus = statusId;
-      renderStatusPills();
-      renderMatches();
-    };
+    window.selectSport = function(sportKey) { selectedSport = sportKey; renderSportBoxes(); renderStatusPills(); renderMatches(); };
+    window.selectStatus = function(statusId) { selectedStatus = statusId; renderStatusPills(); renderMatches(); };
 
     window.openChannels = function(index) {
       const ev = (window._currentlyRendered || [])[index];
       if (!ev) return;
-
-      const modal = document.getElementById('channelModal');
-      const titleEl = document.getElementById('modalMatchTitle');
-      const container = document.getElementById('channelListContainer');
-
+      const modal = document.getElementById('channelModal'), titleEl = document.getElementById('modalMatchTitle'), container = document.getElementById('channelListContainer');
       titleEl.textContent = `${ev.teamAName} vs ${ev.teamBName}`;
-      const channels = Array.isArray(ev.link_names) && ev.link_names.length > 0
-        ? ev.link_names
-        : ['No Channel Listed'];
-
-      container.innerHTML = channels.map((chName, i) => `
-        <div class="channel-item">
-          <span>${chName.trim()}</span>
-          <span class="tv-tag">CH ${i + 1}</span>
-        </div>
-      `).join('');
-
+      const channels = Array.isArray(ev.link_names) && ev.link_names.length > 0 ? ev.link_names : ['No Channel Listed'];
+      container.innerHTML = channels.map((chName, i) => `<div class="channel-item"><span>${(typeof chName === 'object' ? (chName.name || '') : String(chName)).trim()}</span><span class="tv-tag">CH ${i + 1}</span></div>`).join('');
       modal.classList.add('show');
     };
 
-    document.getElementById('closeModalBtn').addEventListener('click', () => {
-      document.getElementById('channelModal').classList.remove('show');
-    });
-
-    document.getElementById('channelModal').addEventListener('click', (e) => {
-      if (e.target.id === 'channelModal') {
-        document.getElementById('channelModal').classList.remove('show');
-      }
-    });
-
-    document.getElementById('searchBtn').addEventListener('click', () => {
-      const drawer = document.getElementById('searchDrawer');
-      drawer.classList.toggle('open');
-      if (drawer.classList.contains('open')) {
-        document.getElementById('searchInput').focus();
-      }
-    });
-
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim();
-      renderStatusPills();
-      renderMatches();
-    });
-
-    document.getElementById('searchClear').addEventListener('click', () => {
-      searchQuery = '';
-      document.getElementById('searchInput').value = '';
-      document.getElementById('searchDrawer').classList.remove('open');
-      renderStatusPills();
-      renderMatches();
-    });
-
-    // =====================================================================
-    // 8. LIVE API FETCH FROM /api/geesports/events (WITH FALLBACK IF OFFLINE)
-    // =====================================================================
-    function buildFallbackData() {
-      return [
-        {
-          category: "Football",
-          eventName: "LaLiga",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/8/image/dark",
-          teamAName: "FC Barcelona",
-          teamBName: "Atlético Madrid",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/2817/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/2836/image",
-          date: "09/11/2026",
-          time: "02:30:00",
-          end_date: "09/11/2026",
-          end_time: "05:30:00",
-          visible: true,
-          priority: 1,
-          link_names: [
-            "TSN3 SPORTS FHD",
-            "BeIN2 SPORTS FHD",
-            "D SPORTS + FHD",
-            "FANCODE FHD",
-            "ESPN DEPORTES+ HD",
-            "ESPN DEPORTES HD",
-            "FANCODE SD1",
-            "PREMIER1 SPORTS FHD"
-          ]
-        },
-        {
-          category: "Football",
-          eventName: "Premier League",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
-          teamAName: "Brighton & Hove Albion",
-          teamBName: "Brentford",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/30/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/50/image",
-          time: "03:00:00",
-          date: "09/11/2026",
-          end_time: "06:00:00",
-          end_date: "09/11/2026",
-          visible: true,
-          priority: -1,
-          link_names: [
-            "PEACOCK ENG FHD",
-            "FUBO SPORTS FHD",
-            "SKY SPORT PL FHD",
-            "SERVER+ TV",
-            "LOW QUALITY (USE VPN)",
-            "XTREME+ FHD",
-            "XTREME+ SD"
-          ]
-        },
-        {
-          category: "Football",
-          eventName: "Premier League",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
-          teamAName: "Manchester United",
-          teamBName: "Aston Villa",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/35/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/40/image",
-          time: "05:30:00",
-          date: "09/11/2026",
-          end_time: "08:00:00",
-          end_date: "09/11/2026",
-          visible: true,
-          priority: 1,
-          link_names: [
-            "FUBO SPORTS FHD",
-            "SKY SPORTS EPL FHD",
-            "FUBO SPORTS ALT",
-            "SKY SPORTS EPL",
-            "LOW QUALITY (USE VPN)",
-            "USA NETWORK FHD",
-            "FASTER QUALITY",
-            "HD QUALITY",
-            "XTREME+ FHD",
-            "XTREME+ SD"
-          ]
-        },
-        {
-          category: "American football",
-          eventName: "NCAA Division FBS",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/32199/image/dark",
-          teamAName: "Oregon State Beavers",
-          teamBName: "Texas State Bobcats",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/4299/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/188144/image",
-          time: "06:30:00",
-          date: "09/11/2026",
-          end_time: "09:30:00",
-          end_date: "09/11/2026",
-          visible: true,
-          priority: -1,
-          link_names: ["STREAM TV + HD", "LOW QUALITY (USE VPN)"]
-        },
-        {
-          category: "Football",
-          eventName: "Premier League",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/17/image/dark",
-          teamAName: "Sunderland",
-          teamBName: "Chelsea",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/41/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/38/image",
-          time: "08:00:00",
-          date: "09/11/2026",
-          end_time: "10:20:00",
-          end_date: "09/11/2026",
-          visible: true,
-          priority: -1,
-          link_names: ["SKY SPORTS MAIN EVENT", "USA NETWORK HD", "FUBO SPORTS FHD"]
-        },
-        {
-          category: "American football",
-          eventName: "NCAA Division FBS",
-          eventLogo: "http://img.sofascore.com/api/v1/unique-tournament/32199/image/dark",
-          teamAName: "UNLV Rebels",
-          teamBName: "Wyoming Cowboys",
-          teamAFlag: "https://img.sofascore.com/api/v1/team/4378/image",
-          teamBFlag: "https://img.sofascore.com/api/v1/team/4347/image",
-          time: "03:30:00",
-          date: "08/11/2026",
-          end_time: "07:00:00",
-          end_date: "08/11/2026",
-          visible: true,
-          priority: -1,
-          link_names: ["STREAM TV + HD", "LOW QUALITY (USE VPN)"]
-        }
-      ];
-    }
+    document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('channelModal').classList.remove('show'));
+    document.getElementById('channelModal').addEventListener('click', (e) => { if (e.target.id === 'channelModal') document.getElementById('channelModal').classList.remove('show'); });
+    document.getElementById('searchBtn').addEventListener('click', () => { const drawer = document.getElementById('searchDrawer'); drawer.classList.toggle('open'); if (drawer.classList.contains('open')) document.getElementById('searchInput').focus(); });
+    document.getElementById('searchInput').addEventListener('input', (e) => { searchQuery = e.target.value.trim(); renderStatusPills(); renderMatches(); });
+    document.getElementById('searchClear').addEventListener('click', () => { searchQuery = ''; document.getElementById('searchInput').value = ''; document.getElementById('searchDrawer').classList.remove('open'); renderStatusPills(); renderMatches(); });
 
     async function loadEventsFromApi() {
       const refreshBtn = document.getElementById('refreshBtn');
       refreshBtn.classList.add('spinning');
-
       try {
         const res = await fetch(API_URL, { cache: 'no-store' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
         const rawList = Array.isArray(json) ? json : (json.events || json.data || []);
-
-        const extracted = rawList
-          .map(item => item.event || item)
-          .filter(ev => ev && ev.teamAName && ev.visible !== false);
-
-        if (extracted.length > 0) {
-          allEvents = extracted.map(computeEventTiming);
-        } else {
-          throw new Error('Empty API list');
-        }
+        const extracted = rawList.map(item => item.event || item).filter(ev => ev && ev.teamAName && ev.visible !== false);
+        if (extracted.length > 0) allEvents = extracted.map(computeEventTiming);
       } catch (err) {
-        if (allEvents.length === 0) {
-          allEvents = buildFallbackData().map(computeEventTiming);
-        }
+        console.error(err);
       } finally {
         setTimeout(() => refreshBtn.classList.remove('spinning'), 300);
-        renderSportBoxes();
-        renderStatusPills();
-        renderMatches();
+        renderSportBoxes(); renderStatusPills(); renderMatches();
       }
     }
 
     document.getElementById('refreshBtn').addEventListener('click', loadEventsFromApi);
-
-    // Initial load directly from API
     loadEventsFromApi();
-    // Auto-refresh API data every 2 minutes
     setInterval(loadEventsFromApi, 120000);
   </script>
 </body>
