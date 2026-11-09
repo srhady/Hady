@@ -327,15 +327,39 @@
     window.selectSport = function(sportKey) { selectedSport = sportKey; renderSportBoxes(); renderStatusPills(); renderMatches(); };
     window.selectStatus = function(statusId) { selectedStatus = statusId; renderStatusPills(); renderMatches(); };
 
-    window.openChannels = function(index) {
+        window.openChannels = function(index) {
       const ev = (window._currentlyRendered || [])[index];
       if (!ev) return;
-      const modal = document.getElementById('channelModal'), titleEl = document.getElementById('modalMatchTitle'), container = document.getElementById('channelListContainer');
+      const modal = document.getElementById('channelModal');
+      const titleEl = document.getElementById('modalMatchTitle');
+      const container = document.getElementById('channelListContainer');
       titleEl.textContent = `${ev.teamAName} vs ${ev.teamBName}`;
-      const channels = Array.isArray(ev.link_names) && ev.link_names.length > 0 ? ev.link_names : ['No Channel Listed'];
-      container.innerHTML = channels.map((chName, i) => `<div class="channel-item"><span>${(typeof chName === 'object' ? (chName.name || '') : String(chName)).trim()}</span><span class="tv-tag">CH ${i + 1}</span></div>`).join('');
+      const channels = Array.isArray(ev.link_names) && ev.link_names.length > 0 ? ev.link_names : ['STREAM TV + HD'];
+      
+      container.innerHTML = channels.map((chObj, i) => {
+        const chName = typeof chObj === 'object' ? (chObj.name || `Server ${i + 1}`) : String(chObj);
+        const chTag = typeof chObj === 'object' && chObj.tag ? chObj.tag : `CH ${i + 1}`;
+        return `
+          <div class="channel-item" style="cursor:pointer;" onclick="goToPlayer(${index}, ${i})">
+            <span>${chName.trim()}</span>
+            <span class="tv-tag">${chTag}</span>
+          </div>
+        `;
+      }).join('');
       modal.classList.add('show');
     };
+
+    window.goToPlayer = function(matchIdx, channelIdx) {
+      const ev = (window._currentlyRendered || [])[matchIdx];
+      if (!ev) return;
+      localStorage.setItem('dreamlive_selected_match', JSON.stringify({
+        ...ev,
+        channelIndex: channelIdx
+      }));
+      window.location.href = `player.html?teamA=${encodeURIComponent(ev.teamAName)}&ch=${channelIdx}`;
+    };
+
+   
 
     document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('channelModal').classList.remove('show'));
     document.getElementById('channelModal').addEventListener('click', (e) => { if (e.target.id === 'channelModal') document.getElementById('channelModal').classList.remove('show'); });
