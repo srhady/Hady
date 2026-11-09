@@ -7,7 +7,6 @@
   <title>Dream live - Player</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- JW Player Scripts -->
   <script src='https://cdn.jwplayer.com/libraries/MAaRkUjT.js'></script>
   <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftIJ5Vqg==";</script>
 
@@ -66,7 +65,6 @@
       <div class="header-left"><a href="admin.html" class="back-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></a><span class="brand-title">Dream live</span></div>
       <div class="live-pill"><span class="live-dot"></span><span>LIVE PLAYER</span></div>
     </header>
-
     <div class="player-sticky-wrap">
       <div class="video-box">
         <div id="videoContainer"><div id="videoElement"></div></div>
@@ -74,12 +72,10 @@
         <div class="player-loader" id="playerLoader"><div class="spinner"></div><div class="loader-text" id="loaderText">Loading Stream...</div></div>
       </div>
     </div>
-
     <section class="section-box">
       <div class="section-head"><div class="section-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Select Server / Channel</span></div><span class="drm-status" id="streamTypeBadge">AUTO</span></div>
       <div class="servers-grid" id="serversGrid"></div>
     </section>
-
     <section class="match-banner" id="matchBanner">
       <div class="banner-league" id="bannerLeague">LOADING MATCH...</div>
       <div class="banner-teams">
@@ -88,7 +84,6 @@
         <div class="b-team right"><div class="b-name" id="nameB">Team B</div><div class="b-logo"><img id="logoB" src="" alt="" /></div></div>
       </div>
     </section>
-
     <div class="other-matches-title">More Matches</div>
     <div class="mini-list" id="otherMatchesList"></div>
   </div>
@@ -102,11 +97,7 @@
       return 'data:image/svg+xml;utf8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="#101720"/><text x="48" y="56" text-anchor="middle" fill="#38bdf8" font-family="sans-serif" font-size="28" font-weight="700">${initials}</text></svg>`);
     }
 
-    function sanitizeLogo(url, name) {
-      if (!url || typeof url !== 'string') return createFallbackBadge(name);
-      return url.trim().startsWith('http://') ? 'https://' + url.trim().slice(7) : url.trim();
-    }
-
+    function sanitizeLogo(url, name) { return (!url || typeof url !== 'string') ? createFallbackBadge(name) : (url.trim().startsWith('http://') ? 'https://' + url.trim().slice(7) : url.trim()); }
     function showLoader(msg = 'Loading Stream...') { document.getElementById('loaderText').textContent = msg; document.getElementById('playerLoader').classList.remove('hidden'); }
     function hideLoader() { document.getElementById('playerLoader').classList.add('hidden'); }
 
@@ -114,28 +105,27 @@
       if (!apiField || typeof apiField !== 'string') return null;
       const raw = apiField.trim();
       if (raw.startsWith('http')) return { type: 'WIDEVINE DRM', lic: raw };
-      if (raw.includes(':')) {
-        const parts = raw.split(',')[0].split(':').map(s => s.trim().toLowerCase());
-        if (parts.length === 2) return { type: 'CLEARKEY DRM', kid: parts[0], key: parts[1] };
-      }
+      if (raw.includes(':')) { const parts = raw.split(',')[0].split(':').map(s => s.trim().toLowerCase()); if (parts.length === 2) return { type: 'CLEARKEY DRM', kid: parts[0], key: parts[1] }; }
       return null;
     }
 
     function playChannelStream(streamObj) {
-      if (!streamObj || !streamObj.link) return;
+      if (!streamObj) return;
+      // Smart Finder: Link না থাকলে tokenApi থেকে embed লিংক নেবে
+      let targetUrl = (streamObj.link || streamObj.url || (streamObj.tokenApi ? streamObj.tokenApi.api : "") || "").trim();
+      if (!targetUrl) return;
       showLoader(`Connecting to Server...`);
       const embedFrame = document.getElementById('embedFrame'), videoContainer = document.getElementById('videoContainer'), badgeEl = document.getElementById('streamTypeBadge');
       
-      let targetUrl = streamObj.link.trim();
-      if (targetUrl.includes('|')) targetUrl = targetUrl.split('|')[0].trim(); // Pipe Parse
+      if (targetUrl.includes('|')) targetUrl = targetUrl.split('|')[0].trim();
       
-      if ((targetUrl.includes('.html') || targetUrl.includes('/?url=')) && !targetUrl.includes('.m3u8') && !targetUrl.includes('.mpd')) {
-        badgeEl.textContent = 'WEB EMBED'; videoContainer.style.display = 'none'; embedFrame.style.display = 'block'; embedFrame.src = targetUrl; setTimeout(hideLoader, 1500); return;
-      }
+      let isEmbed = (streamObj.tokenApi && streamObj.tokenApi.type === 'embed') || targetUrl.includes('.html') || targetUrl.includes('/embed/') || (targetUrl.includes('/?url=') && !targetUrl.includes('.m3u8') && !targetUrl.includes('.mpd'));
+      if (isEmbed) { badgeEl.textContent = 'WEB EMBED'; videoContainer.style.display = 'none'; embedFrame.style.display = 'block'; embedFrame.src = targetUrl; setTimeout(hideLoader, 1500); return; }
 
       videoContainer.style.display = 'block'; embedFrame.style.display = 'none'; embedFrame.src = '';
-      const drmInfo = buildDrmConfiguration(streamObj.api);
-      badgeEl.textContent = drmInfo ? drmInfo.type : (streamObj.linkTag || 'HD STREAM');
+      let drmApi = (streamObj.api || streamObj.key || streamObj.drm_key || "").trim();
+      const drmInfo = buildDrmConfiguration(drmApi);
+      badgeEl.textContent = drmInfo ? drmInfo.type : (streamObj.name && streamObj.name.includes('FHD') ? 'FHD STREAM' : 'HD STREAM');
 
       let setupConfig = { file: targetUrl, width: "100%", aspectratio: "16:9", autostart: true, cast: {} };
       if (drmInfo && drmInfo.type === 'CLEARKEY DRM') { setupConfig.type = 'dash'; setupConfig.drm = { clearkey: { keyId: drmInfo.kid, key: drmInfo.key } }; }
@@ -146,7 +136,7 @@
       jwplayer("videoElement").on('error', () => { showLoader('Stream Error / Offline'); });
     }
 
-    function extractStreams(ev) { return (ev.linksDecoded && Array.isArray(ev.linksDecoded.data) && ev.linksDecoded.data.length > 0) ? ev.linksDecoded.data : (Array.isArray(ev.streams) ? ev.streams : []); }
+    function extractStreams(ev) { return (ev.linksDecoded && Array.isArray(ev.linksDecoded.data) && ev.linksDecoded.data.length > 0) ? ev.linksDecoded.data : (Array.isArray(ev.channels) ? ev.channels : (Array.isArray(ev.links) ? ev.links : (Array.isArray(ev.streams) ? ev.streams : []))); }
 
     async function selectMatch(matchObj, chIndex = 0) {
       currentMatch = matchObj; currentServerIndex = chIndex;
@@ -157,17 +147,18 @@
       lgB.src = sanitizeLogo(matchObj.teamBFlag, matchObj.teamBName); lgB.onerror = () => { lgB.src = createFallbackBadge(matchObj.teamBName); };
 
       let streams = extractStreams(matchObj);
-      if (streams.length === 0 && matchObj.links && matchObj.links.startsWith('http')) {
+      // JSON Array Fix: .txt লিংক ফেচ করে সরাসরি Array রিটার্ন হলে সেভাবেই রিসিভ করবে
+      if (streams.length === 0 && matchObj.links && typeof matchObj.links === 'string' && matchObj.links.startsWith('http')) {
         showLoader('Decrypting Channels...');
-        try { const res = await fetch(matchObj.links); const list = (await res.json()).data || []; if (list.length > 0) { matchObj.linksDecoded = { data: list }; streams = list; } } catch (e) {}
+        try { const res = await fetch(matchObj.links); const decJson = await res.json(); const list = Array.isArray(decJson) ? decJson : (decJson.data || []); if (list.length > 0) { matchObj.linksDecoded = { data: list }; streams = list; } } catch (e) { console.error("Decrypt error", e); }
       }
 
       renderServerButtons(streams); renderOtherMatches();
-      if (streams.length > 0) switchServer(Math.min(chIndex, streams.length - 1)); else showLoader('No active links found.');
+      if (streams.length > 0) switchServer(Math.min(chIndex, streams.length - 1)); else showLoader('No channel sources found.');
     }
 
     function renderServerButtons(streams) {
-      document.getElementById('serversGrid').innerHTML = (!streams || streams.length === 0) ? `<div style="color:#93a3b5;font-size:12.5px;">No servers available.</div>` : streams.map((st, idx) => `<button class="server-btn ${idx === currentServerIndex ? 'active' : ''}" onclick="switchServer(${idx})"><span>${(st.name || `Server ${idx + 1}`).trim()}</span><span class="server-tag">${(st.linkTag || st.tag || (st.api ? 'DRM' : 'HD')).trim()}</span></button>`).join('');
+      document.getElementById('serversGrid').innerHTML = (!streams || streams.length === 0) ? `<div style="color:#ef4444;font-size:12.5px;font-weight:600;">No active channels found!</div>` : streams.map((st, idx) => `<button class="server-btn ${idx === currentServerIndex ? 'active' : ''}" onclick="switchServer(${idx})"><span>${(st.name || st.server || `Server ${idx + 1}`).trim()}</span><span class="server-tag">${(st.api ? 'DRM' : (st.tokenApi && st.tokenApi.type === 'embed' ? 'EMBED' : 'HD'))}</span></button>`).join('');
     }
 
     window.switchServer = function(index) { const streams = extractStreams(currentMatch); if (!streams[index]) return; currentServerIndex = index; renderServerButtons(streams); playChannelStream(streams[index]); };
