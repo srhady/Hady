@@ -11,7 +11,7 @@
   <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftIJ5Vqg==";</script>
 
   <style>
-    :root { --bg-main: #0c121a; --bg-card: #17202c; --bg-pill: #121923; --sky-primary: #38bdf8; --sky-border: #0284c7; --text-white: #ffffff; --text-muted: #93a3b5; --live-green: #22c55e; }
+    :root { --bg-main: #0c121a; --bg-card: #17202c; --bg-pill: #121923; --sky-primary: #38bdf8; --sky-border: #0284c7; --pill-active-start: #0284c7; --pill-active-end: #0369a1; --text-white: #ffffff; --text-muted: #93a3b5; --live-green: #22c55e; }
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
     body { background-color: #070b10; color: var(--text-white); font-family: 'Outfit', sans-serif; display: flex; justify-content: center; min-height: 100vh; overflow-x: hidden; user-select: none; }
     .app-container { width: 100%; max-width: 450px; min-height: 100vh; background-color: var(--bg-main); padding-bottom: 28px; position: relative; box-shadow: 0 0 35px rgba(0, 0, 0, 0.8); }
@@ -49,14 +49,6 @@
     .b-logo img { width: 100%; height: 100%; object-fit: cover; }
     .b-name { font-size: 12.5px; font-weight: 600; line-height: 1.2; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .vs-circle { width: 34px; height: 34px; margin: 0 auto; border-radius: 50%; background: #101720; border: 1px solid #2e435c; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--sky-primary); }
-    .other-matches-title { padding: 4px 12px 8px; font-size: 14px; font-weight: 700; color: #e2e8f0; }
-    .mini-list { padding: 0 10px; display: flex; flex-direction: column; gap: 8px; }
-    .mini-card { background: var(--bg-card); border: 1.5px solid #263649; border-radius: 12px; padding: 8px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
-    .mini-card.current { border-color: var(--sky-primary); background: #1a2636; }
-    .mini-info { display: flex; flex-direction: column; gap: 2px; }
-    .mini-teams { font-size: 13px; font-weight: 600; color: #fff; }
-    .mini-sub { font-size: 11px; color: var(--text-muted); }
-    .play-now-btn { background: rgba(56, 189, 248, 0.14); color: var(--sky-primary); border: 1px solid var(--sky-border); padding: 5px 10px; border-radius: 8px; font-size: 11.5px; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -68,7 +60,8 @@
     <div class="player-sticky-wrap">
       <div class="video-box">
         <div id="videoContainer"><div id="videoElement"></div></div>
-        <iframe id="embedFrame" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+        <!-- iframe-এ sandbox যোগ করা হয়েছে পপআপ ও রিডাইরেক্ট ব্লক করার জন্য -->
+        <iframe id="embedFrame" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen allow="autoplay; encrypted-media"></iframe>
         <div class="player-loader" id="playerLoader"><div class="spinner"></div><div class="loader-text" id="loaderText">Loading Stream...</div></div>
       </div>
     </div>
@@ -84,13 +77,11 @@
         <div class="b-team right"><div class="b-name" id="nameB">Team B</div><div class="b-logo"><img id="logoB" src="" alt="" /></div></div>
       </div>
     </section>
-    <div class="other-matches-title">More Matches</div>
-    <div class="mini-list" id="otherMatchesList"></div>
   </div>
 
   <script>
     const API_URL = 'https://falconde-uqdj3fde.manus.space/api/geesports/events';
-    let allMatches = [], currentMatch = null, currentServerIndex = 0;
+    let currentMatch = null, currentServerIndex = 0;
 
     function createFallbackBadge(name) {
       const clean = (name || 'DL').replace(/[^a-zA-Z0-9 ]/g, '').trim(), initials = clean.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase() || 'DL';
@@ -111,7 +102,17 @@
 
     function playChannelStream(streamObj) {
       if (!streamObj) return;
-      // Smart Finder: Link না থাকলে tokenApi থেকে embed লিংক নেবে
+      
+      // পূর্বের সার্ভার পুরোপুরি স্টপ করা
+      try {
+        if (jwplayer("videoElement").getState() !== "idle") {
+           jwplayer("videoElement").stop();
+           jwplayer("videoElement").remove(); 
+        }
+      } catch (e) {}
+
+      document.getElementById('videoContainer').innerHTML = '<div id="videoElement"></div>';
+
       let targetUrl = (streamObj.link || streamObj.url || (streamObj.tokenApi ? streamObj.tokenApi.api : "") || "").trim();
       if (!targetUrl) return;
       showLoader(`Connecting to Server...`);
@@ -120,7 +121,14 @@
       if (targetUrl.includes('|')) targetUrl = targetUrl.split('|')[0].trim();
       
       let isEmbed = (streamObj.tokenApi && streamObj.tokenApi.type === 'embed') || targetUrl.includes('.html') || targetUrl.includes('/embed/') || (targetUrl.includes('/?url=') && !targetUrl.includes('.m3u8') && !targetUrl.includes('.mpd'));
-      if (isEmbed) { badgeEl.textContent = 'WEB EMBED'; videoContainer.style.display = 'none'; embedFrame.style.display = 'block'; embedFrame.src = targetUrl; setTimeout(hideLoader, 1500); return; }
+      if (isEmbed) { 
+        badgeEl.textContent = 'WEB EMBED'; 
+        videoContainer.style.display = 'none'; 
+        embedFrame.style.display = 'block'; 
+        embedFrame.src = targetUrl; 
+        setTimeout(hideLoader, 1500); 
+        return; 
+      }
 
       videoContainer.style.display = 'block'; embedFrame.style.display = 'none'; embedFrame.src = '';
       let drmApi = (streamObj.api || streamObj.key || streamObj.drm_key || "").trim();
@@ -147,13 +155,12 @@
       lgB.src = sanitizeLogo(matchObj.teamBFlag, matchObj.teamBName); lgB.onerror = () => { lgB.src = createFallbackBadge(matchObj.teamBName); };
 
       let streams = extractStreams(matchObj);
-      // JSON Array Fix: .txt লিংক ফেচ করে সরাসরি Array রিটার্ন হলে সেভাবেই রিসিভ করবে
       if (streams.length === 0 && matchObj.links && typeof matchObj.links === 'string' && matchObj.links.startsWith('http')) {
         showLoader('Decrypting Channels...');
         try { const res = await fetch(matchObj.links); const decJson = await res.json(); const list = Array.isArray(decJson) ? decJson : (decJson.data || []); if (list.length > 0) { matchObj.linksDecoded = { data: list }; streams = list; } } catch (e) { console.error("Decrypt error", e); }
       }
 
-      renderServerButtons(streams); renderOtherMatches();
+      renderServerButtons(streams);
       if (streams.length > 0) switchServer(Math.min(chIndex, streams.length - 1)); else showLoader('No channel sources found.');
     }
 
@@ -161,16 +168,13 @@
       document.getElementById('serversGrid').innerHTML = (!streams || streams.length === 0) ? `<div style="color:#ef4444;font-size:12.5px;font-weight:600;">No active channels found!</div>` : streams.map((st, idx) => `<button class="server-btn ${idx === currentServerIndex ? 'active' : ''}" onclick="switchServer(${idx})"><span>${(st.name || st.server || `Server ${idx + 1}`).trim()}</span><span class="server-tag">${(st.api ? 'DRM' : (st.tokenApi && st.tokenApi.type === 'embed' ? 'EMBED' : 'HD'))}</span></button>`).join('');
     }
 
-    window.switchServer = function(index) { const streams = extractStreams(currentMatch); if (!streams[index]) return; currentServerIndex = index; renderServerButtons(streams); playChannelStream(streams[index]); };
-
-    function renderOtherMatches() {
-      document.getElementById('otherMatchesList').innerHTML = allMatches.slice(0, 15).map((m, i) => {
-        const isCur = currentMatch && m.teamAName === currentMatch.teamAName;
-        return `<div class="mini-card ${isCur ? 'current' : ''}" onclick="selectMatchByIndex(${i})"><div class="mini-info"><div class="mini-teams">${m.teamAName} vs ${m.teamBName || ''}</div><div class="mini-sub">${m.category} • ${m.eventName}</div></div><span class="play-now-btn">${isCur ? 'Playing' : 'Watch'}</span></div>`;
-      }).join('');
-    }
-
-    window.selectMatchByIndex = function(idx) { if (allMatches[idx]) { selectMatch(allMatches[idx], 0); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
+    window.switchServer = function(index) { 
+      const streams = extractStreams(currentMatch); 
+      if (!streams[index]) return; 
+      currentServerIndex = index; 
+      renderServerButtons(streams); 
+      playChannelStream(streams[index]); 
+    };
 
     async function bootPlayer() {
       let savedSelection = null;
@@ -181,7 +185,7 @@
       try {
         const res = await fetch(API_URL, { cache: 'no-store' });
         const json = await res.json(), rawList = Array.isArray(json) ? json : (json.events || json.data || []);
-        allMatches = rawList.map(item => item.event || item).filter(ev => ev && ev.teamAName && ev.visible !== false);
+        let allMatches = rawList.map(item => item.event || item).filter(ev => ev && ev.teamAName && ev.visible !== false);
         
         let target = savedSelection;
         if (allMatches.length > 0) {
