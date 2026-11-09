@@ -68,16 +68,6 @@
     .card-footer { display: flex; align-items: flex-end; justify-content: center; position: relative; height: 21px; }
     .hot-ribbon { position: absolute; left: -10px; bottom: 0; background-color: var(--hot-green); color: #ffffff; font-size: 10px; font-weight: 700; padding: 2px 11px 2px 9px; border-top-right-radius: 10px; display: flex; align-items: center; gap: 3px; }
     .bottom-status-tab { background-color: #0e141d; color: #ffffff; font-size: 11px; font-weight: 600; padding: 2px 15px; border-radius: 8px 8px 0 0; letter-spacing: 0.2px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .modal-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.74); display: none; align-items: center; justify-content: center; z-index: 100; padding: 16px; }
-    .modal-backdrop.show { display: flex; }
-    .channel-modal { width: 100%; max-width: 360px; background-color: #16202c; border: 2px solid var(--sky-primary); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65); }
-    .modal-head { padding: 12px 14px; background-color: #101720; border-bottom: 1px solid #233042; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-    .modal-title { font-size: 14px; font-weight: 700; color: #ffffff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .close-btn { background: none; border: none; color: #93a3b5; font-size: 22px; line-height: 1; cursor: pointer; }
-    .channel-list { max-height: 320px; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 7px; }
-    .channel-item { background-color: #101720; border: 1px solid #263649; border-radius: 9px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; color: #ffffff; }
-    .channel-item span.tv-tag { font-size: 10.5px; color: var(--sky-primary); background: rgba(56, 189, 248, 0.14); padding: 2px 7px; border-radius: 6px; }
-    .empty-msg { text-align: center; color: var(--text-muted); padding: 32px 12px; font-size: 13.5px; }
   </style>
 </head>
 <body>
@@ -112,13 +102,6 @@
     <div class="sports-slider" id="sportSlider"></div>
     <div class="filter-slider" id="statusSlider"></div>
     <main class="matches-list" id="matchesList"></main>
-  </div>
-
-  <div class="modal-backdrop" id="channelModal">
-    <div class="channel-modal">
-      <div class="modal-head"><div class="modal-title" id="modalMatchTitle">Channels</div><button class="close-btn" id="closeModalBtn">&times;</button></div>
-      <div class="channel-list" id="channelListContainer"></div>
-    </div>
   </div>
 
   <script>
@@ -307,7 +290,7 @@
         const safeA = ev.teamAName.replace(/'/g, "\\'"), safeB = ev.teamBName.replace(/'/g, "\\'"), safeL = ev.eventName.replace(/'/g, "\\'");
         const centerHTML = isLive ? `<div class="live-indicator"><span class="live-dot"></span><span class="live-text">Live</span></div>` : `<div class="match-time">${ev.bdTime12}</div><div class="match-date">${ev.bdDate}</div>`;
         const bottomTabText = getCardBottomStatusText(ev, nowMs);
-        return `<article class="match-card" data-card-idx="${idx}" data-state="${state}" onclick="openChannels(${idx})"><div class="card-header"><img class="league-icon" src="${logoLeague}" data-raw="${logoLeague}" loading="eager" decoding="async" alt="" onerror="onLogoError(this, '${safeL}')" /><div class="league-title">${headerText}</div></div><div class="card-body"><div class="team-side"><div class="team-logo-wrap"><img src="${logoA}" data-raw="${logoA}" loading="eager" decoding="async" alt="${ev.teamAName}" onerror="onLogoError(this, '${safeA}')" /></div><div class="team-name">${ev.teamAName}</div></div><div class="center-info">${centerHTML}</div><div class="team-side right"><div class="team-name">${ev.teamBName}</div><div class="team-logo-wrap"><img src="${logoB}" data-raw="${logoB}" loading="eager" decoding="async" alt="${ev.teamBName}" onerror="onLogoError(this, '${safeB}')" /></div></div></div><div class="card-footer">${ev.isHot ? `<div class="hot-ribbon">HOT 🔥</div>` : ''}<div class="bottom-status-tab" data-timer-el="${idx}">${bottomTabText}</div></div></article>`;
+        return `<article class="match-card" data-card-idx="${idx}" data-state="${state}" onclick="goToPlayer(${idx}, 0)"><div class="card-header"><img class="league-icon" src="${logoLeague}" data-raw="${logoLeague}" loading="eager" decoding="async" alt="" onerror="onLogoError(this, '${safeL}')" /><div class="league-title">${headerText}</div></div><div class="card-body"><div class="team-side"><div class="team-logo-wrap"><img src="${logoA}" data-raw="${logoA}" loading="eager" decoding="async" alt="${ev.teamAName}" onerror="onLogoError(this, '${safeA}')" /></div><div class="team-name">${ev.teamAName}</div></div><div class="center-info">${centerHTML}</div><div class="team-side right"><div class="team-name">${ev.teamBName}</div><div class="team-logo-wrap"><img src="${logoB}" data-raw="${logoB}" loading="eager" decoding="async" alt="${ev.teamBName}" onerror="onLogoError(this, '${safeB}')" /></div></div></div><div class="card-footer">${ev.isHot ? `<div class="hot-ribbon">HOT 🔥</div>` : ''}<div class="bottom-status-tab" data-timer-el="${idx}">${bottomTabText}</div></div></article>`;
       }).join('');
     }
 
@@ -327,42 +310,14 @@
     window.selectSport = function(sportKey) { selectedSport = sportKey; renderSportBoxes(); renderStatusPills(); renderMatches(); };
     window.selectStatus = function(statusId) { selectedStatus = statusId; renderStatusPills(); renderMatches(); };
 
-        window.openChannels = function(index) {
-      const ev = (window._currentlyRendered || [])[index];
-      if (!ev) return;
-      const modal = document.getElementById('channelModal');
-      const titleEl = document.getElementById('modalMatchTitle');
-      const container = document.getElementById('channelListContainer');
-      titleEl.textContent = `${ev.teamAName} vs ${ev.teamBName}`;
-      const channels = Array.isArray(ev.link_names) && ev.link_names.length > 0 ? ev.link_names : ['STREAM TV + HD'];
-      
-      container.innerHTML = channels.map((chObj, i) => {
-        const chName = typeof chObj === 'object' ? (chObj.name || `Server ${i + 1}`) : String(chObj);
-        const chTag = typeof chObj === 'object' && chObj.tag ? chObj.tag : `CH ${i + 1}`;
-        return `
-          <div class="channel-item" style="cursor:pointer;" onclick="goToPlayer(${index}, ${i})">
-            <span>${chName.trim()}</span>
-            <span class="tv-tag">${chTag}</span>
-          </div>
-        `;
-      }).join('');
-      modal.classList.add('show');
-    };
-
+    // Matches Modal has been bypassed. Directly loading the player page.
     window.goToPlayer = function(matchIdx, channelIdx) {
       const ev = (window._currentlyRendered || [])[matchIdx];
       if (!ev) return;
-      localStorage.setItem('dreamlive_selected_match', JSON.stringify({
-        ...ev,
-        channelIndex: channelIdx
-      }));
+      localStorage.setItem('dreamlive_selected_match', JSON.stringify({ ...ev, channelIndex: channelIdx }));
       window.location.href = `player.html?teamA=${encodeURIComponent(ev.teamAName)}&ch=${channelIdx}`;
     };
 
-   
-
-    document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('channelModal').classList.remove('show'));
-    document.getElementById('channelModal').addEventListener('click', (e) => { if (e.target.id === 'channelModal') document.getElementById('channelModal').classList.remove('show'); });
     document.getElementById('searchBtn').addEventListener('click', () => { const drawer = document.getElementById('searchDrawer'); drawer.classList.toggle('open'); if (drawer.classList.contains('open')) document.getElementById('searchInput').focus(); });
     document.getElementById('searchInput').addEventListener('input', (e) => { searchQuery = e.target.value.trim(); renderStatusPills(); renderMatches(); });
     document.getElementById('searchClear').addEventListener('click', () => { searchQuery = ''; document.getElementById('searchInput').value = ''; document.getElementById('searchDrawer').classList.remove('open'); renderStatusPills(); renderMatches(); });
