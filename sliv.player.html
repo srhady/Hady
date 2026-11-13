@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Episode</title>
+    
+    <!-- JW Player Library -->
+    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
+    <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftlJ5Vqg==";</script>
+
+    <style>
+        body { margin: 0; padding: 0; background-color: #000; color: #fff; font-family: sans-serif; height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Top Navigation/Back Button */
+        .top-bar { position: absolute; top: 0; left: 0; width: 100%; padding: 20px; z-index: 100; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); display: flex; align-items: center; }
+        .back-btn { color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; transition: color 0.2s; }
+        .back-btn:hover { color: #e50914; }
+        .ep-title-display { margin-left: 20px; font-size: 1.2rem; opacity: 0.8; }
+
+        /* Player Container */
+        .player-wrapper { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+        #player { width: 100%; height: 100%; }
+        
+        .loading { font-size: 1.2rem; color: #888; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="sliv.html" class="back-btn">← Back to Series</a>
+        <span class="ep-title-display" id="displayTitle">Loading stream...</span>
+    </div>
+
+    <div class="player-wrapper">
+        <div id="player" class="loading">Requesting secure stream from server...</div>
+    </div>
+
+    <script>
+        const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
+
+        // URL থেকে ID এবং Title নেওয়া
+        const urlParams = new URLSearchParams(window.location.search);
+        const contentId = urlParams.get('id');
+        const epTitle = urlParams.get('title') || "Episode";
+
+        document.getElementById('displayTitle').innerText = epTitle;
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            if(!contentId) {
+                document.getElementById('player').innerHTML = "No Episode ID provided!";
+                return;
+            }
+
+            try {
+                // API কল করে MPD এবং License URL আনা
+                const response = await fetch(`${API_BASE_URL}/api/play?id=${contentId}`);
+                const playData = await response.json();
+
+                if (!playData.url || !playData.drm_license_url) {
+                    document.getElementById('player').innerHTML = "Failed to extract playback link or DRM license.";
+                    return;
+                }
+
+                // Subtitles array তৈরি (যদি থাকে)
+                let tracksConfig = [];
+                if (playData.subtitles && playData.subtitles.length > 0) {
+                    tracksConfig = playData.subtitles.map(sub => ({
+                        file: sub.url,
+                        label: sub.label || sub.language,
+                        kind: "captions"
+                    }));
+                }
+
+                // JW Player Setup with Widevine
+                jwplayer("player").setup({
+                    file: playData.url, // MPD Link
+                    type: "dash",
+                    title: epTitle,
+                    width: "100%",
+                    height: "100%",
+                    autostart: true,
+                    cast: {}, // Chromecast support
+                    drm: {
+                        widevine: {
+                            url: playData.drm_license_url // DRM License URL
+                        }
+                    },
+                    tracks: tracksConfig // Subtitles
+                });
+
+            } catch (error) {
+                console.error("Error setting up player:", error);
+                document.getElementById('player').innerHTML = "Server Error! Could not fetch playback data.";
+            }
+        });
+    </script>
+</body>
+</html>
