@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonyLIV Series Streaming</title>
+
+    <!-- JW Player Library & Key -->
+    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
+    <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftlJ5Vqg==";</script>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f1115; color: #fff; }
+        
+        /* Header */
+        header { background: #1a1d24; padding: 20px; text-align: center; border-bottom: 2px solid #e50914; }
+        header h1 { font-size: 24px; color: #e50914; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Main Container */
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+
+        /* Video Player Section */
+        .player-wrapper { width: 100%; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-bottom: 20px; }
+        #player { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px; }
+
+        /* Series Info Section */
+        .series-info { margin-bottom: 30px; }
+        .series-info h2 { font-size: 28px; margin-bottom: 10px; color: #fff; }
+        .series-info p { color: #b3b3b3; line-height: 1.6; font-size: 15px; }
+
+        /* Episode Grid */
+        h3.section-title { font-size: 22px; margin-bottom: 15px; border-left: 4px solid #e50914; padding-left: 10px; }
+        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        
+        .episode-card { background: #1a1d24; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+        .episode-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4); }
+        .episode-card img { width: 100%; height: 140px; object-fit: cover; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+        .episode-card:hover img { border-color: #e50914; }
+        
+        .ep-details { padding: 12px; }
+        .ep-details h4 { font-size: 15px; margin-bottom: 5px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ep-details span { font-size: 12px; color: #888; background: #2a2d34; padding: 3px 8px; border-radius: 4px; }
+        
+        .loading { text-align: center; padding: 50px; color: #888; font-size: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Premium Stream</h1>
+    </header>
+
+    <div class="container">
+        <!-- Player Area -->
+        <div class="player-wrapper">
+            <div id="player">ভিডিও প্লে করতে নিচের যেকোনো এপিসোডে ক্লিক করুন</div>
+        </div>
+
+        <!-- Series Details -->
+        <div class="series-info" id="seriesInfo">
+            <h2 id="seriesTitle">Loading Series...</h2>
+            <p id="seriesDesc">অনুগ্রহ করে অপেক্ষা করুন, ডেটা লোড হচ্ছে...</p>
+        </div>
+
+        <!-- Episodes List -->
+        <h3 class="section-title">All Episodes</h3>
+        <div class="episodes-grid" id="episodesList">
+            <!-- Episodes will be injected here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // আপনার Render API লিংক
+        const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
+
+        // পেজ লোড হওয়ার সাথে সাথে সিরিজের ডেটা ফেচ করা
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/series`);
+                const data = await response.json();
+                
+                // API এর স্ট্রাকচার থেকে ডেটা বের করা
+                const bundleData = data.resultObj.containers[0];
+                const seriesTitle = bundleData.metadata.title;
+                const seriesDesc = bundleData.metadata.longDescription;
+                const episodes = bundleData.containers; // এপিসোড লিস্ট
+
+                // HTML এ ডেটা বসানো
+                document.getElementById('seriesTitle').innerText = seriesTitle === "Season 1" ? "Scam 1992: The Harshad Mehta Story" : seriesTitle;
+                document.getElementById('seriesDesc').innerText = seriesDesc;
+
+                const epListContainer = document.getElementById('episodesList');
+                epListContainer.innerHTML = ""; // Clear loading
+
+                // প্রতিটি এপিসোডের জন্য কার্ড তৈরি করা
+                episodes.forEach(ep => {
+                    const meta = ep.metadata;
+                    const card = document.createElement('div');
+                    card.className = 'episode-card';
+                    card.onclick = () => playEpisode(meta.contentId, meta.episodeTitle);
+
+                    card.innerHTML = `
+                        <img src="${meta.landscape_thumb || meta.square_thumb}" alt="${meta.episodeTitle}">
+                        <div class="ep-details">
+                            <h4>Ep ${meta.episodeNumber}: ${meta.episodeTitle}</h4>
+                            <span>${(meta.duration / 60).toFixed(0)} Mins</span>
+                        </div>
+                    `;
+                    epListContainer.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Error loading series:", error);
+                document.getElementById('seriesTitle').innerText = "Error loading data!";
+            }
+        });
+
+        // এপিসোডে ক্লিক করলে প্লেয়ার লোড করার ফাংশন
+        async function playEpisode(contentId, title) {
+            // প্লেয়ারের জায়গায় লোডিং টেক্সট দেখানো
+            document.getElementById('player').innerHTML = "Preparing secure stream... Please wait.";
+
+            try {
+                // Render API থেকে M3U8/MPD এবং Widevine License ফেচ করা
+                const response = await fetch(`${API_BASE_URL}/api/play?id=${contentId}`);
+                const playData = await response.json();
+
+                const manifestUrl = playData.url;
+                const licenseUrl = playData.drm_license_url;
+
+                // JW Player सेटअप
+                jwplayer("player").setup({
+                    file: manifestUrl,
+                    title: title,
+                    type: "dash",
+                    width: "100%",
+                    aspectratio: "16:9",
+                    autostart: true,
+                    drm: {
+                        widevine: {
+                            url: licenseUrl // DRM লাইসেন্স সেট করা
+                        }
+                    }
+                });
+
+                // ইউজারকে প্লেয়ারের কাছে নিয়ে যাওয়া
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error("Error playing video:", error);
+                document.getElementById('player').innerHTML = "Failed to load video stream. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
