@@ -3,155 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonyLIV Series Streaming</title>
-
-    <!-- JW Player Library & Key -->
-    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
-    <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftlJ5Vqg==";</script>
-
+    <title>Watch Series</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f1115; color: #fff; }
+        /* Netflix Style CSS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #141414; color: #fff; overflow-x: hidden; }
         
-        /* Header */
-        header { background: #1a1d24; padding: 20px; text-align: center; border-bottom: 2px solid #e50914; }
-        header h1 { font-size: 24px; color: #e50914; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Main Container */
-        .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
-
-        /* Video Player Section */
-        .player-wrapper { width: 100%; background: #000; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5); margin-bottom: 20px; }
-        #player { width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px; }
-
-        /* Series Info Section */
-        .series-info { margin-bottom: 30px; }
-        .series-info h2 { font-size: 28px; margin-bottom: 10px; color: #fff; }
-        .series-info p { color: #b3b3b3; line-height: 1.6; font-size: 15px; }
-
-        /* Episode Grid */
-        h3.section-title { font-size: 22px; margin-bottom: 15px; border-left: 4px solid #e50914; padding-left: 10px; }
-        .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        /* Hero Banner */
+        .hero { position: relative; height: 85vh; background-size: cover; background-position: center; display: flex; align-items: center; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(20,20,20,0.9) 0%, rgba(20,20,20,0.4) 50%, rgba(20,20,20,0.1) 100%); }
+        .hero-bottom-fade { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, #141414 100%); }
         
-        .episode-card { background: #1a1d24; border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
-        .episode-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4); }
-        .episode-card img { width: 100%; height: 140px; object-fit: cover; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
-        .episode-card:hover img { border-color: #e50914; }
+        .hero-content { position: relative; z-index: 10; padding: 0 4%; max-width: 60%; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
+        .hero-meta { display: flex; gap: 15px; margin-bottom: 15px; font-size: 1.1rem; color: #a3a3a3; font-weight: bold; }
+        .match-tag { border: 1px solid #a3a3a3; padding: 1px 5px; border-radius: 3px; }
+        .hero-desc { font-size: 1.2rem; line-height: 1.5; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+        /* Episodes Section */
+        .episodes-section { position: relative; z-index: 10; padding: 0 4%; margin-top: -80px; }
+        .section-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
         
-        .ep-details { padding: 12px; }
-        .ep-details h4 { font-size: 15px; margin-bottom: 5px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .ep-details span { font-size: 12px; color: #888; background: #2a2d34; padding: 3px 8px; border-radius: 4px; }
+        .episodes-grid { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 20px; scrollbar-width: none; }
+        .episodes-grid::-webkit-scrollbar { display: none; }
         
-        .loading { text-align: center; padding: 50px; color: #888; font-size: 20px; }
+        .episode-card { flex: 0 0 300px; background: #181818; border-radius: 4px; cursor: pointer; transition: transform 0.3s; position: relative; text-decoration: none; color: inherit; }
+        .episode-card:hover { transform: scale(1.05); z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .ep-img { width: 100%; height: 168px; object-fit: cover; border-radius: 4px 4px 0 0; }
+        .play-icon { position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.7); opacity: 0; transition: opacity 0.3s; }
+        .episode-card:hover .play-icon { opacity: 1; }
+        
+        .ep-info { padding: 15px; }
+        .ep-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .ep-title { font-size: 1rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; }
+        .ep-duration { font-size: 0.9rem; color: #a3a3a3; }
+        .ep-desc { font-size: 0.85rem; color: #808080; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Premium Stream</h1>
-    </header>
-
-    <div class="container">
-        <!-- Player Area -->
-        <div class="player-wrapper">
-            <div id="player">ভিডিও প্লে করতে নিচের যেকোনো এপিসোডে ক্লিক করুন</div>
+    <div id="heroBanner" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-bottom-fade"></div>
+        <div class="hero-content">
+            <h1 id="heroTitle" class="hero-title">Loading...</h1>
+            <div class="hero-meta">
+                <span id="heroYear"></span>
+                <span class="match-tag" id="heroAge">18+</span>
+                <span id="heroSeasons">1 Season</span>
+            </div>
+            <p id="heroDesc" class="hero-desc"></p>
         </div>
+    </div>
 
-        <!-- Series Details -->
-        <div class="series-info" id="seriesInfo">
-            <h2 id="seriesTitle">Loading Series...</h2>
-            <p id="seriesDesc">অনুগ্রহ করে অপেক্ষা করুন, ডেটা লোড হচ্ছে...</p>
-        </div>
-
-        <!-- Episodes List -->
-        <h3 class="section-title">All Episodes</h3>
+    <div class="episodes-section">
+        <h2 class="section-title">Episodes</h2>
         <div class="episodes-grid" id="episodesList">
-            <!-- Episodes will be injected here by JavaScript -->
+            <!-- Episodes injected here -->
         </div>
     </div>
 
     <script>
-        // আপনার Render API লিংক
-        const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
+        const API_BASE_URL = "https://sonyliv-api-1.onrender.com"; // আপনার রেন্ডার API
 
-        // পেজ লোড হওয়ার সাথে সাথে সিরিজের ডেটা ফেচ করা
         document.addEventListener("DOMContentLoaded", async () => {
             try {
                 const response = await fetch(`${API_BASE_URL}/api/series`);
                 const data = await response.json();
                 
-                // API এর স্ট্রাকচার থেকে ডেটা বের করা
                 const bundleData = data.resultObj.containers[0];
-                const seriesTitle = bundleData.metadata.title;
-                const seriesDesc = bundleData.metadata.longDescription;
-                const episodes = bundleData.containers; // এপিসোড লিস্ট
+                const meta = bundleData.metadata;
+                const episodes = bundleData.containers;
 
-                // HTML এ ডেটা বসানো
-                document.getElementById('seriesTitle').innerText = seriesTitle === "Season 1" ? "Scam 1992: The Harshad Mehta Story" : seriesTitle;
-                document.getElementById('seriesDesc').innerText = seriesDesc;
+                // Set Hero Banner
+                const bgImage = meta.tv_background_image || meta.detail_cover_bg;
+                document.getElementById('heroBanner').style.backgroundImage = `url('${bgImage}')`;
+                document.getElementById('heroTitle').innerText = meta.title === "Season 1" ? "Scam 1992" : meta.title;
+                document.getElementById('heroYear').innerText = meta.release_year || "2020";
+                document.getElementById('heroAge').innerText = meta["18+"] ? "18+" : "U/A";
+                document.getElementById('heroDesc').innerText = meta.shortDescription;
 
+                // Load Episodes
                 const epListContainer = document.getElementById('episodesList');
-                epListContainer.innerHTML = ""; // Clear loading
-
-                // প্রতিটি এপিসোডের জন্য কার্ড তৈরি করা
                 episodes.forEach(ep => {
-                    const meta = ep.metadata;
-                    const card = document.createElement('div');
-                    card.className = 'episode-card';
-                    card.onclick = () => playEpisode(meta.contentId, meta.episodeTitle);
+                    const epMeta = ep.metadata;
+                    
+                    // এখানে sliv.player.html এ ডাইরেক্ট করা হচ্ছে ID সহ
+                    const aTag = document.createElement('a');
+                    aTag.href = `sliv.player.html?id=${epMeta.contentId}&title=${encodeURIComponent(epMeta.episodeTitle)}`;
+                    aTag.className = 'episode-card';
 
-                    card.innerHTML = `
-                        <img src="${meta.landscape_thumb || meta.square_thumb}" alt="${meta.episodeTitle}">
-                        <div class="ep-details">
-                            <h4>Ep ${meta.episodeNumber}: ${meta.episodeTitle}</h4>
-                            <span>${(meta.duration / 60).toFixed(0)} Mins</span>
+                    aTag.innerHTML = `
+                        <div style="position: relative;">
+                            <img class="ep-img" src="${epMeta.landscape_thumb}" alt="${epMeta.episodeTitle}">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="ep-info">
+                            <div class="ep-header">
+                                <span class="ep-title">${epMeta.episodeNumber}. ${epMeta.episodeTitle}</span>
+                                <span class="ep-duration">${(epMeta.duration / 60).toFixed(0)}m</span>
+                            </div>
+                            <p class="ep-desc">${epMeta.shortDescription}</p>
                         </div>
                     `;
-                    epListContainer.appendChild(card);
+                    epListContainer.appendChild(aTag);
                 });
-
             } catch (error) {
-                console.error("Error loading series:", error);
-                document.getElementById('seriesTitle').innerText = "Error loading data!";
+                console.error("Error loading series data", error);
             }
         });
-
-        // এপিসোডে ক্লিক করলে প্লেয়ার লোড করার ফাংশন
-        async function playEpisode(contentId, title) {
-            // প্লেয়ারের জায়গায় লোডিং টেক্সট দেখানো
-            document.getElementById('player').innerHTML = "Preparing secure stream... Please wait.";
-
-            try {
-                // Render API থেকে M3U8/MPD এবং Widevine License ফেচ করা
-                const response = await fetch(`${API_BASE_URL}/api/play?id=${contentId}`);
-                const playData = await response.json();
-
-                const manifestUrl = playData.url;
-                const licenseUrl = playData.drm_license_url;
-
-                // JW Player सेटअप
-                jwplayer("player").setup({
-                    file: manifestUrl,
-                    title: title,
-                    type: "dash",
-                    width: "100%",
-                    aspectratio: "16:9",
-                    autostart: true,
-                    drm: {
-                        widevine: {
-                            url: licenseUrl // DRM লাইসেন্স সেট করা
-                        }
-                    }
-                });
-
-                // ইউজারকে প্লেয়ারের কাছে নিয়ে যাওয়া
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            } catch (error) {
-                console.error("Error playing video:", error);
-                document.getElementById('player').innerHTML = "Failed to load video stream. Please try again.";
-            }
-        }
     </script>
 </body>
 </html>
