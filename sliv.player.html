@@ -3,66 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playing Episode</title>
+    <meta name="author" content="Md Sohanur Rahman Hady (HADY)">
+    <title>Playing - Premium Player</title>
     
     <!-- JW Player Library -->
     <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
     <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftlJ5Vqg==";</script>
 
     <style>
-        body { margin: 0; padding: 0; background-color: #000; color: #fff; font-family: sans-serif; height: 100vh; display: flex; flex-direction: column; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; height: 100vh; width: 100vw; }
         
-        /* Top Navigation/Back Button */
-        .top-bar { position: absolute; top: 0; left: 0; width: 100%; padding: 20px; z-index: 100; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); display: flex; align-items: center; }
-        .back-btn { color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; transition: color 0.2s; }
-        .back-btn:hover { color: #e50914; }
-        .ep-title-display { margin-left: 20px; font-size: 1.2rem; opacity: 0.8; }
+        /* Netflix Style Overlay Container */
+        .player-container { position: relative; width: 100vw; height: 100vh; background: #000; display: flex; align-items: center; justify-content: center; }
+        
+        /* Top Navigation (Auto-hides like Netflix) */
+        .top-controls { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z-index: 10; display: flex; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%); transition: opacity 0.5s ease; opacity: 1; }
+        
+        .player-container:hover .top-controls { opacity: 1; }
+        .top-controls.idle { opacity: 0; }
 
-        /* Player Container */
-        .player-wrapper { flex: 1; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
-        #player { width: 100%; height: 100%; }
+        .back-btn { text-decoration: none; color: #fff; display: flex; align-items: center; font-size: 1.8rem; cursor: pointer; transition: transform 0.2s ease; }
+        .back-btn:hover { transform: scale(1.1); }
+        .back-icon { margin-right: 15px; font-weight: bold; }
         
-        .loading { font-size: 1.2rem; color: #888; }
+        .ep-info { display: flex; flex-direction: column; }
+        .ep-title { font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+        
+        /* JW Player Wrapper */
+        #player { width: 100% !important; height: 100% !important; position: absolute; top: 0; left: 0; }
+        
+        .loading-text { position: absolute; font-size: 1.5rem; color: #e50914; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <a href="sliv.html" class="back-btn">← Back to Series</a>
-        <span class="ep-title-display" id="displayTitle">Loading stream...</span>
-    </div>
+    <div class="player-container" id="playerContainer">
+        <div class="top-controls" id="topControls">
+            <a href="sliv.html" class="back-btn" title="Back to Browse">
+                <span class="back-icon">🡐</span>
+            </a>
+            <div class="ep-info">
+                <span class="ep-title" id="displayTitle">Loading stream...</span>
+            </div>
+        </div>
 
-    <div class="player-wrapper">
-        <div id="player" class="loading">Requesting secure stream from server...</div>
+        <div id="player"></div>
+        <div class="loading-text" id="loadingText">Connecting...</div>
     </div>
 
     <script>
         const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
 
-        // URL থেকে ID এবং Title নেওয়া
         const urlParams = new URLSearchParams(window.location.search);
         const contentId = urlParams.get('id');
-        const epTitle = urlParams.get('title') || "Episode";
+        const epTitle = urlParams.get('title') || "Episode Playback";
 
         document.getElementById('displayTitle').innerText = epTitle;
 
+        // Auto-hide Top Controls (Netflix effect)
+        let timeout;
+        const topControls = document.getElementById('topControls');
+        const container = document.getElementById('playerContainer');
+
+        function resetTimer() {
+            topControls.classList.remove('idle');
+            container.style.cursor = 'default';
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                topControls.classList.add('idle');
+                container.style.cursor = 'none'; // Hide mouse cursor when idle
+            }, 3000);
+        }
+        
+        document.addEventListener('mousemove', resetTimer);
+        document.addEventListener('keydown', resetTimer);
+        resetTimer();
+
+        // Fetch and Play
         document.addEventListener("DOMContentLoaded", async () => {
             if(!contentId) {
-                document.getElementById('player').innerHTML = "No Episode ID provided!";
+                document.getElementById('loadingText').innerText = "ERROR: NO EPISODE ID";
                 return;
             }
 
             try {
-                // API কল করে MPD এবং License URL আনা
                 const response = await fetch(`${API_BASE_URL}/api/play?id=${contentId}`);
                 const playData = await response.json();
 
-                if (!playData.url || !playData.drm_license_url) {
-                    document.getElementById('player').innerHTML = "Failed to extract playback link or DRM license.";
-                    return;
-                }
+                document.getElementById('loadingText').style.display = 'none';
 
-                // Subtitles array তৈরি (যদি থাকে)
                 let tracksConfig = [];
                 if (playData.subtitles && playData.subtitles.length > 0) {
                     tracksConfig = playData.subtitles.map(sub => ({
@@ -72,26 +103,23 @@
                     }));
                 }
 
-                // JW Player Setup with Widevine
                 jwplayer("player").setup({
-                    file: playData.url, // MPD Link
+                    file: playData.url,
                     type: "dash",
-                    title: epTitle,
                     width: "100%",
                     height: "100%",
                     autostart: true,
-                    cast: {}, // Chromecast support
+                    stretching: "uniform",
+                    controls: true,
                     drm: {
-                        widevine: {
-                            url: playData.drm_license_url // DRM License URL
-                        }
+                        widevine: { url: playData.drm_license_url }
                     },
-                    tracks: tracksConfig // Subtitles
+                    tracks: tracksConfig
                 });
 
             } catch (error) {
-                console.error("Error setting up player:", error);
-                document.getElementById('player').innerHTML = "Server Error! Could not fetch playback data.";
+                document.getElementById('loadingText').innerText = "STREAM UNAVAILABLE";
+                document.getElementById('loadingText').style.color = "gray";
             }
         });
     </script>
