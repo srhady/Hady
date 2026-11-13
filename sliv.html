@@ -3,59 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch Series</title>
+    <meta name="author" content="Md Sohanur Rahman Hady (HADY)">
+    <title>Watch Series - Premium</title>
     <style>
         /* Netflix Style CSS */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #141414; color: #fff; overflow-x: hidden; }
         
         /* Hero Banner */
-        .hero { position: relative; height: 85vh; background-size: cover; background-position: center; display: flex; align-items: center; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(20,20,20,0.9) 0%, rgba(20,20,20,0.4) 50%, rgba(20,20,20,0.1) 100%); }
-        .hero-bottom-fade { position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, #141414 100%); }
+        .hero { position: relative; height: 85vh; min-height: 500px; background-size: cover; background-position: center top; display: flex; align-items: flex-end; padding-bottom: 100px; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(20,20,20,0.9) 0%, rgba(20,20,20,0.4) 50%, rgba(20,20,20,0.1) 100%), linear-gradient(to top, #141414 0%, transparent 40%); }
         
-        .hero-content { position: relative; z-index: 10; padding: 0 4%; max-width: 60%; }
-        .hero-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; }
-        .hero-meta { display: flex; gap: 15px; margin-bottom: 15px; font-size: 1.1rem; color: #a3a3a3; font-weight: bold; }
-        .match-tag { border: 1px solid #a3a3a3; padding: 1px 5px; border-radius: 3px; }
-        .hero-desc { font-size: 1.2rem; line-height: 1.5; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero-content { position: relative; z-index: 10; padding: 0 4%; max-width: 800px; width: 100%; }
+        
+        /* Show Logo instead of Text */
+        .hero-logo { max-width: 350px; width: 80%; margin-bottom: 20px; object-fit: contain; }
+        
+        .hero-meta { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 1rem; color: #a3a3a3; font-weight: bold; }
+        .match-tag { border: 1px solid #a3a3a3; padding: 2px 6px; border-radius: 3px; font-size: 0.9rem; }
+        .hero-desc { font-size: 1.1rem; line-height: 1.5; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
         /* Episodes Section */
-        .episodes-section { position: relative; z-index: 10; padding: 0 4%; margin-top: -80px; }
-        .section-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
+        .episodes-section { position: relative; z-index: 10; padding: 0 4%; margin-top: -60px; }
+        .section-title { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: #e5e5e5; }
         
         .episodes-grid { display: flex; overflow-x: auto; gap: 15px; padding-bottom: 20px; scrollbar-width: none; }
         .episodes-grid::-webkit-scrollbar { display: none; }
         
-        .episode-card { flex: 0 0 300px; background: #181818; border-radius: 4px; cursor: pointer; transition: transform 0.3s; position: relative; text-decoration: none; color: inherit; }
+        .episode-card { flex: 0 0 280px; background: #181818; border-radius: 6px; cursor: pointer; transition: transform 0.3s; position: relative; text-decoration: none; color: inherit; overflow: hidden; }
         .episode-card:hover { transform: scale(1.05); z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .ep-img { width: 100%; height: 168px; object-fit: cover; border-radius: 4px 4px 0 0; }
-        .play-icon { position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.7); opacity: 0; transition: opacity 0.3s; }
+        .ep-img { width: 100%; height: 157px; object-fit: cover; border-bottom: 2px solid #2a2a2a; }
+        
+        .play-icon { position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); opacity: 0; transition: opacity 0.3s; }
         .episode-card:hover .play-icon { opacity: 1; }
         
         .ep-info { padding: 15px; }
-        .ep-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .ep-title { font-size: 1rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 80%; }
-        .ep-duration { font-size: 0.9rem; color: #a3a3a3; }
-        .ep-desc { font-size: 0.85rem; color: #808080; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .ep-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .ep-title { font-size: 1rem; font-weight: bold; line-height: 1.2; margin-right: 10px; }
+        .ep-duration { font-size: 0.85rem; color: #a3a3a3; white-space: nowrap; }
+        .ep-desc { font-size: 0.85rem; color: #808080; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; }
+
+        @media (max-width: 768px) {
+            .hero { height: 60vh; min-height: 400px; padding-bottom: 50px; }
+            .hero-logo { max-width: 250px; }
+            .hero-desc { font-size: 0.95rem; }
+            .episode-card { flex: 0 0 240px; }
+            .ep-img { height: 135px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Hero Section -->
     <div id="heroBanner" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-bottom-fade"></div>
         <div class="hero-content">
-            <h1 id="heroTitle" class="hero-title">Loading...</h1>
+            <!-- Text Title is replaced by Logo Image -->
+            <img id="heroLogo" class="hero-logo" src="" alt="Series Logo" style="display: none;">
+            
             <div class="hero-meta">
                 <span id="heroYear"></span>
                 <span class="match-tag" id="heroAge">18+</span>
                 <span id="heroSeasons">1 Season</span>
             </div>
-            <p id="heroDesc" class="hero-desc"></p>
+            <p id="heroDesc" class="hero-desc">Loading metadata...</p>
         </div>
     </div>
 
+    <!-- Episodes Section -->
     <div class="episodes-section">
         <h2 class="section-title">Episodes</h2>
         <div class="episodes-grid" id="episodesList">
@@ -73,29 +88,46 @@
                 
                 const bundleData = data.resultObj.containers[0];
                 const meta = bundleData.metadata;
+                const emf = meta.emfAttributes || {}; // ছবির ডাটাগুলো এখানে থাকে
                 const episodes = bundleData.containers;
 
-                // Set Hero Banner
-                const bgImage = meta.tv_background_image || meta.detail_cover_bg;
-                document.getElementById('heroBanner').style.backgroundImage = `url('${bgImage}')`;
-                document.getElementById('heroTitle').innerText = meta.title === "Season 1" ? "Scam 1992" : meta.title;
-                document.getElementById('heroYear').innerText = meta.release_year || "2020";
+                // Set Hero Banner & Logo
+                // মোবাইলের জন্য detail_cover_bg_mobile_v2 অথবা tv_background_image
+                const bgImage = emf.detail_cover_bg_mobile_v2 || emf.tv_background_image || emf.detail_cover_bg;
+                if (bgImage) {
+                    document.getElementById('heroBanner').style.backgroundImage = `url('${bgImage}')`;
+                }
+
+                // সেট লোগো
+                const logoImg = emf.masthead_logo || emf.masthead_logo_v1;
+                if (logoImg) {
+                    const logoEl = document.getElementById('heroLogo');
+                    logoEl.src = logoImg;
+                    logoEl.style.display = 'block';
+                }
+
+                document.getElementById('heroYear').innerText = meta.release_year || meta.year || "2020";
                 document.getElementById('heroAge').innerText = meta["18+"] ? "18+" : "U/A";
-                document.getElementById('heroDesc').innerText = meta.shortDescription;
+                document.getElementById('heroDesc').innerText = meta.shortDescription || meta.longDescription;
 
                 // Load Episodes
                 const epListContainer = document.getElementById('episodesList');
+                epListContainer.innerHTML = ''; // Clear loading state
+
                 episodes.forEach(ep => {
                     const epMeta = ep.metadata;
+                    const epEmf = epMeta.emfAttributes || {};
                     
-                    // এখানে sliv.player.html এ ডাইরেক্ট করা হচ্ছে ID সহ
+                    // এপিসোডের থাম্বনেইল (landscape বা square)
+                    const thumbUrl = epEmf.landscape_thumb || epEmf.square_thumb || epEmf.portrait_thumb || "";
+
                     const aTag = document.createElement('a');
                     aTag.href = `sliv.player.html?id=${epMeta.contentId}&title=${encodeURIComponent(epMeta.episodeTitle)}`;
                     aTag.className = 'episode-card';
 
                     aTag.innerHTML = `
                         <div style="position: relative;">
-                            <img class="ep-img" src="${epMeta.landscape_thumb}" alt="${epMeta.episodeTitle}">
+                            <img class="ep-img" src="${thumbUrl}" alt="${epMeta.episodeTitle}" onerror="this.src='https://via.placeholder.com/280x157/1a1d24/888888?text=No+Image'">
                             <div class="play-icon">▶</div>
                         </div>
                         <div class="ep-info">
@@ -110,6 +142,7 @@
                 });
             } catch (error) {
                 console.error("Error loading series data", error);
+                document.getElementById('heroDesc').innerText = "Error loading data from server.";
             }
         });
     </script>
