@@ -1,127 +1,544 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Md Sohanur Rahman Hady (HADY)">
-    <title>Playing - Premium Player</title>
-    
-    <!-- JW Player Library -->
-    <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
-    <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftlJ5Vqg==";</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090d">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #000; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; height: 100vh; width: 100vw; }
-        
-        /* Netflix Style Overlay Container */
-        .player-container { position: relative; width: 100vw; height: 100vh; background: #000; display: flex; align-items: center; justify-content: center; }
-        
-        /* Top Navigation (Auto-hides like Netflix) */
-        .top-controls { position: absolute; top: 0; left: 0; width: 100%; padding: 30px 40px; z-index: 10; display: flex; align-items: center; background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%); transition: opacity 0.5s ease; opacity: 1; }
-        
-        .player-container:hover .top-controls { opacity: 1; }
-        .top-controls.idle { opacity: 0; }
+<title>Premium Player</title>
 
-        .back-btn { text-decoration: none; color: #fff; display: flex; align-items: center; font-size: 1.8rem; cursor: pointer; transition: transform 0.2s ease; }
-        .back-btn:hover { transform: scale(1.1); }
-        .back-icon { margin-right: 15px; font-weight: bold; }
-        
-        .ep-info { display: flex; flex-direction: column; }
-        .ep-title { font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
-        
-        /* JW Player Wrapper */
-        #player { width: 100% !important; height: 100% !important; position: absolute; top: 0; left: 0; }
-        
-        .loading-text { position: absolute; font-size: 1.5rem; color: #e50914; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-    </style>
+<script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
+<script>
+    jwplayer.key = "YOUR_JWPLAYER_LICENSE_KEY";
+</script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #e50914;
+    --bg: #08090d;
+    --text: #ffffff;
+    --muted: #a3a3ad;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.player-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Player */
+
+#player {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#player .jwplayer {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Top navigation */
+
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 30px 4%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.45),
+        transparent
+    );
+
+    transition: opacity .35s ease,
+                transform .35s ease;
+}
+
+.topbar.hidden {
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+}
+
+.back-button {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.09);
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+
+    backdrop-filter: blur(15px);
+    transition: .25s;
+}
+
+.back-button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.08);
+}
+
+.title-area {
+    min-width: 0;
+}
+
+.title-area small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.episode-title {
+    font-size: clamp(16px, 2vw, 23px);
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 65vw;
+}
+
+/* Loading screen */
+
+.loading-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    background: #08090d;
+    transition: opacity .4s;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(255,255,255,.12);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-title {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.loading-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Error screen */
+
+.error-screen {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(229,9,20,.12),
+        transparent 55%),
+        #08090d;
+}
+
+.error-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.error-title {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 450px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.retry-button {
+    background: var(--accent);
+    border: none;
+    padding: 13px 30px;
+    border-radius: 7px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.retry-button:hover {
+    background: #ff2631;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:600px) {
+    .topbar {
+        padding: 20px 17px;
+        gap: 13px;
+    }
+
+    .back-button {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+
+    .episode-title {
+        max-width: 75vw;
+        font-size: 16px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="player-container" id="playerContainer">
-        <div class="top-controls" id="topControls">
-            <a href="sliv.html" class="back-btn" title="Back to Browse">
-                <span class="back-icon">🡐</span>
-            </a>
-            <div class="ep-info">
-                <span class="ep-title" id="displayTitle">Loading stream...</span>
+<div class="player-container" id="playerContainer">
+
+    <div class="topbar" id="topbar">
+
+        <a href="sliv.html"
+           class="back-button"
+           title="Back to Browse">
+            &#8592;
+        </a>
+
+        <div class="title-area">
+            <small>NOW PLAYING</small>
+            <div class="episode-title" id="displayTitle">
+                Loading episode...
             </div>
         </div>
 
-        <div id="player"></div>
-        <div class="loading-text" id="loadingText">Connecting...</div>
     </div>
 
-    <script>
-        const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
+    <div id="player"></div>
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const contentId = urlParams.get('id');
-        const epTitle = urlParams.get('title') || "Episode Playback";
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-title">PREPARING YOUR STREAM</div>
+        <div class="loading-subtitle" id="loadingMessage">
+            Connecting to server...
+        </div>
+    </div>
 
-        document.getElementById('displayTitle').innerText = epTitle;
+    <div class="error-screen" id="errorScreen">
+        <div class="error-icon">⚠</div>
+        <h2 class="error-title">Unable to Play</h2>
 
-        // Auto-hide Top Controls (Netflix effect)
-        let timeout;
-        const topControls = document.getElementById('topControls');
-        const container = document.getElementById('playerContainer');
+        <p class="error-message" id="errorMessage">
+            Something went wrong while loading this video.
+        </p>
 
-        function resetTimer() {
-            topControls.classList.remove('idle');
-            container.style.cursor = 'default';
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                topControls.classList.add('idle');
-                container.style.cursor = 'none'; // Hide mouse cursor when idle
-            }, 3000);
-        }
-        
-        document.addEventListener('mousemove', resetTimer);
-        document.addEventListener('keydown', resetTimer);
-        resetTimer();
+        <button class="retry-button" onclick="loadStream()">
+            TRY AGAIN
+        </button>
+    </div>
 
-        // Fetch and Play
-        document.addEventListener("DOMContentLoaded", async () => {
-            if(!contentId) {
-                document.getElementById('loadingText').innerText = "ERROR: NO EPISODE ID";
-                return;
+</div>
+
+<script>
+const API_BASE_URL = "https://sonyliv-api-1.onrender.com";
+
+const params = new URLSearchParams(location.search);
+
+const contentId = params.get("id");
+const episodeTitle =
+    params.get("title") || "Episode Playback";
+
+const playerContainer =
+    document.getElementById("playerContainer");
+
+const topbar =
+    document.getElementById("topbar");
+
+const loadingScreen =
+    document.getElementById("loadingScreen");
+
+const loadingMessage =
+    document.getElementById("loadingMessage");
+
+const errorScreen =
+    document.getElementById("errorScreen");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+document.getElementById("displayTitle").textContent =
+    episodeTitle;
+
+
+/* Auto hide navigation */
+
+let hideTimer;
+
+function showControls() {
+    topbar.classList.remove("hidden");
+    playerContainer.style.cursor = "default";
+
+    clearTimeout(hideTimer);
+
+    hideTimer = setTimeout(() => {
+        topbar.classList.add("hidden");
+        playerContainer.style.cursor = "none";
+    }, 3500);
+}
+
+["mousemove", "touchstart", "keydown", "click"].forEach(event => {
+    playerContainer.addEventListener(event, showControls);
+});
+
+showControls();
+
+
+/* UI helpers */
+
+function showLoading(message) {
+    loadingMessage.textContent = message;
+    loadingScreen.style.display = "flex";
+    errorScreen.style.display = "none";
+}
+
+function hideLoading() {
+    loadingScreen.style.display = "none";
+}
+
+function showError(message) {
+    hideLoading();
+    errorMessage.textContent = message;
+    errorScreen.style.display = "flex";
+}
+
+
+/* Destroy previous player */
+
+function destroyPlayer() {
+    try {
+        if (window.jwplayer) {
+            const oldPlayer = jwplayer("player");
+
+            if (oldPlayer && oldPlayer.remove) {
+                oldPlayer.remove();
             }
+        }
+    } catch (e) {
+        console.warn("Player cleanup:", e);
+    }
+}
 
-            try {
-                const response = await fetch(`${API_BASE_URL}/api/play?id=${contentId}`);
-                const playData = await response.json();
 
-                document.getElementById('loadingText').style.display = 'none';
+/* Fetch and configure stream */
 
-                let tracksConfig = [];
-                if (playData.subtitles && playData.subtitles.length > 0) {
-                    tracksConfig = playData.subtitles.map(sub => ({
-                        file: sub.url,
-                        label: sub.label || sub.language,
-                        kind: "captions"
-                    }));
-                }
+async function loadStream() {
 
-                jwplayer("player").setup({
-                    file: playData.url,
-                    type: "dash",
-                    width: "100%",
-                    height: "100%",
-                    autostart: true,
-                    stretching: "uniform",
-                    controls: true,
-                    drm: {
-                        widevine: { url: playData.drm_license_url }
-                    },
-                    tracks: tracksConfig
-                });
+    if (!contentId) {
+        showError("Episode ID is missing from the URL.");
+        return;
+    }
 
-            } catch (error) {
-                document.getElementById('loadingText').innerText = "STREAM UNAVAILABLE";
-                document.getElementById('loadingText').style.color = "gray";
+    showLoading("Connecting to streaming server...");
+    destroyPlayer();
+
+    try {
+
+        const apiUrl =
+            `${API_BASE_URL}/api/play?id=${encodeURIComponent(contentId)}`;
+
+        const response = await fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json"
             }
         });
-    </script>
+
+        if (!response.ok) {
+            throw new Error(
+                `API request failed: HTTP ${response.status}`
+            );
+        }
+
+        const data = await response.json();
+
+        if (!data.url) {
+            throw new Error(
+                data.message || "Stream URL not found in API response."
+            );
+        }
+
+        const streamType =
+            data.type === "application/dash+xml" ||
+            data.type === "dash"
+                ? "dash"
+                : data.type;
+
+        const isWidevine =
+            data.drm === "widevine" ||
+            (typeof data.drm === "object" && data.drm?.widevine) ||
+            !!data.drm_license_url;
+
+        if (isWidevine && !data.drm_license_url) {
+            throw new Error(
+                "Widevine license URL is missing."
+            );
+        }
+
+        const tracks = Array.isArray(data.subtitles)
+            ? data.subtitles
+                .filter(sub => sub.url)
+                .map(sub => ({
+                    file: sub.url,
+                    label: sub.label || sub.language || "Subtitle",
+                    kind: "captions"
+                }))
+            : [];
+
+        showLoading("Initializing video player...");
+
+        const config = {
+            file: data.url,
+            type: streamType,
+            width: "100%",
+            height: "100%",
+            controls: true,
+            autostart: false,
+            stretching: "uniform",
+            displaytitle: false,
+            preload: "metadata",
+            tracks: tracks
+        };
+
+        if (isWidevine) {
+            config.drm = {
+                widevine: {
+                    url: data.drm_license_url
+                }
+            };
+        }
+
+        const player = jwplayer("player");
+
+        player.setup(config);
+
+        player.on("ready", function() {
+            hideLoading();
+            console.log("JW Player ready.");
+        });
+
+        player.on("play", function() {
+            hideLoading();
+        });
+
+        player.on("buffer", function() {
+            showLoading("Buffering video...");
+        });
+
+        player.on("error", function(event) {
+            console.error("JW Player error:", event);
+
+            showError(
+                event.message ||
+                "Playback failed. Check stream, DRM and network settings."
+            );
+        });
+
+        player.on("setupError", function(event) {
+            console.error("JW Player setup error:", event);
+
+            showError(
+                event.message ||
+                "Player setup failed. Check your JW Player configuration."
+            );
+        });
+
+        player.on("complete", function() {
+            console.log("Playback completed.");
+        });
+
+    } catch (error) {
+
+        console.error("Stream loading error:", error);
+
+        showError(error.message || "Unable to connect to streaming server.");
+    }
+}
+
+
+/* Start */
+
+document.addEventListener("DOMContentLoaded", loadStream);
+
+</script>
+
 </body>
 </html>
