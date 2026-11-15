@@ -1,11 +1,6 @@
 #EXTM3U
 #EXT-X-VERSION:8
-## Created with Broadpeak BkS350 Origin Packager (version=1.15.6-31568)
 
-# AUDIO groups
-#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio-aacl-140",NAME="audio_140257_und",DEFAULT=YES,AUTOSELECT=YES,CHANNELS="2"
-
-# variants
 #EXT-X-STREAM-INF:BANDWIDTH=1411000,AVERAGE-BANDWIDTH=1283000,CODECS="mp4a.40.2,avc1.64002A",RESOLUTION=854x480,FRAME-RATE=25,VIDEO-RANGE=SDR,AUDIO="audio-aacl-140",CLOSED-CAPTIONS=NONE
 https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/202-audio_140257_und=140000-video=1070000.m3u8
 
@@ -14,12 +9,3 @@ https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F
 
 #EXT-X-STREAM-INF:BANDWIDTH=5003000,AVERAGE-BANDWIDTH=4548000,CODECS="mp4a.40.2,avc1.64002A",RESOLUTION=1920x1080,FRAME-RATE=25,VIDEO-RANGE=SDR,AUDIO="audio-aacl-140",CLOSED-CAPTIONS=NONE
 https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/202-audio_140257_und=140000-video=4150000.m3u8
-
-# variants (Audio Only)
-#EXT-X-STREAM-INF:BANDWIDTH=164000,AVERAGE-BANDWIDTH=149000,CODECS="mp4a.40.2",AUDIO="audio-aacl-140"
-https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/202-audio_140257_und=140000.m3u8
-
-# keyframes
-#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=156000,CODECS="avc1.64002A",RESOLUTION=854x480,VIDEO-RANGE=SDR,URI="https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/keyframes/202-video=1070000.m3u8"
-#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=458000,CODECS="avc1.64002A",RESOLUTION=1280x720,VIDEO-RANGE=SDR,URI="https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/keyframes/202-video=3140000.m3u8"
-#EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=605000,CODECS="avc1.64002A",RESOLUTION=1920x1080,VIDEO-RANGE=SDR,URI="https://hpc5-nmc-mnc.mydex.tv/_tkn_st=1794733828~exp=1794762688~acl=%2Fbpk-tv%2F202%2Fdefault%2F*~eti=0a9841174aafdb2d7f14e5e3e111eaa9~sid=e6b015d167244637~imax=2~hmac=fe8ef837b52fd032ba15783b1b07d58c1c96d9db8b41827e10e5c29563de47e6/bpk-tv/202/default/keyframes/202-video=4150000.m3u8"
