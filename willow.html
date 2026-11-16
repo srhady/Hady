@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WILLOW LIVE - Match Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jwplayer.com/libraries/MAaRkUjT.js"></script>
 <script>jwplayer.key="jTL7dlu7ybUI5NZnDdVgb1laM8/Hj3ftIJ5Vqg==";</script>
 <style>
-body{font-family:Inter,Arial,sans-serif;background:#f1f5f9;color:#1e293b}
+body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#1e293b}
 .pulse-dot{animation:pulse 1.5s infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 6px #ef444455}}
 .match-card{transition:.25s}
@@ -21,9 +22,8 @@ body{font-family:Inter,Arial,sans-serif;background:#f1f5f9;color:#1e293b}
 <body class="pb-16 antialiased">
 <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
 <div class="flex justify-center h-16 items-center">
-<div class="flex items-center gap-2">
-<span class="bg-emerald-600 text-white w-9 h-9 rounded flex items-center justify-center font-extrabold text-2xl">W</span>
-<span class="font-extrabold text-2xl tracking-tight text-slate-800">ILLOW LIVE</span>
+<div class="flex items-center gap-0">
+<span class="bg-emerald-600 text-white w-9 h-9 rounded flex items-center justify-center font-extrabold text-2xl">W</span><span class="font-extrabold text-2xl tracking-tight text-slate-800">ILLOW LIVE</span>
 </div></div></nav>
 <main class="max-w-7xl mx-auto px-4 pt-8">
 <div class="flex flex-col md:flex-row gap-4 mb-8">
@@ -50,9 +50,7 @@ body{font-family:Inter,Arial,sans-serif;background:#f1f5f9;color:#1e293b}
 const JSON_URL="https://raw.githubusercontent.com/srhady/willow-event/refs/heads/main/live_sports.json";
 let allMatches=[],currentFilter="ALL",searchQuery="",currentStreams=[],currentDrmKey="";
 const grid=document.getElementById("matchesGrid");
-async function fetchSportsData(){
-try{const r=await fetch(JSON_URL,{cache:"no-store"});if(!r.ok)throw Error();const d=await r.json();allMatches=d.Matches||[];renderMatches()}
-catch(e){grid.innerHTML='<div class="col-span-full text-center text-red-500 p-8">Error loading match feed.</div>'}}
+async function fetchSportsData(){try{const r=await fetch(JSON_URL,{cache:"no-store"});if(!r.ok)throw Error();const d=await r.json();allMatches=d.Matches||[];renderMatches()}catch(e){grid.innerHTML='<div class="col-span-full text-center text-red-500 p-8">Error loading match feed.</div>'}}
 function renderMatches(){
 let filtered=allMatches.filter(m=>(currentFilter==="ALL"||(m.status||"").toUpperCase()===currentFilter)&&`${m.title} ${m.synopsis||""}`.toLowerCase().includes(searchQuery.toLowerCase()));
 filtered.sort((a,b)=>(b.status==="LIVE")-(a.status==="LIVE"));
@@ -64,7 +62,7 @@ return `<div class="match-card bg-white rounded-2xl border overflow-hidden flex 
 <img src="${m.cover_image||'https://via.placeholder.com/600x338'}" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/600x338'">
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 <span class="absolute top-3 left-3 ${live?'bg-red-500':'bg-amber-400 text-slate-900'} text-white text-xs font-bold px-2 py-1 rounded-md">${live?'<span class="pulse-dot inline-block w-2 h-2 bg-white rounded-full mr-1"></span>LIVE':'◷ UPCOMING'}</span>
-<span class="absolute top-3 right-3 bg-slate-900/80 text-white text-xs font-bold px-3 py-1.5 rounded-md">${m.time||'TBA'}</span>
+<span class="absolute top-3 right-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-md">${m.time||'TBA'}</span>
 </div>
 <div class="p-4 flex flex-col flex-grow">
 <div class="text-sm font-extrabold text-emerald-600 uppercase tracking-wide mb-2">${series}</div>
