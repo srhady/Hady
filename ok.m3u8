@@ -1,3 +1,12 @@
 #EXTM3U
-#EXTINF:-1 group-title="Live TV", Tapmad 1080p
-https://tencent-cdn.tapmad.com/v1/01a1456f124d15fc600b1e3e9683d7/01a145990eba15fc60e91e1786b054/ProdPK_export_1080.m3u8|User-Agent=Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Mobile Safari/537.36&Referer=https://www.tapmad.com/&Origin=https://www.tapmad.com
+
+#EXTINF:-1 tvg-id="amzn1.dv.gti.a6e27be0-2439-4c0d-acc7-935fb304193c" tvg-lang="ENGLISH" tvg-logo="" group-title="Sports",ENG | India Tour of New Zealand 2026
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=com.clearkey.alpha
+#KODIPROP:inputstream.adaptive.license_key={"keys":[{"kty":"oct","kid":"AAYETslaWBn6WdVLaQkBSA","k":"KNS4iJN8KzGMP_8ngS2BlA"},{"kty":"oct","kid":"36eVrgxYjZupL4YsGrXHJg","k":"nFi463Q60uvMpmLXVBVDCg"},{"kty":"oct","kid":"MexQxYg_yaAUHQ2i0mGkjw","k":"NMO5-WnYZ4_g9mCfg-2ZyQ"},{"kty":"oct","kid":"RKQblsOAMhejTQOFo05y2Q","k":"cIKNvy3m6hhFWdAT7ZR1CQ"},{"kty":"oct","kid":"5S447fEEG8toY7OgjUIKsQ","k":"pNxlp6SY70XIJv-dk42uTw"},{"kty":"oct","kid":"kMBkyNbw96IlXtUSZGPEZQ","k":"O1v3dlJZzyCbazSThuKmeg"},{"kty":"oct","kid":"y7nGZHpKoN2dIlVFHjht2g","k":"mPVXaR586yVa5d3vtoT0qQ"},{"kty":"oct","kid":"0aiadSGzuMqADcMW3JfODQ","k":"xQlJSwKYqRn4Th1YI1LCMA"},{"kty":"oct","kid":"va_cAimUCUHLcBbG5vKtPg","k":"gD6YKO8pcuOokNRAT_UnCw"},{"kty":"oct","kid":"nQeRrllNkof4Kv7BT6l9Tg","k":"9MPFNL-Ss-g1-Cv5Ul2G6w"},{"kty":"oct","kid":"RuCTMI9uqXuuNytmX8280w","k":"VKGQ_RGI494_UKdlIAvGzg"},{"kty":"oct","kid":"dNuSjm2BhYRS_AsqC-oQqA","k":"6nEm3n4hn0LY0PU7xm2vvA"}]}
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:158.0) Gecko/20100101 Firefox/158.0
+#EXTVLCOPT:http-referrer=https://www.primevideo.com/
+#EXTVLCOPT:http-origin=https://www.primevideo.com
+#EXTHTTP:{"referer":"https://www.primevideo.com/","origin":"https://www.primevideo.com"}
+https://live-pv-ta-enf.amazon.fastly-edge.com/$T$2D3RhEOhAQWhBFgkOWE2NWFkMDQtYzk4NS00OTZhLWE4NzQtYTkwMzY2M2FiNzFlWIimAWpwcmltZXZpZGVvBBprHNvZBhprCRVZA2ZmYXN0bHkCeChmaWQ6MDFhMjFiN2ItNjZlZC03MjljLWIzYzYtYTk4NjcyYjgxNTU2GQE4oQWhAngzL3AwZ3lnYTdpbTcvb3V0L3YxLzYwYWIzY2VhNWNlZTRmMjhhNzg5MzAxNmUwNjUzOTQ3WCClGnYz5HiyWup_f1QijDvtofvKmgpsEijcq8jusR0G8Q/fra-nitro/live/clients/dash-sd/enc/p0gyga7im7/out/v1/60ab3cea5cee4f28a7893016e0653947/cenc-sd.mpd
